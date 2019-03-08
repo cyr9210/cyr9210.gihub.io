@@ -1,7 +1,7 @@
 ---
 title: IOC, IOC컨테이너
 date: 2019-03-05 02:19:06
-tags: Springframework-introduction
+tags: Spring
 ---
 
 ![springf](/images/springframwork-logo.png)
