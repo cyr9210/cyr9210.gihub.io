@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b822ac65-2a1b-4b7c-a042-e6489a655fa8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/OracleDB/oracle01.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/OracleDB/oracle01.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/OracleDB/oracle02.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/OracleDB/oracle02.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo/_config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo/layout/_partial/head.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo/layout/_partial/head.ejs" afterDir="false" />
@@ -38,11 +38,11 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/source/_posts/Process/Process02.md">
+        <entry file="file://$PROJECT_DIR$/source/_posts/OracleDB/oracle02.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="380">
-                <caret line="65" column="8" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="30">
+                <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
               </first_editor>
               <second_editor />
             </state>
@@ -82,12 +82,15 @@
         <option value="$PROJECT_DIR$/source/_posts/Java/java16.md" />
         <option value="$PROJECT_DIR$/source/_posts/OracleDB/oracle01.md" />
         <option value="$PROJECT_DIR$/source/_posts/Process/Process02.md" />
+        <option value="$PROJECT_DIR$/source/_posts/OracleDB/oracle02.md" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1280" />
-    <option name="height" value="800" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="640" />
+    <option name="y" value="23" />
+    <option name="width" value="640" />
+    <option name="height" value="777" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -95,7 +98,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -133,12 +135,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552123117887" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552123118945" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -186,12 +189,13 @@
       <workItem from="1551959567726" duration="14188000" />
       <workItem from="1552104741597" duration="3212000" />
       <workItem from="1552109095043" duration="5731000" />
-      <workItem from="1552116871828" duration="5164000" />
+      <workItem from="1552116871828" duration="5290000" />
+      <workItem from="1552144640154" duration="2475000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46023000" />
+    <option name="totallyTimeSpent" value="48624000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -203,10 +207,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="640" y="23" width="640" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49863014" visible="true" weight="0.27382874" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49863014" weight="0.27759197" />
       <window_info id="Structure" order="1" sideWeight="0.5017241" side_tool="true" weight="0.26979" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -225,7 +229,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32876712" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Thumbnails" order="11" weight="0.32876712" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.50136983" visible="true" weight="0.26849315" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.50136983" visible="true" weight="0.2671533" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24959612" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -464,16 +468,6 @@
         <state relative-caret-position="-268" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/OracleDB/oracle01.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="2625">
-            <caret line="175" lean-forward="true" selection-start-line="175" selection-end-line="175" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/Process/Process01.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
@@ -486,9 +480,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/Process/Process02.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="380">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="975">
             <caret line="65" column="8" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/OracleDB/oracle01.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="390">
+            <caret line="26" column="21" selection-start-line="26" selection-end-line="27" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/OracleDB/oracle02.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="30">
+            <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
           </first_editor>
           <second_editor />
         </state>
