@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b822ac65-2a1b-4b7c-a042-e6489a655fa8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/OracleDB/oracle02.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/OracleDB/oracle02.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo/_config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo/layout/_partial/head.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo/layout/_partial/head.ejs" afterDir="false" />
@@ -36,13 +35,25 @@
     <favorites_list name="cyr9210.github.io" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/source/_posts/OracleDB/oracle02.md">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/_posts/OracleDB/oracle05.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="30">
-                <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+              <first_editor relative-caret-position="167">
+                <caret line="15" column="19" selection-start-line="15" selection-end-line="16" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/_posts/OracleDB/DBmodeling01.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="232">
+                <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
               </first_editor>
               <second_editor />
             </state>
@@ -55,7 +66,11 @@
     <findStrings>
       <find>f</find>
       <find>₩</find>
+      <find>/databaseD/</find>
     </findStrings>
+    <replaceStrings>
+      <replace>/database/</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -83,6 +98,10 @@
         <option value="$PROJECT_DIR$/source/_posts/OracleDB/oracle01.md" />
         <option value="$PROJECT_DIR$/source/_posts/Process/Process02.md" />
         <option value="$PROJECT_DIR$/source/_posts/OracleDB/oracle02.md" />
+        <option value="$PROJECT_DIR$/source/_posts/OracleDB/oracle03.md" />
+        <option value="$PROJECT_DIR$/source/_posts/OracleDB/oracle04.md" />
+        <option value="$PROJECT_DIR$/source/_posts/OracleDB/oracle05.md" />
+        <option value="$PROJECT_DIR$/source/_posts/OracleDB/DBmodeling01.md" />
       </list>
     </option>
   </component>
@@ -98,6 +117,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -135,7 +155,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -152,8 +171,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/source/_posts/Process" />
       <recent name="$PROJECT_DIR$/source/_posts/OracleDB" />
+      <recent name="$PROJECT_DIR$/source/_posts/Process" />
       <recent name="$PROJECT_DIR$/source/_posts/Java" />
       <recent name="$PROJECT_DIR$/source/_posts/Project" />
       <recent name="$PROJECT_DIR$/source/_posts/Algorism" />
@@ -190,12 +209,14 @@
       <workItem from="1552104741597" duration="3212000" />
       <workItem from="1552109095043" duration="5731000" />
       <workItem from="1552116871828" duration="5290000" />
-      <workItem from="1552144640154" duration="2475000" />
+      <workItem from="1552144640154" duration="2639000" />
+      <workItem from="1552206910452" duration="1122000" />
+      <workItem from="1552215450716" duration="3696000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48624000" />
+    <option name="totallyTimeSpent" value="53606000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -501,8 +522,48 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/OracleDB/oracle02.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="30">
-            <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+          <first_editor relative-caret-position="240">
+            <caret line="16" column="23" selection-start-line="16" selection-end-line="17" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/OracleDB/oracle03.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="45">
+            <caret line="40" column="24" selection-start-line="40" selection-end-line="41" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/OracleDB/oracle04.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="210">
+            <caret line="14" column="23" selection-start-line="14" selection-end-line="15" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/OracleDB/oracle05.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="167">
+            <caret line="15" column="19" selection-start-line="15" selection-end-line="16" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/OracleDB/DBmodeling01.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="232">
+            <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
           </first_editor>
           <second_editor />
         </state>
