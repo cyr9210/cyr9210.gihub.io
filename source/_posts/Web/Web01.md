@@ -1,6 +1,6 @@
 ---
 title: Web, HTML
-date: 2019-03-11 21:31:38
+date: 2018-12-07 21:31:38
 tags: Web
 ---
 ![html](/images/html_logo.jpeg)
@@ -142,7 +142,7 @@ ex) 웹어플리케이션 별 Active X 설치 필요
 #### Body
 문서의 내용을 작성하는 부분
 
-![web](/images/web/Web01-11.png)
+![web](/images/web/Web01-12.png)
 - <head>에 위치하며 <head>내부 태그 및 <html>을 제외한 모든 태그를 포함한다.
 - id속성을 이용, 문서 내에서 유일하게 태그를 식별한다.(id 속성 중복 X)
 - class 속성을 이용하여 여러태그에 공톡적인 특성을 부여 가능(중복가능)
@@ -165,23 +165,23 @@ ex) 웹어플리케이션 별 Active X 설치 필요
 - 종류 : a, img, span 등이 있다.
 
 ##### 목록형 태그
-![web](/images/web/Web01-12.png)
+![web](/images/web/Web01-13.png)
 - <a> : 폐이지로 이동하는 명령어
 - href 는 문서내 특정지점으로 이동 가능
 
 ##### 예시
-![web](/images/web/Web01-12.png)
-![web](/images/web/Web01-13.png)
+![web](/images/web/Web01-14.png)
+![web](/images/web/Web01-15.png)
 
 #### 테이블요소
-![web](/images/web/Web01-14.png)
+![web](/images/web/Web01-16.png)
 - colspan : 열병합
 - rowspan : 행병합
 
-![web](/images/web/Web01-15.png)
+![web](/images/web/Web01-17.png)
 
 ##### 예제
-![web](/images/web/Web01-16.png)
+![web](/images/web/Web01-18.png)
 
 #### 오브젝트 ,이미지요소
 - alt : 간단한 그림의 설명을 툴팁으로 보여줌, 이미지가 나타날 수 없는 경우 대체 텍스트를 설정함
@@ -189,7 +189,7 @@ ex) 웹어플리케이션 별 Active X 설치 필요
 - alt는 웹접근성을 위해서 사용된다.(시각장애인)
 
 ##### 예제
-![web](/images/web/Web01-17.png)
+![web](/images/web/Web01-19.png)
 
 #### FORM 요소
 - 사용자로부터 데이터를 입력받아 서버에서 처리하기 위한 용도로 사용
@@ -200,5 +200,10 @@ ex) 웹어플리케이션 별 Active X 설치 필요
 - action 속성 : 데이터를 전송할 URL을 지정
 - method속성 : 데이터 전송방식을 지정(GET, POST)
 
+##### form 컨트롤 요소
+![web](/images/web/Web01-20.png)
 
+##### 예제
+![web](/images/web/Web01-21.png)
+- input 태그안의 text, email, date, color, range, checkbox, radio 활용 및 select , feild 태그 활용
 <br><br>
