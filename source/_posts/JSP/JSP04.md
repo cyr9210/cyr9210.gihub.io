@@ -3,7 +3,7 @@ title: 설계모델, 모델1설계방식, 모델2설계방식(MVC패턴)
 date: 2019-01-04 19:45:33
 tags: JSP
 ---
-# KOSTA DAY39
+# KOSTA DAY42
 ## JSP
 ![JSP](/images/JSP_logo.png)
 
