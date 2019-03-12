@@ -1,9 +1,10 @@
 ---
 title: HotelReservation-System(DB Mini project)
 date: 2018-12-07 21:05:09
-tags: 프로젝트 회고
+tags: 프로젝트_회고
 ---
-
+# Project
+## DataBase Mini Project
 ### HotelReservation-System
 **Project github : https://github.com/junjangsee/Hotel-Reservation_System**
 

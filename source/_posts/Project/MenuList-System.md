@@ -1,11 +1,11 @@
 ---
 title: MenuList System(Java Mini Project)
 date: 2018-11-23 15:06:23
-tags: 프로젝트 회고
+tags: 프로젝트_회고
 ---
 
 # Project
-## Java mini Project
+## Java Mini Project
 
 ### MenuList_System
 **Project github : https://github.com/junjangsee/Menu-List-System**
