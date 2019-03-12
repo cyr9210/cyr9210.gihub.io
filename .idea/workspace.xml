@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b822ac65-2a1b-4b7c-a042-e6489a655fa8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/JavaScript/JS01.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/JavaScript/JS01.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo/_config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo/layout/_partial/head.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo/layout/_partial/head.ejs" afterDir="false" />
@@ -38,11 +36,11 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/_posts/JavaScript/JS01.md">
+        <entry file="file://$PROJECT_DIR$/source/_posts/JavaScript/JS02.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="30">
-                <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+              <first_editor relative-caret-position="75">
+                <caret line="5" selection-start-line="5" selection-end-line="7" selection-end-column="26" />
               </first_editor>
               <second_editor />
             </state>
@@ -50,11 +48,11 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/source/_posts/JavaScript/JS02.md">
+        <entry file="file://$PROJECT_DIR$/source/_posts/JavaScript/JS03.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="408">
-                <caret line="146" lean-forward="true" selection-start-line="146" selection-end-line="146" />
+              <first_editor relative-caret-position="324">
+                <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
               </first_editor>
               <second_editor />
             </state>
@@ -111,6 +109,7 @@
         <option value="$PROJECT_DIR$/source/_posts/Algorithm/algorism01.md" />
         <option value="$PROJECT_DIR$/source/_posts/JavaScript/JS01.md" />
         <option value="$PROJECT_DIR$/source/_posts/JavaScript/JS02.md" />
+        <option value="$PROJECT_DIR$/source/_posts/JavaScript/JS03.md" />
       </list>
     </option>
   </component>
@@ -223,12 +222,12 @@
       <workItem from="1552206910452" duration="1122000" />
       <workItem from="1552215450716" duration="6082000" />
       <workItem from="1552306080571" duration="9457000" />
-      <workItem from="1552367076315" duration="2220000" />
+      <workItem from="1552367076315" duration="3571000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67669000" />
+    <option name="totallyTimeSpent" value="69020000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -634,8 +633,18 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/JavaScript/JS02.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="408">
-            <caret line="146" lean-forward="true" selection-start-line="146" selection-end-line="146" />
+          <first_editor relative-caret-position="75">
+            <caret line="5" selection-start-line="5" selection-end-line="7" selection-end-column="26" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/JavaScript/JS03.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="324">
+            <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
           </first_editor>
           <second_editor />
         </state>
