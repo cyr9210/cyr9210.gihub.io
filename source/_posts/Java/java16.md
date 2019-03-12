@@ -1,7 +1,7 @@
 ---
 title: Java 면접질문1, KOSTA 필기시험
 date: 2018-11-21 15:29:57
-tags: 면접 예상 질문
+tags: Interview
 ---
 
 ![Java](/images/javaimage.png)

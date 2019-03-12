@@ -1,7 +1,7 @@
 ---
 title: KOSTA 필기시험(Oracle DB)
 date: 2018-12-04 21:09:07
-tags: DataBase
+tags: Interview
 ---
 ![DB](/images/oracledb_logo.png)
 # KOSTA DAY28
