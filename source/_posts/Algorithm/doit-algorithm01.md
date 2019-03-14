@@ -1,6 +1,6 @@
 ---
 title: KOSTA 예제, DFS
-date: 2019-11-20 14:27:17
+date: 2018-11-20 14:27:17
 tags: Algorithm
 ---
 
