@@ -8,10 +8,9 @@ tags: Algorithm
 # Study
 ## Algorism
 
-최근 저는 알고리즘 및 네트워크, 개인 프로젝트를 위해 스터디에 가입하였습니다.<br>
-해당 스터디는 매주월요일을 기준은로 매주 주어진 양의 알고리즘 및 네트워크를 공부하고, 정리하여 git team의 Repository에 공유하는 방식이며 지정한 문제를 자신의 방식으로 풀고 서로 피드백을 받는 방식으로 진행됩니다.
+알고리즘 시험을 시행하는 회사들이 많아졌습니다.
+시험을 대비하기 위해 매주 조금씩 알고리즘을 공부하기로 마음을 먹었습니다.
 
-git team : https://github.com/liveonly-today<br>
 알고리즘은 아래 교재로 진행할 예정입니다. 🙂<br>
 
 <img src="/images/doit_algorithm.jpg" width="40%">
