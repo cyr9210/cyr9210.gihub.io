@@ -1,7 +1,7 @@
 ---
 title: Spring MVC, valid이용 검증, mybatis 연동 (KOSTA)
 date: 2019-01-25 05:22:10
-tags: Spring
+tags: Springframework_kosta
 ---
 ![springf](/images/springframwork-logo.png)
 #  KOSTA DAY56

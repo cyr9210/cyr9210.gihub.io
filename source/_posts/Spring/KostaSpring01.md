@@ -1,7 +1,7 @@
 ---
 title: Spring, Maven, DI, 객체주입, AOP (KOSTA)
 date: 2019-01-24 04:29:52
-tags: Spring
+tags: Springframework_kosta
 ---
 ![springf](/images/springframwork-logo.png)
 #  KOSTA DAY55

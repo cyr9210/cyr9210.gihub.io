@@ -1,7 +1,7 @@
 ---
 title: 개발환경 세팅, Junit 테스트, OracleDB 연동, mybaits연동, log4jdbc, MVC Controller, 파일업/다운로드 (KOSTA)
 date: 2019-01-29 06:06:08
-tags: Spring
+tags: Springframework_kosta
 ---
 ![springf](/images/springframwork-logo.png)
 #  KOSTA DAY58

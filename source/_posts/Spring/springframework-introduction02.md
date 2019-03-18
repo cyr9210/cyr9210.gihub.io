@@ -1,7 +1,7 @@
 ---
 title: AOP
 date: 2019-03-08 14:03:12
-tags: Spring
+tags: Springframework
 ---
 ![springf](/images/springframwork-logo.png)
 # 스프링 프레임워크 입문02(inflearn) - 백기선 

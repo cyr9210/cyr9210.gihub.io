@@ -1,7 +1,8 @@
 ---
 title: HAVING, 함수, DDL, DML, 제약조건, JOIN
 date: 2018-11-27 18:02:10
-tags: DataBase
+tags: OracleDB
+
 ---
 
 ![DB](/images/oracledb_logo.png)

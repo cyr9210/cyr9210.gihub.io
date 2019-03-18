@@ -1,7 +1,7 @@
 ---
 title: ANSI JOIN, INNER JOIN, OUTER JOIN, SELF JOIN, 서브쿼리
 date: 2018-11-28 17:36:11
-tags: DataBase
+tags: OracleDB
 ---
 ![DB](/images/oracledb_logo.png)
 # KOSTA DAY22

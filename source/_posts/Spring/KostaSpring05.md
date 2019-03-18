@@ -1,7 +1,7 @@
 ---
 title: Spring MVC TEST (KOSTA)
 date: 2019-01-30 06:45:43
-tags: Spring
+tags: Springframework_kosta
 ---
 ![springf](/images/springframwork-logo.png)
 #  KOSTA DAY59

@@ -1,7 +1,7 @@
 ---
 title: 다중컬럼 다중로우, FROM절 서브쿼리, 인덱스, 시퀀스, 뷰, PLSQL
 date: 2018-11-29 19:58:06
-tags: DataBase
+tags: OracleDB
 ---
 ![DB](/images/oracledb_logo.png)
 # KOSTA DAY23

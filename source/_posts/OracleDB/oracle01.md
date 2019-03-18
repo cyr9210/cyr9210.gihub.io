@@ -1,7 +1,7 @@
 ---
 title: 데이터베이스, Oracle , SELECT
 date: 2018-11-26 13:26:15
-tags: DataBase
+tags: OracleDB
 ---
 
 ![DB](/images/oracledb_logo.png)

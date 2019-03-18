@@ -1,7 +1,7 @@
 ---
 title: \@RequestParam, \@Pathvariable(RESTful), tiles, File up/down, JSON, AOP, Transaction (KOSTA)
 date: 2019-01-28 05:41:12
-tags: Spring
+tags: Springframework_kosta
 ---
 
 ![springf](/images/springframwork-logo.png)
