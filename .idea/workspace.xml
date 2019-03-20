@@ -3,20 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b822ac65-2a1b-4b7c-a042-e6489a655fa8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/OracleDB/oracle01.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/OracleDB/oracle01.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/OracleDB/oracle02.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/OracleDB/oracle02.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/OracleDB/oracle03.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/OracleDB/oracle03.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/OracleDB/oracle04.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/OracleDB/oracle04.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/OracleDB/oracle05.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/OracleDB/oracle05.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Spring/KostaSpring01.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Spring/KostaSpring01.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Spring/KostaSpring02.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Spring/KostaSpring02.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Spring/KostaSpring03.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Spring/KostaSpring03.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Spring/KostaSpring04.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Spring/KostaSpring04.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Spring/KostaSpring05.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Spring/KostaSpring05.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Spring/springframework-introduction01.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Spring/springframework-introduction01.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Spring/springframework-introduction02.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Spring/springframework-introduction02.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/_posts/Spring/springframewwork-core01.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Spring/springframewwork-core01.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Web/internet01.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/AWS/internet01.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo/_config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo/layout/_partial/head.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo/layout/_partial/head.ejs" afterDir="false" />
@@ -49,13 +36,13 @@
     <favorites_list name="cyr9210.github.io" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springframewwork-core01.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="486">
-                <caret line="106" column="21" selection-start-line="106" selection-start-column="21" selection-end-line="106" selection-end-column="21" />
+              <first_editor relative-caret-position="576">
+                <caret line="334" column="4" selection-start-line="334" selection-start-column="4" selection-end-line="334" selection-end-column="4" />
               </first_editor>
               <second_editor />
             </state>
@@ -83,6 +70,7 @@
       <find>tags: Java(kosta)</find>
       <find>tags: Springframework</find>
       <find>tags: Springframework(kosta)</find>
+      <find>![</find>
     </findStrings>
     <replaceStrings>
       <replace>/database/</replace>
@@ -93,6 +81,7 @@
       <replace>tags: JSP(kosta)</replace>
       <replace>tags: Java</replace>
       <replace>tags: Springframework_kosta</replace>
+      <replace>[</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/source/about</dir>
@@ -168,7 +157,7 @@
       <scroll-view-position x="0" y="0" />
     </layout>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="640" />
     <option name="y" value="23" />
     <option name="width" value="640" />
@@ -179,45 +168,13 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="_posts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="_posts" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552905570553" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/source/_posts/Spring" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -284,11 +241,14 @@
       <workItem from="1552818071863" duration="152000" />
       <workItem from="1552887623684" duration="31000" />
       <workItem from="1552888264429" duration="9954000" />
+      <workItem from="1552972352462" duration="7813000" />
+      <workItem from="1553055175783" duration="489000" />
+      <workItem from="1553061477827" duration="6233000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121538000" />
+    <option name="totallyTimeSpent" value="136073000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -300,7 +260,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="640" y="23" width="640" height="777" extended-state="1" />
+    <frame x="640" y="23" width="640" height="777" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49635038" weight="0.28428093" />
       <window_info id="Structure" order="1" sideWeight="0.5017241" side_tool="true" weight="0.26979" />
@@ -825,8 +786,8 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springframewwork-core01.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="486">
-            <caret line="106" column="21" selection-start-line="106" selection-start-column="21" selection-end-line="106" selection-end-column="21" />
+          <first_editor relative-caret-position="576">
+            <caret line="334" column="4" selection-start-line="334" selection-start-column="4" selection-end-line="334" selection-end-column="4" />
           </first_editor>
           <second_editor />
         </state>
