@@ -1,6 +1,6 @@
 ---
 title: IoC 컨테이너와 빈
-date: 2019-03-14 16:36:43
+date: 2019-03-21 16:36:43
 tags: Springframework
 ---
 ![springf](/images/springframwork-logo.png)
@@ -332,5 +332,18 @@ public class AppRun implements ApplicationRunner {
 
 - 비동기적으로 실행하고 싶다면 @Async와 함께 사용.(멀티쓰레드)
 ![springcore](/images/springc/springcore01-35.png)
-<br>
- 
+
+#### 스프링이 제공하는 기본 이벤트
+![springcore](/images/springc/springcore01-36.png)
+- ContextRefreshedEvent: ApplicationContext를 초기화 했더나 리프래시 했을 때 발생.
+- ContextClosedEvent: ApplicationContext를 close()하여 싱글톤 빈 소멸되는 시점에 발생.
+- ContextStartedEvent: ApplicationContext를 start()하여 라이프사이클 빈들이 시작신호를 받은 시점에 발생.
+- ContextStoppedEvent: ApplicationContext를 stop()하여 라이프사이클 빈들이 정지신호를 받은 시점에 발생.
+- RequestHandledEvent: HTTP 요청을 처리했을 때 발생.
+<br><br>
+
+### ResourceLoader
+- 리소스를 읽어오는 기능을 제공하는 인터페이스
+- ApplicationContext는 ResourceLoader를 상속받는다.
+
+![springcore](/images/springc/springcore01-37.png)
