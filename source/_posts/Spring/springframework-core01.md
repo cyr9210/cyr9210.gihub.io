@@ -347,3 +347,4 @@ public class AppRun implements ApplicationRunner {
 - ApplicationContext는 ResourceLoader를 상속받는다.
 
 ![springcore](/images/springc/springcore01-37.png)
+<br>
