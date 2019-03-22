@@ -74,3 +74,4 @@ tags: Springframework
 ![springcore2](/images/springc/springcore02-07.png)
 - JSR-380([Bean Validation 2.0.1](https://docs.jboss.org/hibernate/beanvalidation/spec/2.0/api/)) 구현체로 hibernate-validator 사용.()
 - [LocalValidatorFactoryBean](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/validation/beanvalidation/LocalValidatorFactoryBean.html) 빈으로 자동 등록
+<br><br>
