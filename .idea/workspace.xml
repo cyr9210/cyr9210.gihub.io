@@ -4,7 +4,7 @@
     <list default="true" id="b822ac65-2a1b-4b7c-a042-e6489a655fa8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/_posts/Spring/springframework-core01.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Spring/springframework-core01.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Spring/springframework-core02.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Spring/springframework-core02.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/Spring/springframework-core03.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Spring/springframework-core03.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo/_config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo/layout/_partial/head.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo/layout/_partial/head.ejs" afterDir="false" />
@@ -38,12 +38,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springframework-core03.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="365">
-                <caret line="42" column="45" selection-start-line="42" selection-start-column="45" selection-end-line="42" selection-end-column="45" />
+              <first_editor relative-caret-position="782">
+                <caret line="46" selection-start-line="46" selection-end-line="46" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/_posts/Git/oss-git-github.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="119">
+                <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
               </first_editor>
               <second_editor />
             </state>
@@ -99,7 +111,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/source/_posts/Etc/블로그-마크다운-활용.md" />
         <option value="$PROJECT_DIR$/source/_posts/Web/Web01-01.md" />
         <option value="$PROJECT_DIR$/source/_posts/Web/Web02.md" />
         <option value="$PROJECT_DIR$/source/_posts/Algorithm/algorism01.md" />
@@ -147,9 +158,10 @@
         <option value="$PROJECT_DIR$/source/_posts/Spring/KostaSpring01.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springframewwork-core01.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springframework-core02.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springframework-core01.md" />
         <option value="$PROJECT_DIR$/source/_posts/springframework-core03.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springframework-core03.md" />
+        <option value="$PROJECT_DIR$/source/_posts/Spring/springframework-core01.md" />
+        <option value="$PROJECT_DIR$/source/_posts/Git/oss-git-github.md" />
       </list>
     </option>
   </component>
@@ -169,12 +181,44 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+              <item name="_posts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+              <item name="_posts" type="462c0819:PsiDirectoryNode" />
+              <item name="Git" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553240755373" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553331508139" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -186,11 +230,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/source/_posts/Git" />
       <recent name="$PROJECT_DIR$/source/_posts/Spring" />
       <recent name="$PROJECT_DIR$/source/_posts/AWS" />
       <recent name="$PROJECT_DIR$/source/_posts/Web" />
       <recent name="$PROJECT_DIR$/source/_posts/Algorithm" />
-      <recent name="$PROJECT_DIR$/source/_posts/Project" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -251,12 +295,13 @@
       <workItem from="1553235842883" duration="2239000" />
       <workItem from="1553238222221" duration="351000" />
       <workItem from="1553238641801" duration="228000" />
-      <workItem from="1553238903525" duration="1649000" />
+      <workItem from="1553238903525" duration="1866000" />
+      <workItem from="1553316033066" duration="9577000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151534000" />
+    <option name="totallyTimeSpent" value="161328000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -312,16 +357,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/source/_posts/JavaScript/JS02.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="75">
-            <caret line="5" selection-start-line="5" selection-end-line="7" selection-end-column="26" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/JavaScript/JS03.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
@@ -785,8 +820,8 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springframework-core01.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="75">
-            <caret line="5" selection-start-line="5" selection-end-line="7" selection-end-column="18" />
+          <first_editor relative-caret-position="211">
+            <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
           </first_editor>
           <second_editor />
         </state>
@@ -795,8 +830,18 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springframework-core03.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="365">
-            <caret line="42" column="45" selection-start-line="42" selection-start-column="45" selection-end-line="42" selection-end-column="45" />
+          <first_editor relative-caret-position="782">
+            <caret line="46" selection-start-line="46" selection-end-line="46" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/Git/oss-git-github.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="119">
+            <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
           </first_editor>
           <second_editor />
         </state>

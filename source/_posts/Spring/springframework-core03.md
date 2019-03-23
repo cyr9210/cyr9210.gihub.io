@@ -40,5 +40,8 @@ PropertyEditorSupport를 상하여 필요에 맞도록 적용
 ![springcore](/images/springc/springcore03-04.png)
 
 - 앞선 설명과 같이 빈으로 등록하지 않고 InitBinder사용하여 메소드 생성 및 테스트를 실행한다.
-Evnet 클래스를 EventEditor를 사용하여 데이터바인딩하겠다는 뜻 
+Evnet 클래스를 EventEditor를 사용하여 데이터바인딩하겠다는 뜻
 ![springcore](/images/springc/springcore03-05.png)
+<br>
+
+
