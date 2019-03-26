@@ -36,6 +36,7 @@ tags: Springframework
 
 #### SpEL 구성
 - ExpressionParser parser = new SpelExpressionParser()
+    - 예제에서 확인
 - StandardEvaluationContext context = new StandardEvaluationContext(bean)
 - Expression expression = parser.parseExpression(“SpEL 표현식”)
 - String value = expression.getvalue(context, String.class)
