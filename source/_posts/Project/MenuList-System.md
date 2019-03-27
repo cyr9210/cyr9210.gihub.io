@@ -8,8 +8,8 @@ tags: 프로젝트_회고
 ## Java Mini Project
 
 ### MenuList_System
-**Project github : https://github.com/junjangsee/Menu-List-System**
-#### 자료
+**Project github : https://github.com/cyr9210/Menu-List-System**
+#### 구현내용
 ![MenuList](/images/Project/MenuList/MenuList_System01.png)
 ![MenuList](/images/Project/MenuList/MenuList_System02.png)
 ![MenuList](/images/Project/MenuList/MenuList_System03.png)

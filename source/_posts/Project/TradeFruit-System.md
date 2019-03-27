@@ -11,8 +11,8 @@ tags: 프로젝트_회고
 (시간 관계상 전체 페이지가 아닌 3~4페이지)
 - 대상 페이지 : [농산물직거래장터](http://www.guidecrops.com/index.htm)<br>
 
-**Project github : https://github.com/junjangsee/Trade_Fruit_Project**
-#### 자료
+**Project github : https://github.com/cyr9210/Trade_Fruit_Project**
+#### 구현내용
 ![TradeFruit](/images/Project/TradeFruit/TF01.png)
 ![TradeFruit](/images/Project/TradeFruit/TF02.png)
 ![TradeFruit](/images/Project/TradeFruit/TF03.png)

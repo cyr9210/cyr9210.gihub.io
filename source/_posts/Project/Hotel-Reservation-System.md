@@ -6,9 +6,9 @@ tags: 프로젝트_회고
 # Project
 ## DataBase Mini Project
 ### HotelReservation-System
-**Project github : https://github.com/junjangsee/Hotel-Reservation_System**
+**Project github : https://github.com/cyr9210/Hotel-Reservation_System**
 
-#### 자료
+#### 구현내용
 ![HotelReservation](/images/Project/HotelReservation/HotelReservation01.png)
 ![HotelReservation](/images/Project/HotelReservation/HotelReservation02.png)
 ![HotelReservation](/images/Project/HotelReservation/HotelReservation03.png)
