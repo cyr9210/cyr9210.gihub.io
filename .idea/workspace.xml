@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b822ac65-2a1b-4b7c-a042-e6489a655fa8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Spring/springframework-core05.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Spring/springframework-core05.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo/_config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo/layout/_partial/head.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo/layout/_partial/head.ejs" afterDir="false" />
@@ -37,12 +36,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springframework-core05.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="231">
-                <caret line="103" column="8" selection-start-line="103" selection-start-column="8" selection-end-line="103" selection-end-column="8" />
+              <first_editor relative-caret-position="85">
+                <caret line="5" selection-start-line="5" selection-end-line="7" selection-end-column="18" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springframework-core06.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="348">
+                <caret line="41" column="57" selection-start-line="41" selection-start-column="57" selection-end-line="41" selection-end-column="57" />
               </first_editor>
               <second_editor />
             </state>
@@ -98,7 +109,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/source/_posts/Algorithm/algorism01.md" />
         <option value="$PROJECT_DIR$/source/_posts/JavaScript/JS01.md" />
         <option value="$PROJECT_DIR$/source/_posts/JavaScript/JS02.md" />
         <option value="$PROJECT_DIR$/source/_posts/JavaScript/JS03.md" />
@@ -149,6 +159,7 @@
         <option value="$PROJECT_DIR$/source/_posts/Spring/springframework-core03.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springframework-core04.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springframework-core05.md" />
+        <option value="$PROJECT_DIR$/source/_posts/Spring/springframework-core06.md" />
       </list>
     </option>
   </component>
@@ -158,7 +169,7 @@
     </layout>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="641" />
+    <option name="x" value="640" />
     <option name="y" value="23" />
     <option name="width" value="640" />
     <option name="height" value="777" />
@@ -257,12 +268,13 @@
       <workItem from="1553588735060" duration="203000" />
       <workItem from="1553588973805" duration="589000" />
       <workItem from="1553659225132" duration="1974000" />
-      <workItem from="1553661444945" duration="4362000" />
+      <workItem from="1553661444945" duration="5656000" />
+      <workItem from="1553668834700" duration="1553000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179030000" />
+    <option name="totallyTimeSpent" value="181877000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -274,7 +286,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="641" y="23" width="640" height="777" extended-state="0" />
+    <frame x="640" y="23" width="640" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49176955" weight="0.29765886" />
@@ -318,23 +330,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/source/_posts/JavaScript/JS05.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="35">
-            <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.deploy_git/tags/프로젝트-회고/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-52">
-          <caret line="315" column="40" selection-start-line="315" selection-start-column="40" selection-end-line="315" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1615">
@@ -801,8 +796,21 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springframework-core05.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="231">
-            <caret line="103" column="8" selection-start-line="103" selection-start-column="8" selection-end-line="103" selection-end-column="8" />
+          <first_editor relative-caret-position="85">
+            <caret line="5" selection-start-line="5" selection-end-line="7" selection-end-column="18" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/springcore05-13.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springframework-core06.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="348">
+            <caret line="41" column="57" selection-start-line="41" selection-start-column="57" selection-end-line="41" selection-end-column="57" />
           </first_editor>
           <second_editor />
         </state>
