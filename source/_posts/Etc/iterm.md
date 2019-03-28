@@ -67,7 +67,7 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 
 ### Agnoster 테마 설치하기
 ![iTerm](/images/etc/iTerm09.png)
-- .zshrc 파일 찾는다.
+- .zshrc 파일 찾는다. (숨김파일 상태이다.)
 
 ![iTerm](/images/etc/iTerm10.png)
 - 해당 피일을 열어 위와 같이 수정한다.
