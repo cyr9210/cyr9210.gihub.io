@@ -4,7 +4,7 @@ date: 2019-03-28 13:29:41
 tags: SpringBoot
 ---
 ![springboot](/images/springboot_logo.png)
-# 스프릥 부 개념과 활용01(inflearn) - 백기선 
+# 스프릥 부트 개념과 활용01(inflearn) - 백기선 
 ## Spring boot
 
 백기선 님의 강의 중 세 번째로 수강하게 된 '스프링 부트 개념과 활용'!!
