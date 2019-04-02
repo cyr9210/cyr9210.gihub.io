@@ -1,7 +1,7 @@
 ---
 title: 인터넷, IP, 도메인, DNS, 포트, 포트포워딩, 절대경로, 상대경로, 유동IP, DDNS
 date: 2019-03-16 19:45:26
-tags: AWS
+tags: Web
 ---
 # 생활코딩 - 인터넷
 ## web

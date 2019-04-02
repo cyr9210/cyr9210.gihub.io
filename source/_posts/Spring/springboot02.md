@@ -1,5 +1,5 @@
 ---
-title: 스프링 부트 원리
+title: 스프링 부트 원리 - 의존성 관리
 date: 2019-03-28 17:01:13
 tags: SpringBoot
 ---
@@ -49,22 +49,3 @@ dependencyManagement에 정의된 버전을 가져온다.
 - pom.xml에 properties를 직접 재정의한다.
 ![springboot](/images/springboot/springboot02-9.png)
 <br>
-
-### 자동 설정 이해
-- @SpringBootApplication는 아래와 같이 구성되어있다.
-    - @Configuration
-    - @ComponentScan
-    - @EnableAutoConfiguration
-- @EnableAutoConfiguration (@SpringBootApplication 안에 숨어 있음) 
-- 빈은사실두단계로나눠서읽힘
-    - 1단계: @ComponentScan
-    - 2단계: @EnableAutoConfiguration 
-- @ComponentScan
-    - @Component라는 어노테이션을 가진 클래스를 빈으로 등
-    - @Configuration @Repository @Service @Controller @RestController- 
-- @EnableAutoConfiguration 
-    - spring.factories : 스프링부트 기본 설정들이 정의되어있다.
-        - org.springframework.boot.autoconfigure.EnableAutoConfigu ration
-            - 모두 @Configuration이 붙은 설정파일이다.
-        - @Configuration
-        - @ConditionalOnXxxYyyZzz(조건에 따라 빈으로 등록된다.)
