@@ -13,7 +13,7 @@ tags: SpringBoot
     - mvn package -DskipTests : test제외하고 실행
     
 - spring-maven-plugin이 해주는 일 (패키징)
-
+    - 모든 의존성을 포함하는 jar파일 하나를 만들어준다.
 
 - 과거 “uber” jar 를 사용
     - 모든 클래스 (의존성 및 애플리케이션)를 하나로 압축하는 방법
