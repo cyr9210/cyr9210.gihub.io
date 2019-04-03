@@ -4,7 +4,7 @@ date: 2019-04-02 16:59:51
 tags: SpringBoot
 ---
 ![springboot](/images/springboot_logo.png)
-# 스프릥 부트 개념과 활용02(inflearn) - 백기선 
+# 스프릥 부트 개념과 활용04(inflearn) - 백기선 
 ## Spring boot
 
 ### 내장 웹 서버
@@ -135,14 +135,13 @@ server.compression.enabled=true
     - 그러나 컨테이너 마다, 전부 다르다.
         - undertow
             - HTTPS만 설정되어있으면 추가 설정이 필요없다.
-            
+            ![springboot](/images/springboot/springboot04-11.png)![springboot](/images/springboot/springboot04-6.png)
+                    
         - Tomcat
             - 8.5버전 이하는 복잡한 설정이 필요 (비추천)
             - 톰캐9 이상 과 JDK9 이상 시, 설정 필요없다.
             - 차리리 버전을 업그레이드 하는것을 추천한다.
-            
-    - undertow 설정 및 결과
-    ![springboot](/images/springboot/springboot04-11.png)![springboot](/images/springboot/springboot04-6.png)
+            ![springboot](/images/springboot/springboot04-12.png)![springboot](/images/springboot/springboot04-13.png)![springboot](/images/springboot/springboot04-14.png)
 ---
 참고 강의 : [생활코딩 - HTTPS와 SSL 인증서](https://opentutorials.org/course/228/4894)
 <br><br>
