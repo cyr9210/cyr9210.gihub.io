@@ -70,6 +70,3 @@ tags: SpringBoot
 - 순서 지정 가능 @Order (숫자 낮은게 우선)
 ![springboot](/images/springboot/springboot06-12.png)
 <br>
-
-    
-
