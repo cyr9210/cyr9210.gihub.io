@@ -65,13 +65,74 @@ tags: SpringBoot
 
 #### 랜덤값 설정하기
 - ${random.*}
+- ${random.int(1,100)}
+    - 1~ 100까지중 랜덤
+    - **공백문자 주의(없어야 한다.)**
 
 #### 플레이스 홀더
 - name = keesun
 fullName = ${name} baik
 
+#### 타입-세이프 프로퍼티 @ConfigurationProperties
+- 여러 프로퍼티를 묶어서 읽어올 수 있음
+- 빈으로등록해서다른빈에주입할수있음
+    - @EnableConfigurationProperties
+        ![springboot](/images/springboot/springboot07-10.png)
+        - **이렇게 설정을 빈으로 등록해야 하지만 기본적으로 되어있기 때문에 빈으로 등록만 해주면 된다.**
+    - **@Component**
+    - @Bean
+<br>
 
+##### 예제
+다음과 같은 properties값이 있을 때
+![springboot](/images/springboot/springboot07-11.png)
 
+- properties값에 맞추어 필드값 및 getter, setter를 생성한다.
+![springboot](/images/springboot/springboot07-9.png)
+
+- @ConfigurationPropertiess("properties_name")
+    - 필요한 의존성 설정이 안되어 있어 의존성 추가가 필요하다.
+    ![springboot](/images/springboot/springboot07-8.png)
+    ```
+    <dependency>
+    	<groupId>org.springframework.boot</groupId>
+    	<artifactId>spring-boot-configuration-processor</artifactId>
+    	<optional>true</optional>
+    </dependency>
+    ```
+- 앞서 설명했듯이 @EnableConfigurationProperies 자동으로 설정되기 때문에 빈으로 등록하여 사용한다.
+![springboot](/images/springboot/springboot07-12.png)
+
+- @Autowired로 빈을 주입받아 사용한다.
+![springboot](/images/springboot/springboot07-13.png)
 ---
-참고 동영상 : https://www.youtube.com/user/whiteship2000/featured
-<br><br>
+    
+- 융통성 있는 바인딩
+    - 대소문자, -, _를 융통성 있게 바인딩한다.
+        - context-path (케밥)
+        - context_path (언드스코어)
+        - contextPath (캐멀)
+        - CONTEXTPATH
+
+- 프로퍼티 타입 컨버전
+    - ConversionService통해서 타입 Conversion이 일어난다.
+        - 참고 : [데이터바인딩](https://cyr9210.github.io/2019/03/22/Spring/springframework-core03/)
+    - @DurationUnit
+        - Duration객체로 타입 Conversion해준다.
+        ![springboot](/images/springboot/springboot07-14.png)
+        - 따로 지정하지 않으면 30
+        - 지정하면 지정한값
+        ![springboot](/images/springboot/springboot07-15.png)
+        - 해당 어노테이션을 쓰지않아도 아래와 같은 suffix를 잘쓰면 자동으로 타입 변한을 해준다.
+        ![springboot](/images/springboot/springboot07-16.png)![springboot](/images/springboot/springboot07-17.png)
+    
+- 프로퍼티 값 검증
+    ![springboot](/images/springboot/springboot07-19.png)
+    - @Validated
+    - JSR-303 (@NotNull, ...)
+
+@Value 어노테이션을 사용하는것은 
+- SpEL 을 사용할 수 있지만...
+- 위에 있는 기능들은 전부 사용 불가
+- **따라서 properties값을 사용할 때는 위와같이 사용하는 것을 추천**
+
