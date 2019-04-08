@@ -208,10 +208,11 @@ Environment environment = ctx.getEnvironment();
 #### Profile 정의하기
 - 클래스에 정의
     - @Configuration @Profile("[profile_name\]")
-    ![springcore](/images/springc/springcore01-19.png)
+    ![springcore](/images/springc/springcore01-21.png)
 
     - @Component @Profile("[profile_name\]")
-    ![springcore](/images/springc/springcore01-21.png)
+    ![springcore](/images/springc/springcore01-19.png)
+
 - 메소드에 정의
     - Bean @Profile("[profile_name\]")
     ![springcore](/images/springc/springcore01-20.png)
