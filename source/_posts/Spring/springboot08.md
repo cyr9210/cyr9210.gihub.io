@@ -1,5 +1,5 @@
 ---
-title: 프로파일
+title: 스프링 부트 활용 - 프로파일
 date: 2019-04-08 16:15:30
 tags: SpringBoot
 ---
