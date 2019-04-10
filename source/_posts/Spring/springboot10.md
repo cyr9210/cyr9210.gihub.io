@@ -71,3 +71,13 @@ tags: SpringBoot
     - 필요한것들은 MockBean으로 등록하여 사용한다.
 - @WebFluxTest
 - @DataJpaTest
+<br><br>
+
+### 테스트 유틸
+- **OutputCapture**
+    - 로그를 포함 콘솔에 찍히는 모든것을 캡쳐한다.
+    ![springboot](/images/springboot/springboot10-8.png)
+- TestPropertyValues
+- TestRestTemplate
+- ConfigFileApplicationContextInitializer
+<br><br>
