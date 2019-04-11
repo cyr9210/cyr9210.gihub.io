@@ -40,8 +40,9 @@ Commons Logging을 사용해도 SLF4j로 가고 Logback로 간다.
 - 로그 레벨 조정: logging.level.패지키 = 로그 레벨
 
 ### 커스터 마이징
-[reference 문서](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-logging.html)
-- 커스텀 로그 설정 파일 사용하기
+- [reference 문서](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-logging.html)
+
+#### 커스텀 로그 설정 파일 사용하기
 - Logback: logback-spring.xml
     ```
     <?xml version="1.0" encoding="UTF-8"?>
@@ -77,6 +78,9 @@ Commons Logging을 사용해도 SLF4j로 가고 Logback로 간다.
     	<artifactId>spring-boot-starter-log4j2</artifactId>
     </dependency>
     ```
+    - **앞서 말했던 스프링부트2버전대부터 pom.xml에 exclusion없이 사용할 수 있다고 하였는데, 그 경우에는 로깅퍼사드를 변경하는 경우이며, 이 경우에는 로거를 변경하는 경우이다.**
+    ![springboot](/images/springboot/springboot09-3.png)
+    
     
     
     
