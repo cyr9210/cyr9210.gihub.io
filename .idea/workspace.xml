@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b822ac65-2a1b-4b7c-a042-e6489a655fa8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/source/_posts/Spring/springboot12.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/images/springboot/springboot09-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/images/springboot/springboot12-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/images/springboot/springboot12-10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/images/springboot/springboot12-11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/images/springboot/springboot12-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/images/springboot/springboot12-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/images/springboot/springboot12-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/images/springboot/springboot12-5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/images/springboot/springboot12-6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/images/springboot/springboot12-7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/images/springboot/springboot12-8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/images/springboot/springboot12-9.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Spring/springboot09.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Spring/springboot09.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/Spring/springboot12.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Spring/springboot12.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo/_config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo/layout/_partial/head.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo/layout/_partial/head.ejs" afterDir="false" />
@@ -49,13 +36,13 @@
     <favorites_list name="cyr9210.github.io" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springboot12.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="243">
-                <caret line="123" column="12" selection-start-line="123" selection-start-column="12" selection-end-line="123" selection-end-column="12" />
+              <first_editor relative-caret-position="278">
+                <caret line="189" column="52" selection-start-line="189" selection-start-column="52" selection-end-line="189" selection-end-column="52" />
               </first_editor>
               <second_editor />
             </state>
@@ -186,39 +173,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="_posts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="_posts" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -321,12 +276,13 @@
       <workItem from="1554707692384" duration="3685000" />
       <workItem from="1554866462761" duration="11841000" />
       <workItem from="1554908383920" duration="4135000" />
-      <workItem from="1554968497512" duration="12857000" />
+      <workItem from="1554968497512" duration="12996000" />
+      <workItem from="1555050578096" duration="4741000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="282003000" />
+    <option name="totallyTimeSpent" value="286883000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -360,7 +316,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32846716" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Thumbnails" order="11" weight="0.32876712" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.50136983" visible="true" weight="0.30364963" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.50136983" visible="true" weight="0.30218977" />
       <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24959612" />
@@ -872,8 +828,8 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springboot12.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="243">
-            <caret line="123" column="12" selection-start-line="123" selection-start-column="12" selection-end-line="123" selection-end-column="12" />
+          <first_editor relative-caret-position="278">
+            <caret line="189" column="52" selection-start-line="189" selection-start-column="52" selection-end-line="189" selection-end-column="52" />
           </first_editor>
           <second_editor />
         </state>

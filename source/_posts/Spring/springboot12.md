@@ -130,6 +130,62 @@ tags: SpringBoot
         - https://stackoverflow.com/questions/2208933/how-do-i-force-a-favicon-refresh
         - 브라우저에서 favicon.ico를 읽고 브라우저를 재시작
         ![springboot](/images/springboot/springboot12-16.png)
-        
-        
 
+#### Thymeleaf
+> **템플릿 엔진**
+코드 제너레이션, 이메일 템플릿등에 사용할 수 있으나, **주로 뷰를 만들 때, 사용한다.**
+기본적인 템플릿은 같으나, 안에 값들만 달라진다.(동적 컨텐츠)
+
+- 스프링 부트가 자동 설정을 지원하는 템플릿 엔진
+    - FreeMarker 
+    - Groovy
+    - **Thymeleaf** 
+    - Mustache
+
+- JSP를 권장하지 않는 이유
+    - 스프링부트가 지향하는 바와 다르다.
+    - JAR패키징 할때는 동작하지 않고, WAR패키징 해야함.
+    - Undertow는 JSP를 지원하지 않음.
+    - [reference문서](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-jsp-limitations)
+
+- Thymeleaf 사용하기
+    - https://www.thymeleaf.org/
+    - https://www.thymeleaf.org/doc/articles/standarddialect5minutes.html
+    - 의존성 추가: spring-boot-starter-thymeleaf
+    ```
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+    ```
+    - 템플릿 파일 위치: /src/main/resources/​template/
+    - Thymeleaf 네임스페이스 추가
+        ![springboot](/images/springboot/springboot12-18.png)
+        - th를 사용할 수 있다. (name 값이 있으면 사용한다.)  
+    - Thymeleaf test
+    ![springboot](/images/springboot/springboot12-17.png)
+    - [예제](https://github.com/thymeleaf/thymeleafexamples-stsm/blob/3.0-master/src/main/webapp/WEB-INF/templates/seedstartermng.html) 
+
+#### HTML Unit
+
+- HTML 템플릿 뷰 테스트를 보다 전문적하기 위해 도와주는 툴
+- 스프링 부트는 HTML Unit 기능 및 자동설정 지원한다.
+- http://htmlunit.sourceforge.net/
+- http://htmlunit.sourceforge.net/gettingStarted.html
+- 의존성 추가가 필요하다.
+```
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>htmlunit-driver</artifactId>
+    <version>2.34.0</version>
+</dependency>
+
+<dependency>
+    <groupId>net.sourceforge.htmlunit</groupId>
+    <artifactId>htmlunit</artifactId>
+    <version>2.34.1</version>
+</dependency>
+```
+- WebClient를 주입받아 사용한다.
+    ![springboot](/images/springboot/springboot12-19.png)
+    - WebClient를 만들 때, MockMvc를 사용하기 때문에 MockMvc도 주입받아 사용할 수 있다.
