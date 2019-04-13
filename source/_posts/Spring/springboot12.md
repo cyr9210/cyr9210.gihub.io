@@ -197,3 +197,27 @@ tags: SpringBoot
     ![springboot](/images/springboot/springboot12-20.png)
     - 머신핸들러 요청 시 (Json 응답)
     ![springboot](/images/springboot/springboot12-21.png)
+
+- 스프링 @MVC 예외 처리 방법
+    - @ExchangepHandler
+        ![springboot](/images/springboot/springboot12-22.png)    
+    - @ControllerAdvice
+        ![springboot](/images/springboot/springboot12-23.png)
+        - 여러 컨트롤러에서 사용하기위해 @ExceptionHandler @ControllerAdvice내에서 정의한다.
+        
+- 스프링 부트가 제공하는 기본 예외 처리기
+    - BasicErrorController
+        - HTML과 JSON 응답 지원
+        - error.path라는 키값에 값이 있으면 값사용, 없으면 /error사용
+        server.error.path 키값에 값이 있으면 값사용, 없으면 이전 값 사용(/error 또는 error.path)
+    - 커스터마이징 방법
+        - ErrorController 구현
+            - 스프링부트에서는 BasicErrorController를 상속받아 만드는것을 추천한다.
+            
+- 커스텀 에러 페이지
+    - 상태 코드 값에 따라 에러 페이지 보여주기
+    - src/main/resources/static||template/error/
+        - html파일 이름은 상태값과 같아야한다.
+            - 404.html
+            - 5xx.html    
+    - ErrorViewResolver 구현
