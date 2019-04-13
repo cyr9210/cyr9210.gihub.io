@@ -41,8 +41,8 @@
         <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springboot12.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="278">
-                <caret line="189" column="52" selection-start-line="189" selection-start-column="52" selection-end-line="189" selection-end-column="52" />
+              <first_editor relative-caret-position="502">
+                <caret line="197" column="22" selection-start-line="197" selection-start-column="22" selection-end-line="197" selection-end-column="22" />
               </first_editor>
               <second_editor />
             </state>
@@ -277,12 +277,13 @@
       <workItem from="1554866462761" duration="11841000" />
       <workItem from="1554908383920" duration="4135000" />
       <workItem from="1554968497512" duration="12996000" />
-      <workItem from="1555050578096" duration="4741000" />
+      <workItem from="1555050578096" duration="4825000" />
+      <workItem from="1555165858209" duration="1085000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="286883000" />
+    <option name="totallyTimeSpent" value="288052000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -316,7 +317,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32846716" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Thumbnails" order="11" weight="0.32876712" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.50136983" visible="true" weight="0.30218977" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.50136983" weight="0.30072993" />
       <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24959612" />
@@ -828,8 +829,8 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springboot12.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="278">
-            <caret line="189" column="52" selection-start-line="189" selection-start-column="52" selection-end-line="189" selection-end-column="52" />
+          <first_editor relative-caret-position="502">
+            <caret line="197" column="22" selection-start-line="197" selection-start-column="22" selection-end-line="197" selection-end-column="22" />
           </first_editor>
           <second_editor />
         </state>

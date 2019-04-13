@@ -189,3 +189,11 @@ tags: SpringBoot
 - WebClient를 주입받아 사용한다.
     ![springboot](/images/springboot/springboot12-19.png)
     - WebClient를 만들 때, MockMvc를 사용하기 때문에 MockMvc도 주입받아 사용할 수 있다.
+
+#### ExceptionHandler
+- 스프링 부트 애플리케이션 실행하면 기본적으로 에러핸들러가 등록이 되어있다.
+그리고 그 에러핸들러에 의해 메세지가 보인다.
+    - 브라우저 요청 시
+    ![springboot](/images/springboot/springboot12-20.png)
+    - 머신핸들러 요청 시 (Json 응답)
+    ![springboot](/images/springboot/springboot12-21.png)
