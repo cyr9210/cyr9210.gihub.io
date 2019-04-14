@@ -210,6 +210,7 @@ tags: SpringBoot
         - HTML과 JSON 응답 지원
         - error.path라는 키값에 값이 있으면 값사용, 없으면 /error사용
         server.error.path 키값에 값이 있으면 값사용, 없으면 이전 값 사용(/error 또는 error.path)
+        ![springboot](/images/springboot/springboot12-24.png)
     - 커스터마이징 방법
         - ErrorController 구현
             - 스프링부트에서는 BasicErrorController를 상속받아 만드는것을 추천한다.
@@ -218,6 +219,54 @@ tags: SpringBoot
     - 상태 코드 값에 따라 에러 페이지 보여주기
     - src/main/resources/static||template/error/
         - html파일 이름은 상태값과 같아야한다.
+         <img src="/images/springboot/springboot12-25.png" width="40%">
             - 404.html
             - 5xx.html    
-    - ErrorViewResolver 구현
+    - [ErrorViewResolver 구현](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-error-handling-custom-error-pages)
+
+#### Spring HATEOAS
+- HATEOAS : Hypermedia As The Engine Of Application State
+    - [Understanding HATEOAS 문서](https://spring.io/understanding/HATEOAS)
+    - 서버: 현재 리소스와 연관된 링크 정보를 클라이언트에게 제공한다.
+    - 클라이언트: 연관된 링크 정보를 바탕으로 리소스에 접근한다.
+    - 연관된 링크 정보
+        - Relation
+        - Hypertext Reference)
+    - spring-boot-starter-hateoas 의존성 추가
+    - https://spring.io/understanding/HATEOAS
+    - https://spring.io/guides/gs/rest-hateoas/
+    - https://docs.spring.io/spring-hateoas/docs/current/reference/html/
+    - 사용 Selflink추가 및 테스트
+    ![springboot](/images/springboot/springboot12-26.png)
+
+- ObjectMapper 제공
+    - 우리가 제공하는 리소르를 Json으로 변환할 때, 사용하는 인터페이스 
+    - 커스터마이징 : spring.jackson.*
+    ![springboot](/images/springboot/springboot12-27.png) 
+    - Jackson2ObjectMapperBuilder
+    - web만 의존성에 추가되어도 빈으로 등록된다.
+    
+- LinkDiscovers 제공
+    - 클라이언트 쪽에서 링크 정보를 Rel 이름으로 찾을때 사용할 수 있는 XPath 확장 클래스
+
+#### CORS
+- SOP과 CORS
+    - Single-Origin Policy 
+        - 하나의 origin.. 오리진이 다르면 호출이 불가능
+    - Cross-Origin Resource Sharing
+        - 서로 다른 origin끼리 리소스를 쉐어할 수 있는 방법을 제공하는 표준
+    - Origin(아래 3개를 합친것이 하나의 origin)
+        - URI 스키마 (http, https)
+        - hostname (whiteship.me, localhost)
+        - 포트 (8080, 18080)
+
+- @CrossOrigin
+    - [reference 문서](https://docs.spring.io/spring/docs/5.0.7.RELEASE/spring-framework-reference/web.html#mvc-cors)
+    - 미적용
+        - 포트가 다른 서버에 요청
+        ![springboot](/images/springboot/springboot12-28.png)![springboot](/images/springboot/springboot12-30.png)![springboot](/images/springboot/springboot12-29.png)
+    - @Controller나 @RequestMapping에 추가
+        ![springboot](/images/springboot/springboot12-31.png)![springboot](/images/springboot/springboot12-32.png)
+    - WebMvcConfigurer 사용해서 글로벌 설정
+    (여러 컨트롤러에서 적용)
+    ![springboot](/images/springboot/springboot12-33.png)
