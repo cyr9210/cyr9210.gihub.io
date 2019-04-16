@@ -263,4 +263,197 @@ psql sprinfboot
     - Optional 사용
     ![springboot](/images/springboot/springboot13-24.png)
     
+#### 데이터베이스 초기화
+- 스키마 자동생성
+     - 테스트 코드에선 스키마가 자동 생성된다.(embeded DB사용)
+     ![springboot](/images/springboot/springboot13-26.png)
+     - 실제로 구동했을 때, 스키마에 생성되지 않는다.
+     ![springboot](/images/springboot/springboot13-27.png)
 
+- JPA를 사용한 데이터베이스 초기화
+    - spring.jpa.hibernate.ddl-auto
+        ![springboot](/images/springboot/springboot13-28.png)
+        - update : 수정 및 추가된것만 수정된다.
+            - 데이터가 남기때문에 자주 사용
+            - **컬럼명이 변경되는것은 알지못함으로 필드명은 변경하면 안된다.**
+        - create : 있는것을 지우고 만든다.
+        - create-drop : 생성하고 애플리케이션 종료시 지워준다.
+    
+    - spring.jpa.generate-ddl=true
+        - 기본값이 false이기 때문에 설정해주지 않으면 상기사항이 적용되지 않는다.
+    
+    - 운영 DB의 경우 validate 설정이 보다 안정적이다.
+        - spring.jpa.hibernate.ddl-auto=validate
+        spring.jpa.generate-ddl=false
+        - 릴레이션이 잘 설정되어있는지 확인해준다.
+            - 클래스와 잘 매핑되있으면 오류없이 실행된다.
+            - 매핑이 되지않으면 오류발생
+            ![springboot](/images/springboot/springboot13-29.png)
+            - 따라서 DB수정이 필요 시, 업데이트 환경으로 진행
+            ![springboot](/images/springboot/springboot13-30.png)
+
+- SQL 스크립트를 사용한 데이터베이스 초기화
+    - 테스트 코드를 돌려 쿼리문을 사용하면 간편하다.
+        ![springboot](/images/springboot/springboot13-25.png)
+        - jpa관 설정들은 테스트 코드에도 적용됨으로 주의할 것.
+            
+    - schema.sql 또는 schema-${platform}.sql
+        - empty값이 아니어야 한다.
+    - data.sql 또는 data-${platform}.sql
+        - schema.sql 먼저 호출된다.
+    - ${platform} 값은 spring.datasource.platform 으로 설정 가능.
+        - schema.sql과 공존하면 우선순위는 schema.sql
+        - schema.sql과 공존할 때, 둘 다 empty값이 아니어야한다.
+ 
+#### 데이터베이스 마이그레이션
+- [Flyway](https://docs.spring.io/spring-boot/docs/2.0.3.RELEASE/reference/htmlsingle/#howto-execute-flyway-database-migrations-on-startup)와 Liquibase가 대표적인데, Flyway를 사용하겠습니다
+- 의존성 추가
+    ```
+    <dependency>
+        <groupId>org.flywaydb</groupId>
+        <artifactId>flyway-core</artifactId>
+    </dependency>
+    ```
+
+- 마이그레이션 디렉토리
+    - db/migration 또는 db/migration/{vendor}
+        - 파일들의 쿼리문 문법을 잘 지켜야한다. (;까지)
+        ![springboot](/images/springboot/springboot13-32.png)
+        
+    - spring.flyway.locations로 변경 가능
+
+- 마이그레이션 파일 이름
+    ![springboot](/images/springboot/springboot13-33.png)
+    - V숫자__이름.sql
+    - **V는 꼭 대문자로.**
+    - 숫자는 순차적으로 (타임스탬프 권장)
+    - **숫자와 이름 사이에 언더바 두 개.**
+    - 이름은 가능한 서술적으로.
+
+- **적용된 스크립트 파일(sql)은 절대로 건들면 안된다.**
+    - 수정사항 발생 시, 새로운 파일을 작성한다.
+        - 변경사항
+        ![springboot](/images/springboot/springboot13-34.png)
+        - 새로운 스크립트 작성
+        ![springboot](/images/springboot/springboot13-35.png)
+
+#### Redis
+- 캐시, 메시지 브로커, 키/밸류 스토어 등으로 사용 가능.
+- spring-boot-data-redis 의존성 추가
+
+- Redis 설치 및 실행 (도커)
+    - docker run -p 6379:6379 --name redis_boot -d redis
+    - docker exec -i -t redis_boot redis-cli
+ 
+-  스프링 데이터 Redis
+    - https://projects.spring.io/spring-data-redis/
+    - StringRedisTemplate 또는 RedisTemplate
+    ![springboot](/images/springboot/springboot13-36.png)
+    - extends CrudRepository
+    ![springboot](/images/springboot/springboot13-37.png)
+ 
+ - Redis 주요 커맨드
+    ![springboot](/images/springboot/springboot13-38.png)
+    - https://redis.io/commands
+    - keys *
+    - get {key}
+    - hgetall {key}
+    - hget {key} {column}   
+
+- 커스터마이징
+    - spring.redis.*
+        - url : localhost가아니면 설정이 필요하다.
+        - port : 기본포트번호(6379) 사용안하면 설정이 필요하다.
+
+#### MongoDB
+- MongoDB는 JSON 기반의 도큐먼트 데이터베이스
+    - 스키마가 없다
+- Webflux를 사용하는 경우, MongoDB reactive를 사용하여 reactive한 repository를 만들 수 있다.
+
+- 참고 : ApplicationRunner를 만드는 새로운 방법
+    - ApplicationRunner를 리턴하는 메소드를 빈으로 등록한다.
+    ![springboot](/images/springboot/springboot13-39.png)
+    - 람다를 사용하면 보다 간결하게 사용가능
+    ![springboot](/images/springboot/springboot13-40.png)
+
+- collections 생성
+    ![springboot](/images/springboot/springboot13-41.png)
+    - RDB(Relation Data Base)의 테이블로 보면 된다.
+    
+- MongoDB 설치 및 실행 (도커)
+    ![springboot](/images/springboot/springboot13-42.png)
+    - docker run -p 27017:27017 --name mongo_boot -d mongo
+    - docker exec -i -t mongo_boot bash
+    - mongo
+    
+- 스프링 데이터 몽고DB
+    - MongoTemplate
+        ![springboot](/images/springboot/springboot13-43.png)
+    - MongoRepository
+        ![springboot](/images/springboot/springboot13-44.png)
+    - 내장형 MongoDB (테스트용)
+        - 의존성 추가
+        ```
+        <dependency>
+            <groupId>de.flapdoodle.embed</groupId>
+            <artifactId>de.flapdoodle.embed.mongo</artifactId>
+            <scope>test</scope>
+        </dependency>
+        ```
+        - @DataMongoTest
+            ![springboot](/images/springboot/springboot13-46.png)
+        - 운영용 MongoDB에 영향을 주지 않는다.
+            - 운영용 DB를 포함하지만, test에서 만든 데이터는 운영 DB에 추가 되지않는다.
+            ![springboot](/images/springboot/springboot13-45.png)
+
+#### Neo4j
+- Neo4j는 노드간의 연관 관계를 표현하는데 빠르고 다양한 기능을 제공하는 그래프 데이터베이스
+ex) 친구의친구의친구를 찾는다거나.. 친구의 세번째링크에 관련된 모든 친구를 불러온다거나..
+
+- 의존성 추가
+```
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-neo4j</artifactId>
+</dependency>
+```
+
+- Neo4j 설치 및 실행 (도커)
+    - docker run -p 7474:7474 -p 7687:7687 -d --name noe4j_boot neo4j
+        - 포트를 두개 설정해주어야 한다.
+            - HTTP(앞) → 서버에서 사용한다.
+            - 볼트 프로토 (뒤)
+    - http://localhost:7474/browser
+        - 바로 접속할 수 있다.
+        - 기본 패스워드 Neo4j 비밀번호를 바꿔야한다.
+            - 기본 패스워드가 변경되었기 때문에 설정해줘야한다.
+            ![springboot](/images/springboot/springboot13-48.png)
+
+- NodeEntity 생성
+    ![springboot](/images/springboot/springboot13-49.png)
+    - id 는 숫자값만 줄수 있다.
+
+- 스프링 데이터 Neo4J
+    - 최신버전으로 오면서 등록되던 빈들이 사라졌다.
+        - Neo4jTemplate
+        - Neo4jOpertion
+    - **SessionFactory**
+        ![springboot](/images/springboot/springboot13-50.png)
+    - Neo4jRepository
+        ![springboot](/images/springboot/springboot13-55.png)
+    
+
+- 관계보기
+    - NodeEntity 생성 및 데이터입력 (이전과정에서 진행하였다.)
+    - 브라우저에서 확인 가능하다.
+    ![springboot](/images/springboot/springboot13-51.png)
+    - Relationship을 가질 NodeEntity를 하나 더 만든다.
+    ![springboot](/images/springboot/springboot13-47.png)
+    - Relationship 설정 (Account가 Role을 가지도록 설정하였다.)
+    ![springboot](/images/springboot/springboot13-53.png)
+    - 롤 부여 및 실행
+    ![springboot](/images/springboot/springboot13-52.png)
+    - 브라우저에서 확인
+    ![springboot](/images/springboot/springboot13-54.png)
+     
+       

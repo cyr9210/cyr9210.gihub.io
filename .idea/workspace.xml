@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b822ac65-2a1b-4b7c-a042-e6489a655fa8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/Spring/springboot13.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Spring/springboot13.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo/_config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo/layout/_partial/head.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo/layout/_partial/head.ejs" afterDir="false" />
@@ -40,8 +41,8 @@
         <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springboot13.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="307">
-                <caret line="265" lean-forward="true" selection-start-line="265" selection-end-line="265" />
+              <first_editor relative-caret-position="327">
+                <caret line="458" selection-start-line="458" selection-end-line="458" />
               </first_editor>
               <second_editor />
             </state>
@@ -172,46 +173,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="_posts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="_posts" type="462c0819:PsiDirectoryNode" />
-              <item name="Etc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="_posts" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -318,12 +280,14 @@
       <workItem from="1555050578096" duration="4825000" />
       <workItem from="1555165858209" duration="4269000" />
       <workItem from="1555266714966" duration="4761000" />
-      <workItem from="1555305876065" duration="16266000" />
+      <workItem from="1555305876065" duration="16529000" />
+      <workItem from="1555384551008" duration="12186000" />
+      <workItem from="1555400834875" duration="4387000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="312263000" />
+    <option name="totallyTimeSpent" value="329099000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -345,6 +309,7 @@
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" sideWeight="0.51124746" side_tool="true" weight="0.3411371" />
+      <window_info anchor="bottom" id="Graph Database Console" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329927" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -359,6 +324,7 @@
       <window_info anchor="bottom" id="Thumbnails" order="11" weight="0.32876712" />
       <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.50136983" visible="true" weight="0.3051095" />
       <window_info anchor="bottom" id="Messages" order="13" />
+      <window_info anchor="right" id="Graph Database" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24959612" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -869,8 +835,8 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springboot13.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="307">
-            <caret line="265" lean-forward="true" selection-start-line="265" selection-end-line="265" />
+          <first_editor relative-caret-position="327">
+            <caret line="458" selection-start-line="458" selection-end-line="458" />
           </first_editor>
           <second_editor />
         </state>
