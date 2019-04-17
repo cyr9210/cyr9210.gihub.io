@@ -93,4 +93,77 @@ tags: SpringBoot
     - 설정한 유저로 테스트
     ![springboot](/images/springboot/springboot14-11.png)
 - **대부분의 서비스들은 UserDetailsService를 등록하고 사용하며, WebSecurityConfigurerAdapter를 이용하여 보다 쉽게 설정을 하기 때문에 스프링 부트에서 지원하는 시큐리티는 사실상 사용 할 일이 없다.** 
- 
+
+#### 커스터 마이징
+- 웹 시큐리티 설정
+    - WebSecurityConfigurerAdapter를 상속하는 Configuration을 빈으로 등록한다.
+        이미지
+        - 이 순간 스프링부트에서 자동 설정해주는 SecurityAutoConfiguration은 동작하지 않는다.
+    - http configure을 오버라이딩 한다.
+    ```
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests()
+            .antMatchers("/", "/hello").permitAll()
+            .anyRequest().authenticated()
+            .and().formLogin()
+            .and().httpBasic();
+        }
+    ```
+        - 루트 및 "/hello" 요청에 대하여 접근을 허락한다.
+        - 그 외 모든 요청에 대하여 인증을 한다.
+            - formLogin 인증
+            - httpBasic 인증
+    - 결과
+        - 루트
+            ![springboot](/images/springboot/springboot14-13.png)
+        - hello
+            ![springboot](/images/springboot/springboot14-14.png)
+        - my
+            ![springboot](/images/springboot/springboot14-15.png)
+
+- [UserDetailsServie 구현](https://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/#jc-authentication-userdetailsservice)
+    - User Entity 및 Repository를 생성한다.
+    - User관련 서비스를 생성한다.
+    ![springboot](/images/springboot/springboot14-17.png)
+    
+    - implements UserDetailsService
+        - @Override loadByUsername
+        ![springboot](/images/springboot/springboot14-18.png)
+            - username을 가지고 user객체를 불러와서 인증
+            - return 될 UserDetails라는 인터페이스 구현체는 제 각각 구현되어있는 유저정보이다.
+            스프링 시큐리티는 User라는 이름으로 UserDetails의 구현체를 제공한다.
+            - User의 파라미터로 name, password를 넣고 세번째 인자로 authorities()메서드를 생성해서 넣어준다.
+                ![springboot](/images/springboot/springboot14-16.png)
+        - 더이상 임의의 User를 만들어주지 않는다.
+        - PasswordEncoder를 설정하지 않아서 에러가 발생할 것으로 예상되어진다.
+
+- PasswordEncoder 설정 및 사용
+    - 인코딩을 안하고 로그인을 하면.. 오류 발생
+    ![springboot](/images/springboot/springboot14-19.png)
+    - 패스워드를 직접 DB에 넣으면 안된다. **인코딩 필수**
+    - Security 설정했던 클래스에서 
+    패스워드 인코더를 아무것도 인코딩하지 않는 NoOpPasswordEncoder를 리턴하는 PasswordEncoder를 빈으로 등록하면 로그인이 가능하다.
+    **그러나, 절대로 이런 방법을 사용하면 안된다. 패스워드 인코더를 사용해야한다.**
+    ![springboot](/images/springboot/springboot14-20.png)
+    
+    - 스프링 시큐리티 권장 패스워드 인코더 사용
+        - 패스워드 인코더 빈 등록
+        ```
+        PasswordEncoder passwordEncoder = 
+            PasswordEncoderFactories.createDelegatingPasswordEncoder()
+        ```
+        ![springboot](/images/springboot/springboot14-21.png)
+        
+        - 패스워드 인코딩
+        ![springboot](/images/springboot/springboot14-22.png)
+        
+        - 인코딩 결과
+        ![springboot](/images/springboot/springboot14-23.png)
+            - bcrypt로 인코딩된 것이 보여진다.
+        
+        
+    
+    
+             
+    
