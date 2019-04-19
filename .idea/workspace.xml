@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b822ac65-2a1b-4b7c-a042-e6489a655fa8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Git/oss-git-github.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Git/oss-git-github.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Spring/springboot03.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Spring/springboot03.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/Git/git01.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Git/git01.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/Git/git02.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Git/git02.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo/_config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo/layout/_partial/head.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo/layout/_partial/head.ejs" afterDir="false" />
@@ -37,25 +37,37 @@
     <favorites_list name="cyr9210.github.io" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/source/_posts/Git/git01.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="130">
-                <caret line="120" column="18" selection-start-line="120" selection-start-column="18" selection-end-line="120" selection-end-column="18" />
+              <first_editor relative-caret-position="17">
+                <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/_posts/Git/git02.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="84">
-                <caret line="63" column="30" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
+              <first_editor relative-caret-position="17">
+                <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/_posts/Git/git03.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="17">
+                <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
               </first_editor>
               <second_editor />
             </state>
@@ -118,7 +130,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/source/_posts/Spring/KostaSpring03.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/KostaSpring04.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/KostaSpring05.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springframework-introduction01.md" />
@@ -167,8 +178,9 @@
         <option value="$PROJECT_DIR$/source/_posts/Spring/springboot03.md" />
         <option value="$PROJECT_DIR$/source/_posts/Git/oss-git-github.md" />
         <option value="$PROJECT_DIR$/source/_posts/Etc/git01.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Git/git01.md" />
+        <option value="$PROJECT_DIR$/source/_posts/Git/git03.md" />
         <option value="$PROJECT_DIR$/source/_posts/Git/git02.md" />
+        <option value="$PROJECT_DIR$/source/_posts/Git/git01.md" />
       </list>
     </option>
   </component>
@@ -177,7 +189,7 @@
       <scroll-view-position x="0" y="0" />
     </layout>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds">
     <option name="x" value="640" />
     <option name="y" value="23" />
     <option name="width" value="640" />
@@ -189,7 +201,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -226,7 +238,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -348,12 +360,13 @@
       <workItem from="1555657650395" duration="87000" />
       <workItem from="1555657843443" duration="59000" />
       <workItem from="1555657906558" duration="138000" />
-      <workItem from="1555658069611" duration="8729000" />
+      <workItem from="1555658069611" duration="8971000" />
+      <workItem from="1555682483983" duration="2804000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="365533000" />
+    <option name="totallyTimeSpent" value="368579000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -365,10 +378,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="640" y="23" width="640" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48875254" weight="0.27544427" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48875254" weight="0.2792642" />
       <window_info id="Structure" order="1" sideWeight="0.5017241" side_tool="true" weight="0.26979" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -387,7 +400,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32739726" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Thumbnails" order="11" weight="0.32876712" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49832776" visible="true" weight="0.3041096" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49832776" visible="true" weight="0.3240876" />
       <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="bottom" id="Graph Database Console" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -411,16 +424,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/source/_posts/OracleDB/oracle02.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="60">
-            <caret line="4" selection-start-line="4" selection-end-line="4" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/OracleDB/oracle01.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
@@ -890,11 +893,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Git/git01.md">
+    <entry file="file://$PROJECT_DIR$/source/_posts/Git/git03.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="130">
-            <caret line="120" column="18" selection-start-line="120" selection-start-column="18" selection-end-line="120" selection-end-column="18" />
+          <first_editor relative-caret-position="17">
+            <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
           </first_editor>
           <second_editor />
         </state>
@@ -903,8 +906,18 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/Git/git02.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="84">
-            <caret line="63" column="30" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
+          <first_editor relative-caret-position="17">
+            <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/Git/git01.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="17">
+            <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
           </first_editor>
           <second_editor />
         </state>

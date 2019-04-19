@@ -1,5 +1,5 @@
 ---
-title: Git 명령어02 - branch, gitignore 
+title: Git - branch, stash 
 date: 2019-04-19 19:04:32
 tags: Git
 ---
@@ -26,6 +26,7 @@ tags: Git
 #### git checkout
 - git checkout <전환하려는 브랜치 이름\>
     - 브랜치를 전환 
+    - 커밋로그 입력 시, 해당 커밋으로 체크아웃된다.
 
 - git checkout -b <생성하고 전환할 브랜치 이름\>
     - 브랜치를 생성하고 전환까지 할 때

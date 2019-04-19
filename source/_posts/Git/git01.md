@@ -1,5 +1,5 @@
 ---
-title: Git 명령어01 - status, init, commit, config, log, reset, revert
+title: Git - status, init, commit, config, log, reset, revert
 date: 2019-04-19 16:15:26
 tags: Git
 ---
