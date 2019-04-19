@@ -1,7 +1,7 @@
 ---
 title: Git/GitHub 입문 (oss개발자포럼 세미나)
 date: 2019-03-23 13:42:40
-tags: Git
+tags: Seminar
 ---
 # Git/GitHub 입문 (oss개발자포럼 세미나)
 ## Git

@@ -97,7 +97,7 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 
 - 빈 재정의 수고 덜기
     - 빈으로 매번 등록(재정의)하는 수고를 덜어준다.
-    - 프로퍼티의 정의한 값으로 빈을 등록한다. 
+    - 프로퍼티의 정의한 값으로 빈을 등록한다. (설정 프로젝트에서..)
     - @ConfigurationProperties(“properties에서 쓸 이름”)
     ![springboot](/images/springboot/springboot02-18.png)
     
