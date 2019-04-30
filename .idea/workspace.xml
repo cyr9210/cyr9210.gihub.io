@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b822ac65-2a1b-4b7c-a042-e6489a655fa8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Spring/springboot13.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Spring/springboot13.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo/_config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo/layout/_partial/head.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo/layout/_partial/head.ejs" afterDir="false" />
@@ -42,24 +40,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa02.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="327">
-                <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
+              <first_editor relative-caret-position="85">
+                <caret line="5" selection-start-line="5" selection-end-line="7" selection-end-column="13" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa01.md">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa03.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="17">
-                <caret line="1" column="41" lean-forward="true" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="41" />
+              <first_editor relative-caret-position="310">
+                <caret line="137" column="4" selection-start-line="137" selection-start-column="4" selection-end-line="137" selection-end-column="4" />
               </first_editor>
               <second_editor />
             </state>
@@ -124,7 +122,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/source/_posts/OracleDB/oracle03.md" />
         <option value="$PROJECT_DIR$/source/_posts/OracleDB/oracle04.md" />
         <option value="$PROJECT_DIR$/source/_posts/OracleDB/oracle05.md" />
         <option value="$PROJECT_DIR$/source/_posts/Java/java02.md" />
@@ -175,6 +172,7 @@
         <option value="$PROJECT_DIR$/source/_posts/Spring/springwebmvc03.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springboot13.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springjpa02.md" />
+        <option value="$PROJECT_DIR$/source/_posts/Spring/springjpa03.md" />
       </list>
     </option>
   </component>
@@ -356,12 +354,12 @@
       <workItem from="1556211732322" duration="5076000" />
       <workItem from="1556518699807" duration="7903000" />
       <workItem from="1556549735971" duration="2135000" />
-      <workItem from="1556605103151" duration="3175000" />
+      <workItem from="1556605103151" duration="9299000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="425810000" />
+    <option name="totallyTimeSpent" value="431934000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -419,16 +417,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/source/_posts/Project/TradeFruit-System.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="212">
-            <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/Project/MenuList-System.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
@@ -903,8 +891,18 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa02.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="327">
-            <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
+          <first_editor relative-caret-position="85">
+            <caret line="5" selection-start-line="5" selection-end-line="7" selection-end-column="13" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa03.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="310">
+            <caret line="137" column="4" selection-start-line="137" selection-start-column="4" selection-end-line="137" selection-end-column="4" />
           </first_editor>
           <second_editor />
         </state>
