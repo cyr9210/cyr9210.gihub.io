@@ -162,7 +162,7 @@ psql sprinfboot
     ```
     psql -U <username> <DBname>
     ```
-    ex) psql -U bong springpostgres
+    ex) psql -U bong springboot
         - 맥북도 발생한다.. os문제는 아닌것 같음.
 
 - PostgreSQL용 Datasource 설정

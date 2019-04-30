@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b822ac65-2a1b-4b7c-a042-e6489a655fa8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/source/_posts/Spring/springwebmvc03.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/Spring/springboot13.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Spring/springboot13.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo/_config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo/layout/_partial/head.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo/layout/_partial/head.ejs" afterDir="false" />
@@ -43,11 +43,11 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springwebmvc03.md">
+        <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa02.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="170">
-                <caret line="10" column="55" lean-forward="true" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
+              <first_editor relative-caret-position="327">
+                <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
               </first_editor>
               <second_editor />
             </state>
@@ -55,11 +55,11 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springwebmvc02.md">
+        <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa01.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="136">
-                <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <first_editor relative-caret-position="17">
+                <caret line="1" column="41" lean-forward="true" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="41" />
               </first_editor>
               <second_editor />
             </state>
@@ -91,6 +91,7 @@
       <find>./MDimages</find>
       <find>--</find>
       <find>테스트</find>
+      <find>springpostg</find>
     </findStrings>
     <replaceStrings>
       <replace>/database/</replace>
@@ -123,7 +124,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/source/_posts/OracleDB/oracle02.md" />
         <option value="$PROJECT_DIR$/source/_posts/OracleDB/oracle03.md" />
         <option value="$PROJECT_DIR$/source/_posts/OracleDB/oracle04.md" />
         <option value="$PROJECT_DIR$/source/_posts/OracleDB/oracle05.md" />
@@ -157,7 +157,6 @@
         <option value="$PROJECT_DIR$/source/_posts/Spring/springboot11.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springboot09.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springboot12.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springboot13.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springboot14.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springboot15.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springboot16.md" />
@@ -174,6 +173,8 @@
         <option value="$PROJECT_DIR$/source/_posts/Spring/springwebmvc02.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springjpa01.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springwebmvc03.md" />
+        <option value="$PROJECT_DIR$/source/_posts/Spring/springboot13.md" />
+        <option value="$PROJECT_DIR$/source/_posts/Spring/springjpa02.md" />
       </list>
     </option>
   </component>
@@ -194,7 +195,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -224,6 +224,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -354,12 +355,13 @@
       <workItem from="1556173756228" duration="13525000" />
       <workItem from="1556211732322" duration="5076000" />
       <workItem from="1556518699807" duration="7903000" />
-      <workItem from="1556549735971" duration="1809000" />
+      <workItem from="1556549735971" duration="2135000" />
+      <workItem from="1556605103151" duration="3175000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="422309000" />
+    <option name="totallyTimeSpent" value="425810000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -417,16 +419,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/source/_posts/Project/Hotel-Reservation-System.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="164">
-            <caret line="10" selection-start-line="10" selection-end-line="10" selection-end-column="9" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/Project/TradeFruit-System.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
@@ -707,16 +699,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springboot13.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="85">
-            <caret line="5" selection-start-line="5" selection-end-line="7" selection-end-column="14" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springboot14.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
@@ -878,11 +860,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa01.md">
+    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springwebmvc03.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="85">
-            <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+          <first_editor relative-caret-position="327">
+            <caret line="76" column="8" selection-start-line="76" selection-start-column="8" selection-end-line="76" selection-end-column="8" />
           </first_editor>
           <second_editor />
         </state>
@@ -898,11 +880,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springwebmvc03.md">
+    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa01.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="170">
-            <caret line="10" column="55" lean-forward="true" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
+          <first_editor relative-caret-position="17">
+            <caret line="1" column="41" lean-forward="true" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="41" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springboot13.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="242">
+            <caret line="165" column="34" lean-forward="true" selection-start-line="165" selection-start-column="34" selection-end-line="165" selection-end-column="34" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa02.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="327">
+            <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
           </first_editor>
           <second_editor />
         </state>
