@@ -1,11 +1,11 @@
 ---
-title: 스프링 데이터 JPA - 엔티티 맵핑, Value 타입 맵핑, 관계 맵
+title: 스프링 데이터 JPA - 엔티티 맵핑, Value 타입 맵핑, 관계 맵핑
 date: 2019-04-30 16:24:09
 tags: JPA
 ---
 ![springf](/images/jpa_logo.png)
 # 스프링 데이터 JPA(inflearn) - 백기선 
-## Spring JPA
+## JPA 프로그래밍
 
 ### 엔티티 맵핑
 - xml, @어노테이션으로 맵핑하는 방법 2가지가 있다. 일반적으로 어노테이션을 활용하는 방법을 사용한다.

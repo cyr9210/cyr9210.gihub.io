@@ -5,7 +5,7 @@ tags: JPA
 ---
 ![springf](/images/jpa_logo.png)
 # 스프링 데이터 JPA(inflearn) - 백기선 
-## Spring JPA
+## JPA 프로그래밍
 
 ### 프로젝트 세팅
 - 데이터 베이스 실행(PostgreSQL로 진행)
