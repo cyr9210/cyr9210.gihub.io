@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b822ac65-2a1b-4b7c-a042-e6489a655fa8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Spring/springjpa02.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Spring/springjpa02.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Spring/springjpa03.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Spring/springjpa03.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/Spring/springjpa04.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Spring/springjpa04.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/Spring/springjpa05.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Spring/springjpa05.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo/_config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo/layout/_partial/head.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo/layout/_partial/head.ejs" afterDir="false" />
@@ -43,36 +43,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa04.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="17">
-                <caret line="1" column="28" lean-forward="true" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa05.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="85">
-                <caret line="5" selection-start-line="5" selection-end-line="5" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa03.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="133">
-                <caret line="82" column="8" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="45" />
+              <first_editor relative-caret-position="242">
+                <caret line="60" selection-start-line="60" selection-end-line="60" />
               </first_editor>
               <second_editor />
             </state>
@@ -186,8 +162,8 @@
         <option value="$PROJECT_DIR$/source/_posts/Spring/springboot13.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springjpa02.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springjpa03.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springjpa04.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springjpa05.md" />
+        <option value="$PROJECT_DIR$/source/_posts/Spring/springjpa04.md" />
       </list>
     </option>
   </component>
@@ -207,39 +183,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="_posts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="_posts" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -371,12 +315,15 @@
       <workItem from="1556549735971" duration="2135000" />
       <workItem from="1556605103151" duration="9540000" />
       <workItem from="1556637114001" duration="835000" />
-      <workItem from="1556869653456" duration="3776000" />
+      <workItem from="1556869653456" duration="4017000" />
+      <workItem from="1557040284947" duration="347000" />
+      <workItem from="1557040765593" duration="36000" />
+      <workItem from="1557040842023" duration="2922000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="436786000" />
+    <option name="totallyTimeSpent" value="440332000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -410,7 +357,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32739726" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Thumbnails" order="11" weight="0.32876712" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49832776" visible="true" weight="0.28029197" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49832776" visible="true" weight="0.28029197" />
       <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="bottom" id="Graph Database Console" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -905,21 +852,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa04.md">
+    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa05.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="17">
-            <caret line="1" column="28" lean-forward="true" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+          <first_editor relative-caret-position="136">
+            <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa05.md">
+    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa04.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="85">
-            <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <first_editor relative-caret-position="242">
+            <caret line="60" selection-start-line="60" selection-end-line="60" />
           </first_editor>
           <second_editor />
         </state>
