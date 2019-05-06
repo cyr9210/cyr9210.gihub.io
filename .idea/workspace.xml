@@ -35,8 +35,7 @@
     <select />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="cyr9210.github.io" />
@@ -47,8 +46,20 @@
         <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa04.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="242">
-                <caret line="60" selection-start-line="60" selection-end-line="60" />
+              <first_editor relative-caret-position="293">
+                <caret line="115" column="4" selection-start-line="115" selection-start-column="4" selection-end-line="115" selection-end-column="4" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa05.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="136">
+                <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="23" />
               </first_editor>
               <second_editor />
             </state>
@@ -173,7 +184,7 @@
     </layout>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="640" />
+    <option name="x" value="641" />
     <option name="y" value="23" />
     <option name="width" value="640" />
     <option name="height" value="777" />
@@ -183,7 +194,39 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+              <item name="_posts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+              <item name="_posts" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -318,12 +361,13 @@
       <workItem from="1556869653456" duration="4017000" />
       <workItem from="1557040284947" duration="347000" />
       <workItem from="1557040765593" duration="36000" />
-      <workItem from="1557040842023" duration="2922000" />
+      <workItem from="1557040842023" duration="3115000" />
+      <workItem from="1557127313665" duration="1860000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="440332000" />
+    <option name="totallyTimeSpent" value="442385000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -335,7 +379,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="640" y="23" width="640" height="777" extended-state="0" />
+    <frame x="641" y="23" width="640" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48875254" weight="0.48160535" />
@@ -812,21 +856,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa01.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="17">
-            <caret line="1" column="41" lean-forward="true" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="41" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springboot13.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
           <first_editor relative-caret-position="242">
             <caret line="165" column="34" lean-forward="true" selection-start-line="165" selection-start-column="34" selection-end-line="165" selection-end-column="34" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa01.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="85">
+            <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
           </first_editor>
           <second_editor />
         </state>
@@ -845,7 +889,7 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa03.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="133">
+          <first_editor relative-caret-position="1394">
             <caret line="82" column="8" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="45" />
           </first_editor>
           <second_editor />
@@ -856,7 +900,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
           <first_editor relative-caret-position="136">
-            <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+            <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="23" />
           </first_editor>
           <second_editor />
         </state>
@@ -865,8 +909,8 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa04.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="242">
-            <caret line="60" selection-start-line="60" selection-end-line="60" />
+          <first_editor relative-caret-position="293">
+            <caret line="115" column="4" selection-start-line="115" selection-start-column="4" selection-end-line="115" selection-end-column="4" />
           </first_editor>
           <second_editor />
         </state>

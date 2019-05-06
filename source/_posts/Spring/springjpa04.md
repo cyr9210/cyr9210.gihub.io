@@ -1,5 +1,5 @@
 ---
-title: 스프링 데이터 JPA - Cascade, Fetch, Query
+title: 스프링 데이터 JPA - Cascade, Fetch, Query, 스프링 데이터 JPA 소개 및 원리
 date: 2019-04-30 20:12:00
 tags: JPA
 ---
@@ -82,4 +82,36 @@ List<Post> posts = entityManager.createQuery(criteria).getResultList();
 - [참고문서](https://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#criteria)
 <br>
 
-### NamedQuery
+#### Native Query
+```
+List<Post> posts = entityManager
+.createNativeQuery("SELECT * FROM Post", Post.class)
+.getResultList();
+```
+- 타입을 지원하지 않지만 타입을 받긴한다..
+- [참고문서](https://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#sql)
+<br>
+
+### 스프링 데이터 JPA 소개 및 원리
+
+#### JpaRepository<Entity, Id> 인터페이스
+- 매직 인터페이스
+- @Repository가 없어도 빈으로 등록해 줌.
+
+#### @EnableJpaRepositories
+- 매직의 시작은 여기서 부터
+
+#### 매직은 어떻게 이뤄지나?
+- 시작은 @Import(JpaRepositoriesRegistrar.class)
+- 핵심은 ImportBeanDefinitionRegistrar 인터페이스
+<br><Br>
+---
+##### tip
+- sql 문 보이도록 하기
+    - logging.level.org.hibernate.SQL=debug
+    - spring.jpa.show-sql=true
+- sql문에서 value값 보기
+    - logging.level.org.hibernate.type.descriptor.sql=trace
+---
+<br>
+
