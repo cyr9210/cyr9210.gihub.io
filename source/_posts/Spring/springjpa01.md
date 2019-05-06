@@ -5,7 +5,7 @@ tags: JPA
 ---
 ![springf](/images/jpa_logo.png)
 # 스프링 데이터 JPA(inflearn) - 백기선 
-## Spring JPA
+## 핵심 개념 이해
 
 스프링 웹 MVC와 함께 JPA 강좌를 수강하고 있습니다.
 JPA는 Java Persistence API ORM(Object Relational Mapping)을 위한 표준 기술입니다.

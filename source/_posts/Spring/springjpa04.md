@@ -5,7 +5,7 @@ tags: JPA
 ---
 ![springf](/images/jpa_logo.png)
 # 스프링 데이터 JPA(inflearn) - 백기선 
-## JPA 프로그래밍
+## 핵심 개념 이해
 ### 엔티티의 상태와 Cascade
 
 #### 엔티티의 상태
