@@ -111,4 +111,8 @@ while(iter.hasNext()){
     System.out.prinln(e.getKey() + e.getValue());
 }
 ```
+
+#### 참고자료
+- [생활코딩 - Java Collections Framework](https://opentutorials.org/course/1223/6446)
+- [공대인들이 직접쓰는 컴퓨터 공부방 - Collections 이해](https://hackersstudy.tistory.com/26)
 <br><br>
