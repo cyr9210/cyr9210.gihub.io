@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b822ac65-2a1b-4b7c-a042-e6489a655fa8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Java/java12.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Java/java12.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/_posts/Spring/springjpa05.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Spring/springjpa05.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo/_config.yml" afterDir="false" />
@@ -46,8 +45,8 @@
         <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa05.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="366">
-                <caret line="237" column="16" selection-start-line="237" selection-start-column="16" selection-end-line="237" selection-end-column="16" />
+              <first_editor relative-caret-position="383">
+                <caret line="264" column="37" selection-start-line="264" selection-start-column="37" selection-end-line="264" selection-end-column="37" />
               </first_editor>
               <second_editor />
             </state>
@@ -320,12 +319,13 @@
       <workItem from="1557040842023" duration="3115000" />
       <workItem from="1557127313665" duration="7136000" />
       <workItem from="1557210465814" duration="7990000" />
-      <workItem from="1557246406979" duration="5691000" />
+      <workItem from="1557246406979" duration="5826000" />
+      <workItem from="1557291736602" duration="2809000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="461342000" />
+    <option name="totallyTimeSpent" value="464286000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -867,8 +867,8 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa05.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="366">
-            <caret line="237" column="16" selection-start-line="237" selection-start-column="16" selection-end-line="237" selection-end-column="16" />
+          <first_editor relative-caret-position="383">
+            <caret line="264" column="37" selection-start-line="264" selection-start-column="37" selection-end-line="264" selection-end-column="37" />
           </first_editor>
           <second_editor />
         </state>

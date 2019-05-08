@@ -237,3 +237,29 @@ ListenableFuture<User> findOneByLastname(String lastname);
     ![springjpa](/images/jpa/jpa05-25.png)
 4. 엔티티 레포지토리에 설정 
     ![springjpa](/images/jpa/jpa05-24.png)
+<br>
+
+### 스프링 데이터 Common: 도메인 이벤트
+도메인 관련 이벤트를 발생시키기에 대하여 스프링 프레임워크 사용방법 및 스프링 데이터 사용방법에 대해 알아보자.
+
+#### 스프링 프레임워크의 이벤트 관련 기능
+- [참고문서](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#context-functionality-events)
+- 이벤트를 만들때는 ApplicationEvent를 상속받도록한다. (extends ApplicationEvent)
+    ![springjpa](/images/jpa/jpa05-26.png)
+- ApplicationContext는 BeanFactory와 더불어 ApplicationEventPublisher도 상속받고 있다. (이벤트 등록 기능 지원)
+    ![springjpa](/images/jpa/jpa05-27.png)
+- 리스너 (하기 두가지 방법중 선택하여 사용한다.)
+    - implements ApplicationListener<E extends ApplicationEvent>
+        ![springjpa](/images/jpa/jpa05-28.png)
+    - @EventListener
+        ![springjpa](/images/jpa/jpa05-29.png)
+
+#### 스프링 데이터의 도메인 이벤트 Publisher
+- extends AbstractAggregateRoot<E>
+    ![springjpa](/images/jpa/jpa05-30.png)
+    - AbstractAggregateRoot안에 두 어노테이션이 있다.
+        - @DomainEvents
+        - @AfterDomainEventPublication
+    - registerEvent() 메소드를 사용할 수 있게된다. (이벤트 등록)        
+- 현재는 save() 할 때만 발생 합니다.
+    ![springjpa](/images/jpa/jpa05-31.png)
