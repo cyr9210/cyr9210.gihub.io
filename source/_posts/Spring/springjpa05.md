@@ -263,3 +263,71 @@ ListenableFuture<User> findOneByLastname(String lastname);
     - registerEvent() 메소드를 사용할 수 있게된다. (이벤트 등록)        
 - 현재는 save() 할 때만 발생 합니다.
     ![springjpa](/images/jpa/jpa05-31.png)
+
+### 스프링 데이터 Common: QueryDSL(Domain Specific Language)
+#### QueryDSL을 사용하는 이유
+- 조건문을 표현하는 방법이 타입세이프하다.
+- 조건문을 Predicate 인터페이스로 조건문을 표현하는데, 조합 및 별도 관리가 가능하다.
+
+#### 여러 쿼리 메소드는 대부분 두 가지 중 하나
+- Optional<T> findOne(Predicate): 이런 저런 조건으로 무언가 하나를 찾는다.
+- List<T>|Page<T>|.. findAll(Predicate): 이런 저런 조건으로 무언가 여러개를 찾는다.
+- QuerydslPredicateExecutor 인터페이스
+
+#### QueryDSL
+- [참고문서](http://www.querydsl.com)
+- 타입 세이프한 쿼리 만들 수 있게 도와주는 라이브러리
+- JPA, SQL, MongoDB, JDO, Lucene, Collection 지원
+- [QueryDSL JPA 연동 가이드](http://www.querydsl.com/static/querydsl/4.1.3/reference/html_single/#jpa_integration)
+
+#### 연동 방법
+- 기본 리포지토리 커스터마이징 안 했을 때.
+    - 의존성추가(스프링 부트가 버전관리 해줌)
+        - querydsl-apt : 쿼리용 Domain Specific Laguage를 생성해준다. 플러그인 설정이 필요하다.
+        - queydsl-jpa
+        ```
+        <dependency>
+            <groupId>com.querydsl</groupId>
+            <artifactId>querydsl-apt</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.querydsl</groupId>
+            <artifactId>querydsl-jpa</artifactId>
+        </dependency>
+        ```
+    - 플러그인 추가
+    ```
+    <plugin>
+        <groupId>com.mysema.maven</groupId>
+        <artifactId>apt-maven-plugin</artifactId>
+        <version>1.1.3</version>
+        <executions>
+            <execution>
+                <goals>
+                    <goal>process</goal>
+                </goals>
+                <configuration>
+                    <outputDirectory>target/generated-sources/java</outputDirectory>
+                    <processor>com.querydsl.apt.jpa.JPAAnnotationProcessor</processor>
+                </configuration>
+            </execution>
+        </executions>
+    </plugin>
+    ```
+    - compile 시, 해당 파일이 생성된다.(QAccount)
+        ![springjpa](/images/jpa/jpa05-32.png)
+        
+    - Repostiory 인터페이스에 QuerydslPredicateExecutor<도메인타입> 상속을 추가한다.
+        ![springjpa](/images/jpa/jpa05-33.png)
+        
+    - predicate를 사용하여 조건문을 만들고 사용한다.
+        ![springjpa](/images/jpa/jpa05-34.png)
+        
+- 기본 리포지토리 커스타마이징 했을 때.
+    - 기존에는 만든 커스터마이징 구현체에 SimpleJpaRepository를 상속하지 않도록하고 QuerydslJpaRepository를 상속하도록 함으로 해결 할 수 있었다.
+    - 현재는 상기 방법가 동일하게 해도 구현되는것을 확인하였다.
+<br><br>
+
+
+
