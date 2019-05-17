@@ -41,12 +41,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa05.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="349">
-                <caret line="327" column="14" selection-start-line="327" selection-start-column="14" selection-end-line="327" selection-end-column="14" />
+              <first_editor relative-caret-position="170">
+                <caret line="10" column="25" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="25" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa06.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="344">
+                <caret line="32" column="88" selection-start-line="32" selection-start-column="88" selection-end-line="32" selection-end-column="88" />
               </first_editor>
               <second_editor />
             </state>
@@ -79,6 +91,10 @@
       <find>--</find>
       <find>테스트</find>
       <find>springpostg</find>
+      <find>image</find>
+      <find>![springjpa]</find>
+      <find>image/</find>
+      <find>쿼리 만들기</find>
     </findStrings>
     <replaceStrings>
       <replace>/database/</replace>
@@ -95,6 +111,8 @@
       <replace>/images/Project//</replace>
       <replace>/images/Project/kogile</replace>
       <replace>\--</replace>
+      <replace>/</replace>
+      <replace>/images/jpa/</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/source/about</dir>
@@ -111,7 +129,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/source/_posts/Spring/KostaSpring01.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springframewwork-core01.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springframework-core02.md" />
         <option value="$PROJECT_DIR$/source/_posts/springframework-core03.md" />
@@ -162,6 +179,7 @@
         <option value="$PROJECT_DIR$/source/_posts/Spring/springjpa01.md" />
         <option value="$PROJECT_DIR$/source/_posts/Java/java12.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springjpa05.md" />
+        <option value="$PROJECT_DIR$/source/_posts/Spring/springjpa06.md" />
       </list>
     </option>
   </component>
@@ -171,7 +189,7 @@
     </layout>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="641" />
+    <option name="x" value="640" />
     <option name="y" value="23" />
     <option name="width" value="640" />
     <option name="height" value="777" />
@@ -181,7 +199,39 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+              <item name="_posts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+              <item name="_posts" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -321,12 +371,13 @@
       <workItem from="1557210465814" duration="7990000" />
       <workItem from="1557246406979" duration="5826000" />
       <workItem from="1557291736602" duration="2981000" />
-      <workItem from="1557471404232" duration="3645000" />
+      <workItem from="1557471404232" duration="3983000" />
+      <workItem from="1558101773058" duration="1991000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="468103000" />
+    <option name="totallyTimeSpent" value="470432000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -338,7 +389,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="641" y="23" width="640" height="777" extended-state="0" />
+    <frame x="640" y="23" width="640" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48875254" weight="0.48160535" />
@@ -384,16 +435,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/source/_posts/Project/Kogile-Intermediate.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="-237">
-            <caret line="8" column="66" selection-start-line="5" selection-end-line="8" selection-end-column="66" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/Project/kogile.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
@@ -868,8 +909,18 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa05.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="349">
-            <caret line="327" column="14" selection-start-line="327" selection-start-column="14" selection-end-line="327" selection-end-column="14" />
+          <first_editor relative-caret-position="170">
+            <caret line="10" column="25" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="25" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa06.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="344">
+            <caret line="32" column="88" selection-start-line="32" selection-start-column="88" selection-end-line="32" selection-end-column="88" />
           </first_editor>
           <second_editor />
         </state>

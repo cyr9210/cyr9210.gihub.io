@@ -5,7 +5,7 @@ tags: JPA
 ---
 ![springf](/images/jpa_logo.png)
 # 스프링 데이터 JPA(inflearn) - 백기선 
-## 스프링 데이터 JPA 활용
+## 스프링 데이터 Common
 
 ### 스프링 데이터 JPA 활용 파트 소개
 ![springjpa](/images/jpa/jpa05-1.png)
@@ -16,7 +16,7 @@ tags: JPA
 - 스프링 데이터 JPA : 스프링 데이터 Common이 제공하는 기능에 JPA 관련 기능 추가
 - [참고문서](https://spring.io/projects/spring-data)
 
-### 스프링 데이터 Common: Repository
+### Repository
 - 앞서 JpaRepository를 상속하는 클래스를 만들어 사용한적이 있었는데.. 사실 해당 부분은 JpaRepository가 스프링데이터 Common의 PagingAndSortingRepostiory를 상속받고 있다.
     이미지
     - PagingAndSortingRepostiory : paging, sorting 메소드를 지원
@@ -59,7 +59,7 @@ tags: JPA
     ![springjpa](/images/jpa/jpa05-3.png)
 <br>
 
-### 스프링 데이터 Common: Repository 인터페이스 정의하기
+### Repository 인터페이스 정의하기
 #### Repository 인터페이스로 공개할 메소드를 직접 일일히 정의하고 싶을 때
 - 특정 레퍼지토리 정의
     - @RepositoryDefinition
@@ -73,7 +73,7 @@ tags: JPA
     ![springjpa](/images/jpa/jpa05-7.png)
 <br>
 
-### 스프링 데이터 Common: Null 처리하기
+### Null 처리하기
 #### Optional
 - 자바8 부터 지원
 - Null을 리턴하지 않고, 비어있는 콜렉션을 리턴한다.
@@ -98,7 +98,7 @@ tags: JPA
     - NonNullApi는 불가능
 <br>
 
-### 스프링 데이터 Common: 쿼리 만들기 개요
+### 쿼리 만들기 개요
 #### 스프링 데이터 저장소의 메소드 이름으로 쿼리 만드는 방법
 - 메소드 이름을 분석해서 쿼리 만들기 (CREATE)
     ![springjpa](/images/jpa/jpa05-14.png)
@@ -121,7 +121,7 @@ tags: JPA
   - 매개변수 : Pageable, Sort
 <br>
 
-### 스프링 데이터 Common: 쿼리 만들기 실습
+### 쿼리 만들기 실습
 #### 기본예제
 ```
 List<Person> findByEmailAddressAndLastname(EmailAddress emailAddress, String lastname);
@@ -164,7 +164,7 @@ Stream<User> readAllByFirstnameNotNull();
 [test class](https://github.com/cyr9210/springJPA-study/blob/master/03/src/test/java/me/bong/springjpa03/post/CommnetRepositoryTest.java)
 <br><br>
 
-### 스프링 데이터 Common: 비동기 쿼리
+### 비동기 쿼리
 #### Future
 ```
 @Async
@@ -200,7 +200,7 @@ ListenableFuture<User> findOneByLastname(String lastname);
     - 단, 백그라운드로 실행하고 결과를 받을 필요가 없는 작업이라면 @Async를 사용해서 응답 속도를 향상 시킬 수는 있다.
 <br><br>
 
-### 스프링 데이터 Common: 커스텀 리포지토리
+### 커스텀 리포지토리
 - 쿼리 메소드(쿼리 생성과 쿼리 찾아쓰기)로 해결이 되지 않는 경우 직접 코딩으로 구현 가능.
     - 스프링 데이터 리포지토리 인터페이스에 기능 추가.
     - 스프링 데이터 리포지토리 기본 기능 덮어쓰기 가능.
@@ -223,7 +223,7 @@ ListenableFuture<User> findOneByLastname(String lastname);
     - 기본값은 "Impl" 이다.
 <br><br>
 
-### 스프링 데이터 Common: 기본 리포지토리 커스터마이징
+### 기본 리포지토리 커스터마이징
 - 모든 리포지토리에 공통적으로 추가하고 싶은 기능이 있거나 덮어쓰고 싶은 기본 기능이 있을때
 
 #### 구현방법
@@ -239,7 +239,7 @@ ListenableFuture<User> findOneByLastname(String lastname);
     ![springjpa](/images/jpa/jpa05-24.png)
 <br>
 
-### 스프링 데이터 Common: 도메인 이벤트
+### 도메인 이벤트
 도메인 관련 이벤트를 발생시키기에 대하여 스프링 프레임워크 사용방법 및 스프링 데이터 사용방법에 대해 알아보자.
 
 #### 스프링 프레임워크의 이벤트 관련 기능
@@ -264,7 +264,7 @@ ListenableFuture<User> findOneByLastname(String lastname);
 - 현재는 save() 할 때만 발생 합니다.
     ![springjpa](/images/jpa/jpa05-31.png)
 
-### 스프링 데이터 Common: QueryDSL(Domain Specific Language)
+### QueryDSL(Domain Specific Language)
 #### QueryDSL을 사용하는 이유
 - 조건문을 표현하는 방법이 타입세이프하다.
 - 조건문을 Predicate 인터페이스로 조건문을 표현하는데, 조합 및 별도 관리가 가능하다.
@@ -329,5 +329,159 @@ ListenableFuture<User> findOneByLastname(String lastname);
     - 현재는 상기 방법가 동일하게 해도 구현되는것을 확인하였다.
 <br><br>
 
+### DomainClassConverter
 
+#### 스프링 Converter
+- [참고문서](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/convert/converter/Converter.html)
+
+#### DomainClassConverter
+- 사용 전
+    ```
+    @GetMapping("/posts/{id}")
+        public String getAPost(@PathVariable Long id) {
+            Optional<Post> byId = postRepository.findById(id);
+            Post post = byId.get();
+            return post.getTitle();
+        }
+    ```
+    
+- 사용
+    - 해당아이디 값으 찾아서 Domain객체로 변환해준다.
+        ```
+        @GetMapping("/posts/{id}")
+            public String getAPost(@PathVariable(“id”) Post post) {
+                return post.getTitle();
+            }
+        ```
+
+- Formatter
+    - 문자열 기반
+    - 문자열 -> 다른타입
+    - 어떤타입 -> 문자열 프린팅
+<br><br>
+
+### Pageable과 Sort 매개변수
+#### 스프링 MVC HandlerMethodArgumentResolver
+- 스프링 MVC 핸들러 메소드의 매개변수로 받을 수 있는 객체를 확장하고 싶을 때 사용하는 인터페이스
+- [참고문서](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/method/support/HandlerMethodArgumentResolver.html)
+
+#### 페이징과 정렬 관련 매개변수
+- page: 0부터 시작.
+- size: 기본값 20.
+- sort: property,property(,ASC|DESC)
+- 예) sort=created,desc&sort=title (asc가 기본값)
+
+#### 예제
+- 컨트롤러
+    ```
+    @GetMapping("/posts")
+        public Page<Post> getPost(Pageable pageable){
+            return postRepository.findAll(pageable);
+    }
+    ```
+- test
+    ```
+     @Test
+     public void getPosts() throws Exception {
+         Post post = new Post();
+         post.setTitle("jpa");
+         postRepository.save(post);
+ 
+         mockMvc.perform(get("/posts/")
+                 .param("page", "0")
+                 .param("size", "10")
+                 .param("sort", "created,desc")
+                 .param("sort", "title"))
+                 .andDo(print())
+                 .andExpect(status().isOk())
+         .andExpect(jsonPath("$.content[0].title", is("jpa")));
+     }
+    ```
+<br><br>
+
+### HATEOAS
+#### Page를 PagedResource로 변환하기
+- 일단 HATEOAS 의존성 추가 (starter-hateoas)
+- 핸들러 매개변수로 PagedResourcesAssembler
+
+#### 예제
+- 컨트롤러
+    ```
+     @GetMapping("/posts")
+     public PagedResources<Resource<Post>> getPosts (Pageable pageable, PagedResourcesAssembler<Post> assembler){
+         return assembler.toResource(postRepository.findAll(pageable));
+     }
+    ```
+- test
+    ```
+     @Test
+     public void getPosts() throws Exception {
+         createPost("jpa");
+ 
+ 
+         mockMvc.perform(get("/posts/")
+                 .param("page", "0")
+                 .param("size", "10")
+                 .param("sort", "created,desc")
+                 .param("sort", "title"))
+                 .andDo(print())
+                 .andExpect(status().isOk())
+         .andExpect(jsonPath("$.content[0].title", is("jpa")));
+     }
+    
+     private void createPost(String title) {
+         int postcount = 0;
+ 
+         while(postcount <= 100){
+             Post post = new Post();
+             post.setTitle(title);
+             postRepository.save(post);
+             postcount++;
+         }
+    ```
+    
+- 결과
+    ```
+       "_embedded":{  
+          "postList":[  
+             {  
+                "id":140,
+                "title":"jpa",
+                "created":null
+             },
+    ...
+             {  
+                "id":109,
+                "title":"jpa",
+                "created":null
+             }
+          ]
+       },
+       "_links":{  
+          "first":{  
+             "href":"http://localhost/posts?page=0&size=10&sort=created,desc&sort=title,asc"
+          },
+          "prev":{  
+             "href":"http://localhost/posts?page=1&size=10&sort=created,desc&sort=title,asc"
+          },
+          "self":{  
+             "href":"http://localhost/posts?page=2&size=10&sort=created,desc&sort=title,asc"
+          },
+          "next":{  
+             "href":"http://localhost/posts?page=3&size=10&sort=created,desc&sort=title,asc"
+          },
+          "last":{  
+             "href":"http://localhost/posts?page=19&size=10&sort=created,desc&sort=title,asc"
+          }
+       },
+       "page":{  
+          "size":10,
+          "totalElements":100,
+          "totalPages":20,
+          "number":2
+       }
+    }
+    ```
+
+<br>
 
