@@ -10,7 +10,10 @@ tags: SpringBoot
 ### [독립적으로 실행 가능한 JAR](https://docs.spring.io/spring-boot/docs/current/reference/html/executable-jar.html)
 - mvn package를 하면 실행 가능한 ​JAR 파일 “하나가"​ 생성 됨.
     - mvn clean : target아래 파일들 삭제
-    - mvn package -DskipTests : test제외하고 실행
+    - mvn package -DskipTests : test제외하고 실행 target아래 jar파일 **하나**를 생성한다.
+    
+- 만든 jar파일 샐행
+    - java -jar <jar파일명\> -\-<arguments\>
     
 - spring-maven-plugin이 해주는 일 (패키징)
     - 모든 의존성을 포함하는 jar파일 하나를 만들어준다.
