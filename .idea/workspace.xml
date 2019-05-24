@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b822ac65-2a1b-4b7c-a042-e6489a655fa8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/Spring/oauth2-google-login.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Spring/oauth2-google-login.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo/_config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo/layout/_partial/head.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo/layout/_partial/head.ejs" afterDir="false" />
@@ -39,13 +40,13 @@
     <favorites_list name="cyr9210.github.io" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/source/_posts/Project/Notice-Project.md">
+        <entry file="file://$PROJECT_DIR$/source/_posts/Spring/oauth2-google-login.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="313">
-                <caret line="189" column="60" selection-start-line="189" selection-start-column="60" selection-end-line="189" selection-end-column="60" />
+              <first_editor relative-caret-position="245">
+                <caret line="202" column="67" selection-start-line="202" selection-start-column="67" selection-end-line="202" selection-end-column="67" />
               </first_editor>
               <second_editor />
             </state>
@@ -152,7 +153,6 @@
         <option value="$PROJECT_DIR$/source/_posts/Git/git02.md" />
         <option value="$PROJECT_DIR$/source/_posts/Git/git01.md" />
         <option value="$PROJECT_DIR$/source/_posts/Java/lombok.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/oauth2-google-login.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springwebmvc01.md" />
         <option value="$PROJECT_DIR$/themes/vexo/source/css/_partial/markdown.styl" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springwebmvc02.md" />
@@ -168,6 +168,7 @@
         <option value="$PROJECT_DIR$/source/_posts/Spring/springboot12.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springboot05.md" />
         <option value="$PROJECT_DIR$/source/_posts/Project/Notice-Project.md" />
+        <option value="$PROJECT_DIR$/source/_posts/Spring/oauth2-google-login.md" />
       </list>
     </option>
   </component>
@@ -176,7 +177,7 @@
       <scroll-view-position x="0" y="0" />
     </layout>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="x" value="640" />
     <option name="y" value="23" />
     <option name="width" value="640" />
@@ -188,7 +189,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -212,20 +213,13 @@
               <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
               <item name="source" type="462c0819:PsiDirectoryNode" />
               <item name="_posts" type="462c0819:PsiDirectoryNode" />
-              <item name="Etc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="_posts" type="462c0819:PsiDirectoryNode" />
-              <item name="Project" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -371,12 +365,13 @@
       <workItem from="1558123732117" duration="164000" />
       <workItem from="1558388066015" duration="321000" />
       <workItem from="1558390197222" duration="281000" />
-      <workItem from="1558659803426" duration="8117000" />
+      <workItem from="1558659803426" duration="8350000" />
+      <workItem from="1558673117436" duration="644000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="479843000" />
+    <option name="totallyTimeSpent" value="480720000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -388,7 +383,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48875254" visible="true" weight="0.34006462" />
@@ -708,16 +703,6 @@
     <entry file="file://$PROJECT_DIR$/themes/vexo/layout/_partial/catalog.ejs">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/oauth2-google-login.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="-4292">
-            <caret line="36" column="113" selection-start-line="36" selection-start-column="113" selection-end-line="36" selection-end-column="113" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springframework-introduction02.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
@@ -916,6 +901,16 @@
         <state split_layout="FIRST">
           <first_editor relative-caret-position="313">
             <caret line="189" column="60" selection-start-line="189" selection-start-column="60" selection-end-line="189" selection-end-column="60" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/oauth2-google-login.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="245">
+            <caret line="202" column="67" selection-start-line="202" selection-start-column="67" selection-end-line="202" selection-end-column="67" />
           </first_editor>
           <second_editor />
         </state>

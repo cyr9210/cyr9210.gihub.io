@@ -142,38 +142,47 @@ spring:
         - 로컬환경에서 H2 Console에 접근하기위해
         - 불필요한 테스트 코드 작성을 줄이기 위해
     - 루트, h2-console, 파비콘, login 등에 권한체크 제외설정을 해준다.
-    
+
 #### Google OAuth 설정
 - OAuth 설정 파일 생성
-    ```
-    @RequiredArgsConstructor
-    @Configuration
-    @EnableOAuth2Client
-    public class OAuthConfiguration {
-        private final OAuth2ClientContext oAuth2ClientContext;
-    
-        @Bean
-        public Filter ssoFilter(){
-            OAuth2ClientAuthenticationProcessingFilter oauth2Filter = new OAuth2ClientAuthenticationProcessingFilter("/login");
-            OAuth2RestTemplate oAuth2RestTemplate = new OAuth2RestTemplate(googleClient(), oAuth2ClientContext);
-            oauth2Filter.setRestTemplate(oAuth2RestTemplate);
-            oauth2Filter.setTokenServices(new UserInfoTokenServices(googleResource().getUserInfoUri(), googleClient().getClientId()));
-    
-            return oauth2Filter;
-        }
-    
+	- @Configuration
+	- @EnableOAuth2Client
+		- OAuth2ClientContext가 빈으로 등록이 가능하다.
+	- 구글로그인 정보를 받을 빈을 등록한다.
+        ```
         @Bean
         @ConfigurationProperties("google.client")
         public OAuth2ProtectedResourceDetails googleClient() {
             return new AuthorizationCodeResourceDetails();
         }
-    
+        
         @Bean
         @ConfigurationProperties("google.resource")
         public ResourceServerProperties googleResource() {
             return new ResourceServerProperties();
+        }	
+        ```
+
+	- 필터를 빈으로 등록하고 설정한다.
+        ```
+        @Bean
+        public Filter ssoFilter(){
+            OAuth2ClientAuthenticationProcessingFilter oauth2Filter = new OAuth2ClientAuthenticationProcessingFilter("/login/google");
+            OAuth2RestTemplate oAuth2RestTemplate = new OAuth2RestTemplate(googleClient(), oAuth2ClientContext);
+            oauth2Filter.setRestTemplate(oAuth2RestTemplate);
+            oauth2Filter.setTokenServices(new UserInfoTokenServices(googleResource().getUserInfoUri(), googleClient().getClientId()));
+            oauth2Filter.setAuthenticationSuccessHandler(google);
+            return oauth2Filter;
         }
-    
+        	
+        ```
+		- OAuth2ClientAuthenticationProcessingFilter의 인자값 = OAuth 로그인 시작 포인트
+		- OAuth2RestTemplate 설정 및 필터에 설정
+		- UserInfoTokenServices 설정 (토큰을 얻을 클라이언트 설정)
+		- SuccessHandler 등록
+	
+	- 필터를 등록 할 FilterRegistrationBean을 빈으로 등록
+        ```
         @Bean
         public FilterRegistrationBean oauth2ClientFilterRegistration(OAuth2ClientContextFilter filter) {
             FilterRegistrationBean registration = new FilterRegistrationBean();
@@ -181,12 +190,17 @@ spring:
             registration.setOrder(-100);
             return registration;
         }
-    }
-    ```
+        ```
 
-    - OAuth2ClientAuthenticationProcessingFilter의 인자값 = OAuth 로그인 시작 포인트
-    - ConfigurationProperties를 통해 google.yml에 포함된 google 설정값들이 이름에 맞춰 AuthorizationCodeResourceDetails, ResourceServerProperties클래스의 인스턴스 필드에 할당된다.
-        - 즉, 별도의 set할 필요없다.
+	- Authentication 객체를 주입받아 로그인 정보를 얻는다.
+        ```
+        private LoginAccount getGoogleUser(Authentication authentication) {
+            OAuth2Authentication oAuth2Authentication = (OAuth2Authentication) authentication;
+            return objectMapper.convertValue(oAuth2Authentication.getUserAuthentication().getDetails(), LoginAccount.class);
+        }
+        ```
+		- Authentication객체를 OAuth2Authentication로 형변환
+		- ObjectMapper 객체를  미리 만들어놓은 LoginAccount 객체와 매핑하여  컨버트 한다.
 - 문제발생..
     - 스프링부트 2점대 버전이 되면서 Spring Security OAuth 기능의 일부가 Spring Security로 마이그레이션 되는중이라 지원안하는 기능 발생
     - UserInfoTokenService, ResourceServerProperties 클래스 및 @EnableOAuth2Sso 애노테이션 사용이 불가능
