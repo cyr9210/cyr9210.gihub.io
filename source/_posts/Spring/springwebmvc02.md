@@ -102,7 +102,7 @@ tags: SpringWebMvc
 
 - SpringBoot의 경우 구조가 다르다.
     - ServletContext 안에 스프링이 들어갔다면
-    - 스프링부트 어플리케이션(Java) 안에 톰캣(Servlet컨테이너)가 들어간다.
+    - 스프링부트는 어플리케이션(Java) 안에 톰캣(Servlet컨테이너)가 들어간다.
 <br>
  
 ### DispatcherServlet 
