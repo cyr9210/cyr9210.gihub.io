@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b822ac65-2a1b-4b7c-a042-e6489a655fa8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Spring/springwebmvc02.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Spring/springwebmvc02.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo/_config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/vexo/layout/_partial/head.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/themes/vexo/layout/_partial/head.ejs" afterDir="false" />
@@ -40,13 +39,25 @@
     <favorites_list name="cyr9210.github.io" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springwebmvc02.md">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springwebmvc04.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="115">
-                <caret line="101" lean-forward="true" selection-start-line="101" selection-end-line="101" />
+              <first_editor relative-caret-position="51">
+                <caret line="3" column="18" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="18" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springwebmvc05.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="327">
+                <caret line="79" selection-start-line="79" selection-end-line="79" />
               </first_editor>
               <second_editor />
             </state>
@@ -122,8 +133,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springframework-core05.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springframework-core06.md" />
         <option value="$PROJECT_DIR$/source/_posts/Project/Hotel-Reservation-System.md" />
         <option value="$PROJECT_DIR$/source/_posts/Project/MenuList-System.md" />
         <option value="$PROJECT_DIR$/source/_posts/Project/TradeFruit-System.md" />
@@ -173,6 +182,8 @@
         <option value="$PROJECT_DIR$/source/_posts/Git/git-rebase.md" />
         <option value="$PROJECT_DIR$/source/_posts/Git/git04.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springwebmvc02.md" />
+        <option value="$PROJECT_DIR$/source/_posts/Spring/springwebmvc04.md" />
+        <option value="$PROJECT_DIR$/source/_posts/Spring/springwebmvc05.md" />
       </list>
     </option>
   </component>
@@ -181,7 +192,7 @@
       <scroll-view-position x="0" y="0" />
     </layout>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds">
     <option name="x" value="640" />
     <option name="y" value="23" />
     <option name="width" value="640" />
@@ -194,7 +205,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -218,20 +228,6 @@
               <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
               <item name="source" type="462c0819:PsiDirectoryNode" />
               <item name="_posts" type="462c0819:PsiDirectoryNode" />
-              <item name="Git" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="_posts" type="462c0819:PsiDirectoryNode" />
-              <item name="interview" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="_posts" type="462c0819:PsiDirectoryNode" />
               <item name="Project" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -245,6 +241,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -266,11 +263,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/source/_posts/Spring" />
       <recent name="$PROJECT_DIR$/source/_posts/Git" />
       <recent name="$PROJECT_DIR$/source/_posts/git" />
       <recent name="$PROJECT_DIR$/source/_posts/interview" />
       <recent name="$PROJECT_DIR$/source/interview" />
-      <recent name="$PROJECT_DIR$/source/_posts/Project" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -396,12 +393,13 @@
       <workItem from="1558972735542" duration="1621000" />
       <workItem from="1559029110490" duration="4048000" />
       <workItem from="1559094465106" duration="1483000" />
-      <workItem from="1559246272718" duration="77000" />
+      <workItem from="1559246272718" duration="249000" />
+      <workItem from="1559273868129" duration="8770000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="493383000" />
+    <option name="totallyTimeSpent" value="502325000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -413,10 +411,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="640" y="23" width="640" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48875254" visible="true" weight="0.28513733" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48875254" weight="0.5852843" />
       <window_info id="Structure" order="1" sideWeight="0.5017241" side_tool="true" weight="0.26979" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -435,7 +433,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.30547947" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Thumbnails" order="11" weight="0.32876712" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49832776" visible="true" weight="0.30547947" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49832776" visible="true" weight="0.3051095" />
       <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="bottom" id="Graph Database Console" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -499,26 +497,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/source/_posts/JSP/JSP05.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor>
-            <caret lean-forward="true" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/JSP/JSP04.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="90">
-            <caret line="6" column="6" lean-forward="true" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/JSP/JSP03.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
@@ -725,16 +703,6 @@
         <state split_layout="FIRST">
           <first_editor relative-caret-position="175">
             <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springwebmvc03.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="327">
-            <caret line="76" column="8" selection-start-line="76" selection-start-column="8" selection-end-line="76" selection-end-column="8" />
           </first_editor>
           <second_editor />
         </state>
@@ -981,6 +949,36 @@
         <state split_layout="FIRST">
           <first_editor relative-caret-position="115">
             <caret line="101" lean-forward="true" selection-start-line="101" selection-end-line="101" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springwebmvc03.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="17">
+            <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springwebmvc04.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="51">
+            <caret line="3" column="18" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="18" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springwebmvc05.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="327">
+            <caret line="79" selection-start-line="79" selection-end-line="79" />
           </first_editor>
           <second_editor />
         </state>
