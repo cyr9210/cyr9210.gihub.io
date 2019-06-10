@@ -39,13 +39,13 @@
     <favorites_list name="cyr9210.github.io" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springwebmvc04.md">
+        <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springwebmvc05.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="51">
-                <caret line="3" column="18" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="18" />
+              <first_editor relative-caret-position="85">
+                <caret line="5" selection-start-line="5" selection-end-line="7" selection-end-column="18" />
               </first_editor>
               <second_editor />
             </state>
@@ -53,11 +53,11 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springwebmvc05.md">
+        <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springwebmvc06.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="327">
-                <caret line="79" selection-start-line="79" selection-end-line="79" />
+              <first_editor relative-caret-position="357">
+                <caret line="21" column="57" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
               </first_editor>
               <second_editor />
             </state>
@@ -133,7 +133,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/source/_posts/Project/Hotel-Reservation-System.md" />
         <option value="$PROJECT_DIR$/source/_posts/Project/MenuList-System.md" />
         <option value="$PROJECT_DIR$/source/_posts/Project/TradeFruit-System.md" />
         <option value="$PROJECT_DIR$/source/_posts/Etc/블로그-마크다운-활용.md" />
@@ -184,6 +183,7 @@
         <option value="$PROJECT_DIR$/source/_posts/Spring/springwebmvc02.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springwebmvc04.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springwebmvc05.md" />
+        <option value="$PROJECT_DIR$/source/_posts/Spring/springwebmvc06.md" />
       </list>
     </option>
   </component>
@@ -394,12 +394,13 @@
       <workItem from="1559029110490" duration="4048000" />
       <workItem from="1559094465106" duration="1483000" />
       <workItem from="1559246272718" duration="249000" />
-      <workItem from="1559273868129" duration="8770000" />
+      <workItem from="1559273868129" duration="8893000" />
+      <workItem from="1560165392552" duration="1634000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="502325000" />
+    <option name="totallyTimeSpent" value="504082000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -433,7 +434,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.30547947" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Thumbnails" order="11" weight="0.32876712" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49832776" visible="true" weight="0.3051095" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49832776" visible="true" weight="0.3051095" />
       <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="bottom" id="Graph Database Console" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -497,16 +498,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/source/_posts/JSP/JSP03.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="3213">
-            <caret line="189" lean-forward="true" selection-start-line="189" selection-end-line="189" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/Web/Web01.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
@@ -977,8 +968,18 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springwebmvc05.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="327">
-            <caret line="79" selection-start-line="79" selection-end-line="79" />
+          <first_editor relative-caret-position="85">
+            <caret line="5" selection-start-line="5" selection-end-line="7" selection-end-column="18" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springwebmvc06.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="357">
+            <caret line="21" column="57" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
           </first_editor>
           <second_editor />
         </state>
