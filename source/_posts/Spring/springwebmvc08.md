@@ -1,5 +1,5 @@
 ---
-title: 스프링 MVC 설정 - HTTP 요청 맵핑하기 
+title: 스프링 MVC 활용 - HTTP 요청 맵핑하기 
 date: 2019-06-24 21:02:45
 tags: SpringWebMvc
 ---
