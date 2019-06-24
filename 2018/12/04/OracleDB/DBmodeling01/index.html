@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      실전 데이터 모델링&amp;데이터베이스 설계와 구축 | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>실전 데이터 모델링&데이터베이스 설계와 구축</h2>
+  <p class="post-date">2018-12-04</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p><img src="/images/oracledb_logo.png" alt="DB"></p>
+<h1 id="KOSTA-DAY25"><a href="#KOSTA-DAY25" class="headerlink" title="KOSTA DAY25"></a>KOSTA DAY25</h1><h2 id="DataBase"><a href="#DataBase" class="headerlink" title="DataBase"></a>DataBase</h2><h3 id="실전-데이터-모델링-amp-데이터-베이스-설계와-구축"><a href="#실전-데이터-모델링-amp-데이터-베이스-설계와-구축" class="headerlink" title="실전 데이터 모델링 &amp; 데이터 베이스 설계와 구축"></a>실전 데이터 모델링 &amp; 데이터 베이스 설계와 구축</h3><ul>
+<li>우리나라는 데이터 위주의 설계를 하기 때문에 ERP 다이어그램 위주로 설계를 한다.</li>
+</ul>
+<h4 id="데이터-모델링"><a href="#데이터-모델링" class="headerlink" title="데이터 모델링"></a>데이터 모델링</h4><p>정보화 시스템을 구축하기 위해 , 어떤 데이터가 존재하는지 또는 업무가 필요로 하는 정보가 무엇인지를 분석하는 방법</p>
+<ul>
+<li>프로젝트에 참여한 모든 사람은 데이터모델링에 참여하거나, 모델내용을 이해해야한다.</li>
+<li>업무가 관여하는 어떤것(THING)</li>
+<li>업무가 관여하는 어떤것간의 관계(RELATIONSHIPS)</li>
+<li>어떤 것이 가지는 성격(ATTRIBUTES)</li>
+</ul>
+<p><img src="/images/database/DBm01-01.png" alt="DB"></p>
+<h4 id="엔티티-타입"><a href="#엔티티-타입" class="headerlink" title="엔티티 타입"></a>엔티티 타입</h4><ul>
+<li>업무에 필요하고 유용한 정보를 저장하고 관리하기 위한것</li>
+<li>영속적으로 존재하는 단위</li>
+<li>엔티티 타입이 생성되는 의미대로 명명한다.</li>
+</ul>
+<p><img src="/images/database/DBm01-02.png" alt="DB"></p>
+<h4 id="엔티티타입의-특징"><a href="#엔티티타입의-특징" class="headerlink" title="엔티티타입의 특징"></a>엔티티타입의 특징</h4><ul>
+<li><p>업무에 필요하고 관리하고자 하는 정보<br>필요없는관계X<br><img src="/images/database/DBm01-03.png" alt="DB"></p>
+</li>
+<li><p>식별자에 의해 실별이 가능<br>ex) PRIMARY KEY와 같이 주키가 있어 식별이 가능해야 한다.</p>
+</li>
+<li><p>영속적으로 존재하는 엔티티의 집합<br>엔티티의 수가 1개가 아니라 2개이상이어야 한다.<br><img src="/images/database/DBm01-04.png" alt="DB"></p>
+</li>
+<li><p>업무 프로세스에 이용되어야 한다.<br><img src="/images/database/DBm01-05.png" alt="DB"></p>
+</li>
+<li><p>반드시 속성이 있어야 한다.<br><img src="/images/database/DBm01-06.png" alt="DB"></p>
+</li>
+<li><p>최소한개이상의 관계가 있어야 한다.<br>예외가 있을 수 있다. ex) GRADE table</p>
+</li>
+</ul>
+<h4 id="엔티티-타입의-분류"><a href="#엔티티-타입의-분류" class="headerlink" title="엔티티 타입의 분류"></a>엔티티 타입의 분류</h4><p><img src="/images/database/DBm01-07.png" alt="DB"></p>
+<ul>
+<li>기본 : 해당업무에 기본적으로 존재하는 정보</li>
+<li>중심 : 업무에 핵심적인 역할을 하는 정보</li>
+<li>행위 : 기본과 중심 엔티티타입을 근간으로 업무가 흘러가면서 발생되는 엔티티타입</li>
+</ul>
+<h4 id="식별자"><a href="#식별자" class="headerlink" title="식별자"></a>식별자</h4><ul>
+<li>엔티티 타입내에서 엔티티들을 구분할 수 있는 구분자이다.</li>
+<li>주로 PRIMARY KEY라고 생각할 수 있다.</li>
+</ul>
+<h4 id="대리식별자"><a href="#대리식별자" class="headerlink" title="대리식별자"></a>대리식별자</h4><p><img src="/images/database/DBm01-08.png" alt="DB"></p>
+<ul>
+<li>주식별자의 속성이 복합식별자일 경우 여러 개의 속성을 묶어 하나의 속성으로 만들어 주식별자로 활용하는 경우 대리식별자라 한다.</li>
+<li>주키(식별자)가 많으면 작업이 용이하지 않기때문에 사용</li>
+<li>주키로 사용할 것이 마땅치 않을때, 주키가 많을때 대리식별자 사용을 고려해봐야 한다.</li>
+</ul>
+<h4 id="관계"><a href="#관계" class="headerlink" title="관계"></a>관계</h4><p>두개의 엔티티타입 사이의 논리적인 관계(서로에게 영향을 주는 형태)</p>
+<p><img src="/images/database/DBm01-09.png" alt="DB"></p>
+<ul>
+<li>존재에 의한 관계 / 행위에 의한 관계</li>
+</ul>
+<h4 id="관계의-카디넬러티"><a href="#관계의-카디넬러티" class="headerlink" title="관계의 카디넬러티"></a>관계의 카디넬러티</h4><ul>
+<li><p>1:1(ONE TO ONE)<br><img src="/images/database/DBm01-10.png" alt="DB"></p>
+</li>
+<li><p>1:M (ONE TO MANY)<br><img src="/images/database/DBm01-11.png" alt="DB"></p>
+</li>
+<li><p>M:M (MANY TO MANY)<br><img src="/images/database/DBm01-12.png" alt="DB"></p>
+</li>
+</ul>
+<h4 id="관계의-종류"><a href="#관계의-종류" class="headerlink" title="관계의 종류"></a>관계의 종류</h4><p>주식별자 / 비식별자</p>
+<p><img src="/images/database/DBm01-13.png" alt="DB"></p>
+<ul>
+<li>주식별자 : 부모의 주식별자 = 자식의 주식별자</li>
+<li>비식별자 : 부모의 주식별자 = 자식의 일반속성</li>
+<li>업무의 로직에 따라서 선택한다.<br><strong>결합력이 강하며, 제한적으로 사용되는 경우에만 주식별자를 사용하는것이 좋다.</strong></li>
+</ul>
+<h4 id="속성"><a href="#속성" class="headerlink" title="속성"></a>속성</h4><p>업무에 필요한 엔티티에서 관리하고자 하는 더 이상 분리되지 않는 최소의 데이터 단위</p>
+<h4 id="정규화"><a href="#정규화" class="headerlink" title="정규화"></a>정규화</h4><p>다양한 유형의 검사를 통해 데이터 모델을 더 구조화 하고 개선시켜 나가는 절차에 관련된 이론이다.</p>
+<ul>
+<li>오류를 최소화 시키는 것.</li>
+<li><p>중복된 데이터가 없도록 하는것이 기본원칙</p>
+</li>
+<li><p>함수의 종속성<br><img src="/images/database/DBm01-14.png" alt="DB"></p>
+</li>
+<li><p>정규화<br>  <img src="/images/database/DBm01-15.png" alt="DB"></p>
+<ul>
+<li>제1차 정규화 : 중복된 속성값을 갖는 속성을 분리</li>
+<li>제2차 정규화 : 주식별자에 종속적이지 않은 속성을 분리</li>
+<li>제3차 정규화 : 일반속성인데 주키 역할을 하는것과 그것을 종속하는 속성들을 분리<br><br><br></li>
+</ul>
+</li>
+</ul>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#DataBase">
+    <span class="tag-code">DataBase</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/12/03/OracleDB/oracle05/">
+        <span class="nav-arrow">← </span>
+        
+          Reference 형 데이터, ROWTYPE, 제어문, 반복문, 예외처리, Cursor, for문, Procedure
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2018/12/04/OracleDB/oracletest/">
+        
+          KOSTA 필기시험(Oracle DB)
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#KOSTA-DAY25"><span class="toc-nav-text">KOSTA DAY25</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#DataBase"><span class="toc-nav-text">DataBase</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#실전-데이터-모델링-amp-데이터-베이스-설계와-구축"><span class="toc-nav-text">실전 데이터 모델링 &amp; 데이터 베이스 설계와 구축</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#데이터-모델링"><span class="toc-nav-text">데이터 모델링</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#엔티티-타입"><span class="toc-nav-text">엔티티 타입</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#엔티티타입의-특징"><span class="toc-nav-text">엔티티타입의 특징</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#엔티티-타입의-분류"><span class="toc-nav-text">엔티티 타입의 분류</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#식별자"><span class="toc-nav-text">식별자</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#대리식별자"><span class="toc-nav-text">대리식별자</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#관계"><span class="toc-nav-text">관계</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#관계의-카디넬러티"><span class="toc-nav-text">관계의 카디넬러티</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#관계의-종류"><span class="toc-nav-text">관계의 종류</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#속성"><span class="toc-nav-text">속성</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#정규화"><span class="toc-nav-text">정규화</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2018/12/04/OracleDB/DBmodeling01/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

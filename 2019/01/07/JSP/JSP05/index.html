@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      게시판 페이징처리, 파일 업로드/다운로드, 썸네일 이미지 게시판 | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>게시판 페이징처리, 파일 업로드/다운로드, 썸네일 이미지 게시판</h2>
+  <p class="post-date">2019-01-07</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="KOSTA-DAY43"><a href="#KOSTA-DAY43" class="headerlink" title="KOSTA DAY43"></a>KOSTA DAY43</h1><h2 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h2><p><img src="/images/JSP_logo.png" alt="JSP"></p>
+<h3 id="게시판-페이징-처리"><a href="#게시판-페이징-처리" class="headerlink" title="게시판 페이징 처리"></a>게시판 페이징 처리</h3><p>mvc 패턴의 비지니스로직을 처리하기 위해 Service객체를 생성하여 Service 객체에서 비지니스로직을 처리하는 법에 대해 알아보자.</p>
+<ul>
+<li>기존 : Client → Controller → Action → DAO → mybatis → DB</li>
+<li>Service 객체 추가 : Client → Controller → Action → Service → DAO →mybatis → DB</li>
+</ul>
+<p>Service 객체를 추가하여 페이징 처리 로직과 함께 게시판 리스트를 출력하는 예제를 살펴보자.</p>
+<p><img src="/images/jsp/JSP05-01.png" alt="JSP"></p>
+<ul>
+<li>싱글톤방식을 사용하여 dao객체 및 Service 객체를 생성한다.</li>
+</ul>
+<p><img src="/images/jsp/JSP05-02.png" alt="JSP"></p>
+<ul>
+<li>pageSize = 게시글에 출력될 게시글의 수</li>
+<li>countBoard메소드 실행하여 총 게시물의 갯수를 구한다.</li>
+<li>totalPageCount를 구한다.<br>총갯수 / 출력될 게시글 → 나머지가 있을 시 +1</li>
+<li>startPage/ endPage를 구한다.<br>startPage : 현재페이지-(현재페이지-1)%페이징수 (1~5 →1, 6~10 →6..)<br>(starPage +5)가 총페이지수 보다 크면 endPage = 총페이지수</li>
+<li>startRow = 게시글의 시작 번호<br>→ (현재페이지 -1) * 페이지당 글 갯수</li>
+<li>listBoard메소드에 startRow값을 넣어 list를 구한다.</li>
+<li>RowBounds(int start, PAGE_SIZE) : 페이징처리 getMapper 메소드</li>
+<li>검색된 결과에 관하여 페이징 처리를 위하여 다음과 같은 처리를 한다.<br>searchKey(검색문자)가 null아 아니라면, search라는 값의 세션을 비운고 해당 조건 및 검색문을 set한다.<br>serarchKey값이 null이지만 search라는 session이 존재할 경우, 생성한 search 객체에 session값을 넣어준다.</li>
+<li>페이징처리 정보와 list객체를 필드로 가지는 listModel객체를 리턴한다.<br>리턴한 값을 action에서 setAttribute 하고, path와 forward타입(dispatcher)을 정하여 컨트롤러에 리턴한다.<br>컨트롤러에서 dispatcher한다.</li>
+</ul>
+<p><img src="/images/jsp/JSP05-03.png" alt="JSP"></p>
+<ul>
+<li>이전아이콘 처리</li>
+<li>다음아이콘 처리</li>
+<li>페이지 넘버처리</li>
+<li>현재페이지 &lt;b>태그 처리<br><br><br></li>
+</ul>
+<h3 id="파일-업로드-다운로드"><a href="#파일-업로드-다운로드" class="headerlink" title="파일 업로드 / 다운로드"></a>파일 업로드 / 다운로드</h3><h4 id="JSP-파일-업로드를-위한-기본적인-조건"><a href="#JSP-파일-업로드를-위한-기본적인-조건" class="headerlink" title="JSP 파일 업로드를 위한 기본적인 조건"></a>JSP 파일 업로드를 위한 기본적인 조건</h4><ul>
+<li>파일을 업로드 할 때, form태그의 method = post 여야 한다.</li>
+<li>enctype : 데이터를 전송하게 될 타입을 지정하는 부분</li>
+<li>form태그에 enctype이 명시되면 서블릿에서 request객체를 이용해서 값을 가져오지 못한다.(하나의 스트림을 통해 전송되기 때문에)<br>스트림으로 넘어온 데이터를 getInputStream() 메소드를 사용해서 사용자가 전송한 스트림을 받아 각각 구분자를 이용하여 잘라내어 사용해야 하는데, 복잡하고 어렵다.<br>→ MultipartRequest 를 사용한다.</li>
+</ul>
+<h4 id="MultipartRequest"><a href="#MultipartRequest" class="headerlink" title="MultipartRequest"></a>MultipartRequest</h4><ul>
+<li>cos.jar 라이브러리 추가가 필요하다.</li>
+<li>MultipartRequest 객체 알아보기</li>
+</ul>
+<p><img src="/images/jsp/JSP05-04.png" alt="JSP"></p>
+<p><img src="/images/jsp/JSP05-05.png" alt="JSP"></p>
+<h4 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h4><p><img src="/images/jsp/JSP05-06.png" alt="JSP"></p>
+<ul>
+<li>form태그에 enctype=”multipart/form-data 설정</li>
+<li>input type= “file”로 설정</li>
+</ul>
+<p><img src="/images/jsp/JSP05-07.png" alt="JSP"></p>
+<ul>
+<li>Board객체에 filename이 들어가 변수를 추가한다.</li>
+</ul>
+<p><img src="/images/jsp/JSP05-08.png" alt="JSP"></p>
+<ul>
+<li>request.getRealPath(“upload”) 를 통해 저장될 경로지정<br>upload의 절대경로</li>
+<li>File size지정</li>
+<li>MultipartRequst객체 multi 생성</li>
+<li>DefaultFileRenamePolicy() : 같은 이름의 파일명 방지 처리</li>
+<li>파일이 있으면 파일명을 보드에 담은 후 insert</li>
+</ul>
+<p>다음은 다운로드 방법에 대해 알아보자.</p>
+<p><img src="/images/jsp/JSP05-09.png" alt="JSP"></p>
+<ul>
+<li>a태그를 통해 다운로드를 위한 페이지로 이동 filename을 get타입으로 가지고 간다.</li>
+</ul>
+<p><img src="/images/jsp/JSP05-10.png" alt="JSP"></p>
+<ul>
+<li>filename을 받아온 후 인코딩 한다.</li>
+<li>경로를 지정한다.</li>
+<li>다운로드 알림창이 뜨도록 하기 위해서 ContentType을 8비트 바이너리로 설정한다.<br>response.setContentType(“application/octet-stream”);</li>
+<li>저장파일이름을 설정한다.<br>response.setHeader(“content-Disposition”, “attatchment;filename=\“” + filename2 + “/””);</li>
+<li>no-cache 설정</li>
+</ul>
+<blockquote>
+<p><strong>JSP에서 No-Cache 설정하는 방법</strong><br>웹개발 하다보면 캐쉬된 페이지때문에 가끔 웹브라우저가 재시동하거나, 웹서버를 재시동하는 경우가 있었을 것이다. 그런 경우 캐쉬에서 불러오는 것이 아니라 항상 최신의 페이지를 보여주도록 하는 방법입니다. 데이터가 넘어가는 경우에만 ‘만료된 페이지입니다’ 라는 메시지를 보여주게 된다.</p>
+</blockquote>
+<p><img src="/images/jsp/JSP05-11.png" alt="JSP"></p>
+<ul>
+<li>버퍼크기 설정<br>byte[] data = new byte[8096];</li>
+<li>파일을 남아있으면 읽어서 data에 저장</li>
+<li>is, os 닫아준다. 서블릿도 닫아준다.<br><br><br></li>
+</ul>
+<h3 id="썸네일-이미지-게시판"><a href="#썸네일-이미지-게시판" class="headerlink" title="썸네일 이미지 게시판"></a>썸네일 이미지 게시판</h3><p><img src="/images/jsp/JSP05-12.png" alt="JSP"></p>
+<ul>
+<li>이미지 파일임을 파악하기 위해 fname으로부터 “.”을 기준으로 분리</li>
+<li>uploadPath/fname 으로 경로지정</li>
+<li>imagePath를 사용하여 File객체로 이미지를 저장</li>
+<li>썸네일 이미지를 위해 썸네일이미지 파일을 위한 경로를 지정한다.</li>
+<li>파일형식이 gif 일때 ImageUtil의 resize 메소드 실행</li>
+<li>썸네일 이미지로 크기를 줄여 객체를 이미지파일을 저장한다.</li>
+</ul>
+<p><img src="/images/jsp/JSP05-13.png" alt="JSP"></p>
+<ul>
+<li>src파일객체를을 FileInputStream객체로 만든다.</li>
+<li>오버로딩된 resize메소드 호출</li>
+<li>썸네일 크기 지정</li>
+<li>BufferedImage 객체를 사용하여 지정한 크기 및 이미지타입설정</li>
+<li>생성한 BufferedImage 객체사용하여 2D graphics 생성</li>
+</ul>
+<p><img src="/images/jsp/JSP05-14.png" alt="JSP"></p>
+<ul>
+<li>head = .jpg 등 형식을 제외한 파일명</li>
+<li>pattern = 형식 (ex&gt; jpg, gif등)</li>
+<li>&lt;img src= “upload(파일위치)/썸네일 파일명>으로 썸네일 이미지 출력<br><br><br></li>
+</ul>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#JSP">
+    <span class="tag-code">JSP</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/01/04/JSP/JSP04/">
+        <span class="nav-arrow">← </span>
+        
+          설계모델, 모델1설계방식, 모델2설계방식(MVC패턴)
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/01/09/Process/Process02/">
+        
+          agile(애자일) 프로세스
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#KOSTA-DAY43"><span class="toc-nav-text">KOSTA DAY43</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#JSP"><span class="toc-nav-text">JSP</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#게시판-페이징-처리"><span class="toc-nav-text">게시판 페이징 처리</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#파일-업로드-다운로드"><span class="toc-nav-text">파일 업로드 / 다운로드</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#JSP-파일-업로드를-위한-기본적인-조건"><span class="toc-nav-text">JSP 파일 업로드를 위한 기본적인 조건</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#MultipartRequest"><span class="toc-nav-text">MultipartRequest</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#예제"><span class="toc-nav-text">예제</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#썸네일-이미지-게시판"><span class="toc-nav-text">썸네일 이미지 게시판</span></a></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/01/07/JSP/JSP05/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

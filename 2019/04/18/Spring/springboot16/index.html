@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      스프링 부트 운영 - Actuator | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>스프링 부트 운영 - Actuator</h2>
+  <p class="post-date">2019-04-18</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p><img src="/images/springboot_logo.png" alt="springboot"></p>
+<h1 id="스프릥-부트-개념과-활용16-inflearn-백기선"><a href="#스프릥-부트-개념과-활용16-inflearn-백기선" class="headerlink" title="스프릥 부트 개념과 활용16(inflearn) - 백기선"></a>스프릥 부트 개념과 활용16(inflearn) - 백기선</h1><h2 id="Spring-boot"><a href="#Spring-boot" class="headerlink" title="Spring boot"></a>Spring boot</h2><h3 id="Actuator"><a href="#Actuator" class="headerlink" title="Actuator"></a>Actuator</h3><ul>
+<li><p>스프링 부트는 애플리케이션 운영 환경에서 유용한 기능을 제공한다. </p>
+<ul>
+<li>스프링 부트가 제공하는 엔드포인트와 메트릭스</li>
+<li>그 데이터를 활용하는 모니터링 기능</li>
+</ul>
+</li>
+<li><p><a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready-endpoints" target="_blank" rel="noopener">reference 문서</a></p>
+</li>
+<li><p>의존성 추가</p>
+<ul>
+<li>spring-boot-starter-actuator</li>
+</ul>
+</li>
+<li><p>애플리케이션의 각종 정보를 확인할 수 있는 Endpoints</p>
+<ul>
+<li><p>다양한 Endpoints 제공.</p>
+<ul>
+<li>auditevents : 인증정보</li>
+<li>conditions : 자동설정 및 조건</li>
+<li>env : environment안에 property</li>
+<li>health : 잘 구동중인지..</li>
+<li>httptrace : 최근 100개의 http요청과 응답</li>
+<li>loggers : 로그와 레벨 정보, 수정도 가능하다.</li>
+<li>metrics : 메모리, cpu등 핵심정보, 알림설정도 가능하다. (모니터링 중 어느 수치를 넘거나..)</li>
+<li>shutdown : 애플리케이션을 off 할 수 있다.</li>
+<li>web<ul>
+<li>jolokia : JMX 빈을 http 화면에서 확인할 수 있다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>JMX 또는 HTTP를 통해 접근 가능 함.</p>
+</li>
+<li>shutdown을 제외한 모든 Endpoint는 기본적으로 활성화 상태.</li>
+<li>활성화(enable)랑 공개(Exposing)는 다르다.<br>보안상의 이유로 노출 health, info 외 비공개이다. </li>
+<li>활성화 옵션 조정<ul>
+<li>management.endpoints.enabled-by-default=false</li>
+<li>management.endpoint.info.enabled=true</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="JMX와-HTTP"><a href="#JMX와-HTTP" class="headerlink" title="JMX와 HTTP"></a>JMX와 HTTP</h4><ul>
+<li>JConsole 사용하기<ul>
+<li>terminal에서 jconsole<br><img src="/images/springboot/springboot16-1.png" alt="springboot"></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/jmx/mbeans/" target="_blank" rel="noopener">https://docs.oracle.com/javase/tutorial/jmx/mbeans/</a></li>
+<li><a href="https://docs.oracle.com/javase/7/docs/technotes/guides/management/jconsole.html" target="_blank" rel="noopener">https://docs.oracle.com/javase/7/docs/technotes/guides/management/jconsole.html</a></li>
+</ul>
+</li>
+<li><p>VisualVM 사용하기<br> <img src="/images/springboot/springboot16-2.png" alt="springboot"></p>
+<ul>
+<li>[다운로드 사이트]<a href="https://visualvm.github.io/download.html" target="_blank" rel="noopener">https://visualvm.github.io/download.html</a></li>
+<li>JConsole보다 가시적이고 다양한 플러그인을 지원한다.</li>
+</ul>
+</li>
+<li><p>HTTP 사용하기</p>
+<ul>
+<li>/actuator</li>
+<li>health와 info를 제외한 대부분의 Endpoint가 기본적으로 비공개 상태</li>
+<li>공개 옵션 조정<ul>
+<li>management.endpoints.web.exposure.include=*</li>
+<li>management.endpoints.web.exposure.exclude=env,beans</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Spring-Boot-Admin"><a href="#Spring-Boot-Admin" class="headerlink" title="Spring-Boot-Admin"></a>Spring-Boot-Admin</h4><ul>
+<li>스프링 부트가 제공하는것이 아닌 제 3자가 오픈소스로 제공하는 어플리케이션</li>
+<li>Actuator 정보를 간단한 UI로 제공한다.</li>
+<li><p>github : <a href="https://github.com/codecentric/spring-boot-admin" target="_blank" rel="noopener">https://github.com/codecentric/spring-boot-admin</a></p>
+</li>
+<li><p>Admin 서버 설정</p>
+<ul>
+<li><p>의존성 추가</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;de.codecentric&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-admin-starter-server&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.1.4&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>@EnableAdminServer<br><img src="/images/springboot/springboot16-3.png" alt="springboot"></p>
+</li>
+</ul>
+</li>
+<li><p>클라이언트 설정 (운영될 프로젝트)</p>
+<ul>
+<li><p>의존성 추가</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;de.codecentric&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-admin-starter-client&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.1.4 &lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>spring.boot.admin.client.url=<a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a></p>
+</li>
+<li>management.endpoints.web.exposure.include=*</li>
+<li>포트를 같은걸 쓸 수 없기 때문에 포트 변경해준다.</li>
+<li>설정했던 localhost:8080 접속 시, 아래와같은 화면이 나오고 아래 버튼 클릭 시, 기능들을 사용할 수 있다.<br><img src="/images/springboot/springboot16-4.png" alt="springboot"></li>
+<li>가시적으로 정보들을 확인할 수 있고, 운영중에 로거 변경등의 기능이 있다.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>스프링부트 개념과 활용 강좌를 모두 수강하였습니다.😁<br>제가 원했던 내용보다 자세하고 깊숙하게 알려주셔서 너무너무 만족스러웠습니다.<br>제가 알게된 내용들로 프로젝트를 진행할 생각을 하니 설레기도 합니다.<br>다음 정리 블로깅은 아마 스프링 JPA되지 않을까합니다.<br>스프링 JPA는 ORM의 구현체로 객체와 관계형 데이터베이스의 연결을 해주는 api며 많은 기업에서 사용하고 있는것으로 알고있습니다.<br>빨리 수강하고 싶네요 😁<br><br><br>    </p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#SpringBoot">
+    <span class="tag-code">SpringBoot</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/04/17/Spring/springboot15/">
+        <span class="nav-arrow">← </span>
+        
+          스프링 부트 활용 - 스프링 REST 클라이언트
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/04/19/Git/git01/">
+        
+          Git - status, init, commit, config, log, reset, revert
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#스프릥-부트-개념과-활용16-inflearn-백기선"><span class="toc-nav-text">스프릥 부트 개념과 활용16(inflearn) - 백기선</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Spring-boot"><span class="toc-nav-text">Spring boot</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Actuator"><span class="toc-nav-text">Actuator</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#JMX와-HTTP"><span class="toc-nav-text">JMX와 HTTP</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Spring-Boot-Admin"><span class="toc-nav-text">Spring-Boot-Admin</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/04/18/Spring/springboot16/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

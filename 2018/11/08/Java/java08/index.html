@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      필드, 오버로딩, 오버라이딩, 상속 | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>필드, 오버로딩, 오버라이딩, 상속</h2>
+  <p class="post-date">2018-11-08</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p><img src="/images/javaimage.png" alt="Java"></p>
+<h1 id="KOSTA-DAY08"><a href="#KOSTA-DAY08" class="headerlink" title="KOSTA DAY08"></a>KOSTA DAY08</h1><h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><h3 id="필드"><a href="#필드" class="headerlink" title="필드"></a>필드</h3><h4 id="정적필드"><a href="#정적필드" class="headerlink" title="정적필드"></a>정적필드</h4><ul>
+<li>static 키워드가 붙은 필드</li>
+<li>별도로 객체나 메소드를 생성하지 않아도 메모리가 생성된다.</li>
+<li>클래스 이름.이름 으로 호출한다.<br>(ex : math.random, Integer.parseInt)</li>
+<li>static 블록이나 메소드안에서 일반 멤버변수 사용할 수 없다.<br>(메모리 생성시점이 다르다.)</li>
+</ul>
+<h4 id="상수필드"><a href="#상수필드" class="headerlink" title="상수필드"></a>상수필드</h4><ul>
+<li>static, final 키워드가 모두 붙은 필드</li>
+<li>상수를 구할 땐 final을 반드시 호출해야한다.</li>
+<li>수정하지 않을 요소에 사용됨</li>
+</ul>
+<h4 id="멤버변수와-지역변수-차이점"><a href="#멤버변수와-지역변수-차이점" class="headerlink" title="멤버변수와 지역변수 차이점"></a>멤버변수와 지역변수 차이점</h4><ul>
+<li>멤버변수 → 객체가 소멸될 때 까지 사용</li>
+<li>지역변수 → 해당 메소드 안에서만 사용</li>
+</ul>
+<h4 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h4><p><img src="/images/java/java08-01.png" alt="Java"></p>
+<ul>
+<li>grandTotal 은 정적필드 이고, total은 멤버변수이다.</li>
+<li>obj1, obj2 에 각각 accumulate시켰을 때, total의 경우 일반 멤버 변수이기때문에 서로 다른 객체인 obj1와 obj2 는 다른 total을 가진다.</li>
+<li>grandTotal은 정적필드로서 두값을 합친 30이 리턴된다.<br><br><br></li>
+</ul>
+<h3 id="오버로딩"><a href="#오버로딩" class="headerlink" title="오버로딩"></a>오버로딩</h3><p>메소드의 이름, return값이 동일하지만 매개변수(파라미터)의데이터 타입 및 개수로 구분하는 메소드를 생성하는것을 말한다.</p>
+<blockquote>
+<p>메소드 시그니처<br>메소드 오버로딩의 핵심은 바로 메소드 시그니처에 있습니다.<br>메소드 시그니처란, 메소드의 선언부에 명시되는 매개변수의 리스트를 가리킵니다.<br>만약 두 메소드가 매개변수의 개수, 타입, 순서 까지 모두 같다면 이 두 메소드의 시그니처는 같다고 할 수 있습니다.</p>
+</blockquote>
+<p><br></p>
+<h3 id="오버라이딩"><a href="#오버라이딩" class="headerlink" title="오버라이딩"></a>오버라이딩</h3><p>부모 클래스의 메소드를 호출하여 사용할 때, 사용자의 필요에 따라서 수정하는것을 말한다.</p>
+<ul>
+<li>object객체는 모든 데이터를 가질 수 있다.</li>
+<li>Java의 다형성을 표현한다.</li>
+<li>메소드의 이름, 매개변수, 리턴타입이 같아야 한다.<br><br><br><h3 id="상속"><a href="#상속" class="headerlink" title="상속"></a>상속</h3><img src="/images/java/java08-02.png" alt="Java"></li>
+<li>기존 클래스와 유사한 클래스를 만들어야 하는 경우 사용된다.<br>(확장성 용이)</li>
+<li>extends 함수를 사용하여 상속한다.<br>(final함수를 사용한 클래스는 상속불가, 메소드 앞에 사용 시 오버라이딩이 불가능하다.)</li>
+<li>자식을 생성하면 부모도 생성된다.(new 자식 → 자동으로 new 부모)</li>
+<li>super 함수가 없을 시, 부모의 default생성자를 생성해야한다.<br>(default생성자를 생성하지 않으면 상속 시, 에러가 발생한다.)</li>
+<li>초기화할 내용이 부모에게 있을 시, super 함수를 사용하여 초기화 한다.</li>
+<li>상속관계에서 자식은 부모로 형변환이 가능하다.(즉, 부모 &gt; 자식)</li>
+<li>상속 후, 부모로 형변환 된 자식은 오버라이딩한 메소드만 호출 가능하다. ( 부모로 형변환 되었기 때문에)</li>
+<li>부모로 형변환 된 자식은 이미 크기가 커져서 자식안으로 들어갈 수 없다. 강제 캐스팅이 필요하다.<br>(자식만 가지고 있는 클래스를 호출하기 위한 목적)<br><br><br></li>
+</ul>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#Java">
+    <span class="tag-code">Java</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/11/07/Java/java07/">
+        <span class="nav-arrow">← </span>
+        
+          접근제어자, Exception
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2018/11/09/Java/java09/">
+        
+          reference타입, instanceof, 추상클래스, 객체와 인스턴스의 차이
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#KOSTA-DAY08"><span class="toc-nav-text">KOSTA DAY08</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Java"><span class="toc-nav-text">Java</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#필드"><span class="toc-nav-text">필드</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#정적필드"><span class="toc-nav-text">정적필드</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#상수필드"><span class="toc-nav-text">상수필드</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#멤버변수와-지역변수-차이점"><span class="toc-nav-text">멤버변수와 지역변수 차이점</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#예제"><span class="toc-nav-text">예제</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#오버로딩"><span class="toc-nav-text">오버로딩</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#오버라이딩"><span class="toc-nav-text">오버라이딩</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#상속"><span class="toc-nav-text">상속</span></a></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2018/11/08/Java/java08/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

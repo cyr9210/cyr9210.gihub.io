@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      AOP | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>AOP</h2>
+  <p class="post-date">2019-03-08</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p><img src="/images/springframwork-logo.png" alt="springf"></p>
+<h1 id="스프링-프레임워크-입문02-inflearn-백기선"><a href="#스프링-프레임워크-입문02-inflearn-백기선" class="headerlink" title="스프링 프레임워크 입문02(inflearn) - 백기선"></a>스프링 프레임워크 입문02(inflearn) - 백기선</h1><h2 id="Springframework"><a href="#Springframework" class="headerlink" title="Springframework"></a>Springframework</h2><h3 id="AOP-Aspect-Oriented-Programming"><a href="#AOP-Aspect-Oriented-Programming" class="headerlink" title="AOP(Aspect Oriented Programming)"></a>AOP(Aspect Oriented Programming)</h3><p>흩어져있는 코드를 한곳에 모으는 코딩 기법</p>
+<ul>
+<li>바이트코드 조작<ul>
+<li>클래스파일을 조작</li>
+</ul>
+</li>
+<li><p>프록시패턴</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">class AProxy extends A &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>내부적으로 위와같은 클래스를 생성한다.</li>
+<li><strong>스프링 AOP는 프록시 패턴을 사용한다.</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h4><p>어떤메소드가 실행됬을 때, 시간을 로그로 남기는 예제</p>
+<ul>
+<li><p>@LogExecutionTime 애노테이션 (어디에 적용할지 표시 해두는 용도) 생성<br><strong>annotation 자체는 어떠한 기능도 없다.</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@Target(ElementType.METHOD) //메소드에 사용할것이다. </span><br><span class="line">@Retention(RetentionPolicy.RUNTIME) //런타임동안 해당 annotation을 유지 할 것이다.</span><br><span class="line">public @interface LogExecutionTime &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>실제 Aspect (@LogExecutionTime 애노테이션 달린곳에 적용)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">@Component</span><br><span class="line">@Aspect</span><br><span class="line">public class LogAspect &#123;</span><br><span class="line">    Logger logger = LoggerFactory.getLogger(LogAspect.class); // 로그를 찍기 위해 로거 객체 생성</span><br><span class="line">    @Around(&quot;@annotation(LogExecutionTime)&quot;)</span><br><span class="line">    public Object logExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable &#123;</span><br><span class="line">        StopWatch stopWatch = new StopWatch();</span><br><span class="line">        stopWatch.start();</span><br><span class="line">        </span><br><span class="line">        Object proceed = joinPoint.proceed(); // 어노테이션이 적용된 메소드를 실행</span><br><span class="line">        </span><br><span class="line">        stopWatch.stop();</span><br><span class="line">        logger.info(stopWatch.prettyPrint());</span><br><span class="line">        </span><br><span class="line">        return proceed;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><br><br></p>
+<h3 id="PSA-Portable-Service-Abstraction"><a href="#PSA-Portable-Service-Abstraction" class="headerlink" title="PSA(Portable Service Abstraction)"></a>PSA(Portable Service Abstraction)</h3><ul>
+<li>잘 만든 인터페이스</li>
+<li>테스트에 유리하다.</li>
+<li>변경하기 좋다.</li>
+<li>스프링이 제공하는 API는 모두 PSA라고 본다.<ul>
+<li>스프링프레임워크가 제공하는 API의 90%는 추상화된 인터페이스로 모든영역을 수용할 수 있다.</li>
+</ul>
+</li>
+</ul>
+<h4 id="예제-1"><a href="#예제-1" class="headerlink" title="예제"></a>예제</h4><h5 id="Transactional"><a href="#Transactional" class="headerlink" title="@Transactional"></a>@Transactional</h5><p><a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/transaction/PlatformTransactionManager.html" target="_blank" rel="noopener">PlatformTransactionManager</a></p>
+<p><img src="/images/springi/springi02-01.png" alt="spring"></p>
+<ul>
+<li>구현체들중 하나는 또는 다수는 빈으로 등록이 된다.(Spring boot의 자동설정에 의해서)</li>
+<li>트랜잭션을 처리하는 Aspect는 빈의 바뀌더라도 Aspect는 변화하지 않으므로, 코드의 변경이 없다.</li>
+</ul>
+<h5 id="Controller-RequestMapping"><a href="#Controller-RequestMapping" class="headerlink" title="@Controller | @RequestMapping"></a>@Controller | @RequestMapping</h5><p><img src="/images/springi/springi02-02.png" alt="spring"></p>
+<ul>
+<li>해당코드만 봐서는 Servlet을 사용하는 것인지, Reactive를 사용하는 것인지 판단이 불가능하다. 즉, 추상화 (의존성을 봐야한다.)</li>
+<li>추상화 되있으므로 기술이 변경되어도 대부분의 코드들은 변경없이 사용이 가능하다.<br><br><br></li>
+</ul>
+<p>강의를 들으며 느낀것이 기초 개념 부분이지만 상당히 잘못알고있던 부분도 있었고, 부분적으로만 알고 있었던 부분도 있었습니다.<br>좋은 강의를 듣고 정리할 수 있는 시간이 되어서 좋았습니다. 😀<br><br><br></p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#Springframework">
+    <span class="tag-code">Springframework</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/03/05/Etc/iterm/">
+        <span class="nav-arrow">← </span>
+        
+          iTerm2 설치 및 커스터마이징
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/03/14/Algorithm/doitAl01/">
+        
+          알고리즘, 반복 (doit-알고리즘)
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#스프링-프레임워크-입문02-inflearn-백기선"><span class="toc-nav-text">스프링 프레임워크 입문02(inflearn) - 백기선</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Springframework"><span class="toc-nav-text">Springframework</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#AOP-Aspect-Oriented-Programming"><span class="toc-nav-text">AOP(Aspect Oriented Programming)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#예제"><span class="toc-nav-text">예제</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#PSA-Portable-Service-Abstraction"><span class="toc-nav-text">PSA(Portable Service Abstraction)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#예제-1"><span class="toc-nav-text">예제</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Transactional"><span class="toc-nav-text">@Transactional</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Controller-RequestMapping"><span class="toc-nav-text">@Controller | @RequestMapping</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/03/08/Spring/springframework-introduction02/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      Notice-Project | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>Notice-Project</h2>
+  <p class="post-date">2019-05-24</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h1><h2 id="공지사항-웹-어플리케이션"><a href="#공지사항-웹-어플리케이션" class="headerlink" title="공지사항 웹 어플리케이션"></a>공지사항 웹 어플리케이션</h2><h3 id="사용스택"><a href="#사용스택" class="headerlink" title="사용스택"></a>사용스택</h3><ul>
+<li>Java</li>
+<li>Spring(Boot)</li>
+<li>jQuery</li>
+<li>DB - h2(embedded DB)</li>
+<li>JPA</li>
+<li>SpringSecurity</li>
+<li>Oauth2(구글 로그인)</li>
+<li>템플릿 엔진 - thymeleaf</li>
+<li>디자인 - 부트스트랩 템플릿 활용</li>
+<li>maven</li>
+</ul>
+<h3 id="프로젝트-빌드-및-실행방법"><a href="#프로젝트-빌드-및-실행방법" class="headerlink" title="프로젝트 빌드 및 실행방법"></a>프로젝트 빌드 및 실행방법</h3><ul>
+<li><p>zip파일 다운 또는 clone 후에 아래와 같은 방법으로 실행합니다.</p>
+<ol>
+<li><p>IDE툴 사용하여 Application.class 실행<br> <img src="/images/Project/Notice_Project/notice-project1.png" alt="noticeP"></p>
+</li>
+<li><p>jar 파일로 실행</p>
+<ul>
+<li><p>메이블 플러그인을 통해 jar파일 생성 </p>
+<ul>
+<li>clone 또는 압축푼 폴더의 위치를 찾아 아래 명령어 입력  </li>
+<li>mvn clean<ul>
+<li>target폴더 아래 파일들 삭제</li>
+</ul>
+</li>
+<li>mvn package -DskipTests<ul>
+<li>test제외하고 실행 target폴더 아래 jar파일 하나를 생성한다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>실행</p>
+<ul>
+<li>java -jar (target아래 생성된 .jar파일명)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>접속url : <a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a> (<a href="http://localhost:8080/notice/0" target="_blank" rel="noopener">http://localhost:8080/notice/0</a> 로 이동됩니다.)</p>
+</li>
+</ul>
+<h3 id="기능-구현"><a href="#기능-구현" class="headerlink" title="기능 구현"></a>기능 구현</h3><ul>
+<li><p>메인화면, 로그인, 회원가입페이지를 제외하고 모두 로그인 되어야 서비스 이용이 가능하다.(로그인 되어있지 않을 시, 로그인 페이지로 이동된다.)</p>
+</li>
+<li><p>구글 로그인이 가능하다.</p>
+</li>
+<li>일반 회원가입 및 로그인이 가능하다.</li>
+<li>사용자는 텍스트로 된 공지를 추가할 수 있다.</li>
+<li>사용자는 공지를 수정/삭제할 수 있다.</li>
+<li>사용자는 공지목록을 조회할 수 있다.</li>
+<li>조회시 제목, 작성일, 작성자, 최종수정일, 내용이 조회 가능하다.</li>
+<li>목록은 페이징 기능이 있다.</li>
+<li>제목/글쓴이로 검색이 가능하다.</li>
+</ul>
+<h3 id="구현결과"><a href="#구현결과" class="headerlink" title="구현결과"></a>구현결과</h3><p><img src="/images/Project/Notice_Project/notice-project2.png" alt="noticeP"><br><img src="/images/Project/Notice_Project/notice-project3.png" alt="noticeP"><br><img src="/images/Project/Notice_Project/notice-project4.png" alt="noticeP"><br><img src="/images/Project/Notice_Project/notice-project5.png" alt="noticeP"><br><img src="/images/Project/Notice_Project/notice-project6.png" alt="noticeP"><br><img src="/images/Project/Notice_Project/notice-project7.png" alt="noticeP"></p>
+<h3 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h3><h4 id="로그인"><a href="#로그인" class="headerlink" title="로그인"></a>로그인</h4><ul>
+<li>google 로그인 및 자체 회원가입 및 로그인 기능을 구현을 목표하였다.</li>
+<li>Oauth2를 사용한 구글 로그인을 구현하고 블로깅했던 경험이 있으나, 자체 로그인을 동시구현해본적은 없었다.<ul>
+<li><a href="https://cyr9210.github.io/2019/04/21/Spring/oauth2-google-login/" target="_blank" rel="noopener">Oauth2 - 구글 로그인</a><br><br></li>
+</ul>
+</li>
+</ul>
+<h5 id="회고내용"><a href="#회고내용" class="headerlink" title="회고내용"></a>회고내용</h5><ul>
+<li><p>Security설정 시, form 로그인 및 구글로그인 동시 적용<br>  <img src="/images/Project/Notice_Project/notice-project9.png" alt="noticeP"></p>
+<ul>
+<li><p>web.ignoring().antMatchers()을 적용하여 security인증을 원하지 않는 페이지 주소를 지정한다.</p>
+<ul>
+<li>js, css등 정적 리소스에 관하여도 path를 지정해주어야한다.</li>
+<li><p>스프링부트에서 정적 리소스 path는 /resources/static을 생략하고 지정해준다.</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link href=&quot;/css/sb-admin-2.min.css&quot; rel=&quot;stylesheet&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>  <img src="/images/Project/Notice_Project/notice-project10.png" width="40%"></p>
+</li>
+</ul>
+</li>
+<li><p>formLogin()을 사용하여, 뷰페이지 지정(없을 시, 스프링 시큐리티 에서 만든 페이지 적용)</p>
+</li>
+<li><p>PasswordEncoder를 빈으로 등록하였다.(굳이 security 설정 class에서 등록할 필요는 없다.)</p>
+</li>
+</ul>
+</li>
+<li><p>UserDetailsService 구현<br>  <img src="/images/Project/Notice_Project/notice-project12.png" alt="noticeP"></p>
+<ul>
+<li>내가 구현한 회원 객체의 Service 클래스를 UserDetails를 implements한다.</li>
+<li>loadUserByUsername를 구현한다.<ul>
+<li>return User객체는 스프링 시큐리티에서 만들어 주는 객체이다.</li>
+<li>authorities()는 권한과 관련되었는데 “ROLE_USER”라는 권한을 가지도록 한다.<ul>
+<li>자세한 내용은 잘모르겠습니다. 추후에 공부하여 다시 블로깅할 예정입니다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>로그인 유저 정보 처리</p>
+<ul>
+<li>이전에 로그인 기록이 없는 구글 로그인 발생 시, setAuthenticationSuccessHandler를 다음과 같이 하여 정보를 DB에 저장하였다.<br><img src="/images/Project/Notice_Project/notice-project11.png" alt="noticeP"></li>
+<li>일반 로그인 시, UserDetailsServie에서 Session에 정보를 저장하여 사용할 수 있도록 한다.(구글 로그인 session처리는 이미 적용하였다.)<br><img src="/images/Project/Notice_Project/notice-project12.png" alt="noticeP"></li>
+</ul>
+</li>
+</ul>
+<h5 id="어려움-및-주의사항"><a href="#어려움-및-주의사항" class="headerlink" title="어려움 및 주의사항"></a>어려움 및 주의사항</h5><ul>
+<li>로그인 폼 name=”username” 으로 줘야한다.<br>  <img src="/images/Project/Notice_Project/username.png" alt="noticeP"></li>
+</ul>
+<h5 id="보완해야-할-점"><a href="#보완해야-할-점" class="headerlink" title="보완해야 할 점"></a>보완해야 할 점</h5><ul>
+<li>로그인 정보를 같은 table에 넣어, 구글 로그인 후에 기본 로그인이 가능하다.. 개선이 필요..</li>
+<li>권한 분리 및 적용<br><br><br></li>
+</ul>
+<h4 id="thymeleaf-활용"><a href="#thymeleaf-활용" class="headerlink" title="thymeleaf 활용"></a>thymeleaf 활용</h4><ul>
+<li>타임리프를 처음 사용하여 어려움이 많았습니다.</li>
+<li>사용 내용들을 정리 해보도록 하겠습니다.</li>
+</ul>
+<h5 id="활용내용"><a href="#활용내용" class="headerlink" title="활용내용"></a>활용내용</h5><ul>
+<li><p>th:each, th:with, th:text, index 활용 </p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;tbody th:with=&quot;offset=$&#123;list.getPageable().getOffset()&#125;&quot;&gt;</span><br><span class="line">    &lt;tr th:each=&quot;notice, index : $&#123;list&#125;&quot;&gt;</span><br><span class="line">            &lt;td th:text=&quot;$&#123;list.getTotalElements() - (index.index + list.getPageable().getOffset())&#125;&quot;&gt;1&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;&lt;a th:text=&quot;$&#123;notice.getTitle()&#125;&quot; th:href=&quot;@&#123;&apos;/notice/read/&apos; + $&#123;notice.getId()&#125;&#125;&quot; class=&quot;readNoticeBtn&quot;&gt;New York&lt;/a&gt;&lt;/td&gt;</span><br><span class="line">            &lt;td th:text=&quot;$&#123;notice.getWriter().getName()&#125;&quot;&gt;Customer Support&lt;/td&gt;</span><br><span class="line">            &lt;td th:text=&quot;$&#123;notice.getCreated()&#125;&quot;&gt;2011/01/25&lt;/td&gt;</span><br><span class="line">            &lt;td th:text=&quot;$&#123;notice.getModified()&#125;&quot;&gt;2011/01/25&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">&lt;/tbody&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>th:with 지역변수를 설정하여 사용 할 수 있다.<ul>
+<li>지역변수이다. 위의 예는 tbody태그 밖에서는 사용할 수 없다.(동일레벨 태그도 불가능하다.)</li>
+<li><strong>자동완성으로 인해 th:width를 사용하여 오랜시간동안 오류를 찾지 못했습니다… 주의하세요..</strong></li>
+</ul>
+</li>
+<li>th:text 에 지정한 값이 있으면, 해당 내용으로 text값이 출력된다.<ul>
+<li>th:value또한 같은 기능이나, value을 설정</li>
+</ul>
+</li>
+<li>th:each를 사용하면 위와같이 collection객체를 받아 그안의 객체들을 없을 때 까지 꺼낼 수 있다.<ul>
+<li>index를 같이 명명 해주면, index 값을 사용할 수 있다.<ul>
+<li>index.index, count, size등을 사용할 수 있다.(index는 0부터 시작, count는 1부터 시작)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>th:if, th:unless, th:block, th:href 활용</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;th:block th:unless=&quot;$&#123;first == 0&#125;&quot;&gt;</span><br><span class="line">    &lt;li class=&quot;paginate_button page-item previous&quot;&gt;&lt;a th:href=&quot;@&#123;$&#123;first - 1&#125;&#125;&quot; class=&quot;page-link&quot;&gt;Previous&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">&lt;/th:block&gt;</span><br><span class="line">&lt;th:block th:each=&quot;i : $&#123;#numbers.sequence(first, last)&#125;&quot;&gt;</span><br><span class="line">    &lt;li class=&quot;paginate_button page-item&quot; th:unless=&quot;$&#123;i &gt;= list.getTotalPages() || i == list.getNumber()&#125;&quot;&gt;</span><br><span class="line">        &lt;a class=&quot;page-link&quot; th:text=&quot;$&#123;i + 1&#125;&quot; th:href=&quot;@&#123;$&#123;i&#125;&#125;&quot;&gt;1&lt;/a&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">    &lt;li class=&quot;paginate_button page-item active&quot; th:if=&quot;$&#123;i == list.getNumber() &amp;&amp; i &lt; list.getTotalPages()&#125;&quot;&gt;</span><br><span class="line">        &lt;a class=&quot;page-link&quot; th:text=&quot;$&#123;i + 1&#125;&quot; th:href=&quot;@&#123;$&#123;i&#125;&#125;&quot;&gt;1&lt;/a&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">&lt;/th:block&gt;</span><br><span class="line">&lt;th:block th:if=&quot;$&#123;last+1 &lt; list.getTotalPages()&#125;&quot;&gt;</span><br><span class="line">    &lt;li class=&quot;paginate_button page-item next&quot;&gt;&lt;a th:href=&quot;@&#123;$&#123;last + 1&#125;&#125;&quot; class=&quot;page-link&quot;&gt;Next&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">&lt;/th:block&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>위의 예는 타임리프를 사용하여 페이징 처리를 한 것이다.</li>
+<li>th:block 타임리프 스코프 지정</li>
+<li>th:if 값이 참일 때, 실행</li>
+<li>th:unless 값이 거짓일 때, 실행</li>
+<li>th:href @, $를 사용하여 url을 지정할 수 있다.</li>
+</ul>
+</li>
+<li><p>참고 블로그 : <a href="https://strongstar.tistory.com/17?category=793728" target="_blank" rel="noopener">strongstar-스프링부트:타임리프</a><br><br><br></p>
+</li>
+</ul>
+<h4 id="Page"><a href="#Page" class="headerlink" title="Page"></a>Page</h4><p><img src="/images/Project/Notice_Project/page.png" alt="Page"></p>
+<ul>
+<li>offset() 현재 페이지 시작 엘리먼트 인덱스<br><br><br></li>
+</ul>
+<h4 id="검색내용-저장-및-사용"><a href="#검색내용-저장-및-사용" class="headerlink" title="검색내용 저장 및 사용"></a>검색내용 저장 및 사용</h4><ul>
+<li><p>검색 내용 페이징 처리 시, 처음 검색내용을 파라미터로 가지는 컨트롤러에서 NullPointException이 발생한다.<br>이를 해결하기 위해 Session 또는 쿠키를 사용하여 값을 저장하려고 하였다.</p>
+</li>
+<li><p><a href="https://cyr9210.github.io/2019/01/03/JSP/JSP03/#Cookie" target="_blank" rel="noopener">Cookie VS Session</a></p>
+<ul>
+<li>쿠키는 클라이언트 쪽에 저장되어, 보안이 취약하다.</li>
+<li>세션은 보안에 강하지만, 세션은 서버에 저장되어 메모리를 차지하기 때문에 많은 자료가 쌓이면 문제가 생길 수 있다.</li>
+</ul>
+</li>
+<li><p>검색내용은 로그인 정보와 같은 보안이 중요한 사항이 아니라고 판단하여 쿠키를 사용하기로 결정하였다.</p>
+</li>
+</ul>
+<h5 id="쿠키저장"><a href="#쿠키저장" class="headerlink" title="쿠키저장"></a>쿠키저장</h5><p><img src="/images/Project/Notice_Project/notice-project14.png" alt="noticeP"></p>
+<ul>
+<li>키워드를 쿠키에 저장 후, checkbox 체크값에 따라 제목, 글쓴이, 제목/글쓴이로 검색하는 컨트롤러로 매핑</li>
+</ul>
+<h5 id="CookieValue"><a href="#CookieValue" class="headerlink" title="@CookieValue"></a>@CookieValue</h5><p><img src="/images/Project/Notice_Project/notice-project13.png" alt="noticeP"></p>
+<ul>
+<li>HTTP쿠키 값을 HttpServletRequest등을 통해 읽을 필요없이 스프링 컨트롤러에서 파라미터로 전달 받을 수 있게해준다. <ul>
+<li>required 속성 값을 이용해 필수여부 설정 (기본값은 true: 쿠키값없을 시, 에러발생)</li>
+<li>defaultValue 속성 값을 이용해서 기본값을 지정<br><br><br></li>
+</ul>
+</li>
+</ul>
+<h4 id="Js-cookie"><a href="#Js-cookie" class="headerlink" title="Js cookie"></a>Js cookie</h4><ul>
+<li>자바스크립트에서 쿠키를 보다 편하게 사용할 수 있도록 도와주는 라이브러리</li>
+<li><a href="https://github.com/js-cookie/js-cookie" target="_blank" rel="noopener">https://github.com/js-cookie/js-cookie</a></li>
+</ul>
+<h5 id="쿠키-저장"><a href="#쿠키-저장" class="headerlink" title="쿠키 저장"></a>쿠키 저장</h5><p><img src="/images/Project/Notice_Project/getCookies.png" alt="getCookies"></p>
+<h5 id="쿠키-사용"><a href="#쿠키-사용" class="headerlink" title="쿠키 사용"></a>쿠키 사용</h5><p><img src="/images/Project/Notice_Project/setCookies.png" alt="setCookies"></p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#프로젝트_회고">
+    <span class="tag-code">프로젝트_회고</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/05/03/Spring/springjpa05/">
+        <span class="nav-arrow">← </span>
+        
+          스프링 데이터 JPA - 스프링 데이터 Common
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/05/27/interview/interview01/">
+        
+          예상 면접 질문
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Project"><span class="toc-nav-text">Project</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#공지사항-웹-어플리케이션"><span class="toc-nav-text">공지사항 웹 어플리케이션</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#사용스택"><span class="toc-nav-text">사용스택</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#프로젝트-빌드-및-실행방법"><span class="toc-nav-text">프로젝트 빌드 및 실행방법</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#기능-구현"><span class="toc-nav-text">기능 구현</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#구현결과"><span class="toc-nav-text">구현결과</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#회고"><span class="toc-nav-text">회고</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#로그인"><span class="toc-nav-text">로그인</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#회고내용"><span class="toc-nav-text">회고내용</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#어려움-및-주의사항"><span class="toc-nav-text">어려움 및 주의사항</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#보완해야-할-점"><span class="toc-nav-text">보완해야 할 점</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#thymeleaf-활용"><span class="toc-nav-text">thymeleaf 활용</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#활용내용"><span class="toc-nav-text">활용내용</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Page"><span class="toc-nav-text">Page</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#검색내용-저장-및-사용"><span class="toc-nav-text">검색내용 저장 및 사용</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#쿠키저장"><span class="toc-nav-text">쿠키저장</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#CookieValue"><span class="toc-nav-text">@CookieValue</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Js-cookie"><span class="toc-nav-text">Js cookie</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#쿠키-저장"><span class="toc-nav-text">쿠키 저장</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#쿠키-사용"><span class="toc-nav-text">쿠키 사용</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/05/24/Project/Notice-Project/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

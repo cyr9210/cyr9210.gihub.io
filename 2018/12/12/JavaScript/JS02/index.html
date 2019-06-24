@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      배열, 자바스크립트 내장객체, 이벤트 | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>배열, 자바스크립트 내장객체, 이벤트</h2>
+  <p class="post-date">2018-12-12</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="KOSTA-DAY31"><a href="#KOSTA-DAY31" class="headerlink" title="KOSTA DAY31"></a>KOSTA DAY31</h1><h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><p><img src="/images/JS_logo.png" alt="JS"></p>
+<h3 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h3><p><img src="/images/javascript/JS02-01.png" alt="JS"></p>
+<ul>
+<li>생성한 객체에 cals 함수안에서 <body>태그 안의 f1 폼에 있는 값을 속성 num1, num2에 넣었다.<br>여기서 this는 객체안의 속성 num1, num2를 가르킨다.</body></li>
+<li>&lt;\input type=”button”&gt;의 id를 받아 plus / minus 를 판단한다.<br>여기서 this는 객체안의 속성값인 아닌 객체밖의 window를 가르킨다.</li>
+<li>sum을 계산하여 출력한다.<br><br><br></li>
+</ul>
+<h3 id="배열"><a href="#배열" class="headerlink" title="배열"></a>배열</h3><ul>
+<li><p>[]배열생성<br><img src="/images/javascript/JS02-02.png" alt="JS"></p>
+</li>
+<li><p>new 연산자로 배열생성<br><img src="/images/javascript/JS02-03.png" alt="JS"></p>
+</li>
+<li><p>new연산자 및 배열값으로 배열생성<br><img src="/images/javascript/JS02-04.png" alt="JS"></p>
+</li>
+<li><p>배열문자열 변환<br>join(“-”) : -값으로 배열 나열 시, 분류<br><img src="/images/javascript/JS02-05.png" alt="JS"><br><img src="/images/javascript/JS02-06.png" alt="JS"></p>
+</li>
+<li><p>concat()<br><img src="/images/javascript/JS02-07.png" alt="JS"></p>
+</li>
+<li><p>slice()<br>slice(a, b); : arr[a] ≤ arr[] &lt; arr[b]<br><img src="/images/javascript/JS02-08.png" alt="JS"></p>
+</li>
+<li><p>splice()<br>splice(a, b); : a=index , b=갯수<br><img src="/images/javascript/JS02-09.png" alt="JS"></p>
+</li>
+<li><p>배열정렬 : sort();<br><img src="/images/javascript/JS02-10.png" alt="JS"></p>
+</li>
+<li><p>내림차순<br><img src="/images/javascript/JS02-11.png" alt="JS"><br><br><br></p>
+</li>
+</ul>
+<h3 id="String-객체"><a href="#String-객체" class="headerlink" title="String 객체"></a>String 객체</h3><p><img src="/images/javascript/JS02-12.png" alt="JS"></p>
+<ul>
+<li>문자열을 사용하거나 조작을 지원하느 객체</li>
+<li>new 연산자를 사용하지 않음</li>
+</ul>
+<h4 id="예제-1"><a href="#예제-1" class="headerlink" title="예제"></a>예제</h4><p><img src="/images/javascript/JS02-13.png" alt="JS"><br><img src="/images/javascript/JS02-14.png" alt="JS"><br><br></p>
+<h3 id="Date-객체"><a href="#Date-객체" class="headerlink" title="Date 객체"></a>Date 객체</h3><p>날짜와 시간을 처리할 수 있도록 지원하는 객체</p>
+<ul>
+<li><p>Date(); : 현재 시간을 불러온다.<br><img src="/images/javascript/JS02-15.png" alt="JS"></p>
+</li>
+<li><p>변수를 생성하여 다중실행 되는것을 방지<br><br><br></p>
+</li>
+</ul>
+<h3 id="정규표현식-객체"><a href="#정규표현식-객체" class="headerlink" title="정규표현식 객체"></a>정규표현식 객체</h3><ul>
+<li>문자열.match(/정규표현식/) → 매칭된 결과(문자열)</li>
+<li><p>i : 대소문자 구분X<br>g: 전역검사<br><img src="/images/javascript/JS02-16.png" alt="JS"></p>
+</li>
+<li><p>문자열 변환(replace)<br><img src="/images/javascript/JS02-17.png" alt="JS"><br><img src="/images/javascript/JS02-29.png" alt="JS"><br><br></p>
+</li>
+</ul>
+<h3 id="이벤트"><a href="#이벤트" class="headerlink" title="이벤트"></a>이벤트</h3><h4 id="이벤트-관련용어-정리"><a href="#이벤트-관련용어-정리" class="headerlink" title="이벤트 관련용어 정리"></a>이벤트 관련용어 정리</h4><p><img src="/images/javascript/JS02-18.png" alt="JS"></p>
+<ul>
+<li>이벤트 연결 = 윈도우 객체에 onload 속성에 함수 자료형을 할당<br>window.onload = function(){}</li>
+<li>load : 이벤트이름 , 이벤트타입</li>
+<li>onload : 이벤트 속성</li>
+<li>이벤트 속성에 할당한 함수 : 리스너(Event Listener or Event handler)</li>
+</ul>
+<h4 id="고전이벤트모델"><a href="#고전이벤트모델" class="headerlink" title="고전이벤트모델"></a>고전이벤트모델</h4><ul>
+<li>하나의 이벤트에 하나의 리스너만 연결 가능<br><img src="/images/javascript/JS02-19.png" alt="JS"></li>
+</ul>
+<h4 id="인라인-이벤트"><a href="#인라인-이벤트" class="headerlink" title="인라인 이벤트"></a>인라인 이벤트</h4><ul>
+<li>인라인 태그에 이벤트 속성을 부여한다.<br><img src="/images/javascript/JS02-20.png" alt="JS"></li>
+</ul>
+<h4 id="Default-이벤트-제거"><a href="#Default-이벤트-제거" class="headerlink" title="Default 이벤트 제거"></a>Default 이벤트 제거</h4><ul>
+<li>html태그는 이미 이벤트 리스너가 있다. 대표적으로 <a></a></li>
+<li>default 이벤트제거 방법은 이벤트 리스너에 false 를 리턴한다.<br><img src="/images/javascript/JS02-21.png" alt="JS"></li>
+</ul>
+<h4 id="크로스-브라우징"><a href="#크로스-브라우징" class="headerlink" title="크로스 브라우징"></a>크로스 브라우징</h4><p>이벤트모델은 구IE(인터넷익스플로러8이하) 와 표준모델로 나누어진다. 그렇기 때문에 이벤트 등록을 위해서는 두가지 모두가 호환가능하도록 해야한다.</p>
+<ul>
+<li>jquery에서는 알아서 해주는 부분</li>
+</ul>
+<h5 id="표준모델"><a href="#표준모델" class="headerlink" title="표준모델"></a>표준모델</h5><p><img src="/images/javascript/JS02-22.png" alt="JS"><br><img src="/images/javascript/JS02-23.png" alt="JS"></p>
+<ul>
+<li>여러개의 이벤트리스너 등록이 가능하다.</li>
+</ul>
+<h5 id="IE8-이하모델"><a href="#IE8-이하모델" class="headerlink" title="IE8 이하모델"></a>IE8 이하모델</h5><p><img src="/images/javascript/JS02-24.png" alt="JS"></p>
+<ul>
+<li>이벤트 이름에 반드시 on을 넣어야한다.<br>현재 내 노트북은 IE8이하 버젼이 아니기 때문에 확인할 수 없었다.<br>이제 이 두가지를 모두 호환 가능하도록 크로스 브라우징 하는 방법에 대해알아보자.</li>
+</ul>
+<p><img src="/images/javascript/JS02-25.png" alt="JS"></p>
+<ul>
+<li>if문을 사용하여 addEventListener에 값이 있는지 확인</li>
+<li>값이 있으면 addEventListenr 활용하여 이벤트 추가</li>
+<li>값이 없으면 구버젼 IE 이므로, attachEvent 활용하여 이벤트 추가</li>
+</ul>
+<h4 id="이벤트-전달"><a href="#이벤트-전달" class="headerlink" title="이벤트 전달"></a>이벤트 전달</h4><ul>
+<li>이벤트 버블링 : 자식노드에서 부모노드순으로 이벤트를 실행</li>
+<li>이벤트 캡쳐링 : 버블링과 반대되는 개념으로 부모노드에서 자식노드 순으로 실행( 익스플로러에서 캡쳐링을 지원하지 않아 사용할 일 없다.)</li>
+</ul>
+<p><img src="/images/javascript/JS02-26.png" alt="JS"></p>
+<ul>
+<li>bb는 aa의 자식이므로, bb를 클릭시 bProcess를 실행한 후, aProcess가 실행된다.</li>
+<li>쉽게 말하자면, bb를 클릭한것은 aa를 클릭한것이기도 하기때문에 둘다 실행된다는것이다. 이러한 버블링을 막기위해 하기 예시와 같이 진행할 수 있다.</li>
+</ul>
+<p><img src="/images/javascript/JS02-27.png" alt="JS"></p>
+<ul>
+<li>stopPropagation() 을 활용하여 이벤트 전달을 멈춘다.<br>그러나, IE8이하는 stopPropagation을 사용할 수 없기때문에 크로스 브라우징을 해줘야 한다.<br>그 방법을 알아보자.</li>
+</ul>
+<p><img src="/images/javascript/JS02-28.png" alt="JS"></p>
+<ul>
+<li>구IE 에는 event를 바로 사용호출 못하고 window.event로 가능하다.</li>
+<li>따라서 event라는 변수에 e와 window.event 중 가능 한것을 담는다.<br>(두 모델 모두 event변수안에 event가 담김)</li>
+<li>stopBubble 함수 내용에 따라 각 모델 방식별로 버블링을 제어한다.<br>표준모델 → event.stopPropagation();<br>구모델 → event.cancelBubble = true;<br><br><br></li>
+</ul>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#JavaScript">
+    <span class="tag-code">JavaScript</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/12/11/JavaScript/JS01/">
+        <span class="nav-arrow">← </span>
+        
+          JavaScript, 문법, 변수, 함수, 객체, Prototype
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2018/12/13/JavaScript/JS03/">
+        
+          this., 브라우저 내장객체(BOM), 문서 내장객체(DOM), Ajax
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#KOSTA-DAY31"><span class="toc-nav-text">KOSTA DAY31</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#JavaScript"><span class="toc-nav-text">JavaScript</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#예제"><span class="toc-nav-text">예제</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#배열"><span class="toc-nav-text">배열</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#String-객체"><span class="toc-nav-text">String 객체</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#예제-1"><span class="toc-nav-text">예제</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Date-객체"><span class="toc-nav-text">Date 객체</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#정규표현식-객체"><span class="toc-nav-text">정규표현식 객체</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#이벤트"><span class="toc-nav-text">이벤트</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#이벤트-관련용어-정리"><span class="toc-nav-text">이벤트 관련용어 정리</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#고전이벤트모델"><span class="toc-nav-text">고전이벤트모델</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#인라인-이벤트"><span class="toc-nav-text">인라인 이벤트</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Default-이벤트-제거"><span class="toc-nav-text">Default 이벤트 제거</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#크로스-브라우징"><span class="toc-nav-text">크로스 브라우징</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#표준모델"><span class="toc-nav-text">표준모델</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#IE8-이하모델"><span class="toc-nav-text">IE8 이하모델</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#이벤트-전달"><span class="toc-nav-text">이벤트 전달</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2018/12/12/JavaScript/JS02/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

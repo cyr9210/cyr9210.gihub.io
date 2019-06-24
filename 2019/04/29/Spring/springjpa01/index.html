@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      스프링 데이터 JPA - 관계형 데이터 베이스와 자바, ORM | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>스프링 데이터 JPA - 관계형 데이터 베이스와 자바, ORM</h2>
+  <p class="post-date">2019-04-29</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p><img src="/images/jpa_logo.png" alt="springf"></p>
+<h1 id="스프링-데이터-JPA-inflearn-백기선"><a href="#스프링-데이터-JPA-inflearn-백기선" class="headerlink" title="스프링 데이터 JPA(inflearn) - 백기선"></a>스프링 데이터 JPA(inflearn) - 백기선</h1><h2 id="핵심-개념-이해"><a href="#핵심-개념-이해" class="headerlink" title="핵심 개념 이해"></a>핵심 개념 이해</h2><p>스프링 웹 MVC와 함께 JPA 강좌를 수강하고 있습니다.<br>JPA는 Java Persistence API ORM(Object Relational Mapping)을 위한 표준 기술입니다.<br>ORM이란 RDB 테이블을 객체지향적으로 사용하기 위한 기술을 말합니다.<br>모든 예제는 <a href="https://github.com/cyr9210/springJPA-study" target="_blank" rel="noopener">github</a>에 올리고 있습니다.</p>
+<hr>
+<h3 id="관계형-데이터-베이스와-자바"><a href="#관계형-데이터-베이스와-자바" class="headerlink" title="관계형 데이터 베이스와 자바"></a>관계형 데이터 베이스와 자바</h3><ul>
+<li><p>관계형 데이터 베이스</p>
+<ul>
+<li>현재 가장 많이 사용되고 있는 데이터베이스의 한 종류</li>
+<li>테이블(table)로 이루어져 있으며, 이 테이블은 키(key)와 값(value)의 관계를 나타낸다.</li>
+<li>데이터의 종속성을 관계(relationship)로 표현하는 것이 관계형 데이터베이스의 특징</li>
+</ul>
+</li>
+<li><p>JDBC : 데이터 베이스와 자바의 연결고리<br>  <img src="/images/jpa/jpa01-1.png" alt="jpa"></p>
+<ul>
+<li>어플리케이션에 데이터를 영속화(persistence)하기 위함</li>
+</ul>
+</li>
+</ul>
+<h4 id="기본-JDBC를-사용한-프로젝트-예제"><a href="#기본-JDBC를-사용한-프로젝트-예제" class="headerlink" title="기본 JDBC를 사용한 프로젝트 예제"></a>기본 JDBC를 사용한 프로젝트 예제</h4><ul>
+<li>메이븐 프로젝트 생성</li>
+<li><p>의존성 추가</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.postgresql&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;postgresql&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;42.2.5&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>커넥션 생성</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class Application &#123;</span><br><span class="line">    public static void main(String[] args) throws SQLException &#123;</span><br><span class="line">        String url = &quot;jdbc:postgresql://localhost:5432/springdata&quot;;</span><br><span class="line">        String username = &quot;bong&quot;;</span><br><span class="line">        String password = &quot;pass&quot;;</span><br><span class="line"></span><br><span class="line">        try (Connection connection = DriverManager.getConnection(url, username, password))&#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>try with resource : 자바7 이부터 사용할 수 있는 문법으로, try 문 사용시 ()안의 리소스를 정리해준다. (close해줌)<ul>
+<li>maven 프로젝트로 생성 시, 자바 5버전으로 생성되었으 확률이 크다.</li>
+<li>오류 발생시 project Structure에서 자바7버전 이후 버전으로 변경해준다.</li>
+<li>그래도 오류가 발생한다면.. pom.xml에서 자바 버전을 설정해준다.(<a href="https://stackoverflow.com/questions/29888592/errorjava-javactask-source-release-8-requires-target-release-1-8" target="_blank" rel="noopener">참고</a>)  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;build&gt;</span><br><span class="line">    &lt;plugins&gt;</span><br><span class="line">        &lt;plugin&gt;</span><br><span class="line">            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;</span><br><span class="line">            &lt;configuration&gt;</span><br><span class="line">                &lt;source&gt;1.8&lt;/source&gt;</span><br><span class="line">                &lt;target&gt;1.8&lt;/target&gt;</span><br><span class="line">            &lt;/configuration&gt;</span><br><span class="line">        &lt;/plugin&gt;</span><br><span class="line">    &lt;/plugins&gt;</span><br><span class="line">&lt;/build&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>sql 작성 및 커넥션 사용<br>  <img src="/images/jpa/jpa01-2.png" alt="jpa"></p>
+</li>
+<li><p>참고 : <a href="https://cyr9210.github.io/2019/04/15/Spring/springboot13/#PostgreSQL-%ED%8F%AC%EC%8A%A4%ED%8A%B8%EA%B7%B8%EB%A0%88%EC%8A%A4" target="_blank" rel="noopener">postgresql 사용법</a>  </p>
+</li>
+</ul>
+<h4 id="무엇이-문제인가"><a href="#무엇이-문제인가" class="headerlink" title="무엇이 문제인가?"></a>무엇이 문제인가?</h4><ul>
+<li>SQL을 실행하는 비용이 비싸다.</li>
+<li>SQL이 데이터베이스 마다 다르다.</li>
+<li>스키마를 바꿨더니 코드가 너무 많이 바뀌네…</li>
+<li>반복적인 코드가 너무 많아.</li>
+<li>당장은 필요가 없는데 언제 쓸 줄 모르니까 미리 다 읽어와야 하나…<br><br><br></li>
+</ul>
+<h3 id="ORM-Object-Relation-Mapping"><a href="#ORM-Object-Relation-Mapping" class="headerlink" title="ORM(Object-Relation Mapping)"></a>ORM(Object-Relation Mapping)</h3><ul>
+<li>ORM은 애플리케이션의 클래스와 SQL 데이터베이스의 테이블 사이의 <strong>맵핑 정보를 기술한 메타데이터를 사용</strong>하여, 자바 애플리케이션의 객체를 SQL 데이터베이스의 테이블에 <strong>자동으로 (또 보다 비침투적으로) 영속화</strong> 해주는 기술이다.<h4 id="JDBC와-도메인-모델-사용의-차이점"><a href="#JDBC와-도메인-모델-사용의-차이점" class="headerlink" title="JDBC와 도메인 모델 사용의 차이점"></a>JDBC와 도메인 모델 사용의 차이점</h4></li>
+<li><p>JDBC 사용</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">try(Connection connection = DriverManager.getConnection(url, username, password)) &#123;</span><br><span class="line">    System.out.println(&quot;Connection created: &quot; + connection);</span><br><span class="line">    String sql = &quot;INSERT INTO ACCOUNT VALUES(1, &apos;keesun&apos;, &apos;pass&apos;);&quot;;</span><br><span class="line">    </span><br><span class="line">    try(PreparedStatement statement = connection.prepareStatement(sql))&#123;</span><br><span class="line">    statement.execute();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>도메인 모델 사용</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Account account = new Account(&quot;bong&quot;, &quot;pass&quot;);</span><br><span class="line">accountRepository.save(account);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>JDBC 대신 도메인 모델 사용하려는 이유<ul>
+<li>객체 지향 프로그래밍의 장점을 활용하기 좋으니까.</li>
+<li>각종 디자인 패턴</li>
+<li>코드 재사용</li>
+<li>비즈니스 로직 구현 및 테스트 편함(코드 간결)</li>
+</ul>
+</li>
+</ul>
+<p>도메인 모델을 사용하기 위해서 ORM툴인 JPA를 쓴다고 할 수 있다.</p>
+<h4 id="ORM툴-사용의-장단점"><a href="#ORM툴-사용의-장단점" class="headerlink" title="ORM툴 사용의 장단점"></a>ORM툴 사용의 장단점</h4><ul>
+<li>장점<ul>
+<li>생산성</li>
+<li>유지보수성</li>
+<li>성능<ul>
+<li>하나의 예를 들면.. Hibernate는 객체와 테이블에 들어있는 데이터 사이의 캐쉬가 존재한다.<ul>
+<li>불필요한 쿼리를 날리지 않는다.</li>
+<li>예).. 한 트랜잭션안에서 하나의 데이터에 대하여 하나의 트랜잭션에서 값을 여러번 변경했을 때, 마지막 값이 초기값과의 변경사항을 체크하고 쿼리를 날린다.  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>밴더 독립성<ul>
+<li>DB의 종류에 따라서 변경될 코드가 없다.(방언(diarect)만 설정)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>단점<ul>
+<li>학습비용<ul>
+<li>sql을 포함한 학습이 반드시 필요하다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="ORM-패러다임-불일치"><a href="#ORM-패러다임-불일치" class="headerlink" title="ORM: 패러다임 불일치"></a>ORM: 패러다임 불일치</h3><p>객체를 릴레이션에 맵핑하려니 발생하는 문제(ORM으로 해결이 가능하다.)</p>
+<h4 id="밀도-Granularity-문제"><a href="#밀도-Granularity-문제" class="headerlink" title="밀도(Granularity) 문제"></a>밀도(Granularity) 문제</h4><ul>
+<li>객체<ul>
+<li>다양한 크기의 객체를 만들 수 있음.</li>
+<li>커스텀한 타입 만들기 쉬움.</li>
+</ul>
+</li>
+<li>릴레이션<ul>
+<li>테이블</li>
+<li>기본 데이터 타입 (UDT는 비추)</li>
+</ul>
+</li>
+</ul>
+<h4 id="서브타입-Subtype-문제"><a href="#서브타입-Subtype-문제" class="headerlink" title="서브타입(Subtype) 문제"></a>서브타입(Subtype) 문제</h4><ul>
+<li>객체<ul>
+<li>상속 구조 만들기 쉬움</li>
+<li>다형성</li>
+</ul>
+</li>
+<li>릴레이션<ul>
+<li>테이블 상속이라는게 없음</li>
+<li>상속 기능을 구현했다 하더라도 표준 기술이 아님</li>
+<li>다형적인 관계를 표현할 방법이 없음</li>
+</ul>
+</li>
+</ul>
+<h4 id="식별성-Identity-문제"><a href="#식별성-Identity-문제" class="headerlink" title="식별성(Identity) 문제"></a>식별성(Identity) 문제</h4><ul>
+<li>객체<ul>
+<li>레퍼런스 동일성 (==)</li>
+<li>인스턴스 동일성 (equals() 메소드)</li>
+</ul>
+</li>
+<li>릴레이션<ul>
+<li>주키 (primary key)</li>
+</ul>
+</li>
+</ul>
+<h4 id="관계-Association-문제"><a href="#관계-Association-문제" class="headerlink" title="관계(Association) 문제"></a>관계(Association) 문제</h4><ul>
+<li>객체<ul>
+<li>객체 레퍼런스로 관계 표현</li>
+<li>근본적으로 ‘방향’이 존재 한다.</li>
+<li>다대다 관계를 가질 수 있음</li>
+</ul>
+</li>
+<li>릴레이션<ul>
+<li>외래키(foreign key)로 관계 표현</li>
+<li>‘방향’이라는 의미가 없음. (그냥 Join으로아무거나 묶을 수 있음.)</li>
+<li>태생적으로 다대다 관계를 못만들고, 조인 테이블 또는 링크 테이블을 사용해서 두개의 1대다 관계로 풀어야 함</li>
+</ul>
+</li>
+</ul>
+<h4 id="데이터-네비게이션-Navigation-의-문제"><a href="#데이터-네비게이션-Navigation-의-문제" class="headerlink" title="데이터 네비게이션(Navigation)의 문제"></a>데이터 네비게이션(Navigation)의 문제</h4><ul>
+<li>객체<ul>
+<li>레퍼런스를 이용해서 다른 객체로 이동 가능</li>
+<li>콜렉션을 순회할 수도 있음.</li>
+</ul>
+</li>
+<li>릴레이션<ul>
+<li>하지만 그런 방식은 릴레이션에서 데이터를 조회하는데 있어서 매우 비효율적이다.</li>
+<li>데이터베이스에 요청을 적게 할 수록 성능이 좋다.(따라서 Join을 쓴다.)</li>
+<li>하지만, 너무 많이 한번에 가져오려고 해도 문제다.</li>
+<li>그렇다고 lazy loading을 하자니 그것도 문제다. (n+1 select)<br><br><br></li>
+</ul>
+</li>
+</ul>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#JPA">
+    <span class="tag-code">JPA</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/04/25/Spring/springwebmvc02/">
+        <span class="nav-arrow">← </span>
+        
+          스프링 MVC 동작 원리 - 스프링 연동, DispatcherServlet
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/04/30/Spring/springwebmvc03/">
+        
+          스프링 MVC 동작 원리 - 스프링 MVC 구성 요소, 동작원리 정리
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#스프링-데이터-JPA-inflearn-백기선"><span class="toc-nav-text">스프링 데이터 JPA(inflearn) - 백기선</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#핵심-개념-이해"><span class="toc-nav-text">핵심 개념 이해</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#관계형-데이터-베이스와-자바"><span class="toc-nav-text">관계형 데이터 베이스와 자바</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#기본-JDBC를-사용한-프로젝트-예제"><span class="toc-nav-text">기본 JDBC를 사용한 프로젝트 예제</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#무엇이-문제인가"><span class="toc-nav-text">무엇이 문제인가?</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#ORM-Object-Relation-Mapping"><span class="toc-nav-text">ORM(Object-Relation Mapping)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#JDBC와-도메인-모델-사용의-차이점"><span class="toc-nav-text">JDBC와 도메인 모델 사용의 차이점</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#ORM툴-사용의-장단점"><span class="toc-nav-text">ORM툴 사용의 장단점</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#ORM-패러다임-불일치"><span class="toc-nav-text">ORM: 패러다임 불일치</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#밀도-Granularity-문제"><span class="toc-nav-text">밀도(Granularity) 문제</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#서브타입-Subtype-문제"><span class="toc-nav-text">서브타입(Subtype) 문제</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#식별성-Identity-문제"><span class="toc-nav-text">식별성(Identity) 문제</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#관계-Association-문제"><span class="toc-nav-text">관계(Association) 문제</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#데이터-네비게이션-Navigation-의-문제"><span class="toc-nav-text">데이터 네비게이션(Navigation)의 문제</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/04/29/Spring/springjpa01/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

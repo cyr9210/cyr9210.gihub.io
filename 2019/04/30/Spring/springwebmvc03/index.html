@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      스프링 MVC 동작 원리 - 스프링 MVC 구성 요소, 동작원리 정리 | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>스프링 MVC 동작 원리 - 스프링 MVC 구성 요소, 동작원리 정리</h2>
+  <p class="post-date">2019-04-30</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p><img src="/images/springframwork-logo.png" alt="springf"></p>
+<h1 id="스프링-웹-MVC-inflearn-백기선"><a href="#스프링-웹-MVC-inflearn-백기선" class="headerlink" title="스프링 웹 MVC(inflearn) - 백기선"></a>스프링 웹 MVC(inflearn) - 백기선</h1><h2 id="Springframework"><a href="#Springframework" class="headerlink" title="Springframework"></a>Springframework</h2><h3 id="스프링-MVC-구성-요소"><a href="#스프링-MVC-구성-요소" class="headerlink" title="스프링 MVC 구성 요소"></a>스프링 MVC 구성 요소</h3><p><img src="/images/springwebmvc/springwebmvc03-1.png" alt="springmvc"></p>
+<ul>
+<li><p>DispatcherSerlvet의 기본 전략</p>
+<ul>
+<li>DispatcherServlet.properties를 보면 정의되어있다.</li>
+</ul>
+</li>
+<li><p>MultipartResolver</p>
+<ul>
+<li>파일 업로드 요청 처리에 필요한 인터페이스</li>
+<li>HttpServletRequest를 MultipartHttpServletRequest로 변환해주어 요청이 담고 있는 File을 꺼낼 수 있는 API 제공.</li>
+</ul>
+</li>
+<li><p>LocaleResolver</p>
+<ul>
+<li>클라이언트의 위치(Locale) 정보를 파악하는 인터페이스</li>
+<li>기본 전략은 요청의 accept-language를 보고 판단.</li>
+</ul>
+</li>
+<li><p>ThemeResolver</p>
+<ul>
+<li>애플리케이션에 설정된 테마를 파악하고 변경할 수 있는 인터페이스</li>
+<li>참고: <a href="https://memorynotfound.com/spring-mvc-theme-switcher-example/" target="_blank" rel="noopener">https://memorynotfound.com/spring-mvc-theme-switcher-example/</a></li>
+</ul>
+</li>
+<li><p>HandlerMapping</p>
+<ul>
+<li>요청을 처리할 핸들러를 찾는 인터페이스</li>
+</ul>
+</li>
+<li><p>HandlerAdapter</p>
+<ul>
+<li>HandlerMapping이 찾아낸 “핸들러”를 처리하는 인터페이스</li>
+<li>스프링 MVC 확장력의 핵심</li>
+</ul>
+</li>
+<li><p>HandlerExceptionResolver</p>
+<ul>
+<li>요청 처리 중에 발생한 에러 처리하는 인터페이스</li>
+</ul>
+</li>
+<li><p>RequestToViewNameTranslator</p>
+<ul>
+<li>핸들러에서 뷰 이름을 명시적으로 리턴하지 않은 경우, 요청을 기반으로 뷰 이름을 판단하는 인터페이스</li>
+</ul>
+</li>
+<li><p>ViewResolver</p>
+<ul>
+<li>뷰 이름(string)에 해당하는 뷰를 찾아내는 인터페이스</li>
+</ul>
+</li>
+<li><p>FlashMapManager</p>
+<ul>
+<li>FlashMap 인스턴스를 가져오고 저장하는 인터페이스</li>
+<li>FlashMap은 주로 리다이렉션을 사용할 때 요청 매개변수를 사용하지 않고 데이터를 전달하고 정리할 때 사용한다.</li>
+<li>redirect:/events 이런식으로 이전 정보들을 가지고 가되, url에 정의하지 않고 리다이렉트할 때 사용됨.</li>
+</ul>
+</li>
+</ul>
+<h3 id="스프링-MVC-동작원리-정리"><a href="#스프링-MVC-동작원리-정리" class="headerlink" title="스프링 MVC 동작원리 정리"></a>스프링 MVC 동작원리 정리</h3><ul>
+<li>결국엔 (굉장히 복잡한) 서블릿 = DispatcherServlet</li>
+<li>DispatcherServlet 초기화<ol>
+<li>특정 타입에 해당하는 빈을 찾는다.</li>
+<li>없으면 기본 전략을 사용한다. (DispatcherServlet.properties)</li>
+</ol>
+</li>
+<li><p>스프링 부트 사용하지 않는 스프링 MVC</p>
+<ul>
+<li><p>서블릿 컨네이너(ex, 톰캣)에 등록한 웹 애플리케이션(WAR)에 DispatcherServlet을 등록한다.</p>
+<ul>
+<li>web.xml에 서블릿 등록</li>
+<li>또는 WebApplicationInitializer에 자바 코드로 서블릿 등록 (스프링 3.1+, 서블릿 3.0+)  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class WebApplication implements WebApplicationInitializer &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void onStartup(ServletContext servletContext) throws ServletException &#123;</span><br><span class="line">        AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();</span><br><span class="line">        context.register(WebConfig.class);</span><br><span class="line">        context.refresh();</span><br><span class="line"></span><br><span class="line">        DispatcherServlet dispatcherServlet = new DispatcherServlet(context);</span><br><span class="line">        ServletRegistration.Dynamic app = servletContext.addServlet(&quot;app&quot;, dispatcherServlet);</span><br><span class="line">        app.addMapping(&quot;/app/*&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>세부 구성 요소는 빈 설정하기 나름.</p>
+</li>
+</ul>
+</li>
+<li><p>스프링 부트를 사용하는 스프링 MVC</p>
+<ul>
+<li>자바 애플리케이션에 내장 톰캣을 만들고 그 안에 DispatcherServlet을 등록한다.<ul>
+<li>스프링 부트 자동 설정이 자동으로 해줌.</li>
+</ul>
+</li>
+<li>스프링 부트의 주관에 따라 여러 인터페이스 구현체를 빈으로 등록한다.<br><br><br></li>
+</ul>
+</li>
+</ul>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#SpringWebMvc">
+    <span class="tag-code">SpringWebMvc</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/04/29/Spring/springjpa01/">
+        <span class="nav-arrow">← </span>
+        
+          스프링 데이터 JPA - 관계형 데이터 베이스와 자바, ORM
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/04/30/Spring/springjpa02/">
+        
+          스프링 데이터 JPA - 프로젝트 세팅
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#스프링-웹-MVC-inflearn-백기선"><span class="toc-nav-text">스프링 웹 MVC(inflearn) - 백기선</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Springframework"><span class="toc-nav-text">Springframework</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#스프링-MVC-구성-요소"><span class="toc-nav-text">스프링 MVC 구성 요소</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#스프링-MVC-동작원리-정리"><span class="toc-nav-text">스프링 MVC 동작원리 정리</span></a></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/04/30/Spring/springwebmvc03/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

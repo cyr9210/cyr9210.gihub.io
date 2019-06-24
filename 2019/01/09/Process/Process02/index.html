@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      agile(애자일) 프로세스 | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>agile(애자일) 프로세스</h2>
+  <p class="post-date">2019-01-09</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="KOSTA-DAY44"><a href="#KOSTA-DAY44" class="headerlink" title="KOSTA DAY44"></a>KOSTA DAY44</h1><h2 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h2><h3 id="프로세스"><a href="#프로세스" class="headerlink" title="프로세스"></a>프로세스</h3><p>일을 처리하는 과정 또는 순서       </p>
+<h4 id="소프트웨어-개발에서의-주먹구구식-모델"><a href="#소프트웨어-개발에서의-주먹구구식-모델" class="headerlink" title="소프트웨어 개발에서의 주먹구구식 모델"></a>소프트웨어 개발에서의 주먹구구식 모델</h4><ul>
+<li>공식적인 가이드라인이나 프로세스가 없는 개발방식</li>
+<li>요구분석 명세서나 설계단계없이 간단한 기능만을 정리하여 개발하는 형태</li>
+<li>일단 코드를 작성하여 제품을 만들어본 후에 요구분석, 설계, 유지보수에 대해 생각</li>
+<li>주먹구구식 모델의 단점<ul>
+<li>정해진 개발 순서나 각 단계별로 문서화된 산출물이 없어 관리 및 유지보수가 어렵다.</li>
+<li>프로젝트 전체 범위를 알 수 없을 뿐더러 좋은 아키텍처를 만들 수도 없다.</li>
+<li>일을 효과적으로 나눠 개발할 수도 없으며, 프로젝트 진척 상황을 파악할 수 없다.</li>
+<li>계속적 수정으로 인해 프로그램의 구조가 나빠져 수정이 매우 어려워진다.</li>
+</ul>
+</li>
+</ul>
+<h4 id="선형-순차적-모델-water-fall"><a href="#선형-순차적-모델-water-fall" class="headerlink" title="선형 순차적 모델(water fall)"></a>선형 순차적 모델(water fall)</h4><p><img src="/images/Process/Process02-01.png" alt="process"></p>
+<ul>
+<li>폭포수 모델의 장점<ul>
+<li>관리의 용이</li>
+<li>체계적인 문서화<br>요구사항의 변화가 적은 프로젝트에 적합</li>
+</ul>
+</li>
+<li>폭포수 모델의 단점<ul>
+<li>각 단계는 앞 단계가 완료되어야 수행할 수 있다.</li>
+<li>각 단계의 결과물이 완벽한 수준으로 작성되어야 다음 단계에 오류를 넘겨주지 않는다.</li>
+<li>사용자가 중간에 가시적인 결과를 볼 수 없어 답답해할 수 있다.</li>
+</ul>
+</li>
+</ul>
+<h4 id="V모델"><a href="#V모델" class="headerlink" title="V모델"></a>V모델</h4><p><img src="/images/Process/Process02-02.png" alt="process"></p>
+<ul>
+<li>폭포수 모델 + 테스트 단계 추가 확장</li>
+<li>산출물 중심 vs 각 개발 단계를 검증하는데 초점</li>
+<li>테스트단계에서 정확한 니즈가 확인이 안되며, 지나간 단계의 수정이 어려움</li>
+</ul>
+<h4 id="프로토-타입"><a href="#프로토-타입" class="headerlink" title="프로토 타입"></a>프로토 타입</h4><p>미리 제작해보는 시제품, 제작물의 모형<br><img src="/images/Process/Process02-03.png" alt="process"></p>
+<ul>
+<li>정식 절차에 따라 완전한 소프트웨어를 만들기 전에 사용자의 요구를 받아 일단 모형을 만들고 이 모형을 사용자와 의사소통 하는 도구로 활용</li>
+<li>비용 및 시간의 측면에서 부적합</li>
+</ul>
+<h4 id="통합-프로세스-모델-UP"><a href="#통합-프로세스-모델-UP" class="headerlink" title="통합 프로세스 모델(UP)"></a>통합 프로세스 모델(UP)</h4><p><img src="/images/Process/Process02-04.png" alt="process"></p>
+<h4 id="애자일-프로세스-모델"><a href="#애자일-프로세스-모델" class="headerlink" title="애자일 프로세스 모델"></a>애자일 프로세스 모델</h4><p><img src="/images/Process/Process02-05.jpg" alt="process"></p>
+<ul>
+<li>애자일(agile) : 날렵한, 민첩한</li>
+<li>고객의 요구에 민첨하게 대응하고 그때그때 주어지는 문제를 풀어나가는 방법론</li>
+</ul>
+<h5 id="애자일의-기본가치-애자일-선언문"><a href="#애자일의-기본가치-애자일-선언문" class="headerlink" title="애자일의 기본가치(애자일 선언문)"></a>애자일의 기본가치(애자일 선언문)</h5><ul>
+<li>프로세스와 도구 중심이 아닌, 개개인과의 상호 소통 중시</li>
+<li>문서 중심이 아닌, 실행 가능한 소프트웨어 중시</li>
+<li>계약과 협상 중심이 아닌, 고객과의 협력 중시</li>
+<li>계획 중심이 아닌, 변화에 대한 민첩한 대응 중시<br>→ 본질로 돌아가자.</li>
+</ul>
+<h5 id="애자일-개발-방법론-스크럼"><a href="#애자일-개발-방법론-스크럼" class="headerlink" title="애자일 개발 방법론(스크럼)"></a>애자일 개발 방법론(스크럼)</h5><ul>
+<li>소프트웨어 개발보다는 팀의 개선과 프로젝트 관리를 위한 애자일 방법</li>
+<li>경험적 관리 기법 중 하나</li>
+<li>구체적인 프로세스를 명확하게 제시하지 않음</li>
+<li>개발 팀(조직)을 운영하는 효율적인 운영 방식(지침)<br><br><br></li>
+</ul>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#Process">
+    <span class="tag-code">Process</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/01/07/JSP/JSP05/">
+        <span class="nav-arrow">← </span>
+        
+          게시판 페이징처리, 파일 업로드/다운로드, 썸네일 이미지 게시판
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/01/23/Project/Kogile-Intermediate/">
+        
+          Project_Kogile_JSP
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#KOSTA-DAY44"><span class="toc-nav-text">KOSTA DAY44</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Process"><span class="toc-nav-text">Process</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#프로세스"><span class="toc-nav-text">프로세스</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#소프트웨어-개발에서의-주먹구구식-모델"><span class="toc-nav-text">소프트웨어 개발에서의 주먹구구식 모델</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#선형-순차적-모델-water-fall"><span class="toc-nav-text">선형 순차적 모델(water fall)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#V모델"><span class="toc-nav-text">V모델</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#프로토-타입"><span class="toc-nav-text">프로토 타입</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#통합-프로세스-모델-UP"><span class="toc-nav-text">통합 프로세스 모델(UP)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#애자일-프로세스-모델"><span class="toc-nav-text">애자일 프로세스 모델</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#애자일의-기본가치-애자일-선언문"><span class="toc-nav-text">애자일의 기본가치(애자일 선언문)</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#애자일-개발-방법론-스크럼"><span class="toc-nav-text">애자일 개발 방법론(스크럼)</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/01/09/Process/Process02/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

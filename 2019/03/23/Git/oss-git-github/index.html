@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      Git/GitHub 입문 (oss개발자포럼 세미나) | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>Git/GitHub 입문 (oss개발자포럼 세미나)</h2>
+  <p class="post-date">2019-03-23</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="Git-GitHub-입문-oss개발자포럼-세미나"><a href="#Git-GitHub-입문-oss개발자포럼-세미나" class="headerlink" title="Git/GitHub 입문 (oss개발자포럼 세미나)"></a>Git/GitHub 입문 (oss개발자포럼 세미나)</h1><h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p><img src="/images/git/ossgit02.png" alt="ossgit"><br>버젼관리 시스템인 Git에 대하여 생활코딩 ‘지옥에서 온 git’을 수강하며, 공부를 하던중…<br>oss개발자 포럼 커뮤니티와 국민대학교가 주관하는 ‘Git과 Github을 이용한 버전관리 입문’이라는 주제로 강연을 진행하단다는 정보를 알게되었습니다.<br>해당 커뮤니티에 대한 궁금함과 동시에 오프라인으로 강의를 들어보는게 나쁘지 않을것 같아서 신청하게 되었습니다.🙂</p>
+<hr>
+<h3 id="형상-관리와-버전-관리"><a href="#형상-관리와-버전-관리" class="headerlink" title="형상 관리와 버전 관리"></a>형상 관리와 버전 관리</h3><h4 id="형상-관리"><a href="#형상-관리" class="headerlink" title="형상 관리"></a>형상 관리</h4><p><strong>소프트웨어의 변경사항을 체계적으로 추적하고 관리, 통제하는 것</strong></p>
+<ul>
+<li>관리대상<ul>
+<li>요구사항 명세서</li>
+<li>설계서</li>
+<li>소스코드</li>
+<li>이미지</li>
+<li>라이브러리 파일</li>
+<li>프로젝트 회의록</li>
+<li>그외많은관리대상들</li>
+</ul>
+</li>
+</ul>
+<h4 id="형상관리를-왜-해야할까"><a href="#형상관리를-왜-해야할까" class="headerlink" title="형상관리를 왜 해야할까?"></a>형상관리를 왜 해야할까?</h4><ul>
+<li>소프트웨어 개발 생산성을 향상시켜 준다</li>
+<li>(요구사항을 바탕으로 개발을 진행하므로) 소프트웨어의 품질을 향상시켜 준다</li>
+<li>(문제가 있는 경우를 쉽게 발견할 수 있으므로) 유지보수 비용을 절감시켜 준다<br><br><br></li>
+</ul>
+<h3 id="버전-관리-시스템"><a href="#버전-관리-시스템" class="headerlink" title="버전 관리 시스템"></a>버전 관리 시스템</h3><p><img src="/images/git/ossgit03.png" alt="gitoss"><br>소스코드의 변경사항을 체계적으로 추적하고 관리, 통제하는 시스템</p>
+<h4 id="버전-관리-시스템-VCS-Version-Control-System"><a href="#버전-관리-시스템-VCS-Version-Control-System" class="headerlink" title="버전 관리 시스템 - VCS(Version Control System)"></a>버전 관리 시스템 - VCS(Version Control System)</h4><p><img src="/images/git/ossgit04.png" alt="gitoss"></p>
+<ul>
+<li>로컬에서 직접 모든 자원을 관리</li>
+<li>USB, 메일 첨부파일</li>
+</ul>
+<h4 id="집중형-버전-관리-시스템-CVCS-Centralized-VCS"><a href="#집중형-버전-관리-시스템-CVCS-Centralized-VCS" class="headerlink" title="집중형 버전 관리 시스템 - CVCS(Centralized VCS)"></a>집중형 버전 관리 시스템 - CVCS(Centralized VCS)</h4><p><img src="/images/git/ossgit05.png" alt="gitoss"></p>
+<ul>
+<li>하나의서버를두고서버를중심으로모든자원을관리 </li>
+<li>SVN - <a href="https://subversion.apache.org/" target="_blank" rel="noopener">https://subversion.apache.org/</a></li>
+</ul>
+<h4 id="분산형-버전-관리-시스템-DVCS-Distributed-VCS"><a href="#분산형-버전-관리-시스템-DVCS-Distributed-VCS" class="headerlink" title="분산형 버전 관리 시스템 - DVCS(Distributed VCS)"></a>분산형 버전 관리 시스템 - DVCS(Distributed VCS)</h4><p><img src="/images/git/ossgit06.png" alt="gitoss"></p>
+<ul>
+<li>CVCS처럼 서버를 두고 서버에서 자원 관리를 하지만 로컬에서도 자원 관리를 함</li>
+<li>Git - <a href="https://github.com/git/git" target="_blank" rel="noopener">https://github.com/git/git</a><br><br><br></li>
+</ul>
+<h3 id="Git-Github"><a href="#Git-Github" class="headerlink" title="Git / Github"></a>Git / Github</h3><p><img src="/images/git/ossgit07.png" alt="gitoss"></p>
+<ul>
+<li>Git : 버전관리 시스템</li>
+<li>Github : Git 호스팅 사이트<blockquote>
+<p>호스팅 : 웹의 공간을 빌려주거나 빌리는것</p>
+</blockquote>
+</li>
+</ul>
+<p><br></p>
+<h3 id="Git-Hosting"><a href="#Git-Hosting" class="headerlink" title="Git Hosting"></a>Git Hosting</h3><ul>
+<li>GitHub ( <a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a> ) </li>
+<li>GitLab ( <a href="https://gitlab.com" target="_blank" rel="noopener">https://gitlab.com</a> ) </li>
+<li>BitBucket ( <a href="https://bitbucket.org" target="_blank" rel="noopener">https://bitbucket.org</a> )<br><br><br><h3 id="Git-Client"><a href="#Git-Client" class="headerlink" title="Git Client"></a>Git Client</h3></li>
+<li>Git bash<ul>
+<li>Git을 설치하면 기본제공되는 CLI 기반 Git Client</li>
+<li>Windows / Mac / Linux<br>SourceTree</li>
+<li><a href="https://www.sourcetreeapp.com/" target="_blank" rel="noopener">https://www.sourcetreeapp.com/</a></li>
+<li>Windows / Mac<br>GitKraken</li>
+<li><a href="https://www.gitkraken.com/" target="_blank" rel="noopener">https://www.gitkraken.com/</a> - Windows / Mac / Linux</li>
+</ul>
+</li>
+</ul>
+<p><br><br></p>
+<h3 id="Git을-이용한-버전-관리"><a href="#Git을-이용한-버전-관리" class="headerlink" title="Git을 이용한 버전 관리"></a>Git을 이용한 버전 관리</h3><ul>
+<li>버전관리 ⊂ 형상관리</li>
+<li>Git은 분산형 버전 관리 시스템(DVCS) Git ≠ GitHub<ul>
+<li>GitHub는 Git Hosting 웹 서비스</li>
+</ul>
+</li>
+</ul>
+<h4 id="버전관리를-어떻게할까"><a href="#버전관리를-어떻게할까" class="headerlink" title="버전관리를 어떻게할까?"></a>버전관리를 어떻게할까?</h4><ul>
+<li>CVCS<ul>
+<li><img src="/images/git/ossgit08.png" alt="gitoss"></li>
+<li><img src="/images/git/ossgit09.png" alt="gitoss"></li>
+</ul>
+</li>
+<li><p>DVCS</p>
+<ul>
+<li><img src="/images/git/ossgit10.png" alt="gitoss"></li>
+<li><img src="/images/git/ossgit11.png" alt="gitoss"></li>
+</ul>
+</li>
+<li><p>Git(DVCS)</p>
+<ul>
+<li><img src="/images/git/ossgit12.png" alt="gitoss"></li>
+</ul>
+</li>
+</ul>
+<h4 id="Git의-흐름-workflow"><a href="#Git의-흐름-workflow" class="headerlink" title="Git의 흐름(workflow)"></a>Git의 흐름(workflow)</h4><p><img src="/images/git/ossgit13.png" alt="gitoss"><br><img src="/images/git/ossgit14.png" alt="gitoss"><br><br><br></p>
+<h3 id="GitHub-둘러보기"><a href="#GitHub-둘러보기" class="headerlink" title="GitHub 둘러보기"></a>GitHub 둘러보기</h3><ul>
+<li>fork : 다른사람의 프로젝트를 복제</li>
+<li>Pull Request : 자신이 변경한 코드를 상대방의 리포지토리에 넣고 싶을 때 사용하는 기능<ul>
+<li>git Lab에서는 merge request라고 부른다.</li>
+<li>Pull Request에도 순서가 있다.<br><img src="/images/git/ossgit15.png" alt="gitoss"></li>
+</ul>
+</li>
+<li>git fetch : 리포지토리에서 변경된 기록을 가져오되 merge는 하지 않음</li>
+<li>git pull : 리포지토리에서 변경된 기록을 가져오고 merge도 바로 이루어짐<br><br><br></li>
+</ul>
+<h3 id="알아두면-좋은것"><a href="#알아두면-좋은것" class="headerlink" title="알아두면 좋은것"></a>알아두면 좋은것</h3><ul>
+<li><a href="https://opentutorials.org/course/2708" target="_blank" rel="noopener">생활코딩 지옥에서 온 Git</a></li>
+<li><a href="https://www.youtube.com/watch?v=SYVUyNrQhAU" target="_blank" rel="noopener">동네개발자형 교육방송 - git bisect</a></li>
+<li>여러 프로젝트, 소식 살펴보기 : <a href="https://github.com/explore" target="_blank" rel="noopener">gitexplore</a><ul>
+<li>오픈소스 fork시, <a href="https://opensource.org/licenses" target="_blank" rel="noopener">라이센스</a>에 주의해야한다.<br>참고자료 : <a href="https://www.slideshare.net/ssuser22e7fc/gdg-campus-korea-2-132342619" target="_blank" rel="noopener">https://www.slideshare.net/ssuser22e7fc/gdg-campus-korea-2-132342619</a></li>
+</ul>
+</li>
+<li><p><a href="http://www.itpaper.co.kr/gitignore-%ED%8C%8C%EC%9D%BC%EC%9D%84-%E D%86%B5%ED%95%9C-%EB%AC%B4%EC%8B%9C%EB%AA%A9%EB%A1% 9D-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0/" target="_blank" rel="noopener">gitignore 적용하기</a></p>
+<ul>
+<li><a href="https://www.gitignore.io/" target="_blank" rel="noopener">gitignore.io</a></li>
+</ul>
+</li>
+<li><p>참고하면 도움이 될 책</p>
+<ul>
+<li>소프트웨어 개발의 모든 것</li>
+<li>성공으로 이끄는 팀 개발 실천 기술</li>
+<li>팀을 위한 git<br><br><br></li>
+</ul>
+</li>
+</ul>
+<h3 id="명령어"><a href="#명령어" class="headerlink" title="명령어"></a>명령어</h3><ul>
+<li><p>git 사용자 정보 조회</p>
+<ul>
+<li>git config –global –list</li>
+</ul>
+</li>
+<li><p>이전에 git을 사용한 적이 있다면 사용자 정보를 지워줍니다.</p>
+<ul>
+<li>git config –global –unset-all user.name</li>
+<li>git config –global –unset-all user.email<br><br><br></li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>강의는 매우 만족스럽지 못했습니다..<br>발표자는 20분이 넘는 시간을 지각하고, wifi접속은 안되고, 강의내용은 기존 공지내용과 달랐습니다.<br>bash기반의 명령어 및 구동원리 강의를 기대하고 왔는데..<br>해당 강연은 git 크라켄을 사용하는 gui방식의 툴을 기반으로 하고 있었으며, git에대해 전혀 알지못하는 사람을 대상으로 하는 수준이었기 때문에 제가원하는 강연은 아니었던것 같습니다.<br>분명 강의내용에 명령어 강의라고 되어있어서 신청했는데..😂<br>git을 처음접하시는 분들에게는 어땠을지 모르겠지만 제게는 많이 아쉬웠던 강의였습니다.<br><br><br></p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#Seminar">
+    <span class="tag-code">Seminar</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/03/22/Spring/springframework-core03/">
+        <span class="nav-arrow">← </span>
+        
+          데이터 바인딩
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/03/26/Spring/springframework-core04/">
+        
+          SpEL
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Git-GitHub-입문-oss개발자포럼-세미나"><span class="toc-nav-text">Git/GitHub 입문 (oss개발자포럼 세미나)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Git"><span class="toc-nav-text">Git</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#형상-관리와-버전-관리"><span class="toc-nav-text">형상 관리와 버전 관리</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#형상-관리"><span class="toc-nav-text">형상 관리</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#형상관리를-왜-해야할까"><span class="toc-nav-text">형상관리를 왜 해야할까?</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#버전-관리-시스템"><span class="toc-nav-text">버전 관리 시스템</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#버전-관리-시스템-VCS-Version-Control-System"><span class="toc-nav-text">버전 관리 시스템 - VCS(Version Control System)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#집중형-버전-관리-시스템-CVCS-Centralized-VCS"><span class="toc-nav-text">집중형 버전 관리 시스템 - CVCS(Centralized VCS)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#분산형-버전-관리-시스템-DVCS-Distributed-VCS"><span class="toc-nav-text">분산형 버전 관리 시스템 - DVCS(Distributed VCS)</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Git-Github"><span class="toc-nav-text">Git / Github</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Git-Hosting"><span class="toc-nav-text">Git Hosting</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Git-Client"><span class="toc-nav-text">Git Client</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Git을-이용한-버전-관리"><span class="toc-nav-text">Git을 이용한 버전 관리</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#버전관리를-어떻게할까"><span class="toc-nav-text">버전관리를 어떻게할까?</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Git의-흐름-workflow"><span class="toc-nav-text">Git의 흐름(workflow)</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#GitHub-둘러보기"><span class="toc-nav-text">GitHub 둘러보기</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#알아두면-좋은것"><span class="toc-nav-text">알아두면 좋은것</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#명령어"><span class="toc-nav-text">명령어</span></a></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/03/23/Git/oss-git-github/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

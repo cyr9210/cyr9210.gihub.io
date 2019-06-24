@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      인터페이스, Object class, Wrapper class, Inner class, Anonymous class, String API, Boxing/Unboxing | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>인터페이스, Object class, Wrapper class, Inner class, Anonymous class, String API, Boxing/Unboxing</h2>
+  <p class="post-date">2018-11-12</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p><img src="/images/javaimage.png" alt="Java"></p>
+<h1 id="KOSTA-DAY10"><a href="#KOSTA-DAY10" class="headerlink" title="KOSTA DAY10"></a>KOSTA DAY10</h1><h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><h3 id="인터페이스"><a href="#인터페이스" class="headerlink" title="인터페이스"></a>인터페이스</h3><p>개발코드와 객체가 서로 통신하는 접점</p>
+<ul>
+<li>인터페이스 안의 모든 메소드는 추상메소드이다.(굳이 abstarct 키워드를 사용하지 않아도 된다.)</li>
+<li>인터페이스를 implements하는 클래스는 인터페이스 안의 추상메소드들을 모두 오버라이딩 해야한다.</li>
+<li>추상클래스와 유사한 기능을 하며 자식메소드를 구현하는데 사용된다.</li>
+<li>인터페이스를 implements한 클래스는 인터페이스에 선언한 메소드를 오버라이딩하여 사용가능하다.</li>
+<li>인터페이스 끼리 상속가능 → 실제로는 거의 사용하지 않으나 Java API중 이러한 형택가 있다.</li>
+</ul>
+<h4 id="인터페이스를-사용하는-이유"><a href="#인터페이스를-사용하는-이유" class="headerlink" title="인터페이스를 사용하는 이유"></a>인터페이스를 사용하는 이유</h4><ul>
+<li>자바에서는 다중 상속을 허용하지 않는다.</li>
+<li>상속할 수 없는 상황에서 공통된 기능을 사용하기위해</li>
+<li>코드의 독립성</li>
+</ul>
+<h4 id="추상클래스와-인터페이스의-공통점과-차이점"><a href="#추상클래스와-인터페이스의-공통점과-차이점" class="headerlink" title="추상클래스와 인터페이스의 공통점과 차이점"></a>추상클래스와 인터페이스의 공통점과 차이점</h4><ul>
+<li>공통점<ul>
+<li>코드의 독립성</li>
+</ul>
+</li>
+<li>차이점<ul>
+<li>추상클래스는 일반 메소드가 있을 수 있기 때문에 추상메소드에 abstract 키워드를 사용한다.<br><br><br></li>
+</ul>
+</li>
+</ul>
+<h3 id="Object-class"><a href="#Object-class" class="headerlink" title="Object class"></a>Object class</h3><ul>
+<li>최상위 클래스</li>
+<li>Object class의 toString 메소드는 주소값을 호출한다. → toString 메소드를 생성하여 오버라이딩 가능</li>
+<li>Object class의 equals 메소드는 주소값을 비교한다. → 원하느 값을 비교하기 위해서는 equals메소드를 오버라이딩하여 재정의 해야한다.<br><br><br></li>
+</ul>
+<h3 id="Wrapper-class"><a href="#Wrapper-class" class="headerlink" title="Wrapper class"></a>Wrapper class</h3><p>Wrapper class란 상호전환 시 , 사용하는 클래스</p>
+<p><img src="/images/java/java10-03.png" alt="Java"></p>
+<ul>
+<li>위의 기본형 data외에는 모두 reference 타입</li>
+<li>기본형 ← → reference 타입 상호전환이 필요할 수 있다.</li>
+</ul>
+<h4 id="Boxing"><a href="#Boxing" class="headerlink" title="Boxing"></a>Boxing</h4><p>기본 자료형을 Wrapper 클래스의 객체로 변경하는 과정<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Integer age = new Integer(30);</span><br></pre></td></tr></table></figure></p>
+<h4 id="Unboxing"><a href="#Unboxing" class="headerlink" title="Unboxing"></a>Unboxing</h4><p>각각의 객체를 기본 자료형으로 변경하여 사용하는 과정<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int age2 = age.intValue();</span><br></pre></td></tr></table></figure></p>
+<p><br><br></p>
+<h3 id="Nested-Class"><a href="#Nested-Class" class="headerlink" title="Nested Class"></a>Nested Class</h3><ul>
+<li>클래스안의 클래스라는 의미</li>
+<li>소스의 가독성을 높이고 유지보수를 용이하게 하기위해 사용</li>
+</ul>
+<h4 id="Inner-Class-내부-클래스"><a href="#Inner-Class-내부-클래스" class="headerlink" title="Inner Class(내부 클래스)"></a>Inner Class(내부 클래스)</h4><p><img src="/images/java/java10-01.png" alt="Java"></p>
+<ul>
+<li>클래스안에 클래스를 생성하는 것</li>
+</ul>
+<h4 id="Anonymous-Class-익명-내부-클래스"><a href="#Anonymous-Class-익명-내부-클래스" class="headerlink" title="Anonymous Class(익명 내부 클래스)"></a>Anonymous Class(익명 내부 클래스)</h4><p><img src="/images/java/java10-02.png" alt="Java"></p>
+<ul>
+<li>클래스를 한번만 사용하고 구현할 때, 추상클래스 및 상속없이 일회성으로 구현하기위해서 사용한다.<br><br><br></li>
+</ul>
+<h3 id="String-API"><a href="#String-API" class="headerlink" title="String API"></a>String API</h3><p><img src="/images/java/java10-04.png" alt="Java"></p>
+<ul>
+<li>불변성을 가진다.</li>
+<li>연산자를 통해 추가가능</li>
+<li>StringBuffer 클래스는 append로 추가가능</li>
+<li>.indexof(“<em>”) : </em>이 몇번째인지 찾는다. (시작 = 0)</li>
+<li>.substring(n1, n2) : n1 ~ n2 까지 추출</li>
+<li>trim() : 앞뒤 공백제거</li>
+<li>split(“<em>”) : </em>이 들어간 부분을 찾아서 *로 나누어 배열에 저장</li>
+<li>숫자를 String으로 변환 → n + “”;</li>
+<li>endsWith() / startWith() : ~시작 or 끝나는지 체크</li>
+<li>valueof : 형변환 시, 사용<br><br><br></li>
+</ul>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#Java">
+    <span class="tag-code">Java</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/11/09/Java/java09/">
+        <span class="nav-arrow">← </span>
+        
+          reference타입, instanceof, 추상클래스, 객체와 인스턴스의 차이
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2018/11/13/Java/java11/">
+        
+          Calendar, GregorianCalandar, Random
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#KOSTA-DAY10"><span class="toc-nav-text">KOSTA DAY10</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Java"><span class="toc-nav-text">Java</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#인터페이스"><span class="toc-nav-text">인터페이스</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#인터페이스를-사용하는-이유"><span class="toc-nav-text">인터페이스를 사용하는 이유</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#추상클래스와-인터페이스의-공통점과-차이점"><span class="toc-nav-text">추상클래스와 인터페이스의 공통점과 차이점</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Object-class"><span class="toc-nav-text">Object class</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Wrapper-class"><span class="toc-nav-text">Wrapper class</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Boxing"><span class="toc-nav-text">Boxing</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Unboxing"><span class="toc-nav-text">Unboxing</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Nested-Class"><span class="toc-nav-text">Nested Class</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Inner-Class-내부-클래스"><span class="toc-nav-text">Inner Class(내부 클래스)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Anonymous-Class-익명-내부-클래스"><span class="toc-nav-text">Anonymous Class(익명 내부 클래스)</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#String-API"><span class="toc-nav-text">String API</span></a></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2018/11/12/Java/java10/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

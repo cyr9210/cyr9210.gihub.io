@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      Git - status, init, commit, config, log, reset, revert | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>Git - status, init, commit, config, log, reset, revert</h2>
+  <p class="post-date">2019-04-19</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p><img src="/images/git_logo.png" alt="gitlogo"><br>개발공부를 시작하면서.. git에대한 이야기를 참 많이 들었습니다.<br>커밋, 푸쉬, 풀등… 알 수 없는 이야기들을 하고 나중에 그것이 git과 관련된 명령어였다는 사실을 알게되었습니다.<br>회사에 일을 시작하기전에 알아야 할 필수적인 내용이라고 듣게되어 좀 자세히 알아보려고 합니다.<br>git을 사용하는 방법에는 gui방식의 툴(소스트리, 크라켄)을 사용하는 방법도 있지만 보다 본질적으로 이해하고 싶어 명령어에 대해 공부하게 되었습니다.</p>
+<h3 id="Git-명령어01"><a href="#Git-명령어01" class="headerlink" title="Git 명령어01"></a>Git 명령어01</h3><h4 id="Git-1"><a href="#Git-1" class="headerlink" title="Git"></a>Git</h4><ul>
+<li>컴퓨터 파일의 변경사항을 추적하고 여러 명의 사용자들 간에 해당 파일들의 작업을 조율하기 위한 분산 버전 관리 시스템(DVCS)이다.</li>
+</ul>
+<h4 id="git-version"><a href="#git-version" class="headerlink" title="git --version"></a>git --version</h4><ul>
+<li>git 버전확인</li>
+</ul>
+<h4 id="git-config"><a href="#git-config" class="headerlink" title="git config"></a>git config</h4><ul>
+<li>환경설정</li>
+<li>git config --global --list<ul>
+<li>현재 설정정보를 조회</li>
+<li>global 명령어는 전역설정에 대한 옵션</li>
+</ul>
+</li>
+<li>git config --global user.name “사용자명”<ul>
+<li>필수</li>
+<li>원격 저장소 같도록하는것이 좋다. </li>
+</ul>
+</li>
+<li>git config --global user.email “이메일주소”<ul>
+<li>필수 </li>
+<li>원격 저장소 같도록하는것이 좋다.</li>
+</ul>
+</li>
+</ul>
+<h4 id="git-init"><a href="#git-init" class="headerlink" title="git init"></a>git init</h4><p><img src="/images/git/git01-1.png" alt="git"></p>
+<ul>
+<li>현재 디렉토리에 git 저장소를 생성한다.</li>
+<li>git init 명령어를 사용하면 현재 디렉토리에 .git이라는 디렉토리가 생성되며 버전관리를 시작할 수 있습니다.<ul>
+<li>.git 폴더에는 버전에 대한 정보를 가지고 있다. (삭제하면 안됩니다.)</li>
+</ul>
+</li>
+</ul>
+<h4 id="git-status"><a href="#git-status" class="headerlink" title="git status"></a>git status</h4><ul>
+<li>git의 저장소는 3단계로 이루어져 있다.<ul>
+<li>작업 디렉토리 (unstaging)</li>
+<li>인덱스 (staging)</li>
+<li>HEAD (최종 확정본 commit)</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>HEAD는 현재 브랜치의 가장 최신커밋을 의미한다.</p>
+</blockquote>
+<ul>
+<li>git status<ul>
+<li>커밋되지 않은 변경사항을 조회합니다.<br><img src="/images/git/git01-3.png" alt="git"></li>
+</ul>
+</li>
+</ul>
+<h4 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h4><ul>
+<li><p>스테이징 영역에 올라간 파일만이 commit 즉, 버전등록이 가능하다.<br>  <img src="/images/git/git01-2.png" alt="git"></p>
+</li>
+<li><p>git add &lt;파일이름&gt;<br>  <img src="/images/git/git01-4.png" alt="git"></p>
+<ul>
+<li>untracked file(버전관리를 하지않는 파일)을 버전관리 시작해주며 스테이징 영역으로 올려준다. </li>
+<li>버전관리를 하고 있으나 스테이징영역에 올라기지 않은 파일을 스테이징 영역으로 올려준다. </li>
+</ul>
+</li>
+<li><p>git add .</p>
+<ul>
+<li>untracked 및 unstaged 파일을 모두 add 한다.<br><img src="/images/git/git01-5.png" alt="git"></li>
+</ul>
+</li>
+<li><p>git add -i</p>
+<ul>
+<li>대화식으로 추가 가능하다.<br><img src="/images/git/git01-12.png" alt="git"></li>
+</ul>
+</li>
+</ul>
+<h4 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h4><ul>
+<li>버전을 만드는 작업</li>
+<li><p>git commit<br>  <img src="/images/git/git01-6.png" alt="git"></p>
+<ul>
+<li>버전이름을 정의하여 현재 staging된 파일들을 버전으로 등록한다.<br><img src="/images/git/git01-7.png" alt="git"><ul>
+<li>i 입력 후 메세지 입력</li>
+<li>메세지 입력 완료후 esc </li>
+<li>:wq 로 쓰고 나가기(write, quit)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>git commit -m “&lt;커밋메세지&gt;”</p>
+<ul>
+<li>커밋메세지와 함께 명령할 수 있다.</li>
+</ul>
+</li>
+<li><p>git commit -C HEAD -a --amend</p>
+<ul>
+<li>최근 커밋을 덮어쓴다.<ul>
+<li>HEAD를 commit 로그로 변경하면 해당 commit의 메세지로 커밋이 덮어써진다.</li>
+</ul>
+</li>
+<li>-c 사용 시, 커멧메세지를 변경 할 수 있다.</li>
+</ul>
+</li>
+</ul>
+<h4 id="git-diff"><a href="#git-diff" class="headerlink" title="git diff"></a>git diff</h4><ul>
+<li><p>사전 조건(test03.txt)<br>  <img src="/images/git/git01-8.png" alt="git"></p>
+</li>
+<li><p>git diff</p>
+<ul>
+<li>스테이징 영역과 작업 디렉토리의 차이정을 알려준다.<br><img src="/images/git/git01-9.png" alt="git"></li>
+</ul>
+</li>
+<li>git diff -cached<ul>
+<li>스테이징 영역과 저장소<br><img src="/images/git/git01-10.png" alt="git"></li>
+</ul>
+</li>
+<li>git diff HEAD<ul>
+<li>작업디렉토리, 스테이징영역, 저장소 모두 볼 수 있다.<br><img src="/images/git/git01-11.png" alt="git"></li>
+</ul>
+</li>
+</ul>
+<h4 id="git-log"><a href="#git-log" class="headerlink" title="git log"></a>git log</h4><ul>
+<li>git log<ul>
+<li>커밋로그 조회</li>
+<li>-1, -2 등을 붙여 조회로그 갯수를 지정할 수 있다.</li>
+<li>-p 옵션을 주면 변경사항도 같이 조회된다.</li>
+<li>--decorate --graph  옵션을 주면 브랜치 트리를 볼 수 있다.</li>
+</ul>
+</li>
+<li>git blame<ul>
+<li>갈 줄 앞에 커밋명과 커밋한 사람등의 정보를 볼 수 있습니다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="reset-과-revert"><a href="#reset-과-revert" class="headerlink" title="reset 과 revert"></a>reset 과 revert</h3><ul>
+<li><p>git reset </p>
+<ul>
+<li>과거 버전으로 돌아가기</li>
+<li>--hard : 돌아가려는 이력이후의 모든 내용을 지운다.</li>
+<li>--soft : 돌아가려 했던 이력으로 되돌아 갔지만, 이후의 내용이 지워지지 않고, 해당 내용의 인덱스(또는 스테이지)도 그대로 </li>
+<li>--mixed : 역시 이력은 되돌려집니다. 이후에 변경된 내용에 대해서는 남아있지만, 인덱스는 초기화 됩니다.</li>
+</ul>
+</li>
+<li><p>git revert</p>
+<ul>
+<li>기존의 커밋에서 변경한 내용을 취소해서 새로운 커밋을 만듭니다. </li>
+</ul>
+</li>
+<li><p>차이점 : <a href="https://www.popit.kr/%EA%B0%9C%EB%B0%9C%EB%B0%94%EB%B3%B4%EB%93%A4-git-back-to-the-future/" target="_blank" rel="noopener">https://www.popit.kr/%EA%B0%9C%EB%B0%9C%EB%B0%94%EB%B3%B4%EB%93%A4-git-back-to-the-future/</a></p>
+</li>
+</ul>
+<hr>
+<p>다음 블로깅에서는 branch와 관련된 내용에 관하여 정리하겠습니다.<br><br><br></p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#Git">
+    <span class="tag-code">Git</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/04/18/Spring/springboot16/">
+        <span class="nav-arrow">← </span>
+        
+          스프링 부트 운영 - Actuator
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/04/19/Git/git02/">
+        
+          Git - branch, stash
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Git"><span class="toc-nav-text">Git</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Git-명령어01"><span class="toc-nav-text">Git 명령어01</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Git-1"><span class="toc-nav-text">Git</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#git-version"><span class="toc-nav-text">git --version</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#git-config"><span class="toc-nav-text">git config</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#git-init"><span class="toc-nav-text">git init</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#git-status"><span class="toc-nav-text">git status</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#git-add"><span class="toc-nav-text">git add</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#git-commit"><span class="toc-nav-text">git commit</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#git-diff"><span class="toc-nav-text">git diff</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#git-log"><span class="toc-nav-text">git log</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#reset-과-revert"><span class="toc-nav-text">reset 과 revert</span></a></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/04/19/Git/git01/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

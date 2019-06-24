@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      스프링 부트 활용 - 로깅 | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>스프링 부트 활용 - 로깅</h2>
+  <p class="post-date">2019-04-10</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p><img src="/images/springboot_logo.png" alt="springboot"></p>
+<h1 id="스프릥-부트-개념과-활용09-inflearn-백기선"><a href="#스프릥-부트-개념과-활용09-inflearn-백기선" class="headerlink" title="스프릥 부트 개념과 활용09(inflearn) - 백기선"></a>스프릥 부트 개념과 활용09(inflearn) - 백기선</h1><h2 id="Spring-boot"><a href="#Spring-boot" class="headerlink" title="Spring boot"></a>Spring boot</h2><h3 id="스프링-부트-기본-로거-설정"><a href="#스프링-부트-기본-로거-설정" class="headerlink" title="스프링 부트 기본 로거 설정"></a>스프링 부트 기본 로거 설정</h3><h4 id="로깅-퍼사드-VS-로거"><a href="#로깅-퍼사드-VS-로거" class="headerlink" title="로깅 퍼사드 VS 로거"></a>로깅 퍼사드 VS 로거</h4><ul>
+<li><p>로깅 퍼사드</p>
+<ul>
+<li>로거를 바꿔낄 수 있게 해준다.</li>
+<li>Commons Logging​, SLF4j</li>
+</ul>
+</li>
+<li><p>로거</p>
+<ul>
+<li>실제로 로그를 찍는 역할</li>
+<li>JUL, Log4J2, ​Logback</li>
+</ul>
+</li>
+</ul>
+<h4 id="스프링-5에-로거-관련-변경-사항"><a href="#스프링-5에-로거-관련-변경-사항" class="headerlink" title="스프링 5에 로거 관련 변경 사항"></a>스프링 5에 로거 관련 변경 사항</h4><ul>
+<li><a href="https://docs.spring.io/spring/docs/5.0.0.RC3/spring-framework-reference/overview.html#overview-logging" target="_blank" rel="noopener">reference 문서</a></li>
+<li>Spring-JCL(자카르타 커먼스 로깅)<ul>
+<li>Commons Logging -&gt; SLF4j or Log4j2</li>
+<li>pom.xml에 exclusion 안해도 됨.(Spring boot 2 부터..)</li>
+<li>Log4j2가 있으면 Log4j2를 사용한다.<br>SLF4j만 있으면 SLF4j를 쓴다.</li>
+</ul>
+</li>
+<li>스프링 부트는 Commons Logging을 쓴다.<br>Commons Logging을 사용해도 SLF4j로 가고 Logback로 간다.<br><strong>결국 Logback이 로그를 찍는다.</strong></li>
+</ul>
+<h4 id="스프링-부트-로깅"><a href="#스프링-부트-로깅" class="headerlink" title="스프링 부트 로깅"></a>스프링 부트 로깅</h4><ul>
+<li>기본포맷</li>
+<li>--debug (일부 핵심 라이브러리만 디버깅 모드로)</li>
+<li>--trace (전부 다 디버깅 모드로)</li>
+<li>컬러 출력: spring.output.ansi.enabled</li>
+<li>파일 출력: logging.file 또는 logging.path<ul>
+<li>file : 파일</li>
+<li>path : 디렉토리</li>
+</ul>
+</li>
+<li>로그 레벨 조정: logging.level.패지키 = 로그 레벨</li>
+</ul>
+<h3 id="커스터-마이징"><a href="#커스터-마이징" class="headerlink" title="커스터 마이징"></a>커스터 마이징</h3><ul>
+<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/howto-logging.html" target="_blank" rel="noopener">reference 문서</a></li>
+</ul>
+<h4 id="커스텀-로그-설정-파일-사용하기"><a href="#커스텀-로그-설정-파일-사용하기" class="headerlink" title="커스텀 로그 설정 파일 사용하기"></a>커스텀 로그 설정 파일 사용하기</h4><ul>
+<li><p>Logback: logback-spring.xml</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;configuration&gt;</span><br><span class="line">	&lt;include resource=&quot;org/springframework/boot/logging/logback/base.xml&quot;/&gt;</span><br><span class="line">	&lt;logger name=&quot;패키지_path&quot; level=&quot;DEBUG&quot;/&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
+<p>  <img src="/images/springboot/springboot09-1.png" alt="springboot"></p>
+</li>
+<li><p>Log4J2: log4j2-spring.xml</p>
+</li>
+<li>JUL (비추): logging.properties</li>
+<li><p>Logback extension</p>
+<ul>
+<li>logback-spring.xml을 사용해야한다.(logback.spring.xml 사용 시, 로딩이 일찍되어 사용불가)</li>
+<li>프로파일 <springprofile name="”프로파일”"></springprofile></li>
+<li>Environment 프로퍼티 <springproperty></springproperty></li>
+</ul>
+</li>
+<li><p>로거를 Log4j2로 변경하기</p>
+<ul>
+<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/howto-logging.html#howto-configure-log4j-for-logging" target="_blank" rel="noopener">reference문서</a></li>
+<li><p>exclusion logging(spring-boot-starter)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;exclusions&gt;</span><br><span class="line">		&lt;exclusion&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-boot-starter-logging&lt;/artifactId&gt;</span><br><span class="line">		&lt;/exclusion&gt;</span><br><span class="line">&lt;/exclusions&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>의존성 추가</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;spring-boot-starter-log4j2&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>앞서 말했던 스프링부트2버전대부터 pom.xml에 exclusion없이 사용할 수 있다고 하였는데, 그 경우에는 로깅퍼사드를 변경하는 경우이며, 이 경우에는 로거를 변경하는 경우이다.</strong><br><img src="/images/springboot/springboot09-3.png" alt="springboot"></p>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#SpringBoot">
+    <span class="tag-code">SpringBoot</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/04/08/Spring/springboot08/">
+        <span class="nav-arrow">← </span>
+        
+          스프링 부트 활용 - 프로파일
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/04/10/Spring/springboot10/">
+        
+          스프링 부트 활용 - Test
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#스프릥-부트-개념과-활용09-inflearn-백기선"><span class="toc-nav-text">스프릥 부트 개념과 활용09(inflearn) - 백기선</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Spring-boot"><span class="toc-nav-text">Spring boot</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#스프링-부트-기본-로거-설정"><span class="toc-nav-text">스프링 부트 기본 로거 설정</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#로깅-퍼사드-VS-로거"><span class="toc-nav-text">로깅 퍼사드 VS 로거</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#스프링-5에-로거-관련-변경-사항"><span class="toc-nav-text">스프링 5에 로거 관련 변경 사항</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#스프링-부트-로깅"><span class="toc-nav-text">스프링 부트 로깅</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#커스터-마이징"><span class="toc-nav-text">커스터 마이징</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#커스텀-로그-설정-파일-사용하기"><span class="toc-nav-text">커스텀 로그 설정 파일 사용하기</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/04/10/Spring/springboot09/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      데이터베이스, Oracle , SELECT | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>데이터베이스, Oracle , SELECT</h2>
+  <p class="post-date">2018-11-26</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p><img src="/images/oracledb_logo.png" alt="DB"></p>
+<h1 id="KOSTA-DAY20"><a href="#KOSTA-DAY20" class="headerlink" title="KOSTA DAY20"></a>KOSTA DAY20</h1><h2 id="DataBase"><a href="#DataBase" class="headerlink" title="DataBase"></a>DataBase</h2><h3 id="데이터베이스"><a href="#데이터베이스" class="headerlink" title="데이터베이스"></a>데이터베이스</h3><p>서로 연관성을 가지며, 중복없이 지속적으로 유지 관리해야 할 유용한 데이터들의 집합</p>
+<ul>
+<li>데이터 베이스 이전에 데이터 저장을 위해서 파일시스템을 사용했으나, 많은 문제점이 있었다.<ul>
+<li>중복 데이터 저장 문제 발생</li>
+<li>대용량 데이터 관리 역부족</li>
+<li>데이터 공유 어려움 (다중 사용자)</li>
+<li>보안 취약</li>
+</ul>
+</li>
+<li>상기와 같은 문제점을 극복하고 대량의 데이터를 체계적으로 저장 및 관리하기위해 만들어졌다.</li>
+</ul>
+<h4 id="DBMS"><a href="#DBMS" class="headerlink" title="DBMS"></a>DBMS</h4><p>Database Management System(데이터베이스 관리시스템)<br>대용량 데이터를 쉽게 저장하고, 효율적으로 CRUD(Create Read Update Delete)할 수 있는 환경을 제공해주는 소프트웨어</p>
+<ul>
+<li>대표적인 DBMS로는 Oracle, mySQL, MS-SQL, Informix, DB2가 있다.</li>
+</ul>
+<h4 id="관계형-DBMS"><a href="#관계형-DBMS" class="headerlink" title="관계형 DBMS"></a>관계형 DBMS</h4><p><img src="/images/database/DB01-01.png" alt="DB"></p>
+<ul>
+<li>가장대표적인 DBMS로 실세계 데이터들을 2차원적인 표(table)형식으로 표현</li>
+<li>데이터 무결성, 트래잭션 처리 등 기본적 기능이 우수</li>
+<li>질의어(Query Language)를 사용한 데이터 접근</li>
+<li>정형화된 DATA를 다룸</li>
+<li>비정형화된 DATA는 No-SQL에서 다룸(빅데이터에서 사용)<br><br><br></li>
+</ul>
+<h3 id="Oracle"><a href="#Oracle" class="headerlink" title="Oracle"></a>Oracle</h3><p>가장 대표적인 관계형 DBMS중의 하나이다.(회사명 과 DBMS 제품명 동일)</p>
+<p><img src="/images/database/DB01-02.png" alt="DB"></p>
+<blockquote>
+<p>KOSTA 교육 중에는 무료 버젼인 XE버젼을 사용 할 것이다.</p>
+</blockquote>
+<h4 id="Oracle-xe-설치-및-데이터-접속-설"><a href="#Oracle-xe-설치-및-데이터-접속-설" class="headerlink" title="Oracle xe 설치 및 데이터 접속/설"></a>Oracle xe 설치 및 데이터 접속/설</h4><ul>
+<li>windows : <a href="https://medium.com/@cyr9210/kosta-day20-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-oracle-select-b97fe4913f19" target="_blank" rel="noopener">medium 최용락</a></li>
+<li><p>macOS기준 (참고블로그 : <a href="https://banbanmumani.github.io/2018/01/05/osx%EC%97%90%EC%84%9CoracleDB%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/" target="_blank" rel="noopener">맥(osx)에서 oracle DB 사용하기</a>)</p>
+<ul>
+<li>docker 가입 및 설치</li>
+<li>sql developer 다운로드</li>
+<li><p><a href="https://hub.docker.com/" target="_blank" rel="noopener">도커허브</a>를 통해서 원하는 프로그램을 검색한다.(oracle12c) </p>
+<p><img src="/images/database/DB01-09.png" alt="DB"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull sath89/oracle-12c</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>위의 명령어를 입력한다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name oracle12c -d -p 8080:8080 -p 1521:1521 -v ~/my/oracle/data:/u01/app/oracle sath89/oracle-12c</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>-v옵션을 주어 저장될 위치를 설정해준다. (-v옵션이 없을경우, 컨테이너를 중지하는순간 데이터가 삭제 된다.)<br>데이터는 ‘~/my/oracle/data’경로에 저장된다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm oracle12c</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>위의 명령어는 컨테이너를 삭제하는 명령어이다.(컨테이너 저장으로 인한 오류 발생 시, 삭제 후 다시 진행요함)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs -f  oracle12c</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>위의 명령어를 입력할 시, 로그를 출력하여 초기화 진행상황을 알 수 있다. 100% 완료 될때까지 기다리기.</p>
+</li>
+<li>터미널 재시작</li>
+</ul>
+</li>
+<li><p>sql 접속 </p>
+<ul>
+<li>docker exec -it oracle12c sqlplus<br>ID : system<br>PW : oracle</li>
+</ul>
+</li>
+<li><p>sql developer 계정 생성<br>사용자이름 : system<br>pw : oracle</p>
+</li>
+<li><p>kosta192 계정 생성</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">create user kosta192 identified by 1234</span><br><span class="line">conn sys as sysdba (pw : oracle)</span><br><span class="line">grant connect, resource, dba to kosta192;</span><br><span class="line">conn kosta 192/1234</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>scott 계정확인</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conn sys as sysdba; //(pw : oracle)</span><br><span class="line">SELECT username, account_status FROM dba_users WHERE username=&apos;SCOTT&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>scott계정 잠금해제 (참고블로그 : <a href="https://nabiro.tistory.com/160" target="_blank" rel="noopener">Oracle 에서 scott 계정 락해제 방법</a>) </p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter user scott account unlock;</span><br><span class="line">ALTER user scott IDENTIFIED BY tiger;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><br><br></p>
+<h3 id="SELECT"><a href="#SELECT" class="headerlink" title="SELECT"></a>SELECT</h3><p><img src="/images/database/DB01-06.png" alt="DB"></p>
+<ul>
+<li><p>employees 테이블의 전체 데이터를 불러오기 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM employees</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>중복된 데이터 제거</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT DISTINCT job_id FROM employees;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>정렬 묶음 검색(ORDER BY 절)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT ENO, ENAME, SAL FROM EMP</span><br><span class="line">ORDER BY SAL DESC, ENO;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="/images/database/DB01-07.png" alt="DB"></p>
+<ul>
+<li><p>조건에 맞는 일부데이터(ROW) 불러오기 (WHERE절)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT DEMPLOYEE_ID, LAST_NAME, HIRE_DATE FROM EMPLOYEES</span><br><span class="line">WHERE LAST NAME = ‘King’;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>BETWEEN AND 연산자</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT employee_id, last_name, salary FROM employees</span><br><span class="line">where salary BETWEEN 5000 AND 10000;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>OR 연산자</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT employee_id, last_name, job_id FROM employees</span><br><span class="line">WHERE job_id = ‘FI_MGR’ OR job_id = ‘FI_ACCOUNT’;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>IN연산자</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT employee_id, last_name, job_id FROM employees</span><br><span class="line">WHERE job_id IN (‘FI_MGR’, ‘FI_ACCOUNT’;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>NOT 연산자</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT department_id, department_name FROM departements</span><br><span class="line">WHERE NOT department_id = 10;</span><br><span class="line"></span><br><span class="line">SELECT department_id, department_name FROM departements</span><br><span class="line">WHERE department_id &lt;&gt; 10;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>IS NOT NULL 연산자</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT employee_id, last_name, commission_pct FROM employees</span><br><span class="line">WHERE commission_pct IS NOT NULL;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="/images/database/DB01-08.png" alt="DB"></p>
+<ul>
+<li>LIKE 연산자 (%연산자와 함께 잘사용)<ul>
+<li>‘김%’ = ‘김’으로 시작하는 모든 문자열</li>
+<li>‘%과% = ‘과’로끝나는 모든 문자열</li>
+<li>‘%김%’ = ‘김’이라는 문자를 포함하는 모든 문자열</li>
+<li>‘화_’ =’화’로 시작하는 2글자 문자열</li>
+<li>‘_등_’ = ‘등’이 가운데 들어간 3글자 문자열</li>
+</ul>
+</li>
+<li>그룹함수<ul>
+<li>sum(), avg(), max(), count()</li>
+<li>SELECT sum(salary) FROM employees; =인건비 총합</li>
+</ul>
+</li>
+<li>GROUP BY절<ul>
+<li>부서별 평균 급여를 검색하라.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT department_id, avg(salary) FROM employees</span><br><span class="line">GROUP BY department_id;</span><br><span class="line">GROUP BY 절 사용시 컬럼값은 그룹함수 및 GROUP BY절 인자만 들어갈 수 있다.</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#OracleDB">
+    <span class="tag-code">OracleDB</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/11/23/Project/MenuList-System/">
+        <span class="nav-arrow">← </span>
+        
+          MenuList System(Java Mini Project)
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2018/11/27/OracleDB/oracle02/">
+        
+          HAVING, 함수, DDL, DML, 제약조건, JOIN
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#KOSTA-DAY20"><span class="toc-nav-text">KOSTA DAY20</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#DataBase"><span class="toc-nav-text">DataBase</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#데이터베이스"><span class="toc-nav-text">데이터베이스</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#DBMS"><span class="toc-nav-text">DBMS</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#관계형-DBMS"><span class="toc-nav-text">관계형 DBMS</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Oracle"><span class="toc-nav-text">Oracle</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Oracle-xe-설치-및-데이터-접속-설"><span class="toc-nav-text">Oracle xe 설치 및 데이터 접속/설</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#SELECT"><span class="toc-nav-text">SELECT</span></a></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2018/11/26/OracleDB/oracle01/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

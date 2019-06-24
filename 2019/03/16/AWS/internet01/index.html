@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      인터넷, IP, 도메인, DNS, 포트, 포트포워딩, 절대경로, 상대경로, 유동IP, DDNS | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>인터넷, IP, 도메인, DNS, 포트, 포트포워딩, 절대경로, 상대경로, 유동IP, DDNS</h2>
+  <p class="post-date">2019-03-16</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="생활코딩-인터넷"><a href="#생활코딩-인터넷" class="headerlink" title="생활코딩 - 인터넷"></a>생활코딩 - 인터넷</h1><h2 id="web"><a href="#web" class="headerlink" title="web"></a>web</h2><p>저는 네트워크에 대해서 http완벽가이드라는 교재로 공부할 예정이지만..<br>그전에 AWS를 공부하기위해 선행학습으로 인터넷과 네트워크를 간단하게 정리해보려고 합니다.🙂<br><br>관련강의 : <a href="https://opentutorials.org/course/1688/9483" target="_blank" rel="noopener">생활코딩 - 인터넷</a> </p>
+<hr>
+<h3 id="인터넷"><a href="#인터넷" class="headerlink" title="인터넷"></a>인터넷</h3><ul>
+<li>웹애플리케이션에 모든 사람들이 접근할 수 있도록 해주는 것이다.</li>
+</ul>
+<h4 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h4><p><img src="/images/web/internet01-01.png" alt="internet"></p>
+<ul>
+<li>Internet Protocol Address</li>
+<li>접근하기 위한 주소</li>
+<li>단점<ul>
+<li>기억하기 어렵다.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>myip를 검색하면 자신의 ip를 알 수 있는 여러 서비스가 있다.</p>
+</blockquote>
+<h4 id="도메인"><a href="#도메인" class="headerlink" title="도메인"></a>도메인</h4><ul>
+<li>소유지</li>
+<li>서버컴퓨터의 이름</li>
+<li>하나의 IP주소를 대응하는 관계이다.</li>
+<li>기억하기 쉽게하기 위해</li>
+<li>도메인을 통해 서버에 접속할 수 없다. <ul>
+<li>사람이 보기 편하것일 뿐</li>
+</ul>
+</li>
+<li>IP주소를 통해서만 접속할 수 있다.</li>
+<li>도메인을 구입하여 네임서버에 등록해야한다.</li>
+</ul>
+<h4 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h4><ul>
+<li>Domain Name System</li>
+<li>도메인 네임이 동작하는 체계</li>
+</ul>
+<h5 id="동작원리"><a href="#동작원리" class="headerlink" title="동작원리"></a>동작원리</h5><p><img src="/images/web/internet01-02.png" alt="internet"></p>
+<ul>
+<li>Name Server에 접속하여 해당 IP주소를 요청하고 응답받는다.</li>
+<li>응답받은 IP주소로 접속한다.<br><br><br></li>
+</ul>
+<h3 id="IPv6"><a href="#IPv6" class="headerlink" title="IPv6"></a>IPv6</h3><ul>
+<li>IP는 0.0.0.0 ~ 255.255.255.255 의 주소체계를 가진다. <ul>
+<li>42억개의 IP가 만들어질 수 있다.</li>
+<li>부족하다.</li>
+<li>해결책이 필요하다.</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/web/internet01-03.png" alt="internet"></p>
+<ul>
+<li>IPv4 <ul>
+<li>기존체계</li>
+</ul>
+</li>
+<li>IPv6<ul>
+<li>해결책으로 엄청나게 많은 양의 IP주소 사용할 수 있는 주소체계</li>
+<li>아직은 IPv4와 공존하고 있다. 언젠가는 사라질것…<br><br><br></li>
+</ul>
+</li>
+</ul>
+<h3 id="포트"><a href="#포트" class="headerlink" title="포트"></a>포트</h3><p><img src="/images/web/internet01-05.png" alt="internet"></p>
+<h4 id="공유기"><a href="#공유기" class="headerlink" title="공유기"></a>공유기</h4><p><img src="/images/web/internet01-04.png" alt="internet"></p>
+<ul>
+<li>하나의 공인IP로 여러개의 컴퓨터에서 인터넷을 사용할 수 있도록 하는것</li>
+</ul>
+<h4 id="포트포워딩"><a href="#포트포워딩" class="headerlink" title="포트포워딩"></a>포트포워딩</h4><p><img src="/images/web/internet01-06.png" alt="internet"></p>
+<ul>
+<li>웹서버가 설치되어있는 IP로 토스해준다.</li>
+</ul>
+<h5 id="공유기에서-포트포워딩-설정-iptime기준"><a href="#공유기에서-포트포워딩-설정-iptime기준" class="headerlink" title="공유기에서 포트포워딩 설정 (iptime기준)"></a>공유기에서 포트포워딩 설정 (iptime기준)</h5><p><img src="/images/web/internet01-07.png" alt="internet"></p>
+<ul>
+<li>192.168.0.1 접속 (대부분의 공유기가 해당 IP를 사용한다. 아닐수 있음.)</li>
+<li>포트포워딩 설정 탭에서 토스하려는 IP주소를 입력한다.<br><img src="/images/web/internet01-08.png" alt="internet"><br><br><br></li>
+</ul>
+<h3 id="절대경로-상대경로"><a href="#절대경로-상대경로" class="headerlink" title="절대경로, 상대경로"></a>절대경로, 상대경로</h3><p><img src="/images/web/internet01-09.png" alt="internet"></p>
+<h4 id="절대경로"><a href="#절대경로" class="headerlink" title="절대경로"></a>절대경로</h4><p>나의 위치와 무관</p>
+<h4 id="상대경로"><a href="#상대경로" class="headerlink" title="상대경로"></a>상대경로</h4><p>나의 위치에 따라서 달라짐</p>
+<ul>
+<li>/ 가 맨앞에 한개 있으면 최상위 디렉토리를 의미한다.</li>
+<li>../ 는 현재 디렉토리의 상위 디렉토리</li>
+<li>./ 는 현재 디렉토리 (아무것도 없을때도 현재 디렉토리)<br><br><br></li>
+</ul>
+<h3 id="유동IP와-DDNS"><a href="#유동IP와-DDNS" class="headerlink" title="유동IP와 DDNS"></a>유동IP와 DDNS</h3><h4 id="유동IP"><a href="#유동IP" class="headerlink" title="유동IP"></a>유동IP</h4><ul>
+<li>오랫동안 사용하지 않은 IP를 회수</li>
+<li>새로운 가입자 및 사용자에게 준다.</li>
+<li>다시 사용 시, 새로운 IP부여</li>
+<li>Dynamic Address 라고 부른다.</li>
+<li>IP가 한정적이기 때문에 고갈문제를 해결하기 위해 사용한다.</li>
+</ul>
+<h4 id="DDNS"><a href="#DDNS" class="headerlink" title="DDNS"></a>DDNS</h4><ul>
+<li>Dynamic DNS(Domain Name System)</li>
+<li>주기적으로 네임서버에 접속하여 자신의 IP주소를 알려준다.</li>
+<li>사용자는 도메인 네임으로 접속</li>
+<li>DDNS는 도메인과 호스트의 IP를 지속적으로 동기화 시키고 있다.</li>
+</ul>
+<h4 id="iptime-DDNS설정"><a href="#iptime-DDNS설정" class="headerlink" title="iptime DDNS설정"></a>iptime DDNS설정</h4><p><img src="/images/web/internet01-10.png" alt="internet"></p>
+<ul>
+<li>iptime 펌웨어 버전이 9.58이상이어야 한다.</li>
+<li>해당 PC와 연결되어 있는 공인IP가 바뀌면 도메인 이름과 동기화 시켜준다.</li>
+<li>도메인이름은 Domain_name.iptime.org 로 설정한다.</li>
+<li>id와 pw 설정</li>
+<li>정상등록이라고 표시되면 DDNS설정 완료</li>
+</ul>
+<p><strong>도메인을 구입하여 DDNS서비스 이용 시, 무료 서비스 : <a href="http://freedns.afraid.org/" target="_blank" rel="noopener">FreeDNS</a></strong><br><br><br></p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#Web">
+    <span class="tag-code">Web</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/03/14/Algorithm/doitAl01/">
+        <span class="nav-arrow">← </span>
+        
+          알고리즘, 반복 (doit-알고리즘)
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/03/20/Spring/springframework-core01/">
+        
+          IoC 컨테이너와 빈
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#생활코딩-인터넷"><span class="toc-nav-text">생활코딩 - 인터넷</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#web"><span class="toc-nav-text">web</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#인터넷"><span class="toc-nav-text">인터넷</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#IP"><span class="toc-nav-text">IP</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#도메인"><span class="toc-nav-text">도메인</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#DNS"><span class="toc-nav-text">DNS</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#동작원리"><span class="toc-nav-text">동작원리</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#IPv6"><span class="toc-nav-text">IPv6</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#포트"><span class="toc-nav-text">포트</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#공유기"><span class="toc-nav-text">공유기</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#포트포워딩"><span class="toc-nav-text">포트포워딩</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#공유기에서-포트포워딩-설정-iptime기준"><span class="toc-nav-text">공유기에서 포트포워딩 설정 (iptime기준)</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#절대경로-상대경로"><span class="toc-nav-text">절대경로, 상대경로</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#절대경로"><span class="toc-nav-text">절대경로</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#상대경로"><span class="toc-nav-text">상대경로</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#유동IP와-DDNS"><span class="toc-nav-text">유동IP와 DDNS</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#유동IP"><span class="toc-nav-text">유동IP</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#DDNS"><span class="toc-nav-text">DDNS</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#iptime-DDNS설정"><span class="toc-nav-text">iptime DDNS설정</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/03/16/AWS/internet01/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

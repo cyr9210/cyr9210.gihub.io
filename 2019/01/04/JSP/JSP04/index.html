@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      설계모델, 모델1설계방식, 모델2설계방식(MVC패턴) | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>설계모델, 모델1설계방식, 모델2설계방식(MVC패턴)</h2>
+  <p class="post-date">2019-01-04</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="KOSTA-DAY42"><a href="#KOSTA-DAY42" class="headerlink" title="KOSTA DAY42"></a>KOSTA DAY42</h1><h2 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h2><p><img src="/images/JSP_logo.png" alt="JSP"></p>
+<h3 id="설계모델"><a href="#설계모델" class="headerlink" title="설계모델"></a>설계모델</h3><ul>
+<li>애플리케이션을 설계할 때 가장 먼저 해야 할 일은 프로그램이 해야 할 일을 적당한 크기로 나누어서 모듈화하는 것이다.</li>
+<li>JSP 규격서의 초기 버전인 JavaServer Pages– Specification 0.92에서 소개하고 있는 설계 모델인 모델 1과 모델 2에서도 웹 애플리케이션이 해야 할 일을 데이터 입력, 데이터 처리, 데이터 출력으로 구분하여 모듈화하는 방법을 제시하고 있다.</li>
+<li>모델 1은 비교적 간단한 웹 애플리케이션에 적합한 설계 모델이며, 이 모델에서는 애플리케이션을 두 종류의 모듈로 나누어서 각각 JSP 페이지와 자바빈 클래스로 구현하도록 제안하고 있다.</li>
+</ul>
+<h3 id="모델1-설계방식"><a href="#모델1-설계방식" class="headerlink" title="모델1 설계방식"></a>모델1 설계방식</h3><h4 id="모델1-개요"><a href="#모델1-개요" class="headerlink" title="모델1 개요"></a>모델1 개요</h4><p><img src="/images/jsp/JSP04-01.png" alt="JSP"></p>
+<ul>
+<li>JSP만 이용하여 개발하는 경우</li>
+<li>JSP + Java Bean을 이용하여 개발하는 경우</li>
+<li>Model2의 Controller 개념이 모호</li>
+</ul>
+<h4 id="장점"><a href="#장점" class="headerlink" title="장점"></a>장점</h4><ul>
+<li>개발속도가 빠름</li>
+<li>개발자의 기술적인 숙련도가 낮아도 배우기 쉬워 빠르게 적용가능</li>
+</ul>
+<h4 id="단점"><a href="#단점" class="headerlink" title="단점"></a>단점</h4><ul>
+<li>JSP페이지에서 프레젠테이션 로직과 비지니스 로직이 혼재되어 복잡</li>
+<li>로직의 혼재로 인해 개발자와 디자이너의 작업 분리가 어려움</li>
+<li>JSP 코드의 복잡도로 인해 유지보수가 어려워짐</li>
+</ul>
+<p>웹 애플리케이션이 복잡해지고 사용자 요구가 증가함에 따 라 새로운 개발방식을 요구</p>
+<h3 id="모델2-설계방식"><a href="#모델2-설계방식" class="headerlink" title="모델2 설계방식"></a>모델2 설계방식</h3><h4 id="모델2-개요"><a href="#모델2-개요" class="headerlink" title="모델2 개요"></a>모델2 개요</h4><p><img src="/images/jsp/JSP04-02.png" alt="JSP"></p>
+<ul>
+<li>GUI 개발모델인 MVC를 웹 애플리케이션에 적용하여 구현한 방식</li>
+<li>Application의 역할을 Model — View — Controller로 분리</li>
+</ul>
+<h4 id="장점-1"><a href="#장점-1" class="headerlink" title="장점"></a>장점</h4><ul>
+<li>비즈니스 로직과 프리젠테이션의 분리로 인해 어플리케이션이 명료해지며 유지보수와 확장이 용이함</li>
+<li>디자이너와 개발자의 작업을 분리해 줌</li>
+</ul>
+<h4 id="단점-1"><a href="#단점-1" class="headerlink" title="단점"></a>단점</h4><ul>
+<li>개발초기에아키텍처디자인을위한시간의소요로개발기간이늘어남<br>(개발자가 설계할경우) ( 요즘에는 프레임워크 사용한다. -&gt; 틀이 짜여있음)</li>
+<li>MVC 구조에 대한 개발자들의 이해가 필요함</li>
+</ul>
+<h4 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h4><ul>
+<li>Business Logic을 담당한다. → Java Bean으로 구현</li>
+<li>Business Service(Manager) →Business Logic의 workflow를 관리</li>
+<li>DAO (Data Access Object) → Database와 연동하는 Business Logic을 처리.</li>
+</ul>
+<h4 id="View"><a href="#View" class="headerlink" title="View"></a>View</h4><ul>
+<li>Client에게 응답을 처리한다. → JSP로 구현</li>
+</ul>
+<h4 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h4><ul>
+<li>클라이언트의 요청을 받아 Model과 View사이에서 일의 흐름을 조정한다.</li>
+<li>Servlet</li>
+<li>Client의 요청을 받아 Client가 보낸 Data를 읽고 검사한다.</li>
+<li>Model에게 Business Logic을 요청한다.</li>
+<li>Model의 처리 결과에 맞는 View에게 응답을 요청한다.</li>
+</ul>
+<h4 id="코드진행-과정"><a href="#코드진행-과정" class="headerlink" title="코드진행 과정"></a>코드진행 과정</h4><ol>
+<li>요청</li>
+<li>Controller(Servlet)<ul>
+<li>url판별</li>
+<li>action생성 → Model(dao) → mybatis → DB</li>
+<li>Model 호출(data를 입력)</li>
+<li>View data전달 타입 결정</li>
+<li>View path 결정</li>
+</ul>
+</li>
+<li>View<ul>
+<li>화면에 data 출력</li>
+</ul>
+</li>
+</ol>
+<h4 id="주의사항"><a href="#주의사항" class="headerlink" title="주의사항"></a>주의사항</h4><ul>
+<li>sendRedirect 를 사용하는것은 mvc패턴 사용의 의미가 없다.<br>모든요청은 Controller가 받아야한다.</li>
+<li>어노테이션 or Servlet(Controller)생성시 설정<br>ex) *.do → 페이지 내 모든 .do 호출 시</li>
+</ul>
+<p><img src="/images/jsp/JSP04-03.png" alt="JSP"></p>
+<h4 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h4><p><img src="/images/jsp/JSP04-04.png" alt="JSP"></p>
+<ul>
+<li>페이지 로딩 시, → list.do로 이동</li>
+</ul>
+<p><img src="/images/jsp/JSP04-05.png" alt="JSP"></p>
+<p><img src="/images/jsp/JSP04-06.png" alt="JSP"></p>
+<p><img src="/images/jsp/JSP04-07.png" alt="JSP"></p>
+<ul>
+<li>request.getRequestURI 를 통해 전체 URI호출<br>→ /MVC/list.do</li>
+<li>getContextPath를 통해 프로젝트 네임<br>→ /MVC</li>
+<li>requestURI.subString(ContextPath.length +1) → list.do<br>ContextPath.length +1 = 5</li>
+<li>command가 list.do와 일치한다면, action클래스를 implemets하는 ListAction을 생성한 후, 오버라이딩한 execute함수를 호출한다.</li>
+<li>execute함수는 ActionForward를 리턴하는데 ActionForward객체는 전송타입을 결정할 boolean값과 이동될 경로를 결정하는 path값을 가진다.</li>
+<li>ListAction객체는 list라는 객체를 “list”에 담고 dispatcher방식으로 list.jsp로 이동한다.<br><br><br></li>
+</ul>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#JSP">
+    <span class="tag-code">JSP</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/01/03/JSP/JSP03/">
+        <span class="nav-arrow">← </span>
+        
+          Cookie, Session,익스프레션, JSTL, 필터
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/01/07/JSP/JSP05/">
+        
+          게시판 페이징처리, 파일 업로드/다운로드, 썸네일 이미지 게시판
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#KOSTA-DAY42"><span class="toc-nav-text">KOSTA DAY42</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#JSP"><span class="toc-nav-text">JSP</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#설계모델"><span class="toc-nav-text">설계모델</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#모델1-설계방식"><span class="toc-nav-text">모델1 설계방식</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#모델1-개요"><span class="toc-nav-text">모델1 개요</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#장점"><span class="toc-nav-text">장점</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#단점"><span class="toc-nav-text">단점</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#모델2-설계방식"><span class="toc-nav-text">모델2 설계방식</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#모델2-개요"><span class="toc-nav-text">모델2 개요</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#장점-1"><span class="toc-nav-text">장점</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#단점-1"><span class="toc-nav-text">단점</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Model"><span class="toc-nav-text">Model</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#View"><span class="toc-nav-text">View</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Controller"><span class="toc-nav-text">Controller</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#코드진행-과정"><span class="toc-nav-text">코드진행 과정</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#주의사항"><span class="toc-nav-text">주의사항</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#예제"><span class="toc-nav-text">예제</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/01/04/JSP/JSP04/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

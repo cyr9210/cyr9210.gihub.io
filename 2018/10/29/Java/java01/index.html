@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      변수, 데이터 종류, 연산자, if/else, switch | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>변수, 데이터 종류, 연산자, if/else, switch</h2>
+  <p class="post-date">2018-10-29</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p><img src="/images/javaimage.png" alt="Java"></p>
+<h1 id="KOSTA-DAY01"><a href="#KOSTA-DAY01" class="headerlink" title="KOSTA DAY01"></a>KOSTA DAY01</h1><h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><h3 id="변수"><a href="#변수" class="headerlink" title="변수"></a>변수</h3><h4 id="변수란"><a href="#변수란" class="headerlink" title="변수란?"></a>변수란?</h4><p>변수란 값을 저장할 수 있는 메모리 공간을 의미한다.<br>(데이터를 담는 그릇)</p>
+<h4 id="변수의-선언"><a href="#변수의-선언" class="headerlink" title="변수의 선언"></a>변수의 선언</h4><p>데이터 타입 선언 후, 변수명 지정(ex) int n, String name, Double pi</p>
+<h4 id="java-식별자-명명규칙"><a href="#java-식별자-명명규칙" class="headerlink" title="java 식별자 명명규칙"></a>java 식별자 명명규칙</h4><p>명명규칙 : 변수의 이름을 정할 때, 자바언어에서 정해놓은 규칙<br>식별자(identifier) : 클래스, 메소드, 변수 등 다양한 대상에 대해 이름이 붙어지는 경우, 그 이름을 식별자라고 한다.<br>하나 이상의 글자로 이루어져야함.<br>첫번째 글자는 문자이거나 ‘\’ , ‘<em>’ 이어야함.<br>두번째 이후의 글자는 숫자, 문자, ‘\’, ‘</em>’ 이어야함.<br>길이제한이 없음.<br>키워드는 식별자로 사용할 수 없음.<br>상수 값을 표현하는 단어 ‘true’, ‘false’, ‘null’은 식별자로 사용할 수 없음<br>변수 명명 관례<br>첫번째 문자가 소문자인 명사로 정함<br>여러 단어로 구성된 이름의 경우 두번째 단어부터 첫글자를 대문자로 함<br>‘_’을 쓰지 않음<br>※관례는 지키지 않아도 컴파일에러가 발생하지 않으나, 약속이기 때문에 지 켜주는 것이 좋다.<br><br><br></p>
+<h3 id="데이터-종류"><a href="#데이터-종류" class="headerlink" title="데이터 종류"></a>데이터 종류</h3><h4 id="기본형타입"><a href="#기본형타입" class="headerlink" title="기본형타입"></a>기본형타입</h4><p>가장 기본이 되는 데이터 타입으로써 정수형, 실수형, 문자형, 불린형을 의미</p>
+<ul>
+<li>정수형 : Byte, Short, int(4 byte), long(8 byte)</li>
+<li>실수형 : Float(4 byte), double(8 byte)</li>
+<li>문자형 : char (2 byte)</li>
+<li><p>boolean형 : true or false 중 한가지 값을 가질 수 있다. ( 1 byte)<br><strong>※String은 레퍼런스 타입</strong></p>
+</li>
+<li><p>Byte → Short → int →long → float → double </p>
+</li>
+<li>우측으로 갈수록 큰범위를 가짐</li>
+<li>형변환(Casting)을 통해 데이터 타입의 변경이 가능하다.</li>
+<li>크기가 더 큰 타입을 작은 타입으로 바꿀 때에는 명시적으로 변환해야한다. 이것을 ‘강제형변환’ 이라고 한다.<br><br><br></li>
+</ul>
+<h3 id="연산자"><a href="#연산자" class="headerlink" title="연산자"></a>연산자</h3><h4 id="산술연산자"><a href="#산술연산자" class="headerlink" title="산술연산자"></a>산술연산자</h4><p>산술을 연산할수 있는 연산자</p>
+<p>+, -, *, /, %</p>
+<h4 id="증감연산자"><a href="#증감연산자" class="headerlink" title="증감연산자"></a>증감연산자</h4><ul>
+<li>1씩 증가 or 감소 시키는 연산자</li>
+</ul>
+<p><img src="/images/java/java01-01.png" alt="증감연산자"></p>
+<ul>
+<li>위의 예제와 같이 전치, 후치 에 따라서 값이 달라질 수 있다.</li>
+</ul>
+<h4 id="삼항연산자"><a href="#삼항연산자" class="headerlink" title="삼항연산자"></a>삼항연산자</h4><p><img src="/images/java/java01-02.png" alt="삼항연산자"><br><br><br></p>
+<h3 id="if-else"><a href="#if-else" class="headerlink" title="if/else"></a>if/else</h3><p>조건식의 연산 결과에 따라 블록 내부 문자의 실행 여부를 결정 할 수 있다.</p>
+<h4 id="if문"><a href="#if문" class="headerlink" title="if문"></a>if문</h4><ul>
+<li>조건식이 true일 경우에만 실행문이 실행</li>
+<li>{}를 생략가능하나, if문 다음 한 줄만 포함된다.</li>
+</ul>
+<h4 id="if-else문"><a href="#if-else문" class="headerlink" title="if/else문"></a>if/else문</h4><ul>
+<li>조건식이 true일 경우, if 블록의 실행문이 실행되고, false일 경우 else블록의 실행문이 실행된다.</li>
+</ul>
+<h4 id="if-else-if-else문"><a href="#if-else-if-else문" class="headerlink" title="if/else if/else문"></a>if/else if/else문</h4><p><img src="/images/java/java01-03.png" alt="if/esle"></p>
+<ul>
+<li>처음 if 문의 조건식의 조건문이 true일 경우 if문의 실행문이 실행</li>
+<li>false일 경우 다음 조건식의 결과에 따라 실행블록이 달라진다.</li>
+<li>else if 문의 수는 제한이없으나, 많은 else if문은 속도를 저하시킴</li>
+<li>마지막 else 블록은 생략가능<br><br><br></li>
+</ul>
+<h3 id="switch"><a href="#switch" class="headerlink" title="switch"></a>switch</h3><ul>
+<li>어떤변수의 값에 따라서 문장을 실행할 수 있도록 하는 제어문</li>
+</ul>
+<p><img src="/images/java/java01-03.png" alt="switch"><br><br><br></p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#Java">
+    <span class="tag-code">Java</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+    
+      <a class="nav-right" href="/2018/10/30/Java/java02/">
+        
+          while, Do~while, for, 반복문
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#KOSTA-DAY01"><span class="toc-nav-text">KOSTA DAY01</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Java"><span class="toc-nav-text">Java</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#변수"><span class="toc-nav-text">변수</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#변수란"><span class="toc-nav-text">변수란?</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#변수의-선언"><span class="toc-nav-text">변수의 선언</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#java-식별자-명명규칙"><span class="toc-nav-text">java 식별자 명명규칙</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#데이터-종류"><span class="toc-nav-text">데이터 종류</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#기본형타입"><span class="toc-nav-text">기본형타입</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#연산자"><span class="toc-nav-text">연산자</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#산술연산자"><span class="toc-nav-text">산술연산자</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#증감연산자"><span class="toc-nav-text">증감연산자</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#삼항연산자"><span class="toc-nav-text">삼항연산자</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#if-else"><span class="toc-nav-text">if/else</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#if문"><span class="toc-nav-text">if문</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#if-else문"><span class="toc-nav-text">if/else문</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#if-else-if-else문"><span class="toc-nav-text">if/else if/else문</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#switch"><span class="toc-nav-text">switch</span></a></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2018/10/29/Java/java01/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

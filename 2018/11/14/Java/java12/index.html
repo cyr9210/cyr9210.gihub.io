@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      정규표현식, 자료구조 클래스 | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>정규표현식, 자료구조 클래스</h2>
+  <p class="post-date">2018-11-14</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p><img src="/images/javaimage.png" alt="Java"></p>
+<h1 id="KOSTA-DAY12"><a href="#KOSTA-DAY12" class="headerlink" title="KOSTA DAY12"></a>KOSTA DAY12</h1><h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><h3 id="정규표현식"><a href="#정규표현식" class="headerlink" title="정규표현식"></a>정규표현식</h3><p>특정한 규칙(패턴)을 가진 문자열의 집합을 표현하는데 사용하는 표현식 언어<br><img src="/images/java/java12-01.png" alt="Java"><br><img src="/images/java/java12-02.png" alt="Java"><br><img src="/images/java/java12-03.png" alt="Java"></p>
+<h4 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h4><p><img src="/images/java/java12-04.png" alt="Java"><br><br><br></p>
+<h3 id="자료구조-클래스"><a href="#자료구조-클래스" class="headerlink" title="자료구조 클래스"></a>자료구조 클래스</h3><p>자료구조 : 데이터를 효율적으로 사용할 수 있도록 구조를 만들어서 저장해둔 것</p>
+<h4 id="종류"><a href="#종류" class="headerlink" title="종류"></a>종류</h4><p><img src="/images/java/java12-06.png" alt="Java"></p>
+<ul>
+<li>list(리스트)</li>
+<li>stack(스택) : 제일 처음에 넣은것이 제일 나중에 나옴</li>
+<li>queue(큐) : 처음넣은것이 처음 나옴</li>
+<li>hashtabel(해쉬테이블) : 맵 자료구조</li>
+<li>set(집합) : 엄밀히 말하면 자료구조가 아</li>
+</ul>
+<h4 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h4><p>배열을 list형으로 구현하는 것<br><img src="/images/java/java12-05.png" alt="Java"></p>
+<ul>
+<li>데이터 타입이 필요 → 제네릭 선언 : 코드의 일관성/사용 용이</li>
+<li>크기는 사용에 따라 증가</li>
+<li>삭제 시, 알아서 자리 채움</li>
+<li>전체를 순서대로 출력할 때 가장 용이 </li>
+</ul>
+<h5 id="명령어"><a href="#명령어" class="headerlink" title="명령어"></a>명령어</h5><ul>
+<li>추가 : .add(‘’) / .add(index, ‘’)</li>
+<li>크기 : .size() </li>
+<li>검색 : indexof(‘’)</li>
+</ul>
+<p><img src="/images/java/java12-07.png" alt="Java"></p>
+<ul>
+<li>정렬 : Collections.sort(list)<ul>
+<li>Comparable : 기본 정렬기준 구현</li>
+<li>Comparator : 다른 기준을 정의하고 구현</li>
+</ul>
+</li>
+</ul>
+<h4 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h4><p>인접데이터를 가르키는 식으로 구현</p>
+<ul>
+<li>이웃해서 저장하지 않고 참조하여 사용하여 연결되어 있다. </li>
+<li>주소값으로 연결</li>
+<li>자료의 수정 삭제 시, 용이</li>
+</ul>
+<h4 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h4><ul>
+<li>‘후입선출’방식으로 나중에 저장된 데이터가 가장 빨리 인출된다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Linkedlist&lt;Integer&gt; stack = new LinkedList&lt;&gt;();</span><br><span class="line">stack.addLast(new Integer(10));</span><br><span class="line">stack.addLast(new Integer(20));</span><br><span class="line">stack.addLast(new Integer(30));</span><br><span class="line"></span><br><span class="line">while(!stack.isEmpty())&#123;</span><br><span class="line">    Integer num = stack.removeLast();</span><br><span class="line">    System.out.prinln(num);</span><br><span class="line">&#125;</span><br><span class="line">// 결과 : 30 → 20 → 10</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h4><ul>
+<li><p>‘선입선출’방식으로 가장 먼저 삽입된 데이터가 가장 먼저 제거된다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">LinkedList&lt;Integer&gt; queue = new LinkedList&lt;&gt;();</span><br><span class="line">queue.offer(10);</span><br><span class="line">queue.offer(20);</span><br><span class="line">queue.offer(30);</span><br><span class="line"></span><br><span class="line">while(!stack.isEmpty())&#123;</span><br><span class="line">    Integer num = queue.poll();</span><br><span class="line">    System.out.prinln(num);</span><br><span class="line">&#125;</span><br><span class="line">// 결과 : 10 → 20 → 30</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>poll 대신 peak을 사용하면 Linkedlist의 인자는 그대로 남아있는다.</p>
+</li>
+</ul>
+<h4 id="Hash-Map"><a href="#Hash-Map" class="headerlink" title="Hash(Map)"></a>Hash(Map)</h4><p>자료형으로서 대응관계를 쉽게 표현할 수 있도록 해준다.</p>
+<ul>
+<li>Key와 Value라는 것을 한 쌍으로 가진다.</li>
+<li>순차적으로 해당 요소 값을 구하지 않고 Key를 통하여 Value를 얻는다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, String&gt; map = new HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">map.put(1, &quot;SK&quot;);</span><br><span class="line">map.put(2, &quot;두산&quot;);</span><br><span class="line">map.put(3, &quot;넥센&quot;);</span><br><span class="line"></span><br><span class="line">//크기</span><br><span class="line">System.out.println(&quot;요소 개수 : &quot; + map.size());</span><br><span class="line"></span><br><span class="line">//제거</span><br><span class="line">if(map.containValue(&quot;두산&quot;)&#123;</span><br><span class="line">    map.remove(2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//전체출력 (Map → Set → Iterator)</span><br><span class="line">Set set = map.entrySet();</span><br><span class="line">Iterator iter = set.iterator();</span><br><span class="line"></span><br><span class="line">while(iter.hasNext())&#123;</span><br><span class="line">    Map.Entry&lt;String, String&gt; e = (Map.Entry&lt;String, String&gt;)iter.next(); //Map.Entry : 내부인터페이스</span><br><span class="line">    System.out.prinln(e.getKey() + e.getValue());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
+<li><a href="https://opentutorials.org/course/1223/6446" target="_blank" rel="noopener">생활코딩 - Java Collections Framework</a></li>
+<li><a href="https://hackersstudy.tistory.com/26" target="_blank" rel="noopener">공대인들이 직접쓰는 컴퓨터 공부방 - Collections 이해</a><br><br><br></li>
+</ul>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#Java">
+    <span class="tag-code">Java</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/11/13/Java/java11/">
+        <span class="nav-arrow">← </span>
+        
+          Calendar, GregorianCalandar, Random
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2018/11/15/Java/java13/">
+        
+          배열정렬, 스트림
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#KOSTA-DAY12"><span class="toc-nav-text">KOSTA DAY12</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Java"><span class="toc-nav-text">Java</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#정규표현식"><span class="toc-nav-text">정규표현식</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#예제"><span class="toc-nav-text">예제</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#자료구조-클래스"><span class="toc-nav-text">자료구조 클래스</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#종류"><span class="toc-nav-text">종류</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#ArrayList"><span class="toc-nav-text">ArrayList</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#명령어"><span class="toc-nav-text">명령어</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#LinkedList"><span class="toc-nav-text">LinkedList</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Stack"><span class="toc-nav-text">Stack</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Queue"><span class="toc-nav-text">Queue</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Hash-Map"><span class="toc-nav-text">Hash(Map)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#참고자료"><span class="toc-nav-text">참고자료</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2018/11/14/Java/java12/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

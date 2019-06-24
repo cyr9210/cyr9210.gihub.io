@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      Spring MVC, valid이용 검증, mybatis 연동 (KOSTA) | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>Spring MVC, valid이용 검증, mybatis 연동 (KOSTA)</h2>
+  <p class="post-date">2019-01-25</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p><img src="/images/springframwork-logo.png" alt="springf"></p>
+<h1 id="KOSTA-DAY56"><a href="#KOSTA-DAY56" class="headerlink" title="KOSTA DAY56"></a>KOSTA DAY56</h1><h2 id="Springframework"><a href="#Springframework" class="headerlink" title="Springframework"></a>Springframework</h2><h3 id="Spring-MVC"><a href="#Spring-MVC" class="headerlink" title="Spring MVC"></a>Spring MVC</h3><h4 id="MVC-Model-View-Controller-패턴"><a href="#MVC-Model-View-Controller-패턴" class="headerlink" title="MVC(Model-View-Controller)패턴"></a>MVC(Model-View-Controller)패턴</h4><ul>
+<li>어플리케이션의 확장을 위해 Model, View, Controller 세가지 영역으로 분리</li>
+<li>컴포넌트의 변경이 다른 영역 컴포넌트에 영향을 미치지 않음</li>
+<li>컴포넌트 간의 결합성이 낮아 프로그램 수정이 용이</li>
+</ul>
+<h4 id="장점"><a href="#장점" class="headerlink" title="장점"></a>장점</h4><ul>
+<li>화면과 비즈니스 로직을 분리해서 작업 가능</li>
+<li>영역별 개발로 인하여 확장성이 뛰어남</li>
+<li>표준화된 코드를 사용하므로 공동작업이 용이하고 유지보수성이 좋음</li>
+</ul>
+<h4 id="단점"><a href="#단점" class="headerlink" title="단점"></a>단점</h4><ul>
+<li>개발과정이 복잡해 초기 개발속도가 늦음</li>
+<li>초보자가 이해하고 개발하기에 다소 어려움</li>
+</ul>
+<h4 id="Spring-MVC-1"><a href="#Spring-MVC-1" class="headerlink" title="Spring MVC"></a>Spring MVC</h4><p><img src="/images/springk/springk02-01.png" alt="springk"></p>
+<ul>
+<li>MVC패턴 기반 웹 개발 프레임워크</li>
+<li>Dispatcher Servlet : 컨트롤러 역할을 한다. (.do 등으로 오는 모든 요청을 받아서 연결시켜줌)</li>
+<li>Controller : 기존의 action 클래스의 역할</li>
+<li>Handler Mapping : Dispatcher Servlet이 Controller로 매핑하는 방식을 설정 (설정하지 않으면 Default annotation mapping →annotation으로 메소드를 호출)</li>
+<li>ModelAndView : view 이름 , data를 담을수 있다. (최근 5버젼 사용자들은 잘안쓴다고 한다.)</li>
+<li>viewResolver : view 타입을 설정해준다.</li>
+<li>view : 받은 data를 출력</li>
+</ul>
+<h4 id="요청-처리-순서"><a href="#요청-처리-순서" class="headerlink" title="요청 처리 순서"></a>요청 처리 순서</h4><ol>
+<li>DispatcherServlet이 요청을 수신<ul>
+<li>단일 front controller servlet</li>
+<li>요청을 수신하여 처리를 다른 컴포넌트에 위임</li>
+<li>어느 컨트롤러에 요청을 전송할지 결정</li>
+</ul>
+</li>
+<li>DispatcherServlet은 Handler Mapping에 어느컨트롤러를 사용할 것인지 문의<ul>
+<li>URL과 매핑</li>
+</ul>
+</li>
+<li>DispatcherServlet은 요청을 컨트롤러에게 전송하고 컨트롤러는 요청을 처리한 후 결과 리턴<ul>
+<li>비즈니스 로직 수행 후 결과 정보(Model)가 생성되어 JSP와 같은 뷰에서 사용됨</li>
+</ul>
+</li>
+<li>ModelAndView 오브젝트에 수행결과가 포함되어 DispatcherServlet에 리턴</li>
+<li>ModelAndView는 실제 JSP정보를 갖고 있지 않으며, ViewResolver가 논리적 이름을 실제 JSP이름으로 변환</li>
+<li>View는 결과정보를 사용하여 화면을 표현함</li>
+</ol>
+<p><img src="/images/springk/springk02-02.png" alt="springk"></p>
+<ul>
+<li>좋은 디자인은 컨트롤러가 많은 일을 하지 않고 서비스에 처리를 위임</li>
+</ul>
+<h4 id="라이브러리-설정"><a href="#라이브러리-설정" class="headerlink" title="라이브러리 설정"></a>라이브러리 설정</h4><p><img src="/images/springk/springk02-03.png" alt="springk"><br>Spring MVC 를 위해 Maven을 사용하여 라이르러리를 적용하였다.</p>
+<ol>
+<li>Spring MVC<br>mvc패턴을 사용하기 위해 라이브러리 필요</li>
+<li>validator<br>@valid, @InitBinder 어노테이션 사용하기 위해 필요</li>
+<li>Spring jdbc<br>DB연동을 위해 필요</li>
+<li>mybatis<br>mybatis-config.xml사용하기 위해 필요</li>
+<li>mybatis-spring<br>mybatis-spring 연동을 위해 필요</li>
+</ol>
+<h4 id="DispatcherServlet-설정"><a href="#DispatcherServlet-설정" class="headerlink" title="DispatcherServlet 설정"></a>DispatcherServlet 설정</h4><ul>
+<li>다른 Servlet처럼 web.xml에 등록</li>
+<li>기본적으로 “<servlet-name>-servlet.xml” 파일에서 어플리케이션 컨텍스트 정보를 로드</servlet-name></li>
+<li><url-pattern>은 DispatcherServlet이 처리하는 URL 매핑 패턴을 정의</url-pattern></li>
+</ul>
+<p><img src="/images/springk/springk02-04.png" alt="springk"></p>
+<ul>
+<li>springframework의 springapp라는 이름의 DispatcherServlet를 등록한다.</li>
+<li>DispatcherServlet 영역 지정 ‘/’를 지정한것은 모든 요청을 영역으로 지정한것</li>
+</ul>
+<p><img src="/images/springk/springk02-05.png" alt="springk"></p>
+<ul>
+<li>context: annotation-config<br>context: component-scan base-package=”kosta”<br>→ kosta 패키지 안의 모든 @ 를 찾아 객체화</li>
+<li>mvc: annotation-dirven<br>mvc:default-servlet-handler<br>→ 매핑되는 컨트롤러가 없어도 default serlvet handler가 빈객체로 등록되어, default servlet handler에 요청을 전달한다.</li>
+<li>viewResolver<br>  -Controller가 넘긴 view이름을 통해 알맞은 view 를 찾는 역할<ul>
+<li>prefix 경로 / suffix 타입</li>
+</ul>
+</li>
+</ul>
+<h4 id="한글처리"><a href="#한글처리" class="headerlink" title="한글처리"></a>한글처리</h4><p><img src="/images/springk/springk02-06.png" alt="springk"></p>
+<ul>
+<li>web.wml에서 한글처리를 위한 filter 처리 가능</li>
+</ul>
+<p><img src="/images/springk/springk02-07.png" alt="springk"><br><img src="/images/springk/springk02-08.png" alt="springk"></p>
+<ul>
+<li>@Controller , @Service 등으로 객체화</li>
+<li>Controller 내에 @RequestMapping 으로 매핑</li>
+<li>@Autowired, @Inject 를 사용하여 DI 처리</li>
+<li>같은 매핑 조건이더라도, RequestMethod 타입에 의해 전해진다.</li>
+<li>data를 가져가는 방법<ul>
+<li>ModelAndView (setViewName, addObject)</li>
+<li>Model (addAttribute)</li>
+<li>command 객체</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>command 객체</strong><br>form에서 입력된 값을 받기 위한 객체<br>form 의 name = command객체의 필드변수명과 같을 때, 쓸수 있다.</p>
+</blockquote>
+<p><img src="/images/springk/springk02-09.png" alt="springk"></p>
+<ul>
+<li>@ModelAttribute 어노테이션 설정으로 모델명을 설정할 수 있다.</li>
+</ul>
+<p><img src="/images/springk/springk02-10.png" alt="springk"><br><br></p>
+<h3 id="valid-검증"><a href="#valid-검증" class="headerlink" title="valid 검증"></a>valid 검증</h3><p>valid 검증을 위해서 라이브러리가 필요하다.</p>
+<p><img src="/images/springk/springk02-11.png" alt="springk"><br><img src="/images/springk/springk02-12.png" alt="springk"></p>
+<ul>
+<li>Validator 를 implements 하는 객체를 생성</li>
+<li>@validate 시, 발생 될 validate 메소드를 오버라이드</li>
+<li>해당 객체 및 메소드를 사용하기 위해 @InitBinder 어노테이션 등록<br>InitBinder 메소드 작성</li>
+<li>@Valid 어노테이션으로 원하는 검증위치에 사용<br>검증내용을 직접 작성하지않고, 빈값, 사이즈, 문자타입 등을 어노테이션으로 등록 후, InitBinder어노테이션 없이 @Valid 사용이 가능하다.</li>
+</ul>
+<p><img src="/images/springk/springk02-13.png" alt="springk"></p>
+<ul>
+<li>NotEmpty : 빈값일 때, error</li>
+<li>Size : min값, max값 설정</li>
+<li>Pattern : 정규표현식등을 사용하여, 패턴설정<br><br><br></li>
+</ul>
+<h3 id="mybatis-연동"><a href="#mybatis-연동" class="headerlink" title="mybatis 연동"></a>mybatis 연동</h3><h4 id="xml-설정"><a href="#xml-설정" class="headerlink" title="xml 설정"></a>xml 설정</h4><p><img src="/images/springk/springk02-14.png" alt="springk"></p>
+<ul>
+<li>원하는 DB의 name, password, url, 을 입력하고, name, type을 정하여 server.xml에 기입한다.</li>
+</ul>
+<p><img src="/images/springk/springk02-15.png" alt="springk"></p>
+<ul>
+<li>작성한 Resource를 참조하여, Dispatcher Servlet.xml 을 작성한다.</li>
+<li>dataSource → jndiObjectFactoryBean</li>
+<li>sqlSessionFactory<br>dataSource → 생성한 dataSource 객체<br>configLocation → mybatis-config.xml 설정파일</li>
+<li>sqlSessionTemplate<br>sqlSessionFactory → sqlSessionFactory객체</li>
+</ul>
+<h4 id="DB연동"><a href="#DB연동" class="headerlink" title="DB연동"></a>DB연동</h4><p><img src="/images/springk/springk02-16.png" alt="springk"><br><img src="/images/springk/springk02-17.png" alt="springk"></p>
+<ul>
+<li>Dao객체 생성 → 등록한 sqlSessionTemplate 선언 및 등록</li>
+<li>Dao객체 등록<br><br><br></li>
+</ul>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#Springframework_kosta">
+    <span class="tag-code">Springframework_kosta</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/01/24/Spring/KostaSpring01/">
+        <span class="nav-arrow">← </span>
+        
+          Spring, Maven, DI, 객체주입, AOP (KOSTA)
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/01/28/Spring/KostaSpring03/">
+        
+          \@RequestParam, \@Pathvariable(RESTful), tiles, File up/down, JSON, AOP, Transaction (KOSTA)
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#KOSTA-DAY56"><span class="toc-nav-text">KOSTA DAY56</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Springframework"><span class="toc-nav-text">Springframework</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Spring-MVC"><span class="toc-nav-text">Spring MVC</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#MVC-Model-View-Controller-패턴"><span class="toc-nav-text">MVC(Model-View-Controller)패턴</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#장점"><span class="toc-nav-text">장점</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#단점"><span class="toc-nav-text">단점</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Spring-MVC-1"><span class="toc-nav-text">Spring MVC</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#요청-처리-순서"><span class="toc-nav-text">요청 처리 순서</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#라이브러리-설정"><span class="toc-nav-text">라이브러리 설정</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#DispatcherServlet-설정"><span class="toc-nav-text">DispatcherServlet 설정</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#한글처리"><span class="toc-nav-text">한글처리</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#valid-검증"><span class="toc-nav-text">valid 검증</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#mybatis-연동"><span class="toc-nav-text">mybatis 연동</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#xml-설정"><span class="toc-nav-text">xml 설정</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#DB연동"><span class="toc-nav-text">DB연동</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/01/25/Spring/KostaSpring02/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

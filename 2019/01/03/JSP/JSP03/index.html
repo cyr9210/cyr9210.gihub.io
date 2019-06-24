@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      Cookie, Session,익스프레션, JSTL, 필터 | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>Cookie, Session,익스프레션, JSTL, 필터</h2>
+  <p class="post-date">2019-01-03</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="KOSTA-DAY41"><a href="#KOSTA-DAY41" class="headerlink" title="KOSTA DAY41"></a>KOSTA DAY41</h1><h2 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h2><p><img src="/images/JSP_logo.png" alt="JSP"></p>
+<h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><p>쿠키 기술은 전달한 데이터를 웹 브라우저로 보냈다가 웹 서버 쪽으로 되돌려 받는 방법을 사용한다.<br><img src="/images/jsp/JSP03-01.png" alt="JSP"></p>
+<ul>
+<li>첫 번째 웹 컴포넌트가 웹 브라우저로 HTML 문서를 보낼 때 전달한 데이터를 함께 보내며, 웹 브라우저는 데이터를 저장해 두었다가 두 번째 웹 컴포넌트를 호출할 때 URL과 함께 웹 서버로 보낸다.</li>
+</ul>
+<h4 id="새로운-쿠키-데이터를-저장하는-방법"><a href="#새로운-쿠키-데이터를-저장하는-방법" class="headerlink" title="새로운 쿠키 데이터를 저장하는 방법"></a>새로운 쿠키 데이터를 저장하는 방법</h4><ul>
+<li>Cookie 클래스의 객체를 만든다.</li>
+<li>addCookie 메서드를 호출해야 한다.</li>
+<li>Cookie 클래스는 javax.servlet.http 패키지에 속하며, 클래스의 객체를 만들 때는 쿠키의 이름과 값을 파라미터로 넘겨줘야 한다.</li>
+<li>파라미터는 모두 String 타입이 되어야 하므로 쿠키의 값이 수치일 경우 문자 데이터로 만들어줘서 넘겨줘야 한다.</li>
+</ul>
+<p><img src="/images/jsp/JSP03-02.png" alt="JSP"></p>
+<ul>
+<li>addCookie 메서드를 호출할 때 웹 브라우저로 쿠키를 보내는 기능을 하며, JSP 페이지에서는 response 내장 객체애 대해, 서블릿 클래스에서는 doGet, doPost 메서드의 두 번째 파라미터에 대해 호출 한 후 Cookie 객체를 파라미터로 넘겨줘야 한다.</li>
+</ul>
+<p><img src="/images/jsp/JSP03-03.png" alt="JSP"></p>
+<ul>
+<li>메서드를 통해 웹 브라우저로 전송된 쿠키를 실제로 저장하는 일은 웹 브라우저가 하도록 되어 있다.</li>
+<li>웹 브라우저가 쿠키를 저장할 때 웹 서버의 주소도 함께 저장해 놓는다.</li>
+</ul>
+<h4 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h4><p>로그인 성공 시, 쿠키가 저장되는 과정을 보자.</p>
+<p><img src="/images/jsp/JSP03-04.png" alt="JSP"></p>
+<ul>
+<li>m_name(“홍길동”)을 쿠키에 담기위해 utf-8로 encode한다.</li>
+<li>new 연산자를 사용하여 쿠키를 생성하고 name값을 담는다.</li>
+</ul>
+<p>저장된 쿠키를 활용하는 작업에 대해 보자.</p>
+<p><img src="/images/jsp/JSP03-05.png" alt="JSP"></p>
+<ul>
+<li>저장된 쿠키를 쿠키배열(cookies)에 담는다.</li>
+<li>cookies에 담긴 쿠키의 값이 null일 경우 → loginform으로 다시 이동<br>null이 아닌경우 → cookies에 담긴 쿠키의 값을 꺼내어 decode한 후, name에 담는다.</li>
+<li>null이 아닌경우에도 cookies에 담긴 값이 하나이거나, JSESSIONID인 경우에는 loginform으로 다시이동</li>
+</ul>
+<p>로그아웃 시, 쿠키를 삭제하는 작업을 보자.</p>
+<p><img src="/images/jsp/JSP03-06.png" alt="JSP"></p>
+<ul>
+<li>cookies에 담긴 쿠키들의 setMaxAge를 0으로 세팅(쿠키 유지 시간)</li>
+<li>세팅된 쿠키값으로 쿠키값을 덮어쓴다.<br><br><br></li>
+</ul>
+<h3 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h3><p><img src="/images/jsp/JSP03-07.png" alt="JSP"><br>세션 기술은 웹 브라우저를 거치지 않고 웹 서버에 있는 데이터 영역을 통해 데이터를 전달하는 방법이다.</p>
+<h4 id="세션과-쿠키의-차이점"><a href="#세션과-쿠키의-차이점" class="headerlink" title="세션과 쿠키의 차이점"></a>세션과 쿠키의 차이점</h4><ul>
+<li>쿠키 : 사용자의 정보를 클라이언트쪽에 저장</li>
+<li>세션 : 사용자의 정보를 서버쪽에 저장</li>
+</ul>
+<h4 id="세션기술의-사용방법"><a href="#세션기술의-사용방법" class="headerlink" title="세션기술의 사용방법"></a>세션기술의 사용방법</h4><ul>
+<li>getSession메서드가 리턴한 HttpSession 객체에 대해 setAttribute라는 메서드를 호출하면 세션 데이터 영역에 데이터를 저장할 수 있다.</li>
+</ul>
+<p><img src="/images/jsp/JSP03-08.png" alt="JSP"></p>
+<ul>
+<li>HttpSession 객체에 대해 getAttribute라는 메서드를 호출하면 세션 데이터 영역의 데이터를 가져올 수 있다.</li>
+<li>메서드는 데이터 이름을 파라미터로 받고, 그에 해당하는 데이터 값을 리턴한다.</li>
+<li>주의 할 점은 메서드의 리턴 타입은 java.lang.Object 이므로 데이터 값을 본래의 타입으로 사용하려면 다음과 같이 캐스트 연산을 해야 한다.</li>
+</ul>
+<p><img src="/images/jsp/JSP03-09.png" alt="JSP"><br>세션을 이용해서 할 일을 모두 마치고 나면 invalidate라는 메서드를 호출해서 세션을 끝낼 수 있으며, 메서드는 HttpSession 객체에 대해 호출해야 한다.</p>
+<p><img src="/images/jsp/JSP03-38.png" alt="JSP"></p>
+<ul>
+<li>서블릿 클래스에서 세션을 시작하기 위해서는 doGet, doPost 메서드의 HttpServletRequest 파라미터에 대해 getSession이라는 메서드를 호출해야 한다.</li>
+<li>메서드는 세션 정보를 포함하는 javax.servlet.http.HttpSession 타입의 객체를 리턴한다.</li>
+</ul>
+<p><img src="/images/jsp/JSP03-10.png" alt="JSP"></p>
+<ul>
+<li>JSP 페이지에서는 JSP 페이지가 서블릿 클래스로 변환될 때 메서드를 호출하는 코드가 자동으로 추가 되기 때문에 getSession 메서드를 호출 할 필요가 없다.</li>
+</ul>
+<h4 id="예제-1"><a href="#예제-1" class="headerlink" title="예제"></a>예제</h4><p>로그인 성공 시, 정보를 세션에 저장하는 작업을 보자.</p>
+<p><img src="/images/jsp/JSP03-11.png" alt="JSP"></p>
+<ul>
+<li>getParameter로 받은 데이터를 name이라는 이름을 가진 session에 저장</li>
+<li>상기예시는 jsp 페이지 임으로 getSession작업이 필요하지 없다.</li>
+</ul>
+<p>session에 저장된 데이터 활용방법에 대해 보자.</p>
+<p><img src="/images/jsp/JSP03-12.png" alt="JSP"></p>
+<ul>
+<li>저장한 session에서 값을 꺼내어 name변수에 담는다.</li>
+</ul>
+<p>로그아웃 시, session끝내기 작업에 대하여 보자.(저장된 data삭제)</p>
+<p><img src="/images/jsp/JSP03-13.png" alt="JSP"></p>
+<ul>
+<li>invalidate함수를 호출하여 저장된 데이터들을 삭제한다.<br><br><br></li>
+</ul>
+<h3 id="익스프레션-언어"><a href="#익스프레션-언어" class="headerlink" title="익스프레션 언어"></a>익스프레션 언어</h3><p>익스프레션 언어는 JSP 규격서가 처음 만들어질 때부터 있던 문법이 아니라 새롭게 추가된 문법이며, 이 문법을 이용하면 데이터를 출력하는 코드를 함축적이고 간결하게 구사할 수 있어 코드의 가독성과 유지보수 용이성에 큰 도움이 된다.</p>
+<ul>
+<li>익스프레션 언어(expression language)란 같은 식을 중심으로 코드를 기술하는 언어이다.</li>
+<li>연산자와 피연산자의 조합을 ${와}로 둘러싸서 표현한다.</li>
+<li>익스프레션 언어의 유일한 목적은 식을 계산해서 그 결과를 출력하는 것이기 때문에 하나의 문법으로 효현할 수 있으며 이 문법을 EL식이라고 부른다.</li>
+<li>‘식’위치에는 데이터 이름 하나로만 구성된 식이 들어갈 수도 있고, 연산자를 포함하는 식이 들어 갈 수도 있으며, 자바의 정적 메서드를 호출하는 식이 들어갈 수도 있다.</li>
+</ul>
+<p><img src="/images/jsp/JSP03-14.png" alt="JSP"></p>
+<ul>
+<li>EL 식에 있는 데이터 이름을 해석하는 순서는 사용 범위가 좁은 애트리뷰트부터 점점 더 사용 범위가 넓은 애트리뷰트 순으로 진행 된다.</li>
+</ul>
+<p><img src="/images/jsp/JSP03-15.png" alt="JSP"></p>
+<ul>
+<li>순서에 상관없이 특정한 종류의 애트리뷰트를 짚어서 출력하고 싶을 때는 다음과 같이 표시하면 된다.(거의 사용하지 않는다.)</li>
+</ul>
+<p><img src="/images/jsp/JSP03-16.png" alt="JSP"></p>
+<p>EL식 사용방법에 대해 예제로 알아보자.</p>
+<p><img src="/images/jsp/JSP03-17.png" alt="JSP"><br><img src="/images/jsp/JSP03-18.png" alt="JSP"></p>
+<ul>
+<li>forward액션태그에 저장된 param값을 호출</li>
+<li>form으로 넘긴 data를 가져오는 방법 또한 동일하다.</li>
+<li>request.setAttribute로 넘긴 data를 호출</li>
+<li>request.setAttribute로 넘긴 객체의 data를 호출</li>
+<li>request.setAttribute로 넘긴 Hashmap의 data를 호출<br><br><br></li>
+</ul>
+<h3 id="JSTL"><a href="#JSTL" class="headerlink" title="JSTL"></a>JSTL</h3><p>표준 태그 라이브러리(JSP Standard Tag Library)의 약어이다.</p>
+<h4 id="JSTL을-가지고-할-수-있는일"><a href="#JSTL을-가지고-할-수-있는일" class="headerlink" title="JSTL을 가지고 할 수 있는일"></a>JSTL을 가지고 할 수 있는일</h4><ul>
+<li>간단한 프로그램 로직의 구사(자바의 변수 선언, if 문, for 문 등에 해당하는 로직)</li>
+<li>다른 JSP 페이지 호출(&lt;\c:redirect&gt;, &lt;\c:import&gt;)</li>
+<li>날짜, 시간, 숫자의 포맷</li>
+</ul>
+<h4 id="JSTL이란"><a href="#JSTL이란" class="headerlink" title="JSTL이란?"></a>JSTL이란?</h4><p><img src="/images/jsp/JSP03-19.png" alt="JSP"></p>
+<ul>
+<li>JSP 페이지에서 접두어를 사용하기 위해서는 taglib 지시자를 이용해서 라이브러리의 URI 식별자와 접두어를 연결할 수 있다.</li>
+<li>Taglib* 지시자는 다른 지시자와 마찬가지로 &lt;%@으로 시작해서 %&gt;로 끝난다.</li>
+<li>지시자에는 uri와 prefix라는 두 개의 애트리뷰트를 써야 하고 두 애트리뷰트에 각각 URI 식별자와 접두어를 값으로 주어야 한다.</li>
+</ul>
+<h4 id="속성설정"><a href="#속성설정" class="headerlink" title="속성설정"></a>속성설정</h4><p>JSTL은 커스텀라이브러리기 때문에 Taglib를 설정해야한다.<br><img src="/images/jsp/JSP03-20.png" alt="JSP"></p>
+<ul>
+<li>코어 라이브러리</li>
+<li>포매팅 라이브러리</li>
+</ul>
+<h4 id="코어-라이브러리"><a href="#코어-라이브러리" class="headerlink" title="코어 라이브러리"></a>코어 라이브러리</h4><h5 id="set-out"><a href="#set-out" class="headerlink" title="set/out"></a>set/out</h5><p><img src="/images/jsp/JSP03-21.png" alt="JSP"></p>
+<h5 id="foreach"><a href="#foreach" class="headerlink" title="foreach"></a>foreach</h5><p><img src="/images/jsp/JSP03-22.png" alt="JSP"></p>
+<h5 id="redirect"><a href="#redirect" class="headerlink" title="redirect"></a>redirect</h5><p><img src="/images/jsp/JSP03-23.png" alt="JSP"><br><img src="/images/jsp/JSP03-24.png" alt="JSP"></p>
+<ul>
+<li>redirect했던 orange라는 문자값을 fruit이라는 변수에 담는다.</li>
+</ul>
+<h5 id="if"><a href="#if" class="headerlink" title="if"></a>if</h5><p><img src="/images/jsp/JSP03-25.png" alt="JSP"></p>
+<h5 id="choosewhen"><a href="#choosewhen" class="headerlink" title="choosewhen"></a>choosewhen</h5><p><img src="/images/jsp/JSP03-26.png" alt="JSP"></p>
+<ul>
+<li>otherwise는 Java 언어 if문의 else와 같다고 보면 된다.</li>
+</ul>
+<h4 id="포매팅-라이브러리"><a href="#포매팅-라이브러리" class="headerlink" title="포매팅 라이브러리"></a>포매팅 라이브러리</h4><h5 id="formatdate"><a href="#formatdate" class="headerlink" title="formatdate"></a>formatdate</h5><p><img src="/images/jsp/JSP03-27.png" alt="JSP"></p>
+<h5 id="formatNumber"><a href="#formatNumber" class="headerlink" title="formatNumber"></a>formatNumber</h5><p><img src="/images/jsp/JSP03-28.png" alt="JSP"></p>
+<ul>
+<li>type = “currency” currencySymbol = “$” →화폐단위로 변환 및 심벌입력</li>
+<li>type = “percent” → 소수를 %값으로 변환</li>
+<li>pattern = “#0.00” → 소수둘째자리에서 반올림<br><br><br></li>
+</ul>
+<h3 id="필터"><a href="#필터" class="headerlink" title="필터"></a>필터</h3><p>글자 그대로 여과기 역할을 하는 프로그램이다.</p>
+<ul>
+<li>자바 클래스 형태로 구현해야 하며, 이 클래스를 필터 클래스(filter class)라고 한다.</li>
+</ul>
+<p><img src="/images/jsp/JSP03-29.png" alt="JSP"></p>
+<ul>
+<li>초기화된 필터는 웹 브라우저와 웹 컴포넌트 사이에 위치하게 된다.</li>
+<li>웹 브라우저가 웹 컴포넌트를 호출했을 때 대신 필터가 호출될 것이고, 필터는 필요한 사전작업을 수행한 다음에 웹 컴포넌트를 호출할 것이다.</li>
+<li>filter클래스는 filter인터페이스를 implemets 해야한다.</li>
+</ul>
+<p><img src="/images/jsp/JSP03-30.png" alt="JSP"><br><img src="/images/jsp/JSP03-31.png" alt="JSP"><br><img src="/images/jsp/JSP03-32.png" alt="JSP"></p>
+<h4 id="예제-2"><a href="#예제-2" class="headerlink" title="예제"></a>예제</h4><p><img src="/images/jsp/JSP03-35.png" alt="JSP"></p>
+<ul>
+<li>/bean/* → bean폴더의 모든 페이지에 필터를 적용<br>필터클래스 생성 → 클래스명 입력후 Next → Filter mappings 의 Add또는 Edit를 통해 필터를 적용할 페이지를 입력한다.<br>(@(어노테이션)을 통해서도 매핑할 수 있다.)</li>
+</ul>
+<p><img src="/images/jsp/JSP03-36.png" alt="JSP"></p>
+<ul>
+<li>한글처리를 doFilter에 함으로써 매핑된 페이지들은 모두 한글처리가 적용된다.</li>
+</ul>
+<p><img src="/images/jsp/JSP03-37.png" alt="JSP"></p>
+<ul>
+<li>getSession을 위한 request는 HttpServletRequest/Response객체 임으로 형변환 하였다.</li>
+<li>Servlet 페이지임으로, getSession메소드 호출과정이 없어서 직접 HttpSession객체를 만들고, getSession메소드를 호출하였다.<br><br><br></li>
+</ul>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#JSP">
+    <span class="tag-code">JSP</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/01/02/JSP/JSP02/">
+        <span class="nav-arrow">← </span>
+        
+          JSP액션, useBean/setProperty, 한글처리, JDBC, DAO/DTO, mybatis
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/01/04/JSP/JSP04/">
+        
+          설계모델, 모델1설계방식, 모델2설계방식(MVC패턴)
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#KOSTA-DAY41"><span class="toc-nav-text">KOSTA DAY41</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#JSP"><span class="toc-nav-text">JSP</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Cookie"><span class="toc-nav-text">Cookie</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#새로운-쿠키-데이터를-저장하는-방법"><span class="toc-nav-text">새로운 쿠키 데이터를 저장하는 방법</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#예제"><span class="toc-nav-text">예제</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Session"><span class="toc-nav-text">Session</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#세션과-쿠키의-차이점"><span class="toc-nav-text">세션과 쿠키의 차이점</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#세션기술의-사용방법"><span class="toc-nav-text">세션기술의 사용방법</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#예제-1"><span class="toc-nav-text">예제</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#익스프레션-언어"><span class="toc-nav-text">익스프레션 언어</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#JSTL"><span class="toc-nav-text">JSTL</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#JSTL을-가지고-할-수-있는일"><span class="toc-nav-text">JSTL을 가지고 할 수 있는일</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#JSTL이란"><span class="toc-nav-text">JSTL이란?</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#속성설정"><span class="toc-nav-text">속성설정</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#코어-라이브러리"><span class="toc-nav-text">코어 라이브러리</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#set-out"><span class="toc-nav-text">set/out</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#foreach"><span class="toc-nav-text">foreach</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#redirect"><span class="toc-nav-text">redirect</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#if"><span class="toc-nav-text">if</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#choosewhen"><span class="toc-nav-text">choosewhen</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#포매팅-라이브러리"><span class="toc-nav-text">포매팅 라이브러리</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#formatdate"><span class="toc-nav-text">formatdate</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#formatNumber"><span class="toc-nav-text">formatNumber</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#필터"><span class="toc-nav-text">필터</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#예제-2"><span class="toc-nav-text">예제</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/01/03/JSP/JSP03/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

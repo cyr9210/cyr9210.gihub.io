@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      스프링 부트 활용 - SpringApplication | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>스프링 부트 활용 - SpringApplication</h2>
+  <p class="post-date">2019-04-03</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p><img src="/images/springboot_logo.png" alt="springboot"></p>
+<h1 id="스프릥-부트-개념과-활용06-inflearn-백기선"><a href="#스프릥-부트-개념과-활용06-inflearn-백기선" class="headerlink" title="스프릥 부트 개념과 활용06(inflearn) - 백기선"></a>스프릥 부트 개념과 활용06(inflearn) - 백기선</h1><h2 id="Spring-boot"><a href="#Spring-boot" class="headerlink" title="Spring boot"></a>Spring boot</h2><h3 id="SpringApplication"><a href="#SpringApplication" class="headerlink" title="SpringApplication"></a><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-spring-application.html#boot-features-spring-application" target="_blank" rel="noopener">SpringApplication</a></h3><h4 id="로그"><a href="#로그" class="headerlink" title="로그"></a>로그</h4><ul>
+<li>기본 로그 레벨 INFO<br><img src="/images/springboot/springboot06-1.png" alt="springboot"><ul>
+<li>debug 레벨로 변경<br><img src="/images/springboot/springboot06-2.png" alt="springboot"><ul>
+<li>VM options : -Ddebug</li>
+<li>Program arguments : - -debug</li>
+</ul>
+</li>
+<li>변경 후<ul>
+<li>debug레벨로 로그가 찍힌다.</li>
+<li>어떠한 자동설정이 적용됬는지</li>
+<li>어떠한 자동설정이 왜 적용되지 않았는지<br><img src="/images/springboot/springboot06-4.png" alt="springboot"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="FailureAnalyzer"><a href="#FailureAnalyzer" class="headerlink" title="FailureAnalyzer"></a>FailureAnalyzer</h4><ul>
+<li>어플리케이션 에러가 발생 시, 보다 가시적으로 보이도록 해준다.</li>
+<li>직접 등록도 가능하다.</li>
+<li>거의 만질일이 없다.</li>
+</ul>
+<h4 id="배너"><a href="#배너" class="headerlink" title="배너"></a>배너</h4><ul>
+<li>resources에 배너 설정파일을 만든다.(banner.txt | gif | jpg | png)<br><img src="/images/springboot/springboot06-5.png" alt="springboot"></li>
+<li>banner파일은 resources 바로 아래 위치해야한다.<ul>
+<li>classpath 또는 spring.banner.location을 사용해서 다른 위치의 배너 파일을 사용할 수 있다.</li>
+</ul>
+</li>
+<li>${spring-boot.version} 등의 변수를 사용할 수 있다.<ul>
+<li>일부 변수들은 MANIFEST파일이 있어야 사용할 수 있다.</li>
+</ul>
+</li>
+<li>Banner 클래스 구현하고 SpringApplication.setBanner()로 설정 가능.<br>  <img src="/images/springboot/springboot06-7.png" alt="springboot"><ul>
+<li>txt(승) vs 코딩 </li>
+</ul>
+</li>
+<li>배너끄는방법<br>  <img src="/images/springboot/springboot06-6.png" alt="springboot"></li>
+</ul>
+<h4 id="Builder-패턴"><a href="#Builder-패턴" class="headerlink" title="Builder 패턴"></a>Builder 패턴</h4><ul>
+<li>SpringApplicationBuilder로 빌더 패턴 사용 가능<br><img src="/images/springboot/springboot06-8.png" alt="springboot"></li>
+</ul>
+<h4 id="ApplicationEvent-등"><a href="#ApplicationEvent-등" class="headerlink" title="ApplicationEvent 등"></a>ApplicationEvent 등</h4><ul>
+<li>ApplicationContext를 만들기 전에 사용하는 리스너는 @Bean으로 등록할 수 없다.<ul>
+<li>ex) ApplicationStartingEvent<br>Application이 시작할 때. 즉, ApplicationContext가 만들어지기 전</li>
+<li>이런 경우 직접 해주어야한다. (addListener 등)<br><img src="/images/springboot/springboot06-9.png" alt="springboot"></li>
+<li>Bean으로 등록이되는 리스너는 Bean등록만 해주면 된다.<ul>
+<li>ApplicationStartedListenr로 변경<br><img src="/images/springboot/springboot06-10.png" alt="springboot"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="WebApplicationType-설정"><a href="#WebApplicationType-설정" class="headerlink" title="WebApplicationType 설정"></a>WebApplicationType 설정</h4><ul>
+<li>기본적으로 서블릿으로 동작 (Spring WebMVC가 들어있다면)<ul>
+<li>서블릿이 있으면 무조건 서블릿 동작</li>
+<li>서블릿이 없고 WebFlux가 있다면 REACTIVE </li>
+<li>none 웹 어플리케이션 동작안함</li>
+</ul>
+</li>
+</ul>
+<h4 id="애플리케이션-arguments-사용하기"><a href="#애플리케이션-arguments-사용하기" class="headerlink" title="애플리케이션 arguments 사용하기"></a>애플리케이션 arguments 사용하기</h4><ul>
+<li>Application Arguments를 빈으로 등록해 주니까 가져다 쓸 수 있다.</li>
+</ul>
+<h4 id="애플리케이션-실행한-뒤-뭔가-실행하고-싶을-때"><a href="#애플리케이션-실행한-뒤-뭔가-실행하고-싶을-때" class="headerlink" title="애플리케이션 실행한 뒤 뭔가 실행하고 싶을 때"></a>애플리케이션 실행한 뒤 뭔가 실행하고 싶을 때</h4><ul>
+<li>ApplicationRunner (추천) 또는 CommandLineRunner</li>
+<li>Program arguments는 사용가능하나 JVM options는 무시한다.<br><img src="/images/springboot/springboot06-11.png" alt="springboot"></li>
+<li>순서 지정 가능 @Order (숫자 낮은게 우선)<br><img src="/images/springboot/springboot06-12.png" alt="springboot"><br><br></li>
+</ul>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#SpringBoot">
+    <span class="tag-code">SpringBoot</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/04/03/Spring/springboot05/">
+        <span class="nav-arrow">← </span>
+        
+          스프링 부트 원리 - JAR
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/04/05/Spring/springboot07/">
+        
+          스프링 부트 활용 - 외부설정
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#스프릥-부트-개념과-활용06-inflearn-백기선"><span class="toc-nav-text">스프릥 부트 개념과 활용06(inflearn) - 백기선</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Spring-boot"><span class="toc-nav-text">Spring boot</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#SpringApplication"><span class="toc-nav-text">SpringApplication</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#로그"><span class="toc-nav-text">로그</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#FailureAnalyzer"><span class="toc-nav-text">FailureAnalyzer</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#배너"><span class="toc-nav-text">배너</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Builder-패턴"><span class="toc-nav-text">Builder 패턴</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#ApplicationEvent-등"><span class="toc-nav-text">ApplicationEvent 등</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#WebApplicationType-설정"><span class="toc-nav-text">WebApplicationType 설정</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#애플리케이션-arguments-사용하기"><span class="toc-nav-text">애플리케이션 arguments 사용하기</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#애플리케이션-실행한-뒤-뭔가-실행하고-싶을-때"><span class="toc-nav-text">애플리케이션 실행한 뒤 뭔가 실행하고 싶을 때</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/04/03/Spring/springboot06/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

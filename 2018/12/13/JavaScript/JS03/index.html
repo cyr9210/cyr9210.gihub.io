@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      this., 브라우저 내장객체(BOM), 문서 내장객체(DOM), Ajax | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>this., 브라우저 내장객체(BOM), 문서 내장객체(DOM), Ajax</h2>
+  <p class="post-date">2018-12-13</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="KOSTA-DAY32"><a href="#KOSTA-DAY32" class="headerlink" title="KOSTA DAY32"></a>KOSTA DAY32</h1><h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><p><img src="/images/JS_logo.png" alt="JS"></p>
+<h3 id="This"><a href="#This" class="headerlink" title="This"></a>This</h3><ul>
+<li><p>일반함수 안에서 this는 밖의변수(전역변수)를 가르킨다.<br><img src="/images/javascript/JS03-01.png" alt="JS"></p>
+</li>
+<li><p>생성자함수 안에서 this는 객체의속성을 가르킨다.<br><img src="/images/javascript/JS03-02.png" alt="JS"></p>
+</li>
+<li><p>이벤트리스터 안에서 this(event.target)는 해당 객체를 가르킴<br><img src="/images/javascript/JS03-03.png" alt="JS"></p>
+</li>
+<li><p>this값은 call함수를 사용하여 변경할 수 있다.<br><img src="/images/javascript/JS03-04.png" alt="JS"><br><br></p>
+</li>
+</ul>
+<h3 id="브라우저-내장객체-BOM"><a href="#브라우저-내장객체-BOM" class="headerlink" title="브라우저 내장객체(BOM)"></a>브라우저 내장객체(BOM)</h3><p><img src="/images/javascript/JS03-05.png" alt="JS"></p>
+<ul>
+<li>현재 브라우저가 보여주고 있는 문서에 관한 여러가지 정보 뿐만 아니라 윈도우 정보, 히스토리정보, 문서가 존재하고 있는 위치정보들을 포함</li>
+<li>브라우저 내장객체는 계층구조로 이루어진다.<br>상위객체에서 하위객체의 이름을 .을 이용하여 구분하며 연속적으로 나열하여 사용한다.</li>
+<li>Window, Frame, Document, History, Link, Anchor, Navigator, Image 객체가 들어있다.</li>
+</ul>
+<h4 id="Window-객체"><a href="#Window-객체" class="headerlink" title="Window 객체"></a>Window 객체</h4><p>JS브라우저 내장 객체의 최상위 객체이다.<br>-전체 윈도우에 적용될 내용들을 가지고 있다.</p>
+<ul>
+<li>최상위 객체인 Window는 생략이 가능함</li>
+</ul>
+<h5 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h5><p><img src="/images/javascript/JS03-05.png" alt="JS"><br><img src="/images/javascript/JS03-06.png" alt="JS"></p>
+<ul>
+<li>open을 통해 팝업창을 연다.</li>
+<li>open(‘새창으로 열 페이지 주소’, ‘새창의 이름’, ‘옵션’);<br><br><br></li>
+</ul>
+<h3 id="문서-내장객체-DOM"><a href="#문서-내장객체-DOM" class="headerlink" title="문서 내장객체(DOM)"></a>문서 내장객체(DOM)</h3><p>(X)HTML 문서의 구조를 가리켜 문서객체모델(DOM : Document Object Model)이라고 한다.</p>
+<ul>
+<li>각 태그마다 기능과 속성이 있다.</li>
+<li>IE8이하 및 표준모델들간 호환성이 떨어진다.<br>JQuery에서 이 단점을 모두 해결함</li>
+</ul>
+<h4 id="선택자"><a href="#선택자" class="headerlink" title="선택자"></a>선택자</h4><ul>
+<li>HTML내에서 작성된 스타일(css)은 어떠한 동작을 취했을 때 지정한 요소에 스타일을 적용시킬 수 없다.</li>
+<li>동작의 스타일은 자바스크립트에서 적용<br>HTML내 작성된 스타일 : 정적 / 자바스크립트내 작성된 스타일 : 동적</li>
+<li>직접선택자 : id, class, Form name, Element Name<br>먼거리에 있는 요소를 선택해오는 원거리 선택자</li>
+<li>인접관계 선택자 : parentNode, childNodes, firstChild, children, previousSibling, nextSibling<br>선택한요소를 기준으로 가까운 거리에 있는 요소를 선택하는 근거리 선택자</li>
+</ul>
+<p><img src="/images/javascript/JS03-07.png" alt="JS"></p>
+<p>참고블로그 : <a href="https://starrykss.tistory.com/140?category=611458" target="_blank" rel="noopener">별의블로그</a><br><br><br></p>
+<h3 id="AJAX-Asynchronous-Javascript-And-XML"><a href="#AJAX-Asynchronous-Javascript-And-XML" class="headerlink" title="AJAX(Asynchronous Javascript And XML)"></a>AJAX(Asynchronous Javascript And XML)</h3><p>비동기적인 웹 애플리케이션의 제작을 위해 아래와 같은 조합을 이용하는 웹 개발 기법</p>
+<blockquote>
+<p><strong>비동기식</strong><br>서버에 요청한 일에대해 응답을 기다리지 않고 다른작업을 하는것.<br><strong>동기식</strong><br>서버에 요펑한 일의 응답을 기다리고 다음작업을 하는것</p>
+</blockquote>
+<h4 id="비동기식의-장점"><a href="#비동기식의-장점" class="headerlink" title="비동기식의 장점"></a>비동기식의 장점</h4><ul>
+<li>페이지를 리로딩을 하지 않는다.</li>
+<li>한 페이지 안에서 모든일을 한다.(SAP)</li>
+</ul>
+<h4 id="ajax프로그래밍-순서"><a href="#ajax프로그래밍-순서" class="headerlink" title="ajax프로그래밍 순서"></a>ajax프로그래밍 순서</h4><ul>
+<li>사용자에의한 요청 이벤트 발생</li>
+<li>XMLHttpRequest (xhr) 객체 생성<br>(xhr : 서버와 통신을 담당)</li>
+<li>웹서버에 요청 전송하기(응답이 어떤 타입으로 오는지 확인 필요하다.)</li>
+<li>서버로 부터 응답을 받을 콜백함수를 지정한다.<br>(응답시 자동으로 처리하도록)<br><br><br></li>
+</ul>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#JavaScript">
+    <span class="tag-code">JavaScript</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/12/12/JavaScript/JS02/">
+        <span class="nav-arrow">← </span>
+        
+          배열, 자바스크립트 내장객체, 이벤트
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2018/12/14/JavaScript/JS04/">
+        
+          jQuery, 선택자, 이벤트, 스타일, 효과, DOM구현
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#KOSTA-DAY32"><span class="toc-nav-text">KOSTA DAY32</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#JavaScript"><span class="toc-nav-text">JavaScript</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#This"><span class="toc-nav-text">This</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#브라우저-내장객체-BOM"><span class="toc-nav-text">브라우저 내장객체(BOM)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Window-객체"><span class="toc-nav-text">Window 객체</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#예제"><span class="toc-nav-text">예제</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#문서-내장객체-DOM"><span class="toc-nav-text">문서 내장객체(DOM)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#선택자"><span class="toc-nav-text">선택자</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#AJAX-Asynchronous-Javascript-And-XML"><span class="toc-nav-text">AJAX(Asynchronous Javascript And XML)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#비동기식의-장점"><span class="toc-nav-text">비동기식의 장점</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#ajax프로그래밍-순서"><span class="toc-nav-text">ajax프로그래밍 순서</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2018/12/13/JavaScript/JS03/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      SpEL | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>SpEL</h2>
+  <p class="post-date">2019-03-26</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p><img src="/images/springframwork-logo.png" alt="springf"></p>
+<h1 id="스프링-프레임워크-핵심기술04-inflearn-백기선"><a href="#스프링-프레임워크-핵심기술04-inflearn-백기선" class="headerlink" title="스프링 프레임워크 핵심기술04(inflearn) - 백기선"></a>스프링 프레임워크 핵심기술04(inflearn) - 백기선</h1><h2 id="Springframework"><a href="#Springframework" class="headerlink" title="Springframework"></a>Springframework</h2><h3 id="SpEL-스프링-Expression-Language"><a href="#SpEL-스프링-Expression-Language" class="headerlink" title="SpEL(스프링 Expression Language)"></a><a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#expressions" target="_blank" rel="noopener">SpEL</a>(스프링 Expression Language)</h3><h4 id="스프링-EL이란"><a href="#스프링-EL이란" class="headerlink" title="스프링 EL이란?"></a>스프링 EL이란?</h4><ul>
+<li>객체 그래프를 조회하고 조작하는 기능을 제공한다.</li>
+<li><a href="https://docs.oracle.com/javaee/5/tutorial/doc/bnahq.html" target="_blank" rel="noopener">Unified EL</a>과 비슷하지만, 메소드 호출을 지원하며, 문자열 템플릿 기능도 제공한다.</li>
+<li>OGNL, MVEL, JBOss EL 등 자바에서 사용할 수 있는 여러 EL이 있지만, SpEL은 모든 스프링 프로젝트 전반에 걸쳐 사용할 EL로 만들었다.</li>
+<li>스프링 3.0 부터 지원.</li>
+</ul>
+<h4 id="문법"><a href="#문법" class="headerlink" title="문법"></a>문법</h4><ul>
+<li>#{“표현식”}</li>
+<li>${“프로퍼티”}</li>
+<li>표현식은 프로퍼티를 가질 수 있지만, 반대는 안 됨.<ul>
+<li>#{${my.data} + 1}</li>
+</ul>
+</li>
+<li>레퍼런스 참고</li>
+</ul>
+<h4 id="실제로-어디서-쓰나"><a href="#실제로-어디서-쓰나" class="headerlink" title="실제로 어디서 쓰나?"></a>실제로 어디서 쓰나?</h4><ul>
+<li>@Value 애노테이션</li>
+<li>@ConditionalOnExpression 애노테이션</li>
+<li>스프링 시큐리티<ul>
+<li>메소드 시큐리티, @PreAuthorize, @PostAuthorize, @PreFilter, @PostFilter</li>
+<li>XML 인터셉터 URL 설정</li>
+<li>…</li>
+</ul>
+</li>
+<li>스프링 데이터<ul>
+<li>@Query 애노테이션</li>
+</ul>
+</li>
+<li><a href="https://blog.outsider.ne.kr/997" target="_blank" rel="noopener">Thymeleaf</a></li>
+<li>…</li>
+</ul>
+<h4 id="SpEL-구성"><a href="#SpEL-구성" class="headerlink" title="SpEL 구성"></a>SpEL 구성</h4><ul>
+<li>ExpressionParser parser = new SpelExpressionParser()<ul>
+<li>예제에서 확인</li>
+</ul>
+</li>
+<li>StandardEvaluationContext context = new StandardEvaluationContext(bean)</li>
+<li>Expression expression = parser.parseExpression(“SpEL 표현식”)</li>
+<li>String value = expression.getvalue(context, String.class)</li>
+</ul>
+<h4 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h4><p><img src="/images/springc/springcore04-01.png" alt="springcore"></p>
+<p><img src="/images/springc/springcore04-02.png" alt="springcore"><br><br></p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#Springframework">
+    <span class="tag-code">Springframework</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/03/23/Git/oss-git-github/">
+        <span class="nav-arrow">← </span>
+        
+          Git/GitHub 입문 (oss개발자포럼 세미나)
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/03/26/Spring/springframework-core05/">
+        
+          스프링 AOP
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#스프링-프레임워크-핵심기술04-inflearn-백기선"><span class="toc-nav-text">스프링 프레임워크 핵심기술04(inflearn) - 백기선</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Springframework"><span class="toc-nav-text">Springframework</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#SpEL-스프링-Expression-Language"><span class="toc-nav-text">SpEL(스프링 Expression Language)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#스프링-EL이란"><span class="toc-nav-text">스프링 EL이란?</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#문법"><span class="toc-nav-text">문법</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#실제로-어디서-쓰나"><span class="toc-nav-text">실제로 어디서 쓰나?</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SpEL-구성"><span class="toc-nav-text">SpEL 구성</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#예제"><span class="toc-nav-text">예제</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/03/26/Spring/springframework-core04/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

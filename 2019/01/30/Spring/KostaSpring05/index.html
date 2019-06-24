@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      Spring MVC TEST (KOSTA) | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>Spring MVC TEST (KOSTA)</h2>
+  <p class="post-date">2019-01-30</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p><img src="/images/springframwork-logo.png" alt="springf"></p>
+<h1 id="KOSTA-DAY59"><a href="#KOSTA-DAY59" class="headerlink" title="KOSTA DAY59"></a>KOSTA DAY59</h1><h2 id="Springframework"><a href="#Springframework" class="headerlink" title="Springframework"></a>Springframework</h2><h3 id="Mapper-Test"><a href="#Mapper-Test" class="headerlink" title="Mapper Test"></a>Mapper Test</h3><p>CRUD를 위한 Mapping이 잘되었는지 확인하기위한 Test방법에 대해 알아보자.</p>
+<ul>
+<li>테스트를 위한 DB의 테이블과 data를 생성한다.<br>(table명 = tbl_board, seq_board)</li>
+</ul>
+<p><img src="/images/springk/springk05-01.png" alt="springk"></p>
+<p><img src="/images/springk/springk05-02.png" alt="springk"></p>
+<p><img src="/images/springk/springk05-03.png" alt="springk"></p>
+<p><img src="/images/springk/springk05-04.png" alt="springk"></p>
+<p><img src="/images/springk/springk05-05.png" alt="springk"></p>
+<ul>
+<li>BoardVO클래스 생성</li>
+<li>BoardMapper 인터페이스 생성 및 메소드 생성</li>
+<li>BoardMapper.xml 생성 및 select 쿼리문 작성</li>
+<li>BoardMapperTests 테스트 클래스 생성 후 Junit Test처리<br>전체 data 로그로 출력</li>
+</ul>
+<h4 id="Create-Test"><a href="#Create-Test" class="headerlink" title="Create Test"></a>Create Test</h4><ul>
+<li>인서트문의 경우 두가지 처리방법이 있다.<ul>
+<li>인서트 후에, pk정보가 필요없는 경우 </li>
+<li>처리방법/pk정보가 필요한 경우</li>
+</ul>
+</li>
+</ul>
+<h5 id="먼저-pk정보가-필요없는-insert"><a href="#먼저-pk정보가-필요없는-insert" class="headerlink" title="먼저 pk정보가 필요없는 insert"></a>먼저 pk정보가 필요없는 insert</h5><p><img src="/images/springk/springk05-06.png" alt="springk"></p>
+<p><img src="/images/springk/springk05-07.png" alt="springk"></p>
+<p><img src="/images/springk/springk05-08.png" alt="springk"></p>
+<ul>
+<li>Query문 작성</li>
+<li>Test 실행</li>
+<li>bno값이 null로 결과가 나온다.</li>
+</ul>
+<h5 id="pk정보가-필요한-경우-insert"><a href="#pk정보가-필요한-경우-insert" class="headerlink" title="pk정보가 필요한 경우 insert"></a>pk정보가 필요한 경우 insert</h5><p><img src="/images/springk/springk05-09.png" alt="springk"></p>
+<p><img src="/images/springk/springk05-10.png" alt="springk"></p>
+<ul>
+<li>insert문 안 selectKey태그를 작성하여, pk값을 구한다.(bno)</li>
+<li>위와 같은 방식으로 test를 실행했을때, 결과값에 bno값이 출력된다.</li>
+</ul>
+<h4 id="Read-Test"><a href="#Read-Test" class="headerlink" title="Read Test"></a>Read Test</h4><p>pk정보를 이용하여 테이터 출력을 해보자.</p>
+<p><img src="/images/springk/springk05-11.png" alt="springk"></p>
+<p><img src="/images/springk/springk05-12.png" alt="springk"></p>
+<ul>
+<li>Long값을 파라미터값으로 쓸 경우, L을 뒤에 붙여준다.<br><br><br></li>
+</ul>
+<h3 id="Service-Test"><a href="#Service-Test" class="headerlink" title="Service Test"></a>Service Test</h3><p>service 객체를 만들어서 Test를 실행해보자.</p>
+<p><img src="/images/springk/springk05-13.png" alt="springk"></p>
+<p><img src="/images/springk/springk05-14.png" alt="springk"></p>
+<p><img src="/images/springk/springk05-15.png" alt="springk"></p>
+<p><img src="/images/springk/springk05-16.png" alt="springk"></p>
+<ul>
+<li>service 패키지를 생성<br>root-context.xml에 service 패키지를 scan할 수 있도록 설정한다.</li>
+<li>service 인터페이스 생성</li>
+<li>servie 인터페이스를 implements 하는 InsertBoardService 생성</li>
+<li>InsertBoardService에 오버라이딩 메소드를 작성한다.<br>내용 → Insert(selectKey사용)</li>
+<li>테스트 실행<br><br><br></li>
+</ul>
+<h3 id="Controller-Test"><a href="#Controller-Test" class="headerlink" title="Controller Test"></a>Controller Test</h3><p>Controller 객체를 만들어서 Test 해보자.</p>
+<p>Controller는 기본적으로 서버로 부터 받는 주소값을 가지고 결과를 요청하는 공간이기 때문에 서버를 실행하지 않고 Test하기 위해서는 Test 클래스 안에서 설정이 필요하다.</p>
+<p><img src="/images/springk/springk05-17.png" alt="springk"></p>
+<p><img src="/images/springk/springk05-18.png" alt="springk"></p>
+<p><img src="/images/springk/springk05-19.png" alt="springk"></p>
+<ul>
+<li>BoardController를 생성한다.</li>
+<li>ControllerTest 생성 및 설정<ul>
+<li>WebAppConfiguration을 사용하여 WebAppicationContext를 이용할 수 있도록 한다.</li>
+<li>ContextConfiguration으로 설정 파일을 로드한다.</li>
+<li>WebAppicationContext를 Setter로 DI한다.</li>
+<li>MockMvc를 선언한다. 이유는 WAS 구동을 하지 않고도 테스트를 할 수 있기 때문에</li>
+<li>Before 어노테이션은 테스트 메소드 실행 전 실행하게 해준다.</li>
+</ul>
+</li>
+<li>테스트 코드를 상기 예제와같이 작성 후 실행하면 톰캣 서버 실행을 하지 않아도 결과가 log로 출력된다.</li>
+<li>post방식/ 파라미터값이 있는 경우 예제를 작성해보았다.<br><br><br></li>
+</ul>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#Springframework_kosta">
+    <span class="tag-code">Springframework_kosta</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/01/29/Spring/KostaSpring04/">
+        <span class="nav-arrow">← </span>
+        
+          개발환경 세팅, Junit 테스트, OracleDB 연동, mybaits연동, log4jdbc, MVC Controller, 파일업/다운로드 (KOSTA)
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/02/17/Etc/블로그-마크다운-활용/">
+        
+          블로그 명령어 정리
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#KOSTA-DAY59"><span class="toc-nav-text">KOSTA DAY59</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Springframework"><span class="toc-nav-text">Springframework</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Mapper-Test"><span class="toc-nav-text">Mapper Test</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Create-Test"><span class="toc-nav-text">Create Test</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#먼저-pk정보가-필요없는-insert"><span class="toc-nav-text">먼저 pk정보가 필요없는 insert</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#pk정보가-필요한-경우-insert"><span class="toc-nav-text">pk정보가 필요한 경우 insert</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Read-Test"><span class="toc-nav-text">Read Test</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Service-Test"><span class="toc-nav-text">Service Test</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Controller-Test"><span class="toc-nav-text">Controller Test</span></a></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/01/30/Spring/KostaSpring05/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

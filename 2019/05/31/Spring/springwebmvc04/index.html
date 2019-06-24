@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      스프링 MVC 설정 - 스프링 MVC 빈 설정 | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>스프링 MVC 설정 - 스프링 MVC 빈 설정</h2>
+  <p class="post-date">2019-05-31</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p><img src="/images/springframwork-logo.png" alt="springf"></p>
+<h1 id="스프링-웹-MVC-inflearn-백기선"><a href="#스프링-웹-MVC-inflearn-백기선" class="headerlink" title="스프링 웹 MVC(inflearn) - 백기선"></a>스프링 웹 MVC(inflearn) - 백기선</h1><h2 id="Springframework"><a href="#Springframework" class="headerlink" title="Springframework"></a>Springframework</h2><h3 id="스프링-MVC-빈-설정"><a href="#스프링-MVC-빈-설정" class="headerlink" title="스프링 MVC 빈 설정"></a>스프링 MVC 빈 설정</h3><h4 id="Configuration을-사용한-자바-설정-파일에-직접-Bean을-사용해서-등록하기"><a href="#Configuration을-사용한-자바-설정-파일에-직접-Bean을-사용해서-등록하기" class="headerlink" title="@Configuration을 사용한 자바 설정 파일에 직접 @Bean을 사용해서 등록하기"></a>@Configuration을 사용한 자바 설정 파일에 직접 @Bean을 사용해서 등록하기</h4><ul>
+<li>Dispatcher Servlet의 기본적략을 따른다면 아래와 같다.<br>  <img src="/images/springwebmvc/springwebmvc04-1.png" alt="springmvc"></li>
+<li>추가적인 설정이 있다면 아래와 같이 설정을 추가해준다.<br>  <img src="/images/springwebmvc/springwebmvc04-2.png" alt="springmvc"></li>
+<li>현재는 이러한 방법은 거의 쓰지 않는다. spring mvc에서 제공하는 방법을 사용한다.</li>
+</ul>
+<h4 id="EanbleWebMvc"><a href="#EanbleWebMvc" class="headerlink" title="@EanbleWebMvc"></a>@EanbleWebMvc</h4><ul>
+<li>애노테이션 기반 스프링 MVC를 사용할 때 편리한 웹 MVC 기본 설정</li>
+<li>@Configuration이 있는 클래스에 @EanbleWebMvc를 설정해준다.<br>  <img src="/images/springwebmvc/springwebmvc04-5.png" alt="springmvc"></li>
+<li>@EanbleWebMvc는 DelegatingWebMvcConfiguration을 import해준다.<br>  <img src="/images/springwebmvc/springwebmvc04-4.png" alt="springmvc"><ul>
+<li>DispatcherServlet의 기본설정을 빈으로 등록해준다. (등록된 빈이 없다면..)</li>
+</ul>
+</li>
+<li>사용 시에는 반드시 servletContext를 설정해주어야한다.<br>  <img src="/images/springwebmvc/springwebmvc04-3.png" alt="springmvc"><ul>
+<li>DelegatingWebMvcConfiguration에서 servletContext를 많이 참조하고 있기 때문에..</li>
+</ul>
+</li>
+</ul>
+<h4 id="WebMvcConfigurer"><a href="#WebMvcConfigurer" class="headerlink" title="WebMvcConfigurer"></a>WebMvcConfigurer</h4><ul>
+<li><p>@EnableWebMvc가 제공하는 빈을 커스터마이징할 수 있는 기능을 제공하는 인터페이스</p>
+</li>
+<li><p>WebMvcConfigurer를 implements 함으로서 설정이 가능하다.</p>
+<ul>
+<li>viewresolver를 직접등록하지 않고 다음과 같이 설정 할 수 있다.<br>  <img src="/images/springwebmvc/springwebmvc04-6.png" alt="springmvc"><br><br><br></li>
+</ul>
+</li>
+</ul>
+<h3 id="스프링-부트의-MVC-설정"><a href="#스프링-부트의-MVC-설정" class="headerlink" title="스프링 부트의 MVC 설정"></a>스프링 부트의 MVC 설정</h3><ul>
+<li>스프링 부트의 “주관”이 적용된 자동 설정이 동작한다.<ul>
+<li>JSP 보다 Thymeleaf 선호</li>
+<li>JSON 지원</li>
+<li>정적 리소스 지원 (+ 웰컴 페이지, 파비콘 등 지원)<h4 id="스프링-MVC-커스터마이징"><a href="#스프링-MVC-커스터마이징" class="headerlink" title="스프링 MVC 커스터마이징"></a>스프링 MVC 커스터마이징</h4></li>
+</ul>
+</li>
+<li>application.properties</li>
+<li>@Configuration + Implements WebMvcConfigurer: 스프링 부트의 스프링 MVC 자동설정 + 추가 설정</li>
+<li>@Configuration + @EnableWebMvc + Imlements WebMvcConfigurer: 스프링 부트의 스프링 MVC 자동설정 사용하지 않음.</li>
+</ul>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#SpringWebMvc">
+    <span class="tag-code">SpringWebMvc</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/05/29/Git/git04/">
+        <span class="nav-arrow">← </span>
+        
+          Git - merge, rebase
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/05/31/Spring/springwebmvc05/">
+        
+          스프링 MVC 설정 - 스프링 부트에서 JSP 사용하기
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#스프링-웹-MVC-inflearn-백기선"><span class="toc-nav-text">스프링 웹 MVC(inflearn) - 백기선</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Springframework"><span class="toc-nav-text">Springframework</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#스프링-MVC-빈-설정"><span class="toc-nav-text">스프링 MVC 빈 설정</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Configuration을-사용한-자바-설정-파일에-직접-Bean을-사용해서-등록하기"><span class="toc-nav-text">@Configuration을 사용한 자바 설정 파일에 직접 @Bean을 사용해서 등록하기</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#EanbleWebMvc"><span class="toc-nav-text">@EanbleWebMvc</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#WebMvcConfigurer"><span class="toc-nav-text">WebMvcConfigurer</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#스프링-부트의-MVC-설정"><span class="toc-nav-text">스프링 부트의 MVC 설정</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#스프링-MVC-커스터마이징"><span class="toc-nav-text">스프링 MVC 커스터마이징</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/05/31/Spring/springwebmvc04/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

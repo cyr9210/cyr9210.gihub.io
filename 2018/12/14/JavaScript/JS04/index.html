@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      jQuery, 선택자, 이벤트, 스타일, 효과, DOM구현 | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>jQuery, 선택자, 이벤트, 스타일, 효과, DOM구현</h2>
+  <p class="post-date">2018-12-14</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="KOSTA-DAY33"><a href="#KOSTA-DAY33" class="headerlink" title="KOSTA DAY33"></a>KOSTA DAY33</h1><h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><p><img src="/images/JS_logo.png" alt="JS"></p>
+<h3 id="JQuery"><a href="#JQuery" class="headerlink" title="JQuery"></a>JQuery</h3><p>jQuery는 자바스크립트의 생산성을 향상시켜주는 자바스크립트 라이브러리 입니다.</p>
+<blockquote>
+<p>라이브러리 : 자주 사용되는 로직들을 재활용,유통 가능하도록 만든 로직들의 묶음을 의미한다.</p>
+</blockquote>
+<ul>
+<li>JS로 코딩하는것보다 10배 이상의 생산성을 높일 수 있다.</li>
+<li>RIA 기반 웹</li>
+<li>웹표준</li>
+<li>HTML5</li>
+</ul>
+<blockquote>
+<p><strong>RIA</strong><br>웹 애플리케이션의 장점은 유지하면서 기존 웹 브라우저 기반 인터페이스의 단점인 늦은 응답 속도, 데스크톱 애플리케이션에 비해 떨어지는 조작성 등을 개선하기 위한 기술의 통칭</p>
+</blockquote>
+<h4 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h4><p><img src="/images/javascript/JS03-09.png" alt="JS"><br><img src="/images/javascript/JS03-10.png" alt="JS"><br><br></p>
+<h3 id="선택자-selector"><a href="#선택자-selector" class="headerlink" title="선택자(selector)"></a>선택자(selector)</h3><p><img src="/images/javascript/JS03-08.png" alt="JS"></p>
+<ul>
+<li>$(‘’) 팩토리함수 : JQuery 객체를 생성한다.</li>
+<li>JQuery 함수를 사용하려면 JQuery 객체가 필요하다.</li>
+<li>선택자는 항상 집합으로 표현된다.</li>
+<li>size() : 선택자 집합의 갯수 호출</li>
+<li>get(index) : JQuery객체 → JS객체 변환<br>index값을 안넣으면 배열로 변환된다.</li>
+<li>$() : 팩토리함수, JS → JQuery객체 변환</li>
+<li><p>확장집합에서 엘리먼트 획득<br><img src="/images/javascript/JS04-01.png" alt="JS"><br><strong>toArray() 도 JQuery객체를 JS배열 객체로 변환</strong></p>
+</li>
+<li><p>add()함수를 사용하여 많은 선택자를 체인으로 연결가능<br><img src="/images/javascript/JS04-02.png" alt="JS"></p>
+</li>
+<li><p>확장집합 다듬기<br>not() 함수를 사용하여 체인으로 연결해 논리부정 관계 구성<br><img src="/images/javascript/JS04-03.png" alt="JS"></p>
+</li>
+<li><p>filter() : 표현식 매개변수의 값에 따라서 일치하지 않는 엘리먼트를 새로운 집합에서 제거한다.</p>
+</li>
+<li>has() : test 표현식과 일치하는 자손을 가진 엘리먼트를 포함한 새로운 확장 집합을 생성</li>
+<li><p>JQuery 체인 관리하기</p>
+<ul>
+<li>end() : 이전 확장집합으로 돌아간다.</li>
+<li>find() : 어떤 요소의 하위 요소(자식) 중 특정 요소를 찾는다.</li>
+<li>andself() : 두집합의 합집을 생성한다.</li>
+<li>each() : 선택한 요소가 여러 개일 때 각각에 대하여 반복하여 함수를 실행.<br><img src="/images/javascript/JS04-04.png" alt="JS"></li>
+</ul>
+</li>
+<li><p>다른 HTML DOM 엘리먼트의 관계를 통해 새로운 확장집단을 얻는 메소드<br><img src="/images/javascript/JS04-05.png" alt="JS"></p>
+</li>
+<li><p>속성선택자<br>val(매개변수) : value속성을 매개변수로 지정.<br>매개변수값이 없으면, value값을 불러온다.</p>
+</li>
+<li>배열관리<br><img src="/images/javascript/JS04-06.png" alt="JS"><br><img src="/images/javascript/JS04-07.png" alt="JS"></li>
+<li>JQuery 함수를 사용하기 위해 $.을 붙였다.</li>
+<li>item은 해당 array[index]값<br><br><br></li>
+</ul>
+<h3 id="이벤트"><a href="#이벤트" class="headerlink" title="이벤트"></a>이벤트</h3><ul>
+<li>이벤트 핸들러를 할당할 수있는 통합 메소드 제공</li>
+<li>표준 이벤트 타입명 사용</li>
+<li>엘리먼트의 이벤트 타입 마다 여러 핸들러 할당</li>
+<li>핸들러의 매개변수로 사용할 수 잇는 event 인스턴스 제공</li>
+<li>이벤트의 해제와 기본동작을 막는 통합메소드 제공</li>
+<li>캡쳐 지원하지않음 , 크로스브라우징 지원</li>
+</ul>
+<h4 id="예제-1"><a href="#예제-1" class="headerlink" title="예제"></a>예제</h4><p><img src="/images/javascript/JS04-08.png" alt="JS"></p>
+<ul>
+<li>이벤트 핸들러의 this는 이벤트 객체이다.(event.target)</li>
+<li>remove(‘class_name’) : 클래스제거, 매개변수값이 없으면 전체 제거</li>
+<li>addClass함수를 통해서 css스타일을 변경 또는 추가한다.</li>
+</ul>
+<p><img src="/images/javascript/JS04-09.png" alt="JS"></p>
+<ul>
+<li>on함수에 이벤트이름을 넣어서 적용할 수 있다.</li>
+</ul>
+<p><img src="/images/javascript/JS04-10.png" alt="JS"></p>
+<ul>
+<li>toggleClass() : 설정된 클래스명을 해당하는 요소가 가지고 있는지 판단하여 해당 요소가 있으면 이를 제거합니다. 반대로 해당 요소가 없다면 이를 부여하는 메소드</li>
+<li>trigger() : 시작시 해당 메소드 실행</li>
+<li>event.stopPropagation() : 버블링방지</li>
+</ul>
+<p><img src="/images/javascript/JS04-11.png" alt="JS"></p>
+<ul>
+<li>hover(func1(), func2()) : 마우스 올려놨을때, func1 실행<br>마우스 떨어졌을때, func2 실행<br><br><br></li>
+</ul>
+<h3 id="효과"><a href="#효과" class="headerlink" title="효과"></a>효과</h3><h4 id="스타일"><a href="#스타일" class="headerlink" title="스타일"></a>스타일</h4><p>css(name) : 첫번째 엘리먼트에서 name으로 명시한 css 프로퍼티값<br>css(name, value) : css스타일 name 프로퍼티를 value값으로 설정<br><strong>파라미터값에 따라서 다른 메소드</strong></p>
+<h4 id="기본시각효과"><a href="#기본시각효과" class="headerlink" title="기본시각효과"></a>기본시각효과</h4><p>JQuery는 기본적으로 세가지 효과를 제공한다. 아래표를 살펴보자.<br><img src="/images/javascript/JS04-12.png" alt="JS"><br>6개의 함수 외에도 위의 표의 같은 효과메소드를 묶은 toggle 메소드가 있다. 아래 표를 살펴보자.<br><img src="/images/javascript/JS04-13.png" alt="JS"></p>
+<h4 id="애니메이션-사용자-정의-효과"><a href="#애니메이션-사용자-정의-효과" class="headerlink" title="애니메이션(사용자 정의 효과)"></a>애니메이션(사용자 정의 효과)</h4><p>모든 집합의 엘리먼트에 properties와 easing 매개변수에 명시된 대로 애니메이션을 수행한다. 애니메이션 수행이 완료된 뒤 호출될 콜백함수를 선택적으로 명시 할 수 있다.</p>
+<ul>
+<li>animate(properties, duration, easing, callback)<ul>
+<li>properties : 마지막에 도달해야 하는 값을 명시하는 객체</li>
+<li>duration : 선택 사항으로 효과가 지속되는 시간을 1/1000초 단위로 설정</li>
+<li>easing : 선택사항으로 애니메이션을 미묘하게 바꿀 때 사용</li>
+<li>callback : 선택사항으로 애니메이션이 완료된 뒤 호출</li>
+</ul>
+</li>
+</ul>
+<h4 id="예제-2"><a href="#예제-2" class="headerlink" title="예제"></a>예제</h4><p><img src="/images/javascript/JS04-14.png" alt="JS"></p>
+<ul>
+<li>more클래스의 a태그 하위의 모든 p태그의 스타일중 display : none;으로 설정하여 사라지게 만들었다.</li>
+<li>more클래스의 a태그를 클릭시, slideDown되며 해당 p태그들이 보여지며, a태그의 text를 read less로 바꾸었다.</li>
+<li>read less를 클릭시, slideUp되며 p태그들이 감춰진다.</li>
+</ul>
+<p><img src="/images/javascript/JS04-15.png" alt="JS"></p>
+<ul>
+<li>기본시각효과 및 애니메이션 이벤트 모든 내용들을 종합적으로 활용한예이다.<br><br><br></li>
+</ul>
+<h3 id="DOM-JQuery-활용"><a href="#DOM-JQuery-활용" class="headerlink" title="DOM(JQuery 활용)"></a>DOM(JQuery 활용)</h3><p>JQuery를 활용하여 DOM)(문서 객체 모델)을 다루는법에 대해 알아보자.</p>
+<h4 id="속성-엘리먼트"><a href="#속성-엘리먼트" class="headerlink" title="속성, 엘리먼트"></a>속성, 엘리먼트</h4><p><img src="/images/javascript/JS04-16.png" alt="JS"></p>
+<ul>
+<li>attr(name) : 일치하는 집합에서 첫번째 엘리먼트(선택자의 여러 대상들이 있을때)속성값을 얻는다.<br>일치하는 집합이 없거나 속성이 없으면 undifiend</li>
+<li>attr(name, value) or attr ( attributes) : 속성의 값을 부여</li>
+</ul>
+<h4 id="엘리먼트-조작"><a href="#엘리먼트-조작" class="headerlink" title="엘리먼트 조작"></a>엘리먼트 조작</h4><ul>
+<li><p>엘리먼트 복사, 이동(부모,자식관계)<br><img src="/images/javascript/JS04-17.png" alt="JS"></p>
+</li>
+<li><p>엘리먼트 복사, 이동(형제 관계)<br>뒤에 오는것이 이동되는것으로 보여진다.<br><img src="/images/javascript/JS04-18.png" alt="JS"></p>
+</li>
+<li><p>엘리먼트 감싸기<br><img src="/images/javascript/JS04-19.png" alt="JS"></p>
+</li>
+</ul>
+<h4 id="예제-3"><a href="#예제-3" class="headerlink" title="예제"></a>예제</h4><p><img src="/images/javascript/JS04-20.png" alt="JS"></p>
+<ul>
+<li>innsertBefore()을 통해 생성한 ol문을 footer(id)의 앞에 삽입</li>
+<li>footnote의 span태그를 선택(3개) 각각의 객체를 다음과 같이 실행한다.<ul>
+<li>먼저 this(해당 index span태그)의 뒤에 a태그를 작성하여 삽입</li>
+<li>this는 notes(id)의 자식으로 맨뒤에 입력된다.</li>
+<li>this안에 아까작성한 a태그와 같은 a태그를 맨뒤에 삽입한다.</li>
+<li>this전체를 </li><li>태그로 감싼다.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>&nspb; : 공백(스페이스 한 칸)을 의미.</strong><br>띄어쓰기를 할 때는 키보드의 스페이스키(가장 길쭉한 키)를 한 번 눌러 “공백 문자” 즉 빈 칸을 한 개 삽입합니다.<br>그런데 HTML 문법에서는, 일반 텍스트 편집에서와 달리, 공백 2개를 연속으로 사용해도 2칸을 띄어쓸 수 없습니다.<br>공백을 아무리 많이 삽입해도 공백 1개로 간주됩니다. 그래서 공백을 여러 개 사용해야 할 때는, 빈 칸을 &nbsp; 이렇게 표현해 줍니다.<br>그러면 브라우저가 &amp;nbsp\; 기호를 빈 칸으로 표시해 줍니다.</p>
+</blockquote>
+<p><br><br></p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#jQuery">
+    <span class="tag-code">jQuery</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/12/13/JavaScript/JS03/">
+        <span class="nav-arrow">← </span>
+        
+          this., 브라우저 내장객체(BOM), 문서 내장객체(DOM), Ajax
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2018/12/17/JavaScript/JS05/">
+        
+          JQuery 활용 Ajax, 슬라이드쇼
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#KOSTA-DAY33"><span class="toc-nav-text">KOSTA DAY33</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#JavaScript"><span class="toc-nav-text">JavaScript</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#JQuery"><span class="toc-nav-text">JQuery</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#예제"><span class="toc-nav-text">예제</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#선택자-selector"><span class="toc-nav-text">선택자(selector)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#이벤트"><span class="toc-nav-text">이벤트</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#예제-1"><span class="toc-nav-text">예제</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#효과"><span class="toc-nav-text">효과</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#스타일"><span class="toc-nav-text">스타일</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#기본시각효과"><span class="toc-nav-text">기본시각효과</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#애니메이션-사용자-정의-효과"><span class="toc-nav-text">애니메이션(사용자 정의 효과)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#예제-2"><span class="toc-nav-text">예제</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#DOM-JQuery-활용"><span class="toc-nav-text">DOM(JQuery 활용)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#속성-엘리먼트"><span class="toc-nav-text">속성, 엘리먼트</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#엘리먼트-조작"><span class="toc-nav-text">엘리먼트 조작</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#예제-3"><span class="toc-nav-text">예제</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2018/12/14/JavaScript/JS04/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

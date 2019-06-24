@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      스프링 데이터 JPA - Cascade, Fetch, Query, 스프링 데이터 JPA 소개 및 원리 | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>스프링 데이터 JPA - Cascade, Fetch, Query, 스프링 데이터 JPA 소개 및 원리</h2>
+  <p class="post-date">2019-04-30</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p><img src="/images/jpa_logo.png" alt="springf"></p>
+<h1 id="스프링-데이터-JPA-inflearn-백기선"><a href="#스프링-데이터-JPA-inflearn-백기선" class="headerlink" title="스프링 데이터 JPA(inflearn) - 백기선"></a>스프링 데이터 JPA(inflearn) - 백기선</h1><h2 id="핵심-개념-이해"><a href="#핵심-개념-이해" class="headerlink" title="핵심 개념 이해"></a>핵심 개념 이해</h2><h3 id="엔티티의-상태와-Cascade"><a href="#엔티티의-상태와-Cascade" class="headerlink" title="엔티티의 상태와 Cascade"></a>엔티티의 상태와 Cascade</h3><h4 id="엔티티의-상태"><a href="#엔티티의-상태" class="headerlink" title="엔티티의 상태"></a>엔티티의 상태</h4><p><img src="/images/jpa/jpa04-1.png" alt="springjpa"></p>
+<ul>
+<li>Transient: JPA가 모르는 상태<ul>
+<li>ex)  new 사용하여 객체생성 상태</li>
+</ul>
+</li>
+<li>Persistent: JPA가 관리중인 상태 (1차 캐시, Dirty Checking(변경사항을 계속체크), Write Behind, …)<ul>
+<li>ex)  session.save()를 통해 저장한 상태</li>
+<li>1차 캐시(persistent context(session, entitiymanager등)에 저장된다.)<br>  <img src="/images/jpa/jpa04-2.png" alt="springjpa"><ul>
+<li>바로 쿼리문을 날리지 않고 1차캐싱 후, 트랜잭션 종료 시 객체를 체크하여 쿼리문을 날린다.<br>(불필요한 쿼리문 날리지 않는다.)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Detached: JPA가 더이상 관리하지 않는 상태.<ul>
+<li>session이 끝난상태</li>
+</ul>
+</li>
+<li>Removed: JPA가 관리하긴 하지만 삭제하기로 한 상태.</li>
+</ul>
+<h4 id="Cascade"><a href="#Cascade" class="headerlink" title="Cascade"></a>Cascade</h4><ul>
+<li>엔티티의 상태 변화를 전파 시키는 옵션</li>
+<li>참조하고 있던 객체들도 함께 변화한다.(설정을 해주어야한다.)<br>  <img src="/images/jpa/jpa04-3.png" alt="springjpa"><ul>
+<li>remove 옵션을 주면 함께 사라진다.<br><img src="/images/jpa/jpa04-4.png" alt="springjpa"></li>
+</ul>
+</li>
+</ul>
+<h3 id="Fetch"><a href="#Fetch" class="headerlink" title="Fetch"></a>Fetch</h3><ul>
+<li>연관 관계의 엔티티의 정보를 어떻게 가져올것인가에 대한 설정<ul>
+<li>지금 : Eager<ul>
+<li>@ManyToOne (기본값)<ul>
+<li>comment를 통해서 post를 호출할때 쿼리를 두개 날라지 않는다. 조인쿼리문을 사용하여 출력<br><img src="/images/jpa/jpa04-6.png" alt="springjpa"></li>
+</ul>
+</li>
+<li>@OneToMany의 fetch모드를 eager로 변경하게 되면 comment정보 까지 가져오는것을 확인 할 수 있다.<br><img src="/images/jpa/jpa04-5.png" alt="springjpa"></li>
+</ul>
+</li>
+<li>나중에 : Lazy<ul>
+<li>@OneToMany (기본값)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>Hibernate API (get vs load)</strong><br>session.get();, session.load();과 같이 사용이 가능하다.<br>get</p>
+<pre><code>- DB에서 정보를 가져온다. (Null이 나올 수 있음.)
+</code></pre><p>load</p>
+<pre><code>- DB뿐만 아니라 프록시에서도 정보를 가져올 수 있다.
+- 정보가 없으면 예외를 던진다.
+</code></pre></blockquote>
+<p><br></p>
+<h3 id="Query"><a href="#Query" class="headerlink" title="Query"></a>Query</h3><p>지금까지 Hibernate를 사용하여(entitymanager.unwrap(Session.class);) Session객체를 사용하였다.(save(), get() 등의 api를 사용했다.)<br>(JPA를 사용하여 EntityManager의 persist(), find()를 사용할 수도 있다.)<br>이제 JPA를 사용하여 Query하는 방법에 대해 알아보자. </p>
+<h4 id="JPQL"><a href="#JPQL" class="headerlink" title="JPQL"></a>JPQL</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">TypedQuery&lt;Post&gt; query = entityManager.createQuery(&quot;SELECT p FROM Post As p&quot;, Post.class);</span><br><span class="line">List&lt;Post&gt; posts = query.getResultList();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Java Persistence Query Language / Hibernate Query Language</li>
+<li><strong>데이터베이스 테이블이 아닌, 엔티티 객체 모델 기반으로 쿼리 작성.</strong></li>
+<li>JPA 또는 하이버네이트가 해당 쿼리를 SQL로 변환해서 실행함.</li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#hql" target="_blank" rel="noopener">참고문서</a></li>
+<li>단점<ul>
+<li>오타발생이 가능</li>
+<li>타입세이프하지 않다.(문자열이기 때문에..)</li>
+</ul>
+</li>
+</ul>
+<h4 id="Criteria"><a href="#Criteria" class="headerlink" title="Criteria"></a>Criteria</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CriteriaBuilder builder = entityManager.getCriteriaBuilder();</span><br><span class="line">CriteriaQuery&lt;Post&gt; criteria = builder.createQuery(Post.class);</span><br><span class="line">Root&lt;Post&gt; root = criteria.from(Post.class);</span><br><span class="line">criteria.select(root);</span><br><span class="line">List&lt;Post&gt; posts = entityManager.createQuery(criteria).getResultList();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>타입 세이프 쿼리</li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#criteria" target="_blank" rel="noopener">참고문서</a><br><br></li>
+</ul>
+<h4 id="Native-Query"><a href="#Native-Query" class="headerlink" title="Native Query"></a>Native Query</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Post&gt; posts = entityManager</span><br><span class="line">.createNativeQuery(&quot;SELECT * FROM Post&quot;, Post.class)</span><br><span class="line">.getResultList();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>타입을 지원하지 않지만 타입을 받긴한다..</li>
+<li><a href="https://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#sql" target="_blank" rel="noopener">참고문서</a><br><br></li>
+</ul>
+<h3 id="스프링-데이터-JPA-소개-및-원리"><a href="#스프링-데이터-JPA-소개-및-원리" class="headerlink" title="스프링 데이터 JPA 소개 및 원리"></a>스프링 데이터 JPA 소개 및 원리</h3><h4 id="JpaRepository-lt-Entity-Id-gt-인터페이스"><a href="#JpaRepository-lt-Entity-Id-gt-인터페이스" class="headerlink" title="JpaRepository&lt;Entity, Id&gt; 인터페이스"></a>JpaRepository&lt;Entity, Id&gt; 인터페이스</h4><ul>
+<li>매직 인터페이스</li>
+<li>@Repository가 없어도 빈으로 등록해 줌.</li>
+</ul>
+<h4 id="EnableJpaRepositories"><a href="#EnableJpaRepositories" class="headerlink" title="@EnableJpaRepositories"></a>@EnableJpaRepositories</h4><ul>
+<li>매직의 시작은 여기서 부터</li>
+</ul>
+<h4 id="매직은-어떻게-이뤄지나"><a href="#매직은-어떻게-이뤄지나" class="headerlink" title="매직은 어떻게 이뤄지나?"></a>매직은 어떻게 이뤄지나?</h4><ul>
+<li>시작은 @Import(JpaRepositoriesRegistrar.class)</li>
+<li>핵심은 ImportBeanDefinitionRegistrar 인터페이스<br><br><br></li>
+</ul>
+<hr>
+<h5 id="tip"><a href="#tip" class="headerlink" title="tip"></a>tip</h5><ul>
+<li>sql 문 보이도록 하기<ul>
+<li>logging.level.org.hibernate.SQL=debug</li>
+<li>spring.jpa.show-sql=true</li>
+</ul>
+</li>
+<li>sql문에서 value값 보기<ul>
+<li>logging.level.org.hibernate.type.descriptor.sql=trace</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><br></p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#JPA">
+    <span class="tag-code">JPA</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/04/30/Spring/springjpa03/">
+        <span class="nav-arrow">← </span>
+        
+          스프링 데이터 JPA - 엔티티 맵핑, Value 타입 맵핑, 관계 맵핑
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/05/03/Spring/springjpa06/">
+        
+          스프링 데이터 JPA - 스프링 데이터 JPA
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#스프링-데이터-JPA-inflearn-백기선"><span class="toc-nav-text">스프링 데이터 JPA(inflearn) - 백기선</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#핵심-개념-이해"><span class="toc-nav-text">핵심 개념 이해</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#엔티티의-상태와-Cascade"><span class="toc-nav-text">엔티티의 상태와 Cascade</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#엔티티의-상태"><span class="toc-nav-text">엔티티의 상태</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Cascade"><span class="toc-nav-text">Cascade</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Fetch"><span class="toc-nav-text">Fetch</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Query"><span class="toc-nav-text">Query</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#JPQL"><span class="toc-nav-text">JPQL</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Criteria"><span class="toc-nav-text">Criteria</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Native-Query"><span class="toc-nav-text">Native Query</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#스프링-데이터-JPA-소개-및-원리"><span class="toc-nav-text">스프링 데이터 JPA 소개 및 원리</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#JpaRepository-lt-Entity-Id-gt-인터페이스"><span class="toc-nav-text">JpaRepository&lt;Entity, Id&gt; 인터페이스</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#EnableJpaRepositories"><span class="toc-nav-text">@EnableJpaRepositories</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#매직은-어떻게-이뤄지나"><span class="toc-nav-text">매직은 어떻게 이뤄지나?</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#tip"><span class="toc-nav-text">tip</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/04/30/Spring/springjpa04/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

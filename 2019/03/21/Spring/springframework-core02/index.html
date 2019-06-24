@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      Resource / Validation | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>Resource / Validation</h2>
+  <p class="post-date">2019-03-21</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p><img src="/images/springframwork-logo.png" alt="springf"></p>
+<h1 id="스프링-프레임워크-핵심기술02-inflearn-백기선"><a href="#스프링-프레임워크-핵심기술02-inflearn-백기선" class="headerlink" title="스프링 프레임워크 핵심기술02(inflearn) - 백기선"></a>스프링 프레임워크 핵심기술02(inflearn) - 백기선</h1><h2 id="Springframework"><a href="#Springframework" class="headerlink" title="Springframework"></a>Springframework</h2><h3 id="Resource-추상화"><a href="#Resource-추상화" class="headerlink" title="Resource 추상화"></a><a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/io/Resource.html" target="_blank" rel="noopener">Resource</a> 추상화</h3><ul>
+<li>org.springframework.core.io.Resource</li>
+<li>스프링 내부에서 많이 사용하는 인터페이스.</li>
+<li>java.net.URL을 추상화 한 것.<ul>
+<li>추상화 한 이유<ul>
+<li>클래스패스 기준으로 리소스 읽어오는 기능 부재</li>
+<li>ServletContext를 기준으로 상대 경로로 읽어오는 기능 부재</li>
+<li>새로운 핸들러를 등록하여 특별한 URL 접미사를 만들어 사용할 수는 있지만 구현이 복잡하고 편의성 메소드가 부족하다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>상속 받은 인터페이스</li>
+<li>주요 메소드<ul>
+<li>getInputStream()</li>
+<li>exitst()</li>
+<li>isOpen()</li>
+<li>getDescription(): 전체 경로 포함한 파일 이름 또는 실제 URL</li>
+</ul>
+</li>
+</ul>
+<h4 id="구현체"><a href="#구현체" class="headerlink" title="구현체"></a>구현체</h4><ul>
+<li>UrlResource: java.net.URL 참고, 기본으로 지원하는 프로토콜 http, https, ftp, file, jar.</li>
+<li>ClassPathResource: 지원하는 접두어 classpath:</li>
+<li>FileSystemResource</li>
+<li>ServletContextResource: 웹 애플리케이션 루트에서 상대 경로로 리소스 찾는다.<ul>
+<li>대부분 ServletContextResource를 사용할 것이다.   </li>
+</ul>
+</li>
+</ul>
+<h4 id="리소스-읽어오기"><a href="#리소스-읽어오기" class="headerlink" title="리소스 읽어오기"></a>리소스 읽어오기</h4><ul>
+<li>Resource의 타입은 locaion 문자열과 ApplicationContext의 타입에 따라 결정 된다.<ul>
+<li>ClassPathXmlApplicationContext -&gt; ClassPathResource</li>
+<li>FileSystemXmlApplicationContext -&gt; FileSystemResource</li>
+<li>WebApplicationContext -&gt; ServletContextResource</li>
+</ul>
+</li>
+<li>ApplicationContext의 타입에 상관없이 리소스 타입을 강제하려면 java.net.URL 접두어(+ classpath:)중 하나를 사용할 수 있다.<ul>
+<li>classpath:me/whiteship/config.xml -&gt; ClassPathResource</li>
+<li>file:///some/resource/path/config.xml -&gt; FileSystemResource</li>
+<li><strong>좀 더 명시적으로 사용하기 위해 이 방법을 추천한다.</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h4><p><img src="/images/springc/springcore02-01.png" alt="springcore2"></p>
+<ul>
+<li>WebApplicationContext인것으로 보아 기본적으로 ServletContextResource 이어야한다.</li>
+<li>classpath: 라는 prefix를 사용했기 때문에 ClassPathResource가 나온다.</li>
+</ul>
+<p>여기서 만약 classpath라는 prefix를 지운다면…<br><img src="/images/springc/springcore02-02.png" alt="springcore2"></p>
+<ul>
+<li>ServletContextResource 가 나온다.</li>
+<li>스프링부트가 띄어주는 기본적인 내장 톰캣은 ContextPath가 지정되어있지 않다.<br>때문에 resource파일이 존재하지 않는다고 결과가 나온다.</li>
+<li><strong>스프링부트 기반으로 어플리케이션을 작성할 시, 특히 JSP를 사용하지 않는경우 classpath 접두어 사용을 추천한다.</strong><br><br><br></li>
+</ul>
+<h3 id="Validation-추상화"><a href="#Validation-추상화" class="headerlink" title="Validation 추상화"></a><a href="https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/validation/Validator.html" target="_blank" rel="noopener">Validation</a> 추상화</h3><ul>
+<li>애플리케이션에서 사용하는 객체 검증용 인터페이스.</li>
+<li>어떤한 계층과도 관계가 없다. → 모든 계층(웹, 서비스, 데이터)에서 사용해도 좋다.</li>
+<li>DataBinder에 들어가 바인딩 할 때 같이 사용되기도 한다.</li>
+</ul>
+<h4 id="인터페이스"><a href="#인터페이스" class="headerlink" title="인터페이스"></a>인터페이스</h4><p><img src="/images/springc/springcore02-05.png" alt="springcore2"></p>
+<p><img src="/images/springc/springcore02-03.png" alt="springcore2"></p>
+<p><img src="/images/springc/springcore02-04.png" alt="springcore2"></p>
+<ul>
+<li>boolean supports(Class clazz): 어떤 타입의 객체를 검증할 때 사용할 것인지 결정한다.(검증 대상)</li>
+<li>void validate(Object obj, Errors e): 실제 검증 로직을 이 안에서 구현한다.(검증 내용)<ul>
+<li>구현할 때 ValidationUtils 사용하면 편리하다.</li>
+<li>ValidationUtils를 사용하지 않고, rejectValue를 통해서 직접 만들어 사용할 수 있다.<br>특정필드값에 대한 검증이 아니라면 reject사용<br><img src="/images/springc/springcore02-06.png" alt="springcore2">    </li>
+</ul>
+</li>
+</ul>
+<h4 id="스프링-부트-2-0-5-이상-버전을-사용할-때"><a href="#스프링-부트-2-0-5-이상-버전을-사용할-때" class="headerlink" title="스프링 부트 2.0.5 이상 버전을 사용할 때"></a>스프링 부트 2.0.5 이상 버전을 사용할 때</h4><p><img src="/images/springc/springcore02-07.png" alt="springcore2"></p>
+<ul>
+<li>JSR-380(<a href="https://docs.jboss.org/hibernate/beanvalidation/spec/2.0/api/" target="_blank" rel="noopener">Bean Validation 2.0.1</a>) 구현체로 hibernate-validator 사용.()</li>
+<li><a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/validation/beanvalidation/LocalValidatorFactoryBean.html" target="_blank" rel="noopener">LocalValidatorFactoryBean</a> 빈으로 자동 등록<br><br><br></li>
+</ul>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#Springframework">
+    <span class="tag-code">Springframework</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/03/20/Spring/springframework-core01/">
+        <span class="nav-arrow">← </span>
+        
+          IoC 컨테이너와 빈
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/03/22/Spring/springframework-core03/">
+        
+          데이터 바인딩
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#스프링-프레임워크-핵심기술02-inflearn-백기선"><span class="toc-nav-text">스프링 프레임워크 핵심기술02(inflearn) - 백기선</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Springframework"><span class="toc-nav-text">Springframework</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Resource-추상화"><span class="toc-nav-text">Resource 추상화</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#구현체"><span class="toc-nav-text">구현체</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#리소스-읽어오기"><span class="toc-nav-text">리소스 읽어오기</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#예제"><span class="toc-nav-text">예제</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Validation-추상화"><span class="toc-nav-text">Validation 추상화</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#인터페이스"><span class="toc-nav-text">인터페이스</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#스프링-부트-2-0-5-이상-버전을-사용할-때"><span class="toc-nav-text">스프링 부트 2.0.5 이상 버전을 사용할 때</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/03/21/Spring/springframework-core02/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>
