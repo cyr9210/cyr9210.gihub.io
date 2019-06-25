@@ -135,7 +135,7 @@ tags: SpringWebMvc
     - 기본적으로 JacksonJSON2가 의존성에 들어있다.
     - 즉, JSON용 HTTP 메세지 컨버터가 등록되어있다.
 
-- ObjectMapper는 스프링부트에서 의존성을 자동으러 주입해준다.
+- ObjectMapper는 스프링부트에서 의존성을 자동으로 주입해준다.(spring-boot-starter-web 추가 시)
 - TestCode
     ![springwebmvc](/images/springwebmvc/springwebmvc07-7.png)
 - JsonPath문법
