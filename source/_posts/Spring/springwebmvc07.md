@@ -71,6 +71,7 @@ tags: SpringWebMvc
 
 #### 리소스 핸들러 설정
 ![springwebmvc](/images/springwebmvc/springwebmvc07-4.png)
+- **file시스템으로 맵핑 시, classpath: 대신 file:로 넣어준다.**
 - 어떤 요청 패턴을 지원할 것인가
 - 어디서 리소스를 찾을 것인가
 - 캐싱
