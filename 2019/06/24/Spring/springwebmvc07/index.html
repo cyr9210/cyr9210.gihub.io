@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head><meta name="generator" content="Hexo 3.8.0">
+  <head><meta name="generator" content="Hexo 3.9.0">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   <meta name="description" content="개발공부 정리 블로그">
@@ -176,6 +176,7 @@
 </ul>
 <h4 id="리소스-핸들러-설정"><a href="#리소스-핸들러-설정" class="headerlink" title="리소스 핸들러 설정"></a>리소스 핸들러 설정</h4><p><img src="/images/springwebmvc/springwebmvc07-4.png" alt="springwebmvc"></p>
 <ul>
+<li><strong>file시스템으로 맵핑 시, classpath: 대신 file:로 넣어준다.</strong></li>
 <li>어떤 요청 패턴을 지원할 것인가</li>
 <li>어디서 리소스를 찾을 것인가</li>
 <li>캐싱</li>
@@ -267,7 +268,7 @@
 <li>즉, JSON용 HTTP 메세지 컨버터가 등록되어있다.</li>
 </ul>
 </li>
-<li><p>ObjectMapper는 스프링부트에서 의존성을 자동으러 주입해준다.</p>
+<li><p>ObjectMapper는 스프링부트에서 의존성을 자동으로 주입해준다.(spring-boot-starter-web 추가 시)</p>
 </li>
 <li>TestCode<br>  <img src="/images/springwebmvc/springwebmvc07-7.png" alt="springwebmvc"></li>
 <li>JsonPath문법<ul>
@@ -348,7 +349,7 @@
       <div class="tags">
         <span>Tags:</span>
         
-  <a href="/tags#SpringWebMvc">
+  <a href="/tags#SpringWebMvc" >
     <span class="tag-code">SpringWebMvc</span>
   </a>
 
