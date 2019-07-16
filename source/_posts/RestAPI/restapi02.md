@@ -74,3 +74,53 @@ tags: RestAPI
     - id는 DB에 들어갈 때 자동생성된 값으로 나오는지 확인
 <br><br>
 
+### 입력값 제한하기
+#### 입력값 제한
+- id 또는 입력 받은 데이터로 계산해야 하는 값들은 입력을 받지 않아야 한다.
+- EventDto 적용
+
+#### DTO -> 도메인 객체로 값 복사
+- ModelMapper 사용 (DTO를 도메인으로 convert)
+    ```
+    <dependency>
+        <groupId>org.modelmapper</groupId>
+        <artifactId>modelmapper</artifactId>
+        <version>2.3.1</version> 
+    </dependency>
+    ```
+
+- 통합 테스트로 전환
+    - @WebMvcTest 빼고 다음 애노테이션 추가
+        - @SpringBootTest
+        - @AutoConfigureMockMvc
+    - Repository @MockBean 코드 제거
+
+- 테스트 할 것
+    - 입력값으로 누가 id나 eventStatus, offline, free 이런 데이터까지 같이 주면?
+    - Bad_Request로 응답 vs 받기로 한 값 이외는 무시 (선택)
+<br><br>
+
+### 입력값 이외에 에러 발생
+#### ObjectMapper 커스터마이징
+- spring.jackson.deserialization.fail-on-unknown-properties=true
+    - springboot에서 제공한다.
+<br><br>
+
+### Bad Request 처리하기
+#### @valid 와 BindingResult (또는 Errors)
+- BindingResult는 항상 @Valid 바로 다음 인자로 사용해야 함. (스프링 MVC)
+![restapi](/images/restapi/restapi02-3.png)
+- @NotNull, @NotEmpty, @Min, @Max, ... 사용해서 입력값 바인딩할 때 에러 확인할 수 있음
+![restapi](/images/restapi/restapi02-5.png)
+
+#### 도메인 Validator 만들기
+- Validator 인터페이스 없이 만들어도 상관없음
+- 빈으로 등록 후, 사용
+![restapi](/images/restapi/restapi02-6.png)
+![restapi](/images/restapi/restapi02-4.png)
+
+#### 테스트 설명 용 애노테이션 만들기
+![restapi](/images/restapi/restapi02-7.png)
+![restapi](/images/restapi/restapi02-8.png)
+<br><br>
+
