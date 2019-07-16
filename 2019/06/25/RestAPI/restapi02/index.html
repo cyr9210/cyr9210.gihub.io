@@ -191,6 +191,46 @@
 </ul>
 </li>
 </ul>
+<h3 id="입력값-제한하기"><a href="#입력값-제한하기" class="headerlink" title="입력값 제한하기"></a>입력값 제한하기</h3><h4 id="입력값-제한"><a href="#입력값-제한" class="headerlink" title="입력값 제한"></a>입력값 제한</h4><ul>
+<li>id 또는 입력 받은 데이터로 계산해야 하는 값들은 입력을 받지 않아야 한다.</li>
+<li>EventDto 적용</li>
+</ul>
+<h4 id="DTO-gt-도메인-객체로-값-복사"><a href="#DTO-gt-도메인-객체로-값-복사" class="headerlink" title="DTO -&gt; 도메인 객체로 값 복사"></a>DTO -&gt; 도메인 객체로 값 복사</h4><ul>
+<li><p>ModelMapper 사용 (DTO를 도메인으로 convert)</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.modelmapper&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;modelmapper&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.3.1&lt;/version&gt; </span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>통합 테스트로 전환</p>
+<ul>
+<li>@WebMvcTest 빼고 다음 애노테이션 추가<ul>
+<li>@SpringBootTest</li>
+<li>@AutoConfigureMockMvc</li>
+</ul>
+</li>
+<li>Repository @MockBean 코드 제거</li>
+</ul>
+</li>
+<li><p>테스트 할 것</p>
+<ul>
+<li>입력값으로 누가 id나 eventStatus, offline, free 이런 데이터까지 같이 주면?</li>
+<li>Bad_Request로 응답 vs 받기로 한 값 이외는 무시 (선택)<br><br><br></li>
+</ul>
+</li>
+</ul>
+<h3 id="입력값-이외에-에러-발생"><a href="#입력값-이외에-에러-발생" class="headerlink" title="입력값 이외에 에러 발생"></a>입력값 이외에 에러 발생</h3><h4 id="ObjectMapper-커스터마이징"><a href="#ObjectMapper-커스터마이징" class="headerlink" title="ObjectMapper 커스터마이징"></a>ObjectMapper 커스터마이징</h4><ul>
+<li>spring.jackson.deserialization.fail-on-unknown-properties=true<ul>
+<li>springboot에서 제공한다.<br><br><br></li>
+</ul>
+</li>
+</ul>
+<h3 id="Bad-Request-처리하기"><a href="#Bad-Request-처리하기" class="headerlink" title="Bad Request 처리하기"></a>Bad Request 처리하기</h3><h4 id="valid-와-BindingResult-또는-Errors"><a href="#valid-와-BindingResult-또는-Errors" class="headerlink" title="@valid 와 BindingResult (또는 Errors)"></a>@valid 와 BindingResult (또는 Errors)</h4><ul>
+<li>BindingResult는 항상 @Valid 바로 다음 인자로 사용해야 함. (스프링 MVC)<br><img src="/images/restapi/restapi02-3.png" alt="restapi"></li>
+<li>@NotNull, @NotEmpty, @Min, @Max, … 사용해서 입력값 바인딩할 때 에러 확인할 수 있음<br><img src="/images/restapi/restapi02-5.png" alt="restapi"></li>
+</ul>
+<h4 id="도메인-Validator-만들기"><a href="#도메인-Validator-만들기" class="headerlink" title="도메인 Validator 만들기"></a>도메인 Validator 만들기</h4><ul>
+<li>Validator 인터페이스 없이 만들어도 상관없음</li>
+<li>빈으로 등록 후, 사용<br><img src="/images/restapi/restapi02-6.png" alt="restapi"><br><img src="/images/restapi/restapi02-4.png" alt="restapi"></li>
+</ul>
+<h4 id="테스트-설명-용-애노테이션-만들기"><a href="#테스트-설명-용-애노테이션-만들기" class="headerlink" title="테스트 설명 용 애노테이션 만들기"></a>테스트 설명 용 애노테이션 만들기</h4><p><img src="/images/restapi/restapi02-7.png" alt="restapi"><br><img src="/images/restapi/restapi02-8.png" alt="restapi"><br><br><br></p>
 </section>
     <!-- Tags START -->
     
@@ -237,7 +277,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#스프링-기반-REST-API-개발-inflearn-백기선"><span class="toc-nav-text">스프링 기반 REST API 개발(inflearn) - 백기선</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#이벤트-생성-API-개발"><span class="toc-nav-text">이벤트 생성 API 개발</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#이벤트-API-테스트-클래스-생성"><span class="toc-nav-text">이벤트 API 테스트 클래스 생성</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#스프링-부트-슬라이스-테스트"><span class="toc-nav-text">스프링 부트 슬라이스 테스트</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#MockMvc"><span class="toc-nav-text">MockMvc</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#테스트-할-것"><span class="toc-nav-text">테스트 할 것</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Event-생성-API-구현-201-응답-받기"><span class="toc-nav-text">Event 생성 API 구현 - 201 응답 받기</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#테스트-할-것-1"><span class="toc-nav-text">테스트 할 것</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Event-생성-API-EventRepository-구현"><span class="toc-nav-text">Event 생성 API - EventRepository 구현</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#스프링-데이터-JPA"><span class="toc-nav-text">스프링 데이터 JPA</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#테스트-할-것-2"><span class="toc-nav-text">테스트 할 것</span></a></li></ol></li></ol></li></ol></li></ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#스프링-기반-REST-API-개발-inflearn-백기선"><span class="toc-nav-text">스프링 기반 REST API 개발(inflearn) - 백기선</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#이벤트-생성-API-개발"><span class="toc-nav-text">이벤트 생성 API 개발</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#이벤트-API-테스트-클래스-생성"><span class="toc-nav-text">이벤트 API 테스트 클래스 생성</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#스프링-부트-슬라이스-테스트"><span class="toc-nav-text">스프링 부트 슬라이스 테스트</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#MockMvc"><span class="toc-nav-text">MockMvc</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#테스트-할-것"><span class="toc-nav-text">테스트 할 것</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Event-생성-API-구현-201-응답-받기"><span class="toc-nav-text">Event 생성 API 구현 - 201 응답 받기</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#테스트-할-것-1"><span class="toc-nav-text">테스트 할 것</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Event-생성-API-EventRepository-구현"><span class="toc-nav-text">Event 생성 API - EventRepository 구현</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#스프링-데이터-JPA"><span class="toc-nav-text">스프링 데이터 JPA</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#테스트-할-것-2"><span class="toc-nav-text">테스트 할 것</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#입력값-제한하기"><span class="toc-nav-text">입력값 제한하기</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#입력값-제한"><span class="toc-nav-text">입력값 제한</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#DTO-gt-도메인-객체로-값-복사"><span class="toc-nav-text">DTO -&gt; 도메인 객체로 값 복사</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#입력값-이외에-에러-발생"><span class="toc-nav-text">입력값 이외에 에러 발생</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#ObjectMapper-커스터마이징"><span class="toc-nav-text">ObjectMapper 커스터마이징</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Bad-Request-처리하기"><span class="toc-nav-text">Bad Request 처리하기</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#valid-와-BindingResult-또는-Errors"><span class="toc-nav-text">@valid 와 BindingResult (또는 Errors)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#도메인-Validator-만들기"><span class="toc-nav-text">도메인 Validator 만들기</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#테스트-설명-용-애노테이션-만들기"><span class="toc-nav-text">테스트 설명 용 애노테이션 만들기</span></a></li></ol></li></ol></li></ol></li></ol>
     
   </div>
 </aside>
