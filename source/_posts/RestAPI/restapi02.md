@@ -124,3 +124,102 @@ tags: RestAPI
 ![restapi](/images/restapi/restapi02-8.png)
 <br><br>
 
+#### Bad Request 응답 본문 만들기
+
+- errors 객체를 JSON으로 serialization이 안되기 때문에 body에 담아도 에러가 발생한다.
+  ![restapi02-9](/images/restapi/restapi02-9.png)
+  - errors는 자바빈 스펙을 준수하고 있는 객체가 아니다… -> beanSerializer를 사용할 수 없다.
+  - ErrorsSerilizer를 만들어서 문제를 해결 할 수 있다.
+
+> **Error의 rejectValue와 reject의 차이점** 
+>
+> reject : 글로벌 에러
+>
+> rejectValue : field 에러
+
+- 생성한 ErrorSerializer를 ObjectMapper에 등록한다.
+  - 스프링부트에서는 @JsonComponent를 제공한다. (ObjectMapper에 등록해준다.)
+    ![restapi02-10](/images/restapi/restapi02-10.png)
+
+<br><br>
+
+#### 매개변수를 이용한 테스트
+
+- 테스트 코드 리팩토링
+  - 테스트에서 중복 코드 제거
+  - 매개변수만 바꾸면서 사용하고 싶을 때, JUnitParams를 사용하면 해결 할 수 있다.
+    - 라이브러리 추가
+      ```
+      <dependency>
+      	<groupId>pl.pragmatists</groupId>
+      	<artifactId>JUnitParams</artifactId>
+      	<version>1.1.1</version>
+      	<scope>test</scope>
+      </dependency>
+      ```
+
+    - test Class 설정
+      ```
+      @RunWith(JUnitParamsRunner.class)
+      public class EventTest {
+      	....
+      }
+      ```
+
+    - 사용
+      ```
+      @Test
+      @Parameters({
+        "0, 0, ture",
+        "100, 0, false",
+        "0, 100, false"
+      })
+      public void testFree(int basePrice, int maxPrice, boolean isFree) {
+          
+        //given
+        Event event = Event.builder()
+          .basePrice(basePrice)
+          .maxPrice(maxPrice)
+          .build();
+      
+        //when
+        event.update();
+      
+        //then
+        assertThat(event.isFree()).isEqualTo(isFree);
+      
+      }
+      ```
+
+    - TypeSafe하게 사용하고 싶다면
+      ```
+      @Test
+      @Parameters(method = "parametersForTestFree")
+      public void testFree(int basePrice, int maxPrice, boolean isFree) {
+        
+        // given
+        Event event = Event.builder()
+          .basePrice(basePrice)
+          .maxPrice(maxPrice)
+          .build();
+      
+        // when
+        event.update(); 
+        
+        // then
+        assertThat(event.isFree()).isEqualTo(isFree);
+      
+      }
+      
+      
+      private Object[] parametersForTestFree() {
+      	return new Object[] {
+      		new Object[] {0, 0, true},
+      		new Object[] {100, 0 , false},
+      		new Object[] {0, 100, false}
+      	};
+      }
+      ```
+      - parametersFor~~ 를 사용하면 method = "parametersFor~~"는 생략 가능하다.
+<br><br>
+
