@@ -29,7 +29,11 @@
     <favorites_list name="cyr9210.github.io" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
     <leaf />
+=======
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+>>>>>>> 325390a5d957b863f1e51bb8a658796bfa5d1e71
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -383,12 +387,19 @@
       <workItem from="1563284085454" duration="155000" />
       <workItem from="1563414681240" duration="161000" />
       <workItem from="1563497151923" duration="1231000" />
+<<<<<<< HEAD
       <workItem from="1563498581298" duration="433000" />
+=======
+>>>>>>> 325390a5d957b863f1e51bb8a658796bfa5d1e71
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="530936000" />
+=======
+    <option name="totallyTimeSpent" value="530503000" />
+>>>>>>> 325390a5d957b863f1e51bb8a658796bfa5d1e71
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -402,7 +413,11 @@
   <component name="ToolWindowManager">
     <frame x="1280" y="23" width="1280" height="1365" extended-state="0" />
     <layout>
+<<<<<<< HEAD
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48875254" visible="true" weight="0.30936995" />
+=======
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48875254" weight="0.30936995" />
+>>>>>>> 325390a5d957b863f1e51bb8a658796bfa5d1e71
       <window_info id="Structure" order="1" sideWeight="0.5017241" side_tool="true" weight="0.26979" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -421,7 +436,11 @@
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.30547947" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Thumbnails" order="11" weight="0.32876712" />
+<<<<<<< HEAD
       <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49785408" visible="true" weight="0.32050276" />
+=======
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49785408" weight="0.32050276" />
+>>>>>>> 325390a5d957b863f1e51bb8a658796bfa5d1e71
       <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="bottom" id="Graph Database Console" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -970,8 +989,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/RestAPI/restapi02.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+<<<<<<< HEAD
         <state split_layout="FIRST">
           <first_editor relative-caret-position="767">
+=======
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="1039">
+>>>>>>> 325390a5d957b863f1e51bb8a658796bfa5d1e71
             <caret line="221" column="9" selection-start-line="221" selection-start-column="9" selection-end-line="221" selection-end-column="9" />
           </first_editor>
           <second_editor />
