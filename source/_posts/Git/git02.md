@@ -64,7 +64,7 @@ tags: Git
     - git status 확인 시, 변경내용 없음으로 표시된다. (변경사항들이 stash에 저장됨)
     ![git](/images/git/git02-4.png)
     
-- git stash \--list
+- git stash list
     - 저장된 stash 조회
 - git stash apply
     - 최근에 저장됬던 stash를 적용한다.

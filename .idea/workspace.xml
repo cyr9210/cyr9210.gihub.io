@@ -1,99 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b822ac65-2a1b-4b7c-a042-e6489a655fa8" name="Default Changelist" comment="" />
+    <list default="true" id="10edeb32-08bb-4258-8866-f6cff31a2348" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/Git/git02.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Git/git02.md" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
-  </component>
-  <component name="DefaultGradleProjectSettings">
-    <option name="isMigrated" value="true" />
-  </component>
   <component name="FavoritesManager">
     <favorites_list name="cyr9210.github.io" />
   </component>
   <component name="FileEditorManager">
-<<<<<<< HEAD
-    <leaf />
-=======
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
->>>>>>> 325390a5d957b863f1e51bb8a658796bfa5d1e71
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/_posts/Git/git02.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="422">
+                <caret line="66" column="12" selection-start-line="66" selection-start-column="12" selection-end-line="66" selection-end-column="12" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>m</find>
-      <find>My Project</find>
-      <find>프로젝트-회고</find>
-      <find>My Pro</find>
-      <find>tags</find>
-      <find>&lt;</find>
-      <find>tags: Spring</find>
-      <find>tags: Java</find>
-      <find>tags: DataBase</find>
-      <find>tags: JSP</find>
-      <find>tags: Java(kosta)</find>
-      <find>tags: Springframework</find>
-      <find>tags: Springframework(kosta)</find>
-      <find>![</find>
-      <find>./MDimages</find>
-      <find>--</find>
-      <find>테스트</find>
-      <find>springpostg</find>
-      <find>image</find>
-      <find>![springjpa]</find>
-      <find>image/</find>
-      <find>쿼리 만들기</find>
-      <find>기본 리소스</find>
-      <find>uri</find>
-      <find>ca</find>
-      <find>스프링부트</find>
-      <find>objectmap</find>
-      <find>objectma</find>
-      <find>resourcehadler</find>
-      <find>리소</find>
+      <find>git stash --list</find>
+      <find>git stash</find>
     </findStrings>
-    <replaceStrings>
-      <replace>/database/</replace>
-      <replace>tags: Jav</replace>
-      <replace>tags: Springframework(kosta)</replace>
-      <replace>tags: Java(kosta)</replace>
-      <replace>tags: OracleDB(kosta)</replace>
-      <replace>tags: JSP(kosta)</replace>
-      <replace>tags: Java</replace>
-      <replace>tags: Springframework_kosta</replace>
-      <replace>[</replace>
-      <replace>/images/kogile/</replace>
-      <replace>/images/project/kogile/</replace>
-      <replace>/images/Project//</replace>
-      <replace>/images/Project/kogile</replace>
-      <replace>\--</replace>
-      <replace>/</replace>
-      <replace>/images/jpa/</replace>
-      <replace>URI</replace>
-    </replaceStrings>
     <dirStrings>
-      <dir>$PROJECT_DIR$/source/about</dir>
-      <dir>$PROJECT_DIR$</dir>
-      <dir>$PROJECT_DIR$/source/_posts/OracleDB</dir>
-      <dir>$PROJECT_DIR$/source/_posts/JSP</dir>
-      <dir>$PROJECT_DIR$/source/_posts/Java</dir>
-      <dir>$PROJECT_DIR$/source/_posts/Spring</dir>
+      <dir>$PROJECT_DIR$/source/_posts/Git</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -102,76 +46,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/source/_posts/AWS/internet01.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springboot02.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springboot04.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springboot06.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springboot07.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springframework-core01.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springboog09.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springboot08.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springboot10.md" />
-        <option value="$PROJECT_DIR$/source/_posts/springboot11.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springboot11.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springboot09.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springboot14.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springboot15.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springboot16.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springboot03.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Git/oss-git-github.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Etc/git01.md" />
         <option value="$PROJECT_DIR$/source/_posts/Git/git02.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Git/git01.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Java/lombok.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springwebmvc01.md" />
-        <option value="$PROJECT_DIR$/themes/vexo/source/css/_partial/markdown.styl" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springwebmvc03.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springboot13.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springjpa04.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springjpa03.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springjpa02.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springjpa01.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Java/java12.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springjpa05.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springjpa06.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springboot12.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springboot05.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Project/Notice-Project.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/oauth2-google-login.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Git/git-rebase.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Git/git04.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springwebmvc02.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springwebmvc04.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springwebmvc05.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springwebmvc06.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Git/git03.md" />
-        <option value="$PROJECT_DIR$/themes/vexo/_config.yml" />
-        <option value="$PROJECT_DIR$/source/_posts/interview/interview02.md" />
-        <option value="$PROJECT_DIR$/source/_posts/interview/interview01.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springwebmvc08.md" />
-        <option value="$PROJECT_DIR$/source/_posts/RestAPI/restapi01.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springwebmvc07.md" />
-        <option value="$PROJECT_DIR$/themes/vexo/source/js/script.js" />
-        <option value="$PROJECT_DIR$/source/_posts/RestAPI/restapi02.md" />
       </list>
     </option>
   </component>
-  <component name="JsbtTreeLayoutManager">
-    <layout place="tools.popupGrunt">
-      <scroll-view-position x="0" y="0" />
-    </layout>
-  </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand />
-      <select />
-    </treeState>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1280" />
-    <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="1365" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="2560" />
+    <option name="height" value="1440" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -180,13 +61,17 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
@@ -198,6 +83,13 @@
               <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
               <item name="source" type="462c0819:PsiDirectoryNode" />
               <item name="_posts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+              <item name="_posts" type="462c0819:PsiDirectoryNode" />
+              <item name="Git" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
@@ -210,36 +102,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554913390244" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/source/_posts/RestAPI" />
-      <recent name="$PROJECT_DIR$/source/_posts/Spring" />
-      <recent name="$PROJECT_DIR$/source/_posts/Git" />
-      <recent name="$PROJECT_DIR$/source/_posts/git" />
-      <recent name="$PROJECT_DIR$/source/_posts/interview" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -258,166 +127,23 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b822ac65-2a1b-4b7c-a042-e6489a655fa8" name="Default Changelist" comment="" />
-      <created>1551689540612</created>
+      <changelist id="10edeb32-08bb-4258-8866-f6cff31a2348" name="Default Changelist" comment="" />
+      <created>1564637894958</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1551689540612</updated>
-      <workItem from="1551689544310" duration="6000" />
-      <workItem from="1551689560304" duration="4874000" />
-      <workItem from="1551725169707" duration="5189000" />
-      <workItem from="1551765739695" duration="6869000" />
-      <workItem from="1551954800054" duration="790000" />
-      <workItem from="1551959567726" duration="14188000" />
-      <workItem from="1552104741597" duration="3212000" />
-      <workItem from="1552109095043" duration="5731000" />
-      <workItem from="1552116871828" duration="5290000" />
-      <workItem from="1552144640154" duration="2639000" />
-      <workItem from="1552206910452" duration="1122000" />
-      <workItem from="1552215450716" duration="6082000" />
-      <workItem from="1552306080571" duration="9457000" />
-      <workItem from="1552367076315" duration="15104000" />
-      <workItem from="1552410815969" duration="422000" />
-      <workItem from="1552416314801" duration="2680000" />
-      <workItem from="1552419260713" duration="891000" />
-      <workItem from="1552420203202" duration="29000" />
-      <workItem from="1552420256760" duration="7474000" />
-      <workItem from="1552525113379" duration="1285000" />
-      <workItem from="1552526939898" duration="10294000" />
-      <workItem from="1552550030005" duration="363000" />
-      <workItem from="1552732690216" duration="2683000" />
-      <workItem from="1552807904871" duration="4727000" />
-      <workItem from="1552818071863" duration="152000" />
-      <workItem from="1552887623684" duration="31000" />
-      <workItem from="1552888264429" duration="9954000" />
-      <workItem from="1552972352462" duration="7813000" />
-      <workItem from="1553055175783" duration="489000" />
-      <workItem from="1553061477827" duration="6331000" />
-      <workItem from="1553102746480" duration="1846000" />
-      <workItem from="1553145057980" duration="6211000" />
-      <workItem from="1553231759013" duration="2839000" />
-      <workItem from="1553235842883" duration="2239000" />
-      <workItem from="1553238222221" duration="351000" />
-      <workItem from="1553238641801" duration="228000" />
-      <workItem from="1553238903525" duration="1866000" />
-      <workItem from="1553316033066" duration="9702000" />
-      <workItem from="1553478822345" duration="677000" />
-      <workItem from="1553571588292" duration="9772000" />
-      <workItem from="1553588735060" duration="203000" />
-      <workItem from="1553588973805" duration="589000" />
-      <workItem from="1553659225132" duration="1974000" />
-      <workItem from="1553661444945" duration="5656000" />
-      <workItem from="1553668834700" duration="11498000" />
-      <workItem from="1553747348562" duration="10634000" />
-      <workItem from="1553833890990" duration="1196000" />
-      <workItem from="1553945345105" duration="3551000" />
-      <workItem from="1554179411291" duration="20643000" />
-      <workItem from="1554207781346" duration="1768000" />
-      <workItem from="1554209948058" duration="292000" />
-      <workItem from="1554260908547" duration="9508000" />
-      <workItem from="1554441374536" duration="5366000" />
-      <workItem from="1554634308090" duration="4705000" />
-      <workItem from="1554707692384" duration="3685000" />
-      <workItem from="1554866462761" duration="11841000" />
-      <workItem from="1554908383920" duration="4135000" />
-      <workItem from="1554968497512" duration="12996000" />
-      <workItem from="1555050578096" duration="4825000" />
-      <workItem from="1555165858209" duration="4269000" />
-      <workItem from="1555266714966" duration="4761000" />
-      <workItem from="1555305876065" duration="16529000" />
-      <workItem from="1555384551008" duration="12186000" />
-      <workItem from="1555400834875" duration="4890000" />
-      <workItem from="1555420659734" duration="6596000" />
-      <workItem from="1555471454996" duration="3688000" />
-      <workItem from="1555480392889" duration="6194000" />
-      <workItem from="1555562055561" duration="10440000" />
-      <workItem from="1555657650395" duration="87000" />
-      <workItem from="1555657843443" duration="59000" />
-      <workItem from="1555657906558" duration="138000" />
-      <workItem from="1555658069611" duration="8971000" />
-      <workItem from="1555682483983" duration="3210000" />
-      <workItem from="1555833996105" duration="6006000" />
-      <workItem from="1555909721277" duration="18115000" />
-      <workItem from="1556018358155" duration="890000" />
-      <workItem from="1556173756228" duration="13525000" />
-      <workItem from="1556211732322" duration="5076000" />
-      <workItem from="1556518699807" duration="7903000" />
-      <workItem from="1556549735971" duration="2135000" />
-      <workItem from="1556605103151" duration="9540000" />
-      <workItem from="1556637114001" duration="835000" />
-      <workItem from="1556869653456" duration="4017000" />
-      <workItem from="1557040284947" duration="347000" />
-      <workItem from="1557040765593" duration="36000" />
-      <workItem from="1557040842023" duration="3115000" />
-      <workItem from="1557127313665" duration="7136000" />
-      <workItem from="1557210465814" duration="7990000" />
-      <workItem from="1557246406979" duration="5826000" />
-      <workItem from="1557291736602" duration="2981000" />
-      <workItem from="1557471404232" duration="3983000" />
-      <workItem from="1558101773058" duration="2519000" />
-      <workItem from="1558123732117" duration="164000" />
-      <workItem from="1558388066015" duration="321000" />
-      <workItem from="1558390197222" duration="281000" />
-      <workItem from="1558659803426" duration="8350000" />
-      <workItem from="1558673117436" duration="867000" />
-      <workItem from="1558886706772" duration="5211000" />
-      <workItem from="1558972735542" duration="1621000" />
-      <workItem from="1559029110490" duration="4048000" />
-      <workItem from="1559094465106" duration="1483000" />
-      <workItem from="1559246272718" duration="249000" />
-      <workItem from="1559273868129" duration="8893000" />
-      <workItem from="1560165392552" duration="2522000" />
-      <workItem from="1561374808951" duration="2832000" />
-      <workItem from="1561379063696" duration="141000" />
-      <workItem from="1561379373762" duration="140000" />
-      <workItem from="1561423819608" duration="944000" />
-      <workItem from="1561425596100" duration="8000" />
-      <workItem from="1561425658455" duration="3597000" />
-      <workItem from="1561439950650" duration="667000" />
-      <workItem from="1561441158448" duration="5193000" />
-      <workItem from="1561465478029" duration="1674000" />
-      <workItem from="1561774951818" duration="346000" />
-      <workItem from="1561775309595" duration="351000" />
-      <workItem from="1561775938674" duration="217000" />
-      <workItem from="1562225176304" duration="942000" />
-      <workItem from="1562390952435" duration="150000" />
-      <workItem from="1562809216920" duration="1861000" />
-      <workItem from="1563278524574" duration="2966000" />
-      <workItem from="1563283325646" duration="624000" />
-      <workItem from="1563284085454" duration="155000" />
-      <workItem from="1563414681240" duration="161000" />
-      <workItem from="1563497151923" duration="1231000" />
-<<<<<<< HEAD
-      <workItem from="1563498581298" duration="433000" />
-=======
->>>>>>> 325390a5d957b863f1e51bb8a658796bfa5d1e71
+      <updated>1564637894958</updated>
+      <workItem from="1564637896378" duration="78000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-<<<<<<< HEAD
-    <option name="totallyTimeSpent" value="530936000" />
-=======
-    <option name="totallyTimeSpent" value="530503000" />
->>>>>>> 325390a5d957b863f1e51bb8a658796bfa5d1e71
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
+    <option name="totallyTimeSpent" value="430000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="23" width="1280" height="1365" extended-state="0" />
+    <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
+    <editor active="true" />
     <layout>
-<<<<<<< HEAD
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48875254" visible="true" weight="0.30936995" />
-=======
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48875254" weight="0.30936995" />
->>>>>>> 325390a5d957b863f1e51bb8a658796bfa5d1e71
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48875254" visible="true" weight="0.31175536" />
       <window_info id="Structure" order="1" sideWeight="0.5017241" side_tool="true" weight="0.26979" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -432,15 +158,11 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32876712" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50214595" side_tool="true" weight="0.28554216" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.503231" side_tool="true" weight="0.32050276" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.30547947" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Thumbnails" order="11" weight="0.32876712" />
-<<<<<<< HEAD
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49785408" visible="true" weight="0.32050276" />
-=======
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49785408" weight="0.32050276" />
->>>>>>> 325390a5d957b863f1e51bb8a658796bfa5d1e71
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49676898" visible="true" weight="0.32043797" />
       <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="bottom" id="Graph Database Console" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -491,34 +213,7 @@
       <window_info anchor="right" id="Graph Database" order="10" />
     </layout-to-restore>
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
     <option name="RECENT_FILTERS">
       <map>
         <entry key="Branch">
@@ -534,560 +229,30 @@
       </map>
     </option>
   </component>
-  <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$PROJECT_DIR$/themes/vexo" />
-    </ignored-roots>
-  </component>
-  <component name="antWorkspaceConfiguration">
-    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
-    <option name="FILTER_TARGETS" value="false" />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/source/_posts/Java/java16.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="102">
-            <caret line="6" selection-start-line="6" selection-end-line="8" selection-end-column="7" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springboot01.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="119">
-            <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springframework-core01.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="85">
-            <caret line="5" selection-start-line="5" selection-end-line="7" selection-end-column="18" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/vexo/layout/_partial/catalog.ejs" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springframework-introduction02.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="85">
-            <caret line="5" selection-start-line="5" selection-end-line="7" selection-end-column="18" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/vexo/source/css/_partial/markdown.styl" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springwebmvc01.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="175">
-            <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springboot13.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="242">
-            <caret line="165" column="34" lean-forward="true" selection-start-line="165" selection-start-column="34" selection-end-line="165" selection-end-column="34" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa01.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="119">
-            <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa02.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="119">
-            <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa03.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="119">
-            <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa04.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="119">
-            <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Java/java12.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="293">
-            <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa05.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="170">
-            <caret line="10" column="25" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="25" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa06.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="476">
-            <caret line="28" column="91" selection-start-line="28" selection-start-column="91" selection-end-line="28" selection-end-column="91" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springboot05.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="241">
-            <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Project/MenuList-System.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="119">
-            <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Project/kogile.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="102">
-            <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Project/TradeFruit-System.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Project/Kogile-Intermediate.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Project/Notice-Project.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="313">
-            <caret line="189" column="60" selection-start-line="189" selection-start-column="60" selection-end-line="189" selection-end-column="60" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/oauth2-google-login.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="245">
-            <caret line="202" column="67" selection-start-line="202" selection-start-column="67" selection-end-line="202" selection-end-column="67" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Git/git01.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="187">
-            <caret line="11" selection-start-line="11" selection-end-line="11" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Git/oss-git-github.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="119">
-            <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="35" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/.deploy_git/2019/04/19/Git/git02/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="175" column="7" selection-start-line="175" selection-start-column="7" selection-end-line="175" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/Git/git02.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="17">
-            <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springwebmvc02.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="115">
-            <caret line="101" lean-forward="true" selection-start-line="101" selection-end-line="101" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springwebmvc03.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="17">
-            <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springwebmvc04.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="51">
-            <caret line="3" column="18" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="18" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springwebmvc05.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="85">
-            <caret line="5" selection-start-line="5" selection-end-line="7" selection-end-column="18" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Git/git04.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="403">
-            <caret line="42" column="8" lean-forward="true" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Git/git03.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="1587">
-            <caret line="69" selection-start-line="69" selection-end-line="69" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1501" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/vexo/_config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="46" column="75" selection-start-line="46" selection-start-column="75" selection-end-line="46" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/interview/interview01.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="51">
-            <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/interview/interview02.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="69">
-            <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springboot12.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="438">
-            <caret line="246" column="27" lean-forward="true" selection-start-line="246" selection-start-column="27" selection-end-line="246" selection-end-column="27" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Etc/블로그-마크다운-활용.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="820">
-            <caret line="43" selection-start-line="43" selection-end-line="43" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springwebmvc08.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="-2157">
-            <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springwebmvc07.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="549">
-            <caret line="73" column="48" selection-start-line="73" selection-start-column="48" selection-end-line="73" selection-end-column="48" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/RestAPI/restapi01.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="119">
-            <caret line="7" column="12" selection-start-line="5" selection-end-line="7" selection-end-column="12" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springwebmvc06.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="51">
-            <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/vexo/_source/tags/index.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/vexo/source/js/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="102" column="10" lean-forward="true" selection-start-line="102" selection-start-column="10" selection-end-line="102" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/vexo/source/js/qrious.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/vexo/source/js/gitment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-63266" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/vexo/_source/about/index.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/vexo/_source/project/index.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/vexo/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/RestAPI/restapi02.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-<<<<<<< HEAD
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="767">
-=======
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="1039">
->>>>>>> 325390a5d957b863f1e51bb8a658796bfa5d1e71
-            <caret line="221" column="9" selection-start-line="221" selection-start-column="9" selection-end-line="221" selection-end-column="9" />
+          <first_editor relative-caret-position="422">
+            <caret line="66" column="12" selection-start-line="66" selection-start-column="12" selection-end-line="66" selection-end-column="12" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>ojdbc6</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>cyr9210.github.io</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>
