@@ -139,16 +139,19 @@ MIT : 소스코드 공개 의무 X
 
 - PostgreSQL bash로 실행
 ```
-docker start -i -t postgres_boot bash
+docker exec -i -t postgres_boot bash
 ```
 
 - PostgreSQL 접속
 ```
-/*유저를 포스트그레스 바꾼다.*/
+/*유저를 postgres로 변경*/
 su - postgres
 
 /*DB접속*/
-psql sprinfboot
+psql -d <DBname> -U <username>
+
+/*password 를 쓰고 싶다면*/
+psql -d <DBname> -U <username> -W
 
 /*전체 데이터베이스 조회*/
 \l or \list
