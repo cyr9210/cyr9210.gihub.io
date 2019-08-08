@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      restapi03 | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>restapi03</h2>
+  <p class="post-date">2019-08-08</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="스프링-기반-REST-API-개발-inflearn-백기선"><a href="#스프링-기반-REST-API-개발-inflearn-백기선" class="headerlink" title="스프링 기반 REST API 개발(inflearn) - 백기선"></a>스프링 기반 REST API 개발(inflearn) - 백기선</h1><h2 id="HATEOAS와-Self-Describtive-Messgae-적용"><a href="#HATEOAS와-Self-Describtive-Messgae-적용" class="headerlink" title="HATEOAS와 Self-Describtive Messgae 적용"></a>HATEOAS와 Self-Describtive Messgae 적용</h2><h3 id="스프링-HATEOAS-소개"><a href="#스프링-HATEOAS-소개" class="headerlink" title="스프링 HATEOAS 소개"></a>스프링 HATEOAS 소개</h3><ul>
+<li><p>api를 만들 때, REST하게 resource를 보다 쉽게 제공해주는 라이브러리</p>
+</li>
+<li><p><a href="https://docs.spring.io/spring-hateoas/docs/current/reference/html/" target="_blank" rel="noopener">reference문서</a></p>
+</li>
+<li><p>링크 만드는 기능</p>
+<ul>
+<li>문자열 가지고 만들기</li>
+<li>컨트롤러와 메소드로 만들기</li>
+</ul>
+</li>
+<li><p>리소스 만드는 기능</p>
+<ul>
+<li>리소스: 데이터 + 링크</li>
+</ul>
+</li>
+<li><p>링크 찾아주는 기능</p>
+<ul>
+<li>Traverson</li>
+<li>LinkDiscoverers</li>
+<li>강좌에서는 다루지 않는다..</li>
+</ul>
+</li>
+<li><p>링크</p>
+<ul>
+<li>HREF : URL, URI등을 설정 </li>
+<li>REL : 현재 리소스와의 관계를 설정해준다.<ul>
+<li>self</li>
+<li>profile</li>
+<li>update-events</li>
+<li>query-events</li>
+<li>…</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><br><br><br></p>
+<h3 id="스프링-HATEOAS-적용"><a href="#스프링-HATEOAS-적용" class="headerlink" title="스프링 HATEOAS 적용"></a>스프링 HATEOAS 적용</h3><h4 id="EventResource-만들기"><a href="#EventResource-만들기" class="headerlink" title="EventResource 만들기"></a>EventResource 만들기</h4><ul>
+<li><p>extends ResourceSupport 의 문제</p>
+</li>
+<li><p>data resource가 Json으로 감싸져 있다.<br><img src="/images/restapi/restapi03-1.png" alt="restapi03-1"></p>
+</li>
+</ul>
+<ul>
+<li><p>해결방안</p>
+<ul>
+<li><p>@JsonUnwrapped</p>
+<p><img src="/images/restapi/restapi03-2.png" alt="restapi03-2"></p>
+</li>
+<li><p>extends Resource<t></t></p>
+<p><img src="/images/restapi/restapi03-3.png" alt="restapi03-3"></p>
+<ul>
+<li><p>@JsonUnwrapped가 포함되어 있다.</p>
+<p><img src="/images/restapi/restapi03-18.png" alt="restapi03-18"></p>
+</li>
+<li><p>링크정보도 추가 할 수 있다.</p>
+</li>
+</ul>
+<p><img src="/images/restapi/restapi03-5.png" alt="restapi03-5"></p>
+</li>
+</ul>
+</li>
+<li><p>test 결과</p>
+</li>
+</ul>
+<p><img src="/images/restapi/restapi03-4.png" alt="restapi03-4"></p>
+<ul>
+<li>링크정보를 포함하고 있기 때문에 response의 content Type은 hal+json</li>
+</ul>
+<p><br><br><br></p>
+<h3 id="스프링-REST-Docs-소개"><a href="#스프링-REST-Docs-소개" class="headerlink" title="스프링 REST Docs 소개"></a>스프링 REST Docs 소개</h3><ul>
+<li><a href="https://docs.spring.io/spring-restdocs/docs/2.0.2.RELEASE/reference/html5/" target="_blank" rel="noopener">reference문서</a></li>
+<li>스프링 MVC test를 사용하여 rest api문서의 일부분들을 생성하는데 유용한 기능을 제공해주는 라이브러리</li>
+<li>test를 실행하면서 요청과 응답 헤더등의 정보들을 가지고 문서의 조각(snipet)을 생성한다.</li>
+<li>만들어진 문서의 조각을 사용하여 REST API 문서를 만들 수 있다.</li>
+<li>Ascidockor라는 툴을 사용하여 Aschidoc문법에 맞춘 snipet을 html문서로 만들어준다.</li>
+<li>MockMVC, WebTestClient, RESTAssured 등을 사용하여 만든 테스트에 적용할 수 있다.</li>
+<li>스프링 버전5, Java8 이상 지원</li>
+</ul>
+<p><br><br><br></p>
+<h3 id="스프링-REST-Docs-적용"><a href="#스프링-REST-Docs-적용" class="headerlink" title="스프링 REST Docs 적용"></a>스프링 REST Docs 적용</h3><h4 id="REST-Docs-자동설정"><a href="#REST-Docs-자동설정" class="headerlink" title="REST Docs 자동설정"></a>REST Docs 자동설정</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@AutoConfigureRestDocs</span><br><span class="line">public class EventControllerTest &#123; &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="RestDocs-사용"><a href="#RestDocs-사용" class="headerlink" title="RestDocs 사용"></a>RestDocs 사용</h3><p><img src="/images/restapi/restapi03-6.png" alt="restapi03-6"></p>
+<h4 id="RestDocMockMvc-커스터마이징"><a href="#RestDocMockMvc-커스터마이징" class="headerlink" title="RestDocMockMvc 커스터마이징"></a>RestDocMockMvc 커스터마이징</h4><ul>
+<li><p>RestDcosMockMvcConfigurationCustomizer 구현한 빈 등록</p>
+<p><img src="/images/restapi/restapi03-7.png" alt="restapi03-7"></p>
+</li>
+<li><p>다른 기능을 적용하고 싶다면, <a href="https://docs.spring.io/spring-restdocs/docs/2.0.2.RELEASE/reference/html5/#customizing-requests-and-responses-preprocessors" target="_blank" rel="noopener">processors 목록</a> 을 확인하고 적용시키면 된다.</p>
+</li>
+<li><p>설정을 적용시키기 위해서는 TestClass에서 Import해주어야한다.</p>
+<p><img src="/images/restapi/restapi03-8.png" alt="restapi03-8"></p>
+</li>
+</ul>
+<p><br><br></p>
+<h3 id="스프링-REST-Docs-각종-문서-조각-생성하기"><a href="#스프링-REST-Docs-각종-문서-조각-생성하기" class="headerlink" title="스프링 REST Docs - 각종 문서 조각 생성하기"></a>스프링 REST Docs - 각종 문서 조각 생성하기</h3><h4 id="요청-필드-문서화"><a href="#요청-필드-문서화" class="headerlink" title="요청 필드 문서화"></a>요청 필드 문서화</h4><ul>
+<li>requestFields() + fieldWithPath()</li>
+<li>responseFields() + fieldWithPath()</li>
+<li>requestHeaders() + headerWithName()</li>
+<li>responseHedaers() + headerWithName()</li>
+<li>links() + linkWithRel()</li>
+</ul>
+<h4 id="Relaxed-접두어"><a href="#Relaxed-접두어" class="headerlink" title="Relaxed 접두어"></a>Relaxed 접두어</h4><ul>
+<li>ResponseFields에 링크 정보가 포함되기 때문에 링크정보를 문서화 했음에도 불구하고, 에러가 발생한다 이러한 문제는 Relaxed라는 prefix를 붙여줌으로서 해결 할 수 있다.<br><img src="/images/restapi/restapi03-9.png" alt="restapi03-9"></li>
+<li>장점: 문서 일부분만 테스트 할 수 있다.</li>
+<li>단점: 정확한 문서를 생성하지 못한다.</li>
+<li><strong>Relaxed를 쓰는거 보다는 ResponseFields에 링크정보를 중복으로 포함시키는 것을 추천한다. (변경사항이 있을 시, 반영을 위해서)</strong></li>
+</ul>
+<p><br><br></p>
+<h3 id="스프링-REST-Docs-문서빌드"><a href="#스프링-REST-Docs-문서빌드" class="headerlink" title="스프링 REST Docs - 문서빌드"></a>스프링 REST Docs - 문서빌드</h3><ul>
+<li><a href="https://docs.spring.io/spring-restdocs/docs/2.0.2.RELEASE/reference/html5/" target="_blank" rel="noopener">reference 문서</a></li>
+</ul>
+<h4 id="Maven-플러그인-설정"><a href="#Maven-플러그인-설정" class="headerlink" title="Maven 플러그인 설정"></a>Maven 플러그인 설정</h4><ul>
+<li><p>pom.xml에 설정</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">&lt;build&gt;</span><br><span class="line">    &lt;plugins&gt;</span><br><span class="line">        &lt;plugin&gt;</span><br><span class="line">            &lt;groupId&gt;org.asciidoctor&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;asciidoctor-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;1.5.3&lt;/version&gt;</span><br><span class="line">            &lt;executions&gt;</span><br><span class="line">                &lt;execution&gt;</span><br><span class="line">                    &lt;id&gt;generate-docs&lt;/id&gt;</span><br><span class="line">                    &lt;phase&gt;prepare-package&lt;/phase&gt;</span><br><span class="line">                    &lt;goals&gt;</span><br><span class="line">                        &lt;goal&gt;process-asciidoc&lt;/goal&gt;</span><br><span class="line">                    &lt;/goals&gt;</span><br><span class="line">                    &lt;configuration&gt;</span><br><span class="line">                        &lt;backend&gt;html&lt;/backend&gt;</span><br><span class="line">                        &lt;doctype&gt;book&lt;/doctype&gt;</span><br><span class="line">                    &lt;/configuration&gt;</span><br><span class="line">                &lt;/execution&gt;</span><br><span class="line">            &lt;/executions&gt;</span><br><span class="line">            &lt;dependencies&gt;</span><br><span class="line">                &lt;dependency&gt;</span><br><span class="line">                    &lt;groupId&gt;org.springframework.restdocs&lt;/groupId&gt;</span><br><span class="line">                    &lt;artifactId&gt;spring-restdocs-asciidoctor&lt;/artifactId&gt;</span><br><span class="line">                    &lt;version&gt;$&#123;spring-restdocs.version&#125;&lt;/version&gt;</span><br><span class="line">                &lt;/dependency&gt;</span><br><span class="line">            &lt;/dependencies&gt;</span><br><span class="line">        &lt;/plugin&gt;</span><br><span class="line">        &lt;plugin&gt;</span><br><span class="line">            &lt;artifactId&gt;maven-resources-plugin&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;2.7&lt;/version&gt;</span><br><span class="line">            &lt;executions&gt;</span><br><span class="line">                &lt;execution&gt;</span><br><span class="line">                    &lt;id&gt;copy-resources&lt;/id&gt;</span><br><span class="line">                    &lt;phase&gt;prepare-package&lt;/phase&gt;</span><br><span class="line">                    &lt;goals&gt;</span><br><span class="line">                        &lt;goal&gt;copy-resources&lt;/goal&gt;</span><br><span class="line">                    &lt;/goals&gt;</span><br><span class="line">                    &lt;configuration&gt;</span><br><span class="line">                        &lt;outputDirectory&gt;</span><br><span class="line">                            $&#123;project.build.outputDirectory&#125;/static/docs</span><br><span class="line">                        &lt;/outputDirectory&gt;</span><br><span class="line">                        &lt;resources&gt;</span><br><span class="line">                            &lt;resource&gt;</span><br><span class="line">                                &lt;directory&gt;</span><br><span class="line">                                    $&#123;project.build.directory&#125;/generated-docs</span><br><span class="line">                                &lt;/directory&gt;</span><br><span class="line">                            &lt;/resource&gt;</span><br><span class="line">                        &lt;/resources&gt;</span><br><span class="line">                    &lt;/configuration&gt;</span><br><span class="line">                &lt;/execution&gt;</span><br><span class="line">            &lt;/executions&gt;</span><br><span class="line">        &lt;/plugin&gt;</span><br><span class="line">        &lt;plugin&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">        &lt;/plugin&gt;</span><br><span class="line">    &lt;/plugins&gt;</span><br><span class="line">&lt;/build&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="Gradle-플러그인-설정"><a href="#Gradle-플러그인-설정" class="headerlink" title="Gradle 플러그인 설정"></a>Gradle 플러그인 설정</h4><ul>
+<li><p>build.gradle에 설정</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">plugins &#123; </span><br><span class="line">	id &quot;org.asciidoctor.convert&quot; version &quot;1.5.3&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line">	asciidoctor &apos;org.springframework.restdocs:spring-restdocs-asciidoctor:2.0.2.RELEASE&apos; </span><br><span class="line">	testCompile &apos;org.springframework.restdocs:spring-restdocs-mockmvc:2.0.2.RELEASE&apos; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ext &#123; </span><br><span class="line">	snippetsDir = file(&apos;build/generated-snippets&apos;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test &#123; </span><br><span class="line">	outputs.dir snippetsDir</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">asciidoctor &#123; </span><br><span class="line">	inputs.dir snippetsDir </span><br><span class="line">	dependsOn test </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bootJar &#123;</span><br><span class="line">	dependsOn asciidoctor </span><br><span class="line">	from (&quot;$&#123;asciidoctor.outputDir&#125;/html5&quot;) &#123; </span><br><span class="line">		into &apos;static/docs&apos;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="템플릿-파일-추가"><a href="#템플릿-파일-추가" class="headerlink" title="템플릿 파일 추가"></a>템플릿 파일 추가</h4><ul>
+<li><p>src/main/asciidoc/index.adoc을 만들고 asciidoc 문법에 맞추어 작성한다.</p>
+<ul>
+<li><p>Maven 프로젝트</p>
+<p><img src="/images/restapi/restapi03-10.png" alt="restapi03-10"></p>
+<ul>
+<li><p>target/generated-docs</p>
+</li>
+<li><p>target/classes/docs</p>
+</li>
+<li><p>상기 두개의 디렉토리에 index.html이 생성되며 해당 파일을 실행하거나 어플리케이션 실행 시, /docs/index.html에서 확인할 수 있다.</p>
+<p><img src="/images/restapi/restapi03-11.png" alt="restapi03-11"></p>
+</li>
+</ul>
+</li>
+<li><p>Gradle 프로젝트</p>
+<p><img src="/images/restapi/restapi03-12.png" alt="restapi03-12"></p>
+<ul>
+<li>build/asciidoc/html5</li>
+<li>Maven과 마찬가지이다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="작동내용"><a href="#작동내용" class="headerlink" title="작동내용"></a>작동내용</h4><ul>
+<li>prepare-package :: process-asciidoc<ul>
+<li>package할때 prepare-package 과정에서 asciidoc을 처리하라는 process-ascidoc기능을 실행하는것이다.</li>
+<li>src안의 모든 asciidoc문서를 html로 만들어준다. (generated-docs위치로)</li>
+</ul>
+</li>
+<li>prepare-package :: copy-resources<ul>
+<li>generated-docs에서 classes/docs/static으로 복사한다.</li>
+</ul>
+</li>
+<li><strong>asciidoc을 먼저 처리하고 후에 복사하기 때문에, 순서가 중요하다. (process-asciidoc -&gt; copy-resources)</strong></li>
+</ul>
+<h4 id="profile-링크-추가"><a href="#profile-링크-추가" class="headerlink" title="profile 링크 추가"></a>profile 링크 추가</h4><ul>
+<li><p>REST의 조건인 Self-description을 만족하기 위해 생성한 문서의 링크를 profile이란 이름으로 추가해준다.</p>
+</li>
+<li><p>RESTdocs문서 추가를 위해 테스트를 추가해준다.</p>
+<p><img src="/images/restapi/restapi03-13.png" alt="restapi03-13"></p>
+</li>
+<li><p>Controller에서 profile 링크 정보를 추가해준다.</p>
+<p><img src="/images/restapi/restapi03-14.png" alt="restapi03-14"></p>
+</li>
+</ul>
+<p><br><br></p>
+<h3 id="테스트용-DB와-설정-분리하기"><a href="#테스트용-DB와-설정-분리하기" class="headerlink" title="테스트용 DB와 설정 분리하기"></a>테스트용 DB와 설정 분리하기</h3><ul>
+<li>테스트 할 때는 H2 애플리케이션 서버를 실행할 때는 PostgreSQL을 사용하도록 변경</li>
+</ul>
+<h4 id="의존성-추가-및-수정"><a href="#의존성-추가-및-수정" class="headerlink" title="의존성 추가 및 수정"></a>의존성 추가 및 수정</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.h2database&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;h2&lt;/artifactId&gt;</span><br><span class="line">    &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.postgresql&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;postgresql&lt;/artifactId&gt;</span><br><span class="line">    &lt;scope&gt;runtime&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>H2 의존성은 scope를 test로 변경</li>
+<li>PostgreSQL 의존성을 추가한다.</li>
+<li>참고 : <a href="https://cyr9210.github.io/2019/04/15/Spring/springboot13/" target="_blank" rel="noopener">스프링 부트 활용 -스프링 데이터 - PostgreSQL</a></li>
+</ul>
+<h3 id="설정"><a href="#설정" class="headerlink" title="설정"></a>설정</h3><ul>
+<li><p>DB 설정(application.properties)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spring.datasource.username=postgres</span><br><span class="line">spring.datasource.password=pass</span><br><span class="line">spring.datasource.url=jdbc:postgresql://localhost:5432/postgres</span><br><span class="line">spring.datasource.driver-class-name=org.postgresql.Driver</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>하이버네이트 설정(application.properties)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">spring.jpa.hibernate.ddl-auto=create-drop</span><br><span class="line">spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true</span><br><span class="line">spring.jpa.properties.hibernate.format_sql=true</span><br><span class="line"></span><br><span class="line">logging.level.org.hibernate.SQL=DEBUG</span><br><span class="line">logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Profile-활용하여-Test-설정"><a href="#Profile-활용하여-Test-설정" class="headerlink" title="Profile 활용하여 Test 설정"></a>Profile 활용하여 Test 설정</h3><ul>
+<li><p>application-test.properties 파일을 test - resources 디렉토리에 생성 및 오라이딩할 내용만 작성한다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">spring.datasource.username=sa</span><br><span class="line">spring.datasource.password=</span><br><span class="line">spring.datasource.url=jdbc:h2:mem:testdb</span><br><span class="line">spring.datasource.driver-class-name=org.h2.Driver</span><br><span class="line"></span><br><span class="line">spring.datasource.hikari.jdbc-url=jdbc:h2:mem:testdb</span><br><span class="line">spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.H2Dialect</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>테스트 클래스에서 @ActivePorfile(“test”) 적용</p>
+<p><img src="/images/restapi/restapi03-15.png" alt="restapi03-15"></p>
+<ul>
+<li>실행 시, profile = test로 실행된다.</li>
+</ul>
+</li>
+</ul>
+<p><br><br></p>
+<h3 id="인덱스-핸들러-만들기"><a href="#인덱스-핸들러-만들기" class="headerlink" title="인덱스 핸들러 만들기"></a>인덱스 핸들러 만들기</h3><h4 id="인덱스-핸들러"><a href="#인덱스-핸들러" class="headerlink" title="인덱스 핸들러"></a>인덱스 핸들러</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Getmapping</span>(<span class="string">"/api"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> ResourceSupport <span class="title">root</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  ResourceSupport index = <span class="keyword">new</span> ResourceSupport();</span><br><span class="line">  index.add(linkTo(EventController.class).withRel(<span class="string">"evnets"</span>));</span><br><span class="line">  <span class="keyword">return</span> index;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>다른 리소스에 대한 링크 제공</li>
+<li>문서화</li>
+</ul>
+<h3 id="에러-리소스"><a href="#에러-리소스" class="headerlink" title="에러 리소스"></a>에러 리소스</h3><ul>
+<li><p>에러 발생 시, 돌아갈 수 있는 api는 index 이다.<br>그에 따라서 인덱스로 가는 링크를 제공한다.</p>
+</li>
+<li><p>ErrorsResouce 생성 (extends Resouce<error>)</error></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ErrorsResource</span> <span class="keyword">extends</span> <span class="title">Resource</span>&lt;<span class="title">Errors</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ErrorsResource</span><span class="params">(Errors content, Link... links)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(content, links);</span><br><span class="line">        add(linkTo(methodOn(IndexController.class).index()).withRel(<span class="string">"index"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Errors 사용하던 부분 ErrorsResouce로 변경</p>
+<p><img src="/images/restapi/restapi03-16.png" alt="restapi03-16"></p>
+</li>
+<li><p>문제점 @JsonUnwrapped JSON arrays는 unwrap이 되지 않는다.</p>
+<p><img src="/images/restapi/restapi03-17.png" alt="restapi03-17"></p>
+<ul>
+<li><p>Serializer를 재정의 하거나 Content로 wrapped 되어있는 상태로 쓴다.<br>(여기서는 wrapped되어있는 상태로 쓰기위해서 TestCase를 수정했다.)</p>
+<p><img src="/images/restapi/restapi03-19.png" alt="restapi03-19"></p>
+</li>
+</ul>
+</li>
+</ul>
+<p><br><br><br></p>
+</section>
+    <!-- Tags START -->
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/06/25/RestAPI/restapi02/">
+        <span class="nav-arrow">← </span>
+        
+          이벤트 생성 API 개발
+        
+      </a>
+    
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#스프링-기반-REST-API-개발-inflearn-백기선"><span class="toc-nav-text">스프링 기반 REST API 개발(inflearn) - 백기선</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#HATEOAS와-Self-Describtive-Messgae-적용"><span class="toc-nav-text">HATEOAS와 Self-Describtive Messgae 적용</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#스프링-HATEOAS-소개"><span class="toc-nav-text">스프링 HATEOAS 소개</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#스프링-HATEOAS-적용"><span class="toc-nav-text">스프링 HATEOAS 적용</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#EventResource-만들기"><span class="toc-nav-text">EventResource 만들기</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#스프링-REST-Docs-소개"><span class="toc-nav-text">스프링 REST Docs 소개</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#스프링-REST-Docs-적용"><span class="toc-nav-text">스프링 REST Docs 적용</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#REST-Docs-자동설정"><span class="toc-nav-text">REST Docs 자동설정</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#RestDocs-사용"><span class="toc-nav-text">RestDocs 사용</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#RestDocMockMvc-커스터마이징"><span class="toc-nav-text">RestDocMockMvc 커스터마이징</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#스프링-REST-Docs-각종-문서-조각-생성하기"><span class="toc-nav-text">스프링 REST Docs - 각종 문서 조각 생성하기</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#요청-필드-문서화"><span class="toc-nav-text">요청 필드 문서화</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Relaxed-접두어"><span class="toc-nav-text">Relaxed 접두어</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#스프링-REST-Docs-문서빌드"><span class="toc-nav-text">스프링 REST Docs - 문서빌드</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Maven-플러그인-설정"><span class="toc-nav-text">Maven 플러그인 설정</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Gradle-플러그인-설정"><span class="toc-nav-text">Gradle 플러그인 설정</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#템플릿-파일-추가"><span class="toc-nav-text">템플릿 파일 추가</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#작동내용"><span class="toc-nav-text">작동내용</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#profile-링크-추가"><span class="toc-nav-text">profile 링크 추가</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#테스트용-DB와-설정-분리하기"><span class="toc-nav-text">테스트용 DB와 설정 분리하기</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#의존성-추가-및-수정"><span class="toc-nav-text">의존성 추가 및 수정</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#설정"><span class="toc-nav-text">설정</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Profile-활용하여-Test-설정"><span class="toc-nav-text">Profile 활용하여 Test 설정</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#인덱스-핸들러-만들기"><span class="toc-nav-text">인덱스 핸들러 만들기</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#인덱스-핸들러"><span class="toc-nav-text">인덱스 핸들러</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#에러-리소스"><span class="toc-nav-text">에러 리소스</span></a></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/08/08/RestAPI/restapi03/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>
