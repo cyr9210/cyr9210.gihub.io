@@ -1,5 +1,5 @@
 ---
-title: 데이터 바인딩
+title: 스프링 핵심기술03 - 데이터 바인딩
 date: 2019-03-22 14:17:41
 tags: Springframework
 ---

@@ -1,5 +1,5 @@
 ---
-title: 스프링 부트 활용 - SpringApplication
+title: 스프링 부트 활용06 - SpringApplication
 date: 2019-04-03 12:50:08
 tags: SpringBoot
 ---

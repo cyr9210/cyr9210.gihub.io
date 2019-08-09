@@ -1,5 +1,5 @@
 ---
-title: 스프링 부트 활용 - 스프링 REST 클라이언트
+title: 스프링 부트 활용15 - 스프링 REST 클라이언트
 date: 2019-04-17 16:27:48
 tags: SpringBoot
 ---

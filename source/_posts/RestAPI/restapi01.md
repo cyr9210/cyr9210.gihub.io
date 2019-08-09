@@ -1,9 +1,9 @@
 ---
-title: REST API 및 프로젝트 소개
+title: 스프링 기반 REST API 개발01 - REST API 및 프로젝트 소개
 date: 2019-06-25 10:21:40
 tags: RestAPI
 ---
-# 스프링 기반 REST API 개발(inflearn) - 백기선
+# 스프링 기반 REST API 개발(inflearn)1 - 백기선
 ## REST API 및 프로젝트 소개
 ### REST API
 참고 발표 영상 : [그런 REST API로 괜찮은가](https://www.youtube.com/watch?v=RP_f5dMoHFc)

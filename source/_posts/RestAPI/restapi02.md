@@ -1,9 +1,9 @@
 ---
-title: 이벤트 생성 API 개발
+title: 스프링 기반 REST API 개발02 - 이벤트 생성 API 개발 (@MockBean, ModelMapper, ErrorSerializer, JUnitParams)
 date: 2019-06-25 17:10:57
 tags: RestAPI
 ---
-# 스프링 기반 REST API 개발(inflearn) - 백기선
+# 스프링 기반 REST API 개발(inflearn)2 - 백기선
 ## 이벤트 생성 API 개발
 ### 이벤트 API 테스트 클래스 생성
 #### 스프링 부트 슬라이스 테스트

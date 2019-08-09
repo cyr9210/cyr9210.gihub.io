@@ -1,5 +1,5 @@
 ---
-title: AOP
+title: 스프링 프레임워크 입문02 - AOP
 date: 2019-03-08 14:03:12
 tags: Springframework
 ---

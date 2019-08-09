@@ -1,5 +1,5 @@
 ---
-title: 스프링 부트 활용 - 스프링 웹 MVC
+title: 스프링 부트 활용12 - 스프링 웹 MVC
 date: 2019-04-11 16:43:16
 tags: SpringBoot
 ---

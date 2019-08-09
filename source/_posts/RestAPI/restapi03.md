@@ -1,9 +1,9 @@
 ---
-title: restapi03
+title: 스프링 기반 REST API 개발03 - HATEOAS와 Self-Describtive Message 적용 (HATEOAS-Resource, REST Docs, 테스트용 DB와 설정 분리, API 인덱스)
 date: 2019-08-08 10:24:27
-tags:
+tags: RestAPI
 ---
-# 스프링 기반 REST API 개발(inflearn) - 백기선
+# 스프링 기반 REST API 개발(inflearn)3 - 백기선
 
 ## HATEOAS와 Self-Describtive Messgae 적용
 

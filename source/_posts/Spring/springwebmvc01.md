@@ -1,5 +1,5 @@
 ---
-title: 스프링 MVC 동작 원리 - 스프링 MVC 소개, 서블릿
+title: 스프링 MVC 동작 원리01 - 스프링 MVC 소개, 서블릿
 date: 2019-04-23 20:21:40
 tags: SpringWebMvc
 ---

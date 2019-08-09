@@ -1,5 +1,5 @@
 ---
-title: 스프링 부트 운영 - Actuator
+title: 스프링 부트 운영16 - Actuator
 date: 2019-04-18 20:13:46
 tags: SpringBoot
 ---

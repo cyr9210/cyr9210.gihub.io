@@ -1,5 +1,5 @@
 ---
-title: SpEL
+title: 스프링 핵심기술04 - SpEL
 date: 2019-03-26 14:57:24
 tags: Springframework
 ---

@@ -1,5 +1,5 @@
 ---
-title: 스프링 부트 활용 - 로깅
+title: 스프링 부트 활용09 - 로깅
 date: 2019-04-10 12:21:30
 tags: SpringBoot
 ---

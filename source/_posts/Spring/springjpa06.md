@@ -1,5 +1,5 @@
 ---
-title: 스프링 데이터 JPA - 스프링 데이터 JPA
+title: 스프링 데이터 JPA06 - 스프링 데이터 JPA
 date: 2019-05-03 18:05:54
 tags: JPA
 ---

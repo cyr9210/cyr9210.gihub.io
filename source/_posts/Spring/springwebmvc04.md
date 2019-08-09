@@ -1,5 +1,5 @@
 ---
-title: 스프링 MVC 설정 - 스프링 MVC 빈 설정
+title: 스프링 MVC 설정04 - 스프링 MVC 빈 설정
 date: 2019-05-31 12:38:31
 tags: SpringWebMvc
 ---

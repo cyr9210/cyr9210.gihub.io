@@ -1,5 +1,5 @@
 ---
-title: 스프링 부트 원리 - JAR
+title: 스프링 부트 원리05 - JAR
 date: 2019-04-03 12:08:49
 tags: SpringBoot
 ---

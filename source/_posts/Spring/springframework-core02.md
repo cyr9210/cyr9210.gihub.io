@@ -1,5 +1,5 @@
 ---
-title: Resource / Validation
+title: 스프링 핵심기술02 - Resource / Validation
 date: 2019-03-21 02:37:57
 tags: Springframework
 ---

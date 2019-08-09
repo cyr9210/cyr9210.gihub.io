@@ -1,5 +1,5 @@
 ---
-title: IOC, IOC컨테이너
+title: 스프링 프레임워크 입문01 - IOC, IOC컨테이너
 date: 2019-03-05 02:19:06
 tags: Springframework
 ---

@@ -1,5 +1,5 @@
 ---
-title: 스프링 AOP
+title: 스프링 핵심기술05 - 스프링 AOP
 date: 2019-03-26 16:23:40
 tags: Springframework
 ---

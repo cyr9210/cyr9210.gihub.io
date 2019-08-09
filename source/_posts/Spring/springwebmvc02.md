@@ -1,5 +1,5 @@
 ---
-title: 스프링 MVC 동작 원리 - 스프링 연동, DispatcherServlet
+title: 스프링 MVC 동작 원리02 - 스프링 연동, DispatcherServlet
 date: 2019-04-25 16:11:55
 tags: SpringWebMvc
 ---

@@ -1,5 +1,5 @@
 ---
-title: 스프링 데이터 JPA - Cascade, Fetch, Query, 스프링 데이터 JPA 소개 및 원리
+title: 스프링 데이터 JPA04 - Cascade, Fetch, Query, 스프링 데이터 JPA 소개 및 원리
 date: 2019-04-30 20:12:00
 tags: JPA
 ---

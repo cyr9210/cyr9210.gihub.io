@@ -1,5 +1,5 @@
 ---
-title: IoC 컨테이너와 빈
+title: 스프링 핵심기술01 - IoC 컨테이너와 빈
 date: 2019-03-20 16:36:43
 tags: Springframework
 ---

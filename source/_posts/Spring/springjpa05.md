@@ -1,5 +1,5 @@
 ---
-title: 스프링 데이터 JPA - 스프링 데이터 Common
+title: 스프링 데이터 JPA05 - 스프링 데이터 Common
 date: 2019-05-03 18:05:54
 tags: JPA
 ---
