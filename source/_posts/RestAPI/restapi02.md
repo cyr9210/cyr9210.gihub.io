@@ -88,6 +88,8 @@ tags: RestAPI
         <version>2.3.1</version> 
     </dependency>
     ```
+    - 빈으로 등록후 사용해야한다.
+    - [참고 - ModelMapper Customizing](http://blog.naver.com/PostView.nhn?blogId=kbh3983&logNo=220988245343)
 
 - 통합 테스트로 전환
     - @WebMvcTest 빼고 다음 애노테이션 추가
