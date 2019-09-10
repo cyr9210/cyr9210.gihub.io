@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="10edeb32-08bb-4258-8866-f6cff31a2348" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/RestAPI/restapi02.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/RestAPI/restapi02.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/RestAPI/restapi04.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/RestAPI/restapi04.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/Spring/springjpa06.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Spring/springjpa06.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,19 +19,23 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/_posts/RestAPI/restapi04.md">
+        <entry file="file://$PROJECT_DIR$/source/_posts/RestAPI/restapi02.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="799">
-                <caret line="39" selection-start-line="39" selection-end-line="39" />
-                <caret line="40" selection-start-line="40" selection-end-line="40" />
-                <caret line="41" selection-start-line="41" selection-end-line="41" />
-                <caret line="42" selection-start-line="42" selection-end-line="42" />
-                <caret line="43" selection-start-line="43" selection-end-line="43" />
-                <caret line="44" selection-start-line="44" selection-end-line="44" />
-                <caret line="45" selection-start-line="45" selection-end-line="45" />
-                <caret line="46" selection-start-line="46" selection-end-line="46" />
-                <caret line="47" selection-start-line="47" selection-end-line="47" />
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="17">
+                <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/_posts/RestAPI/restapi03.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="17">
+                <caret line="1" column="29" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="29" />
               </first_editor>
               <second_editor />
             </state>
@@ -38,11 +43,11 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/source/_posts/RestAPI/restapi02.md">
+        <entry file="file://$PROJECT_DIR$/source/_posts/RestAPI/restapi04.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="713">
-                <caret line="91" column="106" selection-start-line="91" selection-start-column="106" selection-end-line="91" selection-end-column="106" />
+              <first_editor relative-caret-position="17">
+                <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
               </first_editor>
               <second_editor />
             </state>
@@ -50,35 +55,11 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springwebmvc02.md">
+        <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa06.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="17">
-                <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springwebmvc03.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="17">
-                <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springwebmvc04.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="17">
-                <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="5372">
+                <caret line="316" column="46" selection-start-line="316" selection-start-column="46" selection-end-line="316" selection-end-column="46" />
               </first_editor>
               <second_editor />
             </state>
@@ -137,8 +118,8 @@
         <entry file="file://$PROJECT_DIR$/source/_posts/RestAPI/restapi01.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="17">
-                <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+              <first_editor relative-caret-position="51">
+                <caret line="3" column="13" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="13" />
               </first_editor>
               <second_editor />
             </state>
@@ -156,6 +137,8 @@
       <find>hexo new post</find>
       <find>$PROJECT_DIR$/source</find>
       <find>properties</find>
+      <find>transactional</find>
+      <find>트랜잭션</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/source/_posts/Git</dir>
@@ -197,7 +180,6 @@
         <option value="$PROJECT_DIR$/source/_posts/Spring/springjpa03.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springjpa04.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springjpa05.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Spring/springjpa06.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springwebmvc01.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springwebmvc02.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springwebmvc03.md" />
@@ -207,16 +189,18 @@
         <option value="$PROJECT_DIR$/source/_posts/Spring/springwebmvc07.md" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/springwebmvc08.md" />
         <option value="$PROJECT_DIR$/source/_posts/RestAPI/restapi01.md" />
-        <option value="$PROJECT_DIR$/source/_posts/RestAPI/restapi03.md" />
-        <option value="$PROJECT_DIR$/source/_posts/RestAPI/restapi04.md" />
         <option value="$PROJECT_DIR$/source/_posts/RestAPI/restapi02.md" />
+        <option value="$PROJECT_DIR$/source/_posts/RestAPI/restapi03.md" />
+        <option value="$PROJECT_DIR$/source/_posts/Spring/springjpa06.md" />
+        <option value="$PROJECT_DIR$/source/_posts/RestAPI/restapi04.md" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="y" value="23" />
-    <option name="width" value="2560" />
-    <option name="height" value="1366" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-1280" />
+    <option name="y" value="-73" />
+    <option name="width" value="1280" />
+    <option name="height" value="1417" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -224,7 +208,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -254,7 +238,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -303,18 +287,21 @@
       <workItem from="1565230676537" duration="150000" />
       <workItem from="1565316447989" duration="698000" />
       <workItem from="1565317770784" duration="430000" />
-      <workItem from="1565651327675" duration="27000" />
+      <workItem from="1565651327675" duration="92000" />
+      <workItem from="1566622276041" duration="23000" />
+      <workItem from="1566963464402" duration="22000" />
+      <workItem from="1568074660922" duration="529000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5506000" />
+    <option name="totallyTimeSpent" value="6145000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="2560" height="1440" extended-state="6" />
+    <frame x="-1280" y="-73" width="1280" height="1417" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48875254" visible="true" weight="0.1711676" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48875254" visible="true" weight="0.16235864" />
       <window_info id="Structure" order="1" sideWeight="0.5017241" side_tool="true" weight="0.26979" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -333,7 +320,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.30547947" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Thumbnails" order="11" weight="0.32876712" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49676898" weight="0.31459853" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49676898" visible="true" weight="0.19698113" />
       <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="bottom" id="Graph Database Console" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -716,41 +703,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa05.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="17">
-            <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa06.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="17">
-            <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springwebmvc01.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="17">
             <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/RestAPI/restapi03.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="17">
-            <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
           </first_editor>
           <second_editor />
         </state>
@@ -829,26 +786,8 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/RestAPI/restapi01.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="17">
-            <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/RestAPI/restapi04.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="799">
-            <caret line="39" selection-start-line="39" selection-end-line="39" />
-            <caret line="40" selection-start-line="40" selection-end-line="40" />
-            <caret line="41" selection-start-line="41" selection-end-line="41" />
-            <caret line="42" selection-start-line="42" selection-end-line="42" />
-            <caret line="43" selection-start-line="43" selection-end-line="43" />
-            <caret line="44" selection-start-line="44" selection-end-line="44" />
-            <caret line="45" selection-start-line="45" selection-end-line="45" />
-            <caret line="46" selection-start-line="46" selection-end-line="46" />
-            <caret line="47" selection-start-line="47" selection-end-line="47" />
+          <first_editor relative-caret-position="51">
+            <caret line="3" column="13" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="13" />
           </first_editor>
           <second_editor />
         </state>
@@ -857,8 +796,48 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/RestAPI/restapi02.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="713">
-            <caret line="91" column="106" selection-start-line="91" selection-start-column="106" selection-end-line="91" selection-end-column="106" />
+          <first_editor relative-caret-position="17">
+            <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/RestAPI/restapi03.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="17">
+            <caret line="1" column="29" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="29" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa05.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="471">
+            <caret line="57" column="18" lean-forward="true" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="18" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa06.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="5372">
+            <caret line="316" column="46" selection-start-line="316" selection-start-column="46" selection-end-line="316" selection-end-column="46" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/RestAPI/restapi04.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="17">
+            <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
           </first_editor>
           <second_editor />
         </state>

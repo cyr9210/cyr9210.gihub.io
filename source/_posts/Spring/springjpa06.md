@@ -313,7 +313,8 @@ tags: JPA
 
 ### 트랜잭션
 - 스프링 프레임워크에서 지원하는 트랜잭션과 거의 유사하다.
-- 기본적으로 Repository 메소드들은 기본적으로 @Transactional이 적용되어있다.
+- 기본적으로 Repository 기본 메소드들은 기본적으로 @Transactional이 적용되어있다.
+    - **직접 선언하는 메소드에는 @Transactional 이 필요하다.**
 
 #### @Transactional
 - [참고문서](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/transaction/annotation/Transactional.html)
