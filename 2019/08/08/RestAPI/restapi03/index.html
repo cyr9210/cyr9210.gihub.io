@@ -10,7 +10,7 @@
   
   <title>
     
-      restapi03 | Bong&#39;s blog
+      스프링 기반 REST API 개발03 - HATEOAS와 Self-Describtive Message 적용 (HATEOAS-Resource, REST Docs, 테스트용 DB와 설정 분리, API 인덱스) | Bong&#39;s blog
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -87,7 +87,7 @@
 </header>
 
     <div id="article-banner">
-  <h2>restapi03</h2>
+  <h2>스프링 기반 REST API 개발03 - HATEOAS와 Self-Describtive Message 적용 (HATEOAS-Resource, REST Docs, 테스트용 DB와 설정 분리, API 인덱스)</h2>
   <p class="post-date">2019-08-08</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
@@ -96,7 +96,7 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h1 id="스프링-기반-REST-API-개발-inflearn-백기선"><a href="#스프링-기반-REST-API-개발-inflearn-백기선" class="headerlink" title="스프링 기반 REST API 개발(inflearn) - 백기선"></a>스프링 기반 REST API 개발(inflearn) - 백기선</h1><h2 id="HATEOAS와-Self-Describtive-Messgae-적용"><a href="#HATEOAS와-Self-Describtive-Messgae-적용" class="headerlink" title="HATEOAS와 Self-Describtive Messgae 적용"></a>HATEOAS와 Self-Describtive Messgae 적용</h2><h3 id="스프링-HATEOAS-소개"><a href="#스프링-HATEOAS-소개" class="headerlink" title="스프링 HATEOAS 소개"></a>스프링 HATEOAS 소개</h3><ul>
+    <section class="markdown-content"><h1 id="스프링-기반-REST-API-개발-inflearn-3-백기선"><a href="#스프링-기반-REST-API-개발-inflearn-3-백기선" class="headerlink" title="스프링 기반 REST API 개발(inflearn)3 - 백기선"></a>스프링 기반 REST API 개발(inflearn)3 - 백기선</h1><h2 id="HATEOAS와-Self-Describtive-Messgae-적용"><a href="#HATEOAS와-Self-Describtive-Messgae-적용" class="headerlink" title="HATEOAS와 Self-Describtive Messgae 적용"></a>HATEOAS와 Self-Describtive Messgae 적용</h2><h3 id="스프링-HATEOAS-소개"><a href="#스프링-HATEOAS-소개" class="headerlink" title="스프링 HATEOAS 소개"></a>스프링 HATEOAS 소개</h3><ul>
 <li><p>api를 만들 때, REST하게 resource를 보다 쉽게 제공해주는 라이브러리</p>
 </li>
 <li><p><a href="https://docs.spring.io/spring-hateoas/docs/current/reference/html/" target="_blank" rel="noopener">reference문서</a></p>
@@ -321,6 +321,15 @@
 </section>
     <!-- Tags START -->
     
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#RestAPI" >
+    <span class="tag-code">RestAPI</span>
+  </a>
+
+      </div>
+    
     <!-- Tags END -->
     <!-- NAV START -->
     
@@ -330,10 +339,17 @@
       <a class="nav-left" href="/2019/06/25/RestAPI/restapi02/">
         <span class="nav-arrow">← </span>
         
-          이벤트 생성 API 개발
+          스프링 기반 REST API 개발02 - 이벤트 생성 API 개발 (@MockBean, ModelMapper, ErrorSerializer, JUnitParams)
         
       </a>
     
+    
+      <a class="nav-right" href="/2019/08/09/RestAPI/restapi04/">
+        
+          스프링 기반 REST API 개발04 - 이벤트 조회 및 수정 REST API 개발(PagedResouce)
+        
+        <span class="nav-arrow"> →</span>
+      </a>
     
   </div>
 
@@ -355,7 +371,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#스프링-기반-REST-API-개발-inflearn-백기선"><span class="toc-nav-text">스프링 기반 REST API 개발(inflearn) - 백기선</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#HATEOAS와-Self-Describtive-Messgae-적용"><span class="toc-nav-text">HATEOAS와 Self-Describtive Messgae 적용</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#스프링-HATEOAS-소개"><span class="toc-nav-text">스프링 HATEOAS 소개</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#스프링-HATEOAS-적용"><span class="toc-nav-text">스프링 HATEOAS 적용</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#EventResource-만들기"><span class="toc-nav-text">EventResource 만들기</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#스프링-REST-Docs-소개"><span class="toc-nav-text">스프링 REST Docs 소개</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#스프링-REST-Docs-적용"><span class="toc-nav-text">스프링 REST Docs 적용</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#REST-Docs-자동설정"><span class="toc-nav-text">REST Docs 자동설정</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#RestDocs-사용"><span class="toc-nav-text">RestDocs 사용</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#RestDocMockMvc-커스터마이징"><span class="toc-nav-text">RestDocMockMvc 커스터마이징</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#스프링-REST-Docs-각종-문서-조각-생성하기"><span class="toc-nav-text">스프링 REST Docs - 각종 문서 조각 생성하기</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#요청-필드-문서화"><span class="toc-nav-text">요청 필드 문서화</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Relaxed-접두어"><span class="toc-nav-text">Relaxed 접두어</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#스프링-REST-Docs-문서빌드"><span class="toc-nav-text">스프링 REST Docs - 문서빌드</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Maven-플러그인-설정"><span class="toc-nav-text">Maven 플러그인 설정</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Gradle-플러그인-설정"><span class="toc-nav-text">Gradle 플러그인 설정</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#템플릿-파일-추가"><span class="toc-nav-text">템플릿 파일 추가</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#작동내용"><span class="toc-nav-text">작동내용</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#profile-링크-추가"><span class="toc-nav-text">profile 링크 추가</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#테스트용-DB와-설정-분리하기"><span class="toc-nav-text">테스트용 DB와 설정 분리하기</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#의존성-추가-및-수정"><span class="toc-nav-text">의존성 추가 및 수정</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#설정"><span class="toc-nav-text">설정</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Profile-활용하여-Test-설정"><span class="toc-nav-text">Profile 활용하여 Test 설정</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#인덱스-핸들러-만들기"><span class="toc-nav-text">인덱스 핸들러 만들기</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#인덱스-핸들러"><span class="toc-nav-text">인덱스 핸들러</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#에러-리소스"><span class="toc-nav-text">에러 리소스</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#스프링-기반-REST-API-개발-inflearn-3-백기선"><span class="toc-nav-text">스프링 기반 REST API 개발(inflearn)3 - 백기선</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#HATEOAS와-Self-Describtive-Messgae-적용"><span class="toc-nav-text">HATEOAS와 Self-Describtive Messgae 적용</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#스프링-HATEOAS-소개"><span class="toc-nav-text">스프링 HATEOAS 소개</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#스프링-HATEOAS-적용"><span class="toc-nav-text">스프링 HATEOAS 적용</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#EventResource-만들기"><span class="toc-nav-text">EventResource 만들기</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#스프링-REST-Docs-소개"><span class="toc-nav-text">스프링 REST Docs 소개</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#스프링-REST-Docs-적용"><span class="toc-nav-text">스프링 REST Docs 적용</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#REST-Docs-자동설정"><span class="toc-nav-text">REST Docs 자동설정</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#RestDocs-사용"><span class="toc-nav-text">RestDocs 사용</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#RestDocMockMvc-커스터마이징"><span class="toc-nav-text">RestDocMockMvc 커스터마이징</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#스프링-REST-Docs-각종-문서-조각-생성하기"><span class="toc-nav-text">스프링 REST Docs - 각종 문서 조각 생성하기</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#요청-필드-문서화"><span class="toc-nav-text">요청 필드 문서화</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Relaxed-접두어"><span class="toc-nav-text">Relaxed 접두어</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#스프링-REST-Docs-문서빌드"><span class="toc-nav-text">스프링 REST Docs - 문서빌드</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Maven-플러그인-설정"><span class="toc-nav-text">Maven 플러그인 설정</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Gradle-플러그인-설정"><span class="toc-nav-text">Gradle 플러그인 설정</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#템플릿-파일-추가"><span class="toc-nav-text">템플릿 파일 추가</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#작동내용"><span class="toc-nav-text">작동내용</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#profile-링크-추가"><span class="toc-nav-text">profile 링크 추가</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#테스트용-DB와-설정-분리하기"><span class="toc-nav-text">테스트용 DB와 설정 분리하기</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#의존성-추가-및-수정"><span class="toc-nav-text">의존성 추가 및 수정</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#설정"><span class="toc-nav-text">설정</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Profile-활용하여-Test-설정"><span class="toc-nav-text">Profile 활용하여 Test 설정</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#인덱스-핸들러-만들기"><span class="toc-nav-text">인덱스 핸들러 만들기</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#인덱스-핸들러"><span class="toc-nav-text">인덱스 핸들러</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#에러-리소스"><span class="toc-nav-text">에러 리소스</span></a></li></ol></li></ol></li></ol>
     
   </div>
 </aside>

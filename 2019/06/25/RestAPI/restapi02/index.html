@@ -10,7 +10,7 @@
   
   <title>
     
-      이벤트 생성 API 개발 | Bong&#39;s blog
+      스프링 기반 REST API 개발02 - 이벤트 생성 API 개발 (@MockBean, ModelMapper, ErrorSerializer, JUnitParams) | Bong&#39;s blog
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -87,7 +87,7 @@
 </header>
 
     <div id="article-banner">
-  <h2>이벤트 생성 API 개발</h2>
+  <h2>스프링 기반 REST API 개발02 - 이벤트 생성 API 개발 (@MockBean, ModelMapper, ErrorSerializer, JUnitParams)</h2>
   <p class="post-date">2019-06-25</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
@@ -96,7 +96,7 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h1 id="스프링-기반-REST-API-개발-inflearn-백기선"><a href="#스프링-기반-REST-API-개발-inflearn-백기선" class="headerlink" title="스프링 기반 REST API 개발(inflearn) - 백기선"></a>스프링 기반 REST API 개발(inflearn) - 백기선</h1><h2 id="이벤트-생성-API-개발"><a href="#이벤트-생성-API-개발" class="headerlink" title="이벤트 생성 API 개발"></a>이벤트 생성 API 개발</h2><h3 id="이벤트-API-테스트-클래스-생성"><a href="#이벤트-API-테스트-클래스-생성" class="headerlink" title="이벤트 API 테스트 클래스 생성"></a>이벤트 API 테스트 클래스 생성</h3><h4 id="스프링-부트-슬라이스-테스트"><a href="#스프링-부트-슬라이스-테스트" class="headerlink" title="스프링 부트 슬라이스 테스트"></a>스프링 부트 슬라이스 테스트</h4><ul>
+    <section class="markdown-content"><h1 id="스프링-기반-REST-API-개발-inflearn-2-백기선"><a href="#스프링-기반-REST-API-개발-inflearn-2-백기선" class="headerlink" title="스프링 기반 REST API 개발(inflearn)2 - 백기선"></a>스프링 기반 REST API 개발(inflearn)2 - 백기선</h1><h2 id="이벤트-생성-API-개발"><a href="#이벤트-생성-API-개발" class="headerlink" title="이벤트 생성 API 개발"></a>이벤트 생성 API 개발</h2><h3 id="이벤트-API-테스트-클래스-생성"><a href="#이벤트-API-테스트-클래스-생성" class="headerlink" title="이벤트 API 테스트 클래스 생성"></a>이벤트 API 테스트 클래스 생성</h3><h4 id="스프링-부트-슬라이스-테스트"><a href="#스프링-부트-슬라이스-테스트" class="headerlink" title="스프링 부트 슬라이스 테스트"></a>스프링 부트 슬라이스 테스트</h4><ul>
 <li>@WebMvcTest<ul>
 <li>MockMvc 빈을 자동 설정 해준다. 따라서 그냥 가져와서 쓰면 됨.</li>
 <li>웹 관련 빈만 등록해 준다. (슬라이스)</li>
@@ -198,6 +198,10 @@
 <h4 id="DTO-gt-도메인-객체로-값-복사"><a href="#DTO-gt-도메인-객체로-값-복사" class="headerlink" title="DTO -&gt; 도메인 객체로 값 복사"></a>DTO -&gt; 도메인 객체로 값 복사</h4><ul>
 <li><p>ModelMapper 사용 (DTO를 도메인으로 convert)</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.modelmapper&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;modelmapper&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.3.1&lt;/version&gt; </span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>빈으로 등록후 사용해야한다.</li>
+<li><a href="http://blog.naver.com/PostView.nhn?blogId=kbh3983&amp;logNo=220988245343" target="_blank" rel="noopener">참고 - ModelMapper Customizing</a></li>
+</ul>
 </li>
 <li><p>통합 테스트로 전환</p>
 <ul>
@@ -297,14 +301,14 @@
       <a class="nav-left" href="/2019/06/25/RestAPI/restapi01/">
         <span class="nav-arrow">← </span>
         
-          REST API 및 프로젝트 소개
+          스프링 기반 REST API 개발01 - REST API 및 프로젝트 소개
         
       </a>
     
     
       <a class="nav-right" href="/2019/08/08/RestAPI/restapi03/">
         
-          restapi03
+          스프링 기반 REST API 개발03 - HATEOAS와 Self-Describtive Message 적용 (HATEOAS-Resource, REST Docs, 테스트용 DB와 설정 분리, API 인덱스)
         
         <span class="nav-arrow"> →</span>
       </a>
@@ -329,7 +333,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#스프링-기반-REST-API-개발-inflearn-백기선"><span class="toc-nav-text">스프링 기반 REST API 개발(inflearn) - 백기선</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#이벤트-생성-API-개발"><span class="toc-nav-text">이벤트 생성 API 개발</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#이벤트-API-테스트-클래스-생성"><span class="toc-nav-text">이벤트 API 테스트 클래스 생성</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#스프링-부트-슬라이스-테스트"><span class="toc-nav-text">스프링 부트 슬라이스 테스트</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#MockMvc"><span class="toc-nav-text">MockMvc</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#테스트-할-것"><span class="toc-nav-text">테스트 할 것</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Event-생성-API-구현-201-응답-받기"><span class="toc-nav-text">Event 생성 API 구현 - 201 응답 받기</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#테스트-할-것-1"><span class="toc-nav-text">테스트 할 것</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Event-생성-API-EventRepository-구현"><span class="toc-nav-text">Event 생성 API - EventRepository 구현</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#스프링-데이터-JPA"><span class="toc-nav-text">스프링 데이터 JPA</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#테스트-할-것-2"><span class="toc-nav-text">테스트 할 것</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#입력값-제한하기"><span class="toc-nav-text">입력값 제한하기</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#입력값-제한"><span class="toc-nav-text">입력값 제한</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#DTO-gt-도메인-객체로-값-복사"><span class="toc-nav-text">DTO -&gt; 도메인 객체로 값 복사</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#입력값-이외에-에러-발생"><span class="toc-nav-text">입력값 이외에 에러 발생</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#ObjectMapper-커스터마이징"><span class="toc-nav-text">ObjectMapper 커스터마이징</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Bad-Request-처리하기"><span class="toc-nav-text">Bad Request 처리하기</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#valid-와-BindingResult-또는-Errors"><span class="toc-nav-text">@valid 와 BindingResult (또는 Errors)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#도메인-Validator-만들기"><span class="toc-nav-text">도메인 Validator 만들기</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#테스트-설명-용-애노테이션-만들기"><span class="toc-nav-text">테스트 설명 용 애노테이션 만들기</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Bad-Request-응답-본문-만들기"><span class="toc-nav-text">Bad Request 응답 본문 만들기</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#매개변수를-이용한-테스트"><span class="toc-nav-text">매개변수를 이용한 테스트</span></a></li></ol></li></ol></li></ol></li></ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#스프링-기반-REST-API-개발-inflearn-2-백기선"><span class="toc-nav-text">스프링 기반 REST API 개발(inflearn)2 - 백기선</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#이벤트-생성-API-개발"><span class="toc-nav-text">이벤트 생성 API 개발</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#이벤트-API-테스트-클래스-생성"><span class="toc-nav-text">이벤트 API 테스트 클래스 생성</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#스프링-부트-슬라이스-테스트"><span class="toc-nav-text">스프링 부트 슬라이스 테스트</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#MockMvc"><span class="toc-nav-text">MockMvc</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#테스트-할-것"><span class="toc-nav-text">테스트 할 것</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Event-생성-API-구현-201-응답-받기"><span class="toc-nav-text">Event 생성 API 구현 - 201 응답 받기</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#테스트-할-것-1"><span class="toc-nav-text">테스트 할 것</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Event-생성-API-EventRepository-구현"><span class="toc-nav-text">Event 생성 API - EventRepository 구현</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#스프링-데이터-JPA"><span class="toc-nav-text">스프링 데이터 JPA</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#테스트-할-것-2"><span class="toc-nav-text">테스트 할 것</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#입력값-제한하기"><span class="toc-nav-text">입력값 제한하기</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#입력값-제한"><span class="toc-nav-text">입력값 제한</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#DTO-gt-도메인-객체로-값-복사"><span class="toc-nav-text">DTO -&gt; 도메인 객체로 값 복사</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#입력값-이외에-에러-발생"><span class="toc-nav-text">입력값 이외에 에러 발생</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#ObjectMapper-커스터마이징"><span class="toc-nav-text">ObjectMapper 커스터마이징</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Bad-Request-처리하기"><span class="toc-nav-text">Bad Request 처리하기</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#valid-와-BindingResult-또는-Errors"><span class="toc-nav-text">@valid 와 BindingResult (또는 Errors)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#도메인-Validator-만들기"><span class="toc-nav-text">도메인 Validator 만들기</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#테스트-설명-용-애노테이션-만들기"><span class="toc-nav-text">테스트 설명 용 애노테이션 만들기</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Bad-Request-응답-본문-만들기"><span class="toc-nav-text">Bad Request 응답 본문 만들기</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#매개변수를-이용한-테스트"><span class="toc-nav-text">매개변수를 이용한 테스트</span></a></li></ol></li></ol></li></ol></li></ol>
     
   </div>
 </aside>

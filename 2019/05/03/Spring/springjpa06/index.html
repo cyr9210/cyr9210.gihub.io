@@ -10,7 +10,7 @@
   
   <title>
     
-      스프링 데이터 JPA - 스프링 데이터 JPA | Bong&#39;s blog
+      스프링 데이터 JPA06 - 스프링 데이터 JPA | Bong&#39;s blog
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -87,7 +87,7 @@
 </header>
 
     <div id="article-banner">
-  <h2>스프링 데이터 JPA - 스프링 데이터 JPA</h2>
+  <h2>스프링 데이터 JPA06 - 스프링 데이터 JPA</h2>
   <p class="post-date">2019-05-03</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
@@ -316,7 +316,10 @@
 <p><strong>추천하지 않는다. QueryByDSL predicate 또는 Specification을 사용하는것을 추천한다.</strong><br><br><br></p>
 <h3 id="트랜잭션"><a href="#트랜잭션" class="headerlink" title="트랜잭션"></a>트랜잭션</h3><ul>
 <li>스프링 프레임워크에서 지원하는 트랜잭션과 거의 유사하다.</li>
-<li>기본적으로 Repository 메소드들은 기본적으로 @Transactional이 적용되어있다.</li>
+<li>기본적으로 Repository 기본 메소드들은 기본적으로 @Transactional이 적용되어있다.<ul>
+<li><strong>직접 선언하는 메소드에는 @Transactional 이 필요하다.</strong></li>
+</ul>
+</li>
 </ul>
 <h4 id="Transactional"><a href="#Transactional" class="headerlink" title="@Transactional"></a>@Transactional</h4><ul>
 <li><a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/transaction/annotation/Transactional.html" target="_blank" rel="noopener">참고문서</a></li>
@@ -440,17 +443,17 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/05/03/Spring/springjpa05/">
+      <a class="nav-left" href="/2019/04/30/Spring/springjpa04/">
         <span class="nav-arrow">← </span>
         
-          스프링 데이터 JPA - 스프링 데이터 Common
+          스프링 데이터 JPA04 - Cascade, Fetch, Query, 스프링 데이터 JPA 소개 및 원리
         
       </a>
     
     
-      <a class="nav-right" href="/2019/05/24/Project/Notice-Project/">
+      <a class="nav-right" href="/2019/05/03/Spring/springjpa05/">
         
-          Notice-Project
+          스프링 데이터 JPA05 - 스프링 데이터 Common
         
         <span class="nav-arrow"> →</span>
       </a>
