@@ -1,7 +1,7 @@
 ---
 title: oauth2 - 구글 로그인
 date: 2019-04-21 17:07:08
-tags: Spring
+tags: SpringSecurity
 ---
 ![google_logo](/images/google_logo.png)
 # Spring
