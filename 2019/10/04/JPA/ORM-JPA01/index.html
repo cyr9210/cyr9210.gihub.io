@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      JPA 소개 | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>JPA 소개</h2>
+  <p class="post-date">2019-10-04</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="자바-ORM-표준-JPA-프로그래밍-기본편"><a href="#자바-ORM-표준-JPA-프로그래밍-기본편" class="headerlink" title="자바 ORM 표준 JPA 프로그래밍 - 기본편"></a>자바 ORM 표준 JPA 프로그래밍 - 기본편</h1><h2 id="JPA-소개"><a href="#JPA-소개" class="headerlink" title="JPA 소개"></a>JPA 소개</h2><h3 id="SQL-중심적인-개발의-문제점"><a href="#SQL-중심적인-개발의-문제점" class="headerlink" title="SQL 중심적인 개발의 문제점"></a>SQL 중심적인 개발의 문제점</h3><ul>
+<li>무한반복, 지루한 코드<ul>
+<li>CRUD<ul>
+<li>INSERT INTO…</li>
+<li>UPDATE…</li>
+<li>SELECT…</li>
+<li>DELETE…</li>
+</ul>
+</li>
+<li>필드 추가 시, 각 쿼리마다 수정이 필요하다.<ul>
+<li>휴먼 에러가 발생하기 쉽다.</li>
+</ul>
+</li>
+<li>관계형 DB사용함에 있어서는 SQL에 의존적인 개발을 피하기 어렵다.</li>
+</ul>
+</li>
+<li>패러다임 불일치<ul>
+<li>객체와 관계형 데이터 베이스의 차이<ol>
+<li>상속</li>
+<li>연관관계</li>
+<li>데이터 타입</li>
+<li>데이터 식별방법</li>
+</ol>
+</li>
+<li>처음 실행하는 SQL에 따라 탐색 범위가 결정</li>
+<li>엔티티 신뢰 문제<ul>
+<li>Query를 확인하기 전까지는 엔티티를 신뢰할 수 없다.</li>
+</ul>
+</li>
+<li>계층 분할이 어렵다.</li>
+<li>객체 비교의 결과가 다르다.</li>
+</ul>
+</li>
+<li><strong>객체지향적으로 설계를 하면 할수록 매핑 작업만 늘어난다.</strong></li>
+<li><strong>객체를 자바 컬렉션에 저장하듯이 DB에 저장할 수는 없을까? -&gt; JPA</strong></li>
+</ul>
+<p><br><br></p>
+<h3 id="JPA-소개-1"><a href="#JPA-소개-1" class="headerlink" title="JPA 소개"></a>JPA 소개</h3><ul>
+<li>Java Persistence API</li>
+<li>자바 진영의 ORM 기술 표준</li>
+</ul>
+<h4 id="ORM"><a href="#ORM" class="headerlink" title="ORM"></a>ORM</h4><ul>
+<li>Object Relational Mapping 객체 관계 매핑</li>
+<li>객체는 객체대로 설계</li>
+<li>관계형 데이터베이스는 관계형 데이터베이스대로 설계</li>
+<li>ORM 프레임워크가 주간에서 매핑</li>
+<li>대중적인 언어는 대부분 ORM 기술이 존재</li>
+</ul>
+<h4 id="JPA는-애플리케이션과-JDBC-사이에서-동작"><a href="#JPA는-애플리케이션과-JDBC-사이에서-동작" class="headerlink" title="JPA는 애플리케이션과 JDBC 사이에서 동작"></a>JPA는 애플리케이션과 JDBC 사이에서 동작</h4><p><img src="/images/jpa/ORM-JPA/ORM01-1.png" alt="ORM01-1"></p>
+<ul>
+<li>개발자 직접 JDBC API를 사용하는것이 아니고 JPA에 명령을 하면 JPA가 JDBC API를 사용해서 SQL을 호출하고 결과를 받아서 동작한다.</li>
+</ul>
+<h4 id="JPA-동작-저장"><a href="#JPA-동작-저장" class="headerlink" title="JPA 동작 - 저장"></a>JPA 동작 - 저장</h4><p><img src="/images/jpa/ORM-JPA/ORM01-2.png" alt="ORM01-2"></p>
+<ul>
+<li>적절한 query를 생성한다. (개발자가 만드는것이 아니고 만들어준다.)</li>
+</ul>
+<h4 id="JPA-동작-조회"><a href="#JPA-동작-조회" class="headerlink" title="JPA 동작 - 조회"></a>JPA 동작 - 조회</h4><p><img src="/images/jpa/ORM-JPA/ORM01-3.png" alt="ORM01-3"></p>
+<h4 id="JPA-역사"><a href="#JPA-역사" class="headerlink" title="JPA 역사"></a>JPA 역사</h4><p><img src="/images/jpa/ORM-JPA/ORM01-4.png" alt="ORM01-4"></p>
+<ul>
+<li>과거에는 EJB(엔티티 빈)이 있었다. 자바표준으로 사용되었다.</li>
+<li>그러나, 아마추어적인 기술… (속도 느림, 성능 떨어짐 등..)</li>
+<li>‘개빈 킹’이라는 개발자가 ORM 프레임워크 하이버네이트를 개발<br>여러 개발자들의 동참하여 오픈소스화가 되었다.</li>
+<li>자바 진영에서 ‘개빈킹’을 스카웃 하이버네이트를 기반으로 자바 표준 JPA를 만들었다.<br>(거의 유사하다. 다듬고.. 용어정리.. )</li>
+</ul>
+<h4 id="JPA는-표준-명세"><a href="#JPA는-표준-명세" class="headerlink" title="JPA는 표준 명세"></a>JPA는 표준 명세</h4><ul>
+<li>JPA는 인터페이스의 모음</li>
+<li>3가지 구현체가 있다.<br><img src="/images/jpa/ORM-JPA/ORM01-5.png" alt="ORM01-5"><ul>
+<li>하이버네이트<ul>
+<li>우리가 사용하는 JPA의 80~90퍼 구현체</li>
+</ul>
+</li>
+<li>EclipseLink</li>
+<li>DataNucleus</li>
+</ul>
+</li>
+</ul>
+<h4 id="JPA를-왜-사용해야-하는가"><a href="#JPA를-왜-사용해야-하는가" class="headerlink" title="JPA를 왜 사용해야 하는가?"></a>JPA를 왜 사용해야 하는가?</h4><ul>
+<li>SQL 중심적인 개발에서 객체 중심으로 개발</li>
+<li><p>생산성</p>
+<ul>
+<li>저장 : jpa.persist(member);</li>
+<li>조회 : Member member = jpa.find(memberId);</li>
+<li>수정 : member.setName(“update_name”);</li>
+<li>삭제 : jpa.remove(member);</li>
+</ul>
+</li>
+<li><p>유지보수</p>
+<ul>
+<li>기존 : 필드 변경 시, 모든 SQL 수정</li>
+<li>JPA 사용 : 필드만 추가하면 된다.</li>
+</ul>
+</li>
+<li><p><strong>패러다임 불일치 해결</strong></p>
+<ul>
+<li><p>JPA와 상속<br><img src="/images/jpa/ORM-JPA/ORM01-6.png" alt="ORM01-6"></p>
+<p><img src="/images/jpa/ORM-JPA/ORM01-7.png" alt="ORM01-7"></p>
+</li>
+<li><p>JPA와 연관관계<br><img src="/images/jpa/ORM-JPA/ORM01-8.png" alt="ORM01-8"></p>
+</li>
+<li><p>JPA와 객체 그래프 탐색<br><img src="/images/jpa/ORM-JPA/ORM01-9.png" alt="ORM01-9"></p>
+</li>
+<li><p>JPA와 비교하기<br><img src="/images/jpa/ORM-JPA/ORM01-10.png" alt="ORM01-10"></p>
+</li>
+</ul>
+</li>
+<li><p>JPA의 성능 최적화 기능</p>
+<ul>
+<li><p>1차 캐시와 동일성(identity) 보장</p>
+<ul>
+<li>같은 트랜잭션 안에서는 같은 엔티티를 반환 - 약간의 조회 성능 향상</li>
+<li>여러번 조회해도 같은 SQL을 여러번 실행하지 않는다.</li>
+</ul>
+</li>
+<li><p>트랜잭션을 지원하는 쓰기 지연(transactional write-behind)<br><img src="/images/jpa/ORM-JPA/ORM01-11.png" alt="ORM01-11"></p>
+<ol>
+<li>트랜잭션을 커밋할 때까지 INSERT SQL을 모음</li>
+<li>JDBC BATCH SQL 기능을 사용해서 한번에 SQL 전송<ul>
+<li>JDBC BATCH : query를 모아서 한번에 날려준다.</li>
+<li>이 과정이 코드가 굉장히 지저분해진다. <strong>JPA는 옵션설정하나로 이 작업을 해준다.</strong></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>지연 로딩(Lazy Loading)</p>
+<ul>
+<li>지연로딩 : 객체가 실제 사용될 때 로딩</li>
+<li>즉시 로딩 : JOIN SQL로 한번에 연관된 객체까지 미리 조회</li>
+<li>두 로딩을 로직에 맞게 옵션을 설정하여 효과적으로 SQL을 호출한다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>데이터 접근 추상화와 벤더 독립성</p>
+</li>
+<li>표준</li>
+</ul>
+<p><br><br></p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#JPA" >
+    <span class="tag-code">JPA</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/09/30/Security/usernamenotfound/">
+        <span class="nav-arrow">← </span>
+        
+          인증 시, UsernameNotfoundException 발생 안함 문제(BadCredentials Exception만 발생)
+        
+      </a>
+    
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#자바-ORM-표준-JPA-프로그래밍-기본편"><span class="toc-nav-text">자바 ORM 표준 JPA 프로그래밍 - 기본편</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#JPA-소개"><span class="toc-nav-text">JPA 소개</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#SQL-중심적인-개발의-문제점"><span class="toc-nav-text">SQL 중심적인 개발의 문제점</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#JPA-소개-1"><span class="toc-nav-text">JPA 소개</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#ORM"><span class="toc-nav-text">ORM</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#JPA는-애플리케이션과-JDBC-사이에서-동작"><span class="toc-nav-text">JPA는 애플리케이션과 JDBC 사이에서 동작</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#JPA-동작-저장"><span class="toc-nav-text">JPA 동작 - 저장</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#JPA-동작-조회"><span class="toc-nav-text">JPA 동작 - 조회</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#JPA-역사"><span class="toc-nav-text">JPA 역사</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#JPA는-표준-명세"><span class="toc-nav-text">JPA는 표준 명세</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#JPA를-왜-사용해야-하는가"><span class="toc-nav-text">JPA를 왜 사용해야 하는가?</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/10/04/JPA/ORM-JPA01/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>
