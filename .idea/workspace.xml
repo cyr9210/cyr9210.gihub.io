@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="10edeb32-08bb-4258-8866-f6cff31a2348" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/JPA/ORM-JPA01.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/JPA/ORM-JPA01.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/images/jpa/ORM-JPA/ORM01-7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/images/jpa/ORM-JPA/ORM01-8.png" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,25 +21,35 @@
     <favorites_list name="cyr9210.github.io" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/_posts/JPA/ORM-JPA01.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="298">
-                <caret line="128" column="4" selection-start-line="128" selection-start-column="4" selection-end-line="128" selection-end-column="4" />
+              <first_editor relative-caret-position="51">
+                <caret line="3" column="9" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="9" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springjpa01.md">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/_posts/JPA/ORM-JPA02.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="51">
-                <caret line="3" column="9" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="9" />
+                <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+                <folding>
+                  <element signature="e#108#109#0" expanded="true" />
+                  <element signature="e#133#134#0" expanded="true" />
+                  <element signature="e#166#167#0" expanded="true" />
+                  <element signature="e#194#195#0" expanded="true" />
+                  <element signature="e#224#225#0" expanded="true" />
+                  <element signature="e#251#252#0" expanded="true" />
+                  <element signature="e#290#291#0" expanded="true" />
+                  <element signature="e#322#323#0" expanded="true" />
+                </folding>
               </first_editor>
               <second_editor />
             </state>
@@ -131,14 +144,15 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/source/_posts/Spring/oauth2-google-login.md" />
         <option value="$PROJECT_DIR$/source/_posts/JPA/ORM-JPA01.md" />
+        <option value="$PROJECT_DIR$/source/_posts/JPA/ORM-JPA02.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="180" />
-    <option name="y" value="112" />
-    <option name="width" value="1080" />
-    <option name="height" value="676" />
+    <option name="x" value="-2560" />
+    <option name="y" value="-256" />
+    <option name="width" value="2560" />
+    <option name="height" value="1440" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -146,6 +160,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -172,18 +187,10 @@
               <item name="_posts" type="462c0819:PsiDirectoryNode" />
               <item name="JPA" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="cyr9210.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cyr9210.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="_posts" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -200,13 +207,13 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/css/images" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/source/_posts/JPA" />
       <recent name="$PROJECT_DIR$/source/_posts/Security" />
       <recent name="$PROJECT_DIR$/source/_posts/RestAPI" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/css/images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -247,18 +254,19 @@
       <workItem from="1569220512302" duration="1244000" />
       <workItem from="1569804636102" duration="4221000" />
       <workItem from="1569844170953" duration="2452000" />
-      <workItem from="1570172455921" duration="539000" />
+      <workItem from="1570172455921" duration="651000" />
+      <workItem from="1570499745288" duration="805000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15991000" />
+    <option name="totallyTimeSpent" value="16908000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="-2560" y="-256" width="2560" height="1440" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48875254" visible="true" weight="0.26466382" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48875254" visible="true" weight="0.14892772" />
       <window_info id="Structure" order="1" sideWeight="0.5017241" side_tool="true" weight="0.26979" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -277,7 +285,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.30547947" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Thumbnails" order="11" weight="0.32876712" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49676898" visible="true" weight="0.41686746" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49676898" visible="true" weight="0.25255474" />
       <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="bottom" id="Graph Database Console" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -348,16 +356,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springboot07.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="17">
-            <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/Spring/springboot08.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -807,8 +805,28 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/JPA/ORM-JPA01.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="298">
-            <caret line="128" column="4" selection-start-line="128" selection-start-column="4" selection-end-line="128" selection-end-column="4" />
+          <first_editor relative-caret-position="51">
+            <caret line="3" column="9" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="9" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/JPA/ORM-JPA02.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="51">
+            <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+            <folding>
+              <element signature="e#108#109#0" expanded="true" />
+              <element signature="e#133#134#0" expanded="true" />
+              <element signature="e#166#167#0" expanded="true" />
+              <element signature="e#194#195#0" expanded="true" />
+              <element signature="e#224#225#0" expanded="true" />
+              <element signature="e#251#252#0" expanded="true" />
+              <element signature="e#290#291#0" expanded="true" />
+              <element signature="e#322#323#0" expanded="true" />
+            </folding>
           </first_editor>
           <second_editor />
         </state>
