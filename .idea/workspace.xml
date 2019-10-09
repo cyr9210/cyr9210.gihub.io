@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10edeb32-08bb-4258-8866-f6cff31a2348" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/source/images/jpa/ORM-JPA/ORM03-17.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/_posts/JPA/ORM-JPA03.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/JPA/ORM-JPA03.md" afterDir="false" />
     </list>
@@ -120,7 +119,8 @@
       <workItem from="1570521177171" duration="405000" />
       <workItem from="1570524152797" duration="162000" />
       <workItem from="1570539566117" duration="38000" />
-      <workItem from="1570599985628" duration="208000" />
+      <workItem from="1570599985628" duration="365000" />
+      <workItem from="1570609148160" duration="7000" />
     </task>
     <servers />
   </component>
@@ -132,7 +132,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
