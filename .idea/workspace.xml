@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10edeb32-08bb-4258-8866-f6cff31a2348" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/source/_posts/JPA/ORM-JPA04.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/images/jpa/ORM-JPA/ORM03-18.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/images/jpa/ORM-JPA/ORM03-19.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/images/jpa/ORM-JPA/ORM03-20.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/images/jpa/ORM-JPA/ORM03-21.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/images/jpa/ORM-JPA/ORM03-22.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/images/jpa/ORM-JPA/ORM03-23.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/images/jpa/ORM-JPA/ORM03-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/images/springboot/FileUpload/fileupload01-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/images/springboot/FileUpload/fileupload01-2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/JPA/ORM-JPA01.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/JPA/ORM-JPA01.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/JPA/ORM-JPA02.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/JPA/ORM-JPA02.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/JPA/ORM-JPA03.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/JPA/ORM-JPA03.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/JPA/ORM-JPA04.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/JPA/ORM-JPA04.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +26,7 @@
   <component name="ProjectId" id="1RvFG02USHkBvqxDdflCEkizw7m" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -45,13 +40,13 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/css/images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/source/_posts/JPA" />
       <recent name="$PROJECT_DIR$/source/_posts/Security" />
       <recent name="$PROJECT_DIR$/source/_posts/RestAPI" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/css/images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -101,7 +96,8 @@
       <workItem from="1570599985628" duration="365000" />
       <workItem from="1570609148160" duration="321000" />
       <workItem from="1570609920185" duration="37000" />
-      <workItem from="1570783410419" duration="1084000" />
+      <workItem from="1570783410419" duration="1575000" />
+      <workItem from="1570956287927" duration="360000" />
     </task>
     <servers />
   </component>

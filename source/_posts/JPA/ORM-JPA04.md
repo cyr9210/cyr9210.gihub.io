@@ -1,5 +1,5 @@
 ---
-title: 04. 엔티티 매핑 - 객체와 테이블 매핑(@Table), 데이터베이스 스키마 자동생성, 필드와 컬럼 매핑(@Column), 기본 키 매핑(@Id, @GenerateValue)
+title: 04.엔티티 매핑 - 객체와 테이블 매핑(@Table), 데이터베이스 스키마 자동생성, 필드와 컬럼 매핑(@Column), 기본 키 매핑(@Id, @GenerateValue)
 date: 2019-10-11 17:44:27
 tags: JPA
 ---
