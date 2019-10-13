@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      05.연관관계 매핑 기초 - 단방향 연관관계, 양방향 연관관계, 연관관계의 주인, 연관관계 매핑 주의사항 | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>05.연관관계 매핑 기초 - 단방향 연관관계, 양방향 연관관계, 연관관계의 주인, 연관관계 매핑 주의사항</h2>
+  <p class="post-date">2019-10-13</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="자바-ORM-표준-JPA-프로그래밍-기본편"><a href="#자바-ORM-표준-JPA-프로그래밍-기본편" class="headerlink" title="자바 ORM 표준 JPA 프로그래밍 - 기본편"></a>자바 ORM 표준 JPA 프로그래밍 - 기본편</h1><h2 id="연관관계-매핑-기초"><a href="#연관관계-매핑-기초" class="headerlink" title="연관관계 매핑 기초"></a>연관관계 매핑 기초</h2><ul>
+<li>객체와 테이블 연관관계의 차이를 이해가 필요</li>
+<li><strong>객체의 참조와 테이블의 외래키 매핑</strong></li>
+<li>방향(Direction) : 단방향, 양방향</li>
+<li>다중성(Multiplicity) : 다대일(N : 1), 일대다 (1 : N), 일대일 (1 : 1), 다대다(N : M)</li>
+<li>연관관계의 주인(Owner) : 객체 양방향 연관관계는 관리 주인이 필요</li>
+</ul>
+<h3 id="연관관계가-필요한-이유"><a href="#연관관계가-필요한-이유" class="headerlink" title="연관관계가 필요한 이유"></a>연관관계가 필요한 이유</h3><ul>
+<li>객체를 테이블에 맞추어 데이터 중심으로 모델링하면, 협력 관계를 만들 수 없다.</li>
+<li>테이블은 외래 키로 조인을 사용해서 연관된 테이블을 찾는다.</li>
+<li>객체는 참조를 사용해서 연관객체를 찾는다.</li>
+<li>테이블과 객체 사이에는 이런 큰 간격이 있다.</li>
+</ul>
+<h3 id="단방향-연관-관계"><a href="#단방향-연관-관계" class="headerlink" title="단방향 연관 관계"></a>단방향 연관 관계</h3><p><img src="/images/jpa/ORM-JPA/ORM05-1.png" alt="ORM05-1"></p>
+<h4 id="도메인-모델링"><a href="#도메인-모델링" class="headerlink" title="도메인 모델링"></a>도메인 모델링</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="meta">@Getter</span> <span class="meta">@Setter</span> <span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Member</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Id</span></span><br><span class="line">    <span class="meta">@GeneratedValue</span></span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"name"</span>)</span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ManyToOne</span></span><br><span class="line">    <span class="meta">@JoinColumn</span>(name = <span class="string">"team_id"</span>)</span><br><span class="line">    <span class="keyword">private</span> Team team;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="meta">@Getter</span> <span class="meta">@Setter</span> <span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Team</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Id</span> <span class="meta">@GeneratedValue</span></span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"team_id"</span>)</span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"name"</span>, length = <span class="number">50</span>)</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="실행-코드"><a href="#실행-코드" class="headerlink" title="실행 코드"></a>실행 코드</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JpaMain</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        EntityManagerFactory emf = Persistence.createEntityManagerFactory(<span class="string">"hello"</span>);</span><br><span class="line"></span><br><span class="line">        EntityManager em = emf.createEntityManager();</span><br><span class="line"></span><br><span class="line">        EntityTransaction tx = em.getTransaction();</span><br><span class="line">        tx.begin();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Team team = <span class="keyword">new</span> Team();</span><br><span class="line">            team.setName(<span class="string">"team A"</span>);</span><br><span class="line">            em.persist(team);</span><br><span class="line"></span><br><span class="line">            Member member = <span class="keyword">new</span> Member();</span><br><span class="line">            member.setUsername(<span class="string">"bong"</span>);</span><br><span class="line">            member.setTeam(team);</span><br><span class="line">            em.persist(member);</span><br><span class="line"></span><br><span class="line">            Member findMember = em.find(Member.class, member.getId());</span><br><span class="line">            Team findTeam = findMember.getTeam();</span><br><span class="line"></span><br><span class="line">            System.out.println(<span class="string">"findTeam.name : "</span> + findTeam.getName());</span><br><span class="line"></span><br><span class="line">            tx.commit();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            tx.rollback();</span><br><span class="line">        &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">            em.close();</span><br><span class="line">        &#125;</span><br><span class="line">        emf.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>member.getTeam() 으로 team을 찾을 수 있다.</li>
+</ul>
+<h4 id="연관관계수정-실행코드"><a href="#연관관계수정-실행코드" class="headerlink" title="연관관계수정 실행코드"></a>연관관계수정 실행코드</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JpaMain</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        EntityManagerFactory emf = Persistence.createEntityManagerFactory(<span class="string">"hello"</span>);</span><br><span class="line"></span><br><span class="line">        EntityManager em = emf.createEntityManager();</span><br><span class="line"></span><br><span class="line">        EntityTransaction tx = em.getTransaction();</span><br><span class="line">        tx.begin();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Team team = <span class="keyword">new</span> Team();</span><br><span class="line">            team.setName(<span class="string">"team A"</span>);</span><br><span class="line">            em.persist(team);</span><br><span class="line"></span><br><span class="line">            Member member = <span class="keyword">new</span> Member();</span><br><span class="line">            member.setUsername(<span class="string">"bong"</span>);</span><br><span class="line">            member.setTeam(team);</span><br><span class="line">            em.persist(member);</span><br><span class="line"></span><br><span class="line">            Member findMember = em.find(Member.class, member.getId());</span><br><span class="line">            System.out.println(<span class="string">"findTeam.name : "</span> + findMember.getTeam().getName());</span><br><span class="line"></span><br><span class="line">            Team newTeam = <span class="keyword">new</span> Team();</span><br><span class="line">            newTeam.setName(<span class="string">"updateTeam"</span>);</span><br><span class="line">            em.persist(newTeam);</span><br><span class="line"></span><br><span class="line">            findMember.setTeam(newTeam);</span><br><span class="line">            System.out.println(<span class="string">"update findTeam.name : "</span> + findMember.getTeam().getName());</span><br><span class="line"></span><br><span class="line">            tx.commit();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            tx.rollback();</span><br><span class="line">        &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">            em.close();</span><br><span class="line">        &#125;</span><br><span class="line">        emf.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>객체만 변경해주면 DB에도 업데이트 된다.</li>
+</ul>
+<p><br><br></p>
+<h3 id="양방향-연관관계와-연관관계의-주인"><a href="#양방향-연관관계와-연관관계의-주인" class="headerlink" title="양방향 연관관계와 연관관계의 주인"></a>양방향 연관관계와 연관관계의 주인</h3><p><img src="/images/jpa/ORM-JPA/ORM05-2.png" alt="ORM05-2"></p>
+<h4 id="도메인-모델링-1"><a href="#도메인-모델링-1" class="headerlink" title="도메인 모델링"></a>도메인 모델링</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="meta">@Getter</span> <span class="meta">@Setter</span> <span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Member</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Id</span> <span class="meta">@GeneratedValue</span></span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"member_id"</span>)</span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"name"</span>)</span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ManyToOne</span></span><br><span class="line">    <span class="meta">@JoinColumn</span>(name = <span class="string">"team_id"</span>)</span><br><span class="line">    <span class="keyword">private</span> Team team;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="meta">@Getter</span> <span class="meta">@Setter</span> <span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Team</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Id</span> <span class="meta">@GeneratedValue</span></span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"team_id"</span>)</span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"name"</span>, length = <span class="number">50</span>)</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@OneToMany</span>(mappedBy = <span class="string">"team"</span>)</span><br><span class="line">    <span class="keyword">private</span> List&lt;Member&gt; members = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>연관관계의 주인은 주로 관계의 다수 인쪽에 설정하는것이 좋다.<ul>
+<li>바꿔 말하면 @ManyToOne인쪽이 주인</li>
+</ul>
+</li>
+<li>mappedBy는 연관관계의 주인이 아닌쪽에 설정한다.<ul>
+<li>바꿔 말하면 @OneToMany인쪽에 mappedBy</li>
+</ul>
+</li>
+</ul>
+<p>테스트 실행에 앞서 알아야 할 내용들이 있다.</p>
+<h4 id="객체의-양방향-관계"><a href="#객체의-양방향-관계" class="headerlink" title="객체의 양방향 관계"></a>객체의 양방향 관계</h4><ul>
+<li><p>객체 연과관계 = 단방향 연관관계 2개</p>
+<ul>
+<li>회원 -&gt; 팀 연관관계 1개(단방향)</li>
+<li>팀 -&gt; 회원 연관관계 1개(단방향)</li>
+</ul>
+</li>
+<li><p><strong>객체의 양방향 관계는 사실 양방향 관계가 아니라 서로 다른 단방향 관계 2개이다.</strong></p>
+<ul>
+<li><p>객체를 양방향으로 참조하려면 단방향 연관관계 2개를 만들어야 한다.</p>
+<p><img src="/images/jpa/ORM-JPA/ORM05-6.png" alt="ORM05-6"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="테이블의-양방향-연관관계"><a href="#테이블의-양방향-연관관계" class="headerlink" title="테이블의 양방향 연관관계"></a>테이블의 양방향 연관관계</h4><ul>
+<li><p>테이블 연관관계 1개</p>
+<ul>
+<li>회원 <->팀 연관관계 1개(양방향)</-></li>
+</ul>
+</li>
+<li><p>테이블은 <strong>외래 키</strong> 하나로 두 테이블의 연관관계를 관리</p>
+<ul>
+<li><p>MEMBER.TEAM_ID 외래 키 하나로 양방향 연관관계 가짐(양쪽으로 조인 가능)</p>
+<p><img src="/images/jpa/ORM-JPA/ORM05-7.png" alt="ORM05-7"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="외래-키-관리"><a href="#외래-키-관리" class="headerlink" title="외래 키 관리"></a>외래 키 관리</h4><p><img src="/images/jpa/ORM-JPA/ORM05-5.png" alt="ORM05-5"></p>
+<ul>
+<li><p>객체의 경우 두개의 단방향 관계이기 때문에 한족에서 외래 키를 관리해야한다.</p>
+</li>
+<li><p>외래키를 관리하는 객체를 <strong>연관관계의 주인(Owner)</strong>이라고 한다.</p>
+</li>
+<li><p>한쪽은 읽기만 가능한 가짜 매핑이 될  수 밖에 없다.</p>
+<p><img src="/images/jpa/ORM-JPA/ORM05-8.png" alt="ORM05-8"></p>
+</li>
+</ul>
+<h4 id="연관관계의-주인-Owner"><a href="#연관관계의-주인-Owner" class="headerlink" title="연관관계의 주인(Owner)"></a>연관관계의 주인(Owner)</h4><p>양방향 매핑 규칙을 기준으로 ..</p>
+<ul>
+<li>객체의 두 관계중 하나를 연관관계의 주인으로 지정</li>
+<li>연관관계의 주인만이 외래 키를 관리(등록, 수정)</li>
+<li><strong>주인이 아닌쪽은 읽기만 가능</strong></li>
+<li>주인은 mappedBy 속성 사용 X</li>
+<li>주인이 아니면 mappedBy 속성으로 주인 지정<ul>
+<li>주인쪽에서 현재 자신으로 매핑된 필드 이름을 입력한다.</li>
+</ul>
+</li>
+</ul>
+<h4 id="누구를-주인으로"><a href="#누구를-주인으로" class="headerlink" title="누구를 주인으로?"></a>누구를 주인으로?</h4><ul>
+<li>외래키가 있는 곳을 주인<ul>
+<li>DB에서 foreign key는 다인쪽이 갖는다.</li>
+</ul>
+</li>
+<li>즉, 다대일 관계에서 다인쪽이 주인이 되는것이 좋다.(헷갈리지 않음)<ul>
+<li>예) team(1) : member(n) -&gt; 주인 member</li>
+</ul>
+</li>
+</ul>
+<h4 id="주의사항"><a href="#주의사항" class="headerlink" title="주의사항"></a>주의사항</h4><ul>
+<li>양방향 매핑 시, 연관관계의 주인에 값을 입력 또는 수정해야 DB에 반영된다.</li>
+<li><strong>주인이 아닌쪽은 읽기만 가능</strong></li>
+</ul>
+<h4 id="실행코드"><a href="#실행코드" class="headerlink" title="실행코드"></a>실행코드</h4><ul>
+<li><p>연관관계 주인쪽 입력</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Team team = <span class="keyword">new</span> Team();</span><br><span class="line">team.setName(<span class="string">"team A"</span>);</span><br><span class="line">em.persist(team);</span><br><span class="line"></span><br><span class="line">Member member = <span class="keyword">new</span> Member();</span><br><span class="line">member.setUsername(<span class="string">"bong"</span>);</span><br><span class="line">member.setTeam(team);</span><br><span class="line">em.persist(member);</span><br><span class="line"></span><br><span class="line">em.flush();</span><br><span class="line">em.clear();</span><br><span class="line"></span><br><span class="line">Team findTeam = em.find(Team.class, <span class="number">1L</span>);</span><br><span class="line">List&lt;Member&gt; members = findTeam.getMembers();</span><br></pre></td></tr></table></figure>
+<p><img src="/images/jpa/ORM-JPA/ORM05-3.png" alt="ORM05-3"></p>
+</li>
+<li><p>주인이 아닌쪽 입력</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Team team = <span class="keyword">new</span> Team();</span><br><span class="line">team.setName(<span class="string">"team A"</span>);</span><br><span class="line">em.persist(team);</span><br><span class="line"></span><br><span class="line">Member member = <span class="keyword">new</span> Member();</span><br><span class="line">member.setUsername(<span class="string">"bong"</span>);</span><br><span class="line"></span><br><span class="line">team.getMembers.add(member);</span><br><span class="line"></span><br><span class="line">em.persist(member);</span><br><span class="line"></span><br><span class="line">em.flush();</span><br><span class="line">em.clear();</span><br><span class="line"></span><br><span class="line">Team findTeam = em.find(Team.class, <span class="number">1L</span>);</span><br><span class="line">List&lt;Member&gt; members = findTeam.getMembers();</span><br></pre></td></tr></table></figure>
+<p><img src="/images/jpa/ORM-JPA/ORM05-4.png" alt="ORM05-4"></p>
+<ul>
+<li><strong>정상적으로 DB에 저장되지 않는것을 볼 수 있다.</strong></li>
+</ul>
+</li>
+</ul>
+<p><br><br></p>
+<h3 id="주의점"><a href="#주의점" class="headerlink" title="주의점"></a>주의점</h3><ul>
+<li><p>양방향 매핑시 가장 많이 하는 실수</p>
+<ul>
+<li><p>연관관게의 주인에 값을 입력하지 않음</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Member member = <span class="keyword">new</span> Member();</span><br><span class="line">member.setUsername(<span class="string">"bong"</span>);</span><br><span class="line">em.persist(member);</span><br><span class="line"></span><br><span class="line">Team team = <span class="keyword">new</span> Team();</span><br><span class="line">team.setName(<span class="string">"team A"</span>);</span><br><span class="line">team.getMembers().add(member);</span><br><span class="line">em.persist(team);</span><br><span class="line"></span><br><span class="line">em.flush();</span><br><span class="line">em.clear();</span><br></pre></td></tr></table></figure>
+<p><img src="/images/jpa/ORM-JPA/ORM05-4.png" alt="ORM05-4"></p>
+<ul>
+<li>연관관계의 주인은 Member이다. </li>
+<li>Team에서만 Member를 지정해주었다.</li>
+<li>DB에는 반영되어지지 않는다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="양방향-연관관계-주의"><a href="#양방향-연관관계-주의" class="headerlink" title="양방향 연관관계 주의"></a>양방향 연관관계 주의</h4><ul>
+<li><p><strong>순수 객체 상태를 고려해서 항상 양쪽에 값을 설정하는것을 추천한다.</strong></p>
+<ul>
+<li><p>객체지향적으로 생각을하면 양쪽에 값을 넣는것 맞기 때문에…</p>
+</li>
+<li><p>flush하지 않고 1차캐시 값을 사용할 때, 값이 정확하지 않다.</p>
+<ul>
+<li><p>flush() 사용 -&gt; DB에 바로 반영</p>
+<p><img src="/images/jpa/ORM-JPA/ORM05-9.png" alt="ORM05-9"></p>
+</li>
+<li><p>flush() 사용안함 -&gt; 1차 캐시 값 사용</p>
+<p><img src="/images/jpa/ORM-JPA/ORM05-10.png" alt="ORM05-10"></p>
+</li>
+</ul>
+</li>
+<li><p>test케이스 작성 시, JPA를 사용하지 않고 JAVA코드로 작성할 때 값이 정확하지 않다.</p>
+</li>
+<li><p><strong>연관관계 편의 메소드를 생성하자</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">changeTeam</span> <span class="params">(Team team)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.team = team;</span><br><span class="line">    team.getMembers().add(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>이런식으로 양방향 값을 변경해주는 메소드를 만들어 놓는것이 좋다.</li>
+<li>양쪽에 이러한 연관관계 설정 메소드가 있으면 헷갈리수 있으니 한쪽에만 만들어 놓는것을 추천한다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>양방향 매핑시에 무한 루프를 조심하자</p>
+<ul>
+<li>toString()<ul>
+<li>양방향 매핑 필드는 제외해야한다.</li>
+</ul>
+</li>
+<li>lombok<ul>
+<li>양방향 매핑 필드는 제외해야한다.</li>
+</ul>
+</li>
+<li>JSON생성<ul>
+<li>Controller에서 Entity를 직접 반환하는일은 없도록 해야한다.</li>
+<li>DTO사용하여 반환한는 것이 좋다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="양방향-매핑-정리"><a href="#양방향-매핑-정리" class="headerlink" title="양방향 매핑 정리"></a>양방향 매핑 정리</h5><ul>
+<li><strong>단방향 매핑만으로 이미 연관관계 매핑은 설계는 완료가 되야한다.</strong></li>
+<li>양방향 매핑은 반대 방향으로 조회기능만 추가된것 뿐</li>
+<li>JPQL에서 역방향으로 탐색할 일이 많을때 양방향이 필요.</li>
+<li><strong>단방향 매핑을 잘 하고 양방향은 필요할 때만 추가 (테이블에 영향을 주지 않음)</strong></li>
+</ul>
+<p><br><br></p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#JPA" >
+    <span class="tag-code">JPA</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/10/11/JPA/ORM-JPA04/">
+        <span class="nav-arrow">← </span>
+        
+          04.엔티티 매핑 - 객체와 테이블 매핑(@Table), 데이터베이스 스키마 자동생성, 필드와 컬럼 매핑(@Column), 기본 키 매핑(@Id, @GenerateValue)
+        
+      </a>
+    
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#자바-ORM-표준-JPA-프로그래밍-기본편"><span class="toc-nav-text">자바 ORM 표준 JPA 프로그래밍 - 기본편</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#연관관계-매핑-기초"><span class="toc-nav-text">연관관계 매핑 기초</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#연관관계가-필요한-이유"><span class="toc-nav-text">연관관계가 필요한 이유</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#단방향-연관-관계"><span class="toc-nav-text">단방향 연관 관계</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#도메인-모델링"><span class="toc-nav-text">도메인 모델링</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#실행-코드"><span class="toc-nav-text">실행 코드</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#연관관계수정-실행코드"><span class="toc-nav-text">연관관계수정 실행코드</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#양방향-연관관계와-연관관계의-주인"><span class="toc-nav-text">양방향 연관관계와 연관관계의 주인</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#도메인-모델링-1"><span class="toc-nav-text">도메인 모델링</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#객체의-양방향-관계"><span class="toc-nav-text">객체의 양방향 관계</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#테이블의-양방향-연관관계"><span class="toc-nav-text">테이블의 양방향 연관관계</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#외래-키-관리"><span class="toc-nav-text">외래 키 관리</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#연관관계의-주인-Owner"><span class="toc-nav-text">연관관계의 주인(Owner)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#누구를-주인으로"><span class="toc-nav-text">누구를 주인으로?</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#주의사항"><span class="toc-nav-text">주의사항</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#실행코드"><span class="toc-nav-text">실행코드</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#주의점"><span class="toc-nav-text">주의점</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#양방향-연관관계-주의"><span class="toc-nav-text">양방향 연관관계 주의</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#양방향-매핑-정리"><span class="toc-nav-text">양방향 매핑 정리</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/10/13/JPA/ORM-JPA05/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

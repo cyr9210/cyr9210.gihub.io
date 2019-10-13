@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      04.엔티티 매핑 - 객체와 테이블 매핑(@Table), 데이터베이스 스키마 자동생성, 필드와 컬럼 매핑(@Column), 기본 키 매핑(@Id, @GenerateValue) | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>04.엔티티 매핑 - 객체와 테이블 매핑(@Table), 데이터베이스 스키마 자동생성, 필드와 컬럼 매핑(@Column), 기본 키 매핑(@Id, @GenerateValue)</h2>
+  <p class="post-date">2019-10-11</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="자바-ORM-표준-JPA-프로그래밍-기본편"><a href="#자바-ORM-표준-JPA-프로그래밍-기본편" class="headerlink" title="자바 ORM 표준 JPA 프로그래밍 - 기본편"></a>자바 ORM 표준 JPA 프로그래밍 - 기본편</h1><h2 id="엔티티-매핑"><a href="#엔티티-매핑" class="headerlink" title="엔티티 매핑"></a>엔티티 매핑</h2><h4 id="객체와-테이블-매핑"><a href="#객체와-테이블-매핑" class="headerlink" title="객체와 테이블 매핑"></a>객체와 테이블 매핑</h4><h4 id="Entity"><a href="#Entity" class="headerlink" title="@Entity"></a>@Entity</h4><ul>
+<li>JPA가 관리, 엔티티라고 한다.</li>
+<li><strong>기본 생성자 필수</strong>(파라미터가 없는 public 또는 protected 생성자)</li>
+<li>final, enum, interface, inner 클래스 사옹불가</li>
+<li>저장할 필드에 final 사용 불가</li>
+</ul>
+<h4 id="Entity-속성-정리"><a href="#Entity-속성-정리" class="headerlink" title="@Entity 속성 정리"></a>@Entity 속성 정리</h4><ul>
+<li>name<ul>
+<li>기본값은 클래스의 이름</li>
+<li>JPA에서 사용할 엔티티 이름을 지정</li>
+<li>같은 클래스 이름이 없으면 가급적 기본값을 사용하는것을 추천한다.</li>
+</ul>
+</li>
+</ul>
+<h4 id="Table"><a href="#Table" class="headerlink" title="@Table"></a>@Table</h4><ul>
+<li>엔티티와 매핑할 테이블 지정</li>
+<li>name<ul>
+<li>매핑할 테이블 이름</li>
+<li>기본값은 엔티티 이름을 사용</li>
+</ul>
+</li>
+<li>catalog<ul>
+<li>데이터베이스 catalog 매핑</li>
+</ul>
+</li>
+<li>schema<ul>
+<li>데이터베이스 schema 매핑</li>
+</ul>
+</li>
+<li>uniqueConstraints<ul>
+<li>DDL생성 시에 유니크 제약 조건 생성</li>
+</ul>
+</li>
+</ul>
+<p><br><br></p>
+<h3 id="데이터베이스-스키마-자동-생성"><a href="#데이터베이스-스키마-자동-생성" class="headerlink" title="데이터베이스 스키마 자동 생성"></a>데이터베이스 스키마 자동 생성</h3><ul>
+<li>DDL을 애플리케이션 실행 시점에 자동 생성</li>
+<li>테이블 중심 -&gt; 객체 중심</li>
+<li>데이터베이스 방언을 활용하여 데이터베이스에 맞는 적절한 DDL 생성</li>
+<li><strong>이렇게 생성한 DDL은 개발 장비에서만 사용</strong><ul>
+<li>생성된 DDL은 운영서버에서는 사용하지 않거나, 적절히 다듬은 후 사용</li>
+</ul>
+</li>
+</ul>
+<h4 id="hibernate-hbm2ddl-auto-설정"><a href="#hibernate-hbm2ddl-auto-설정" class="headerlink" title="hibernate.hbm2ddl.auto 설정"></a>hibernate.hbm2ddl.auto 설정</h4><ul>
+<li>create : 기존 테이블 삭제 후 다시 생성 (DROP + CREATE)</li>
+<li>create-drop : create와 같으나 종료시점에 테이블 DROP</li>
+<li>update : 변경된 부분만 반영(운영 DB에는 사용하면 안됨)<ul>
+<li>기존에 있던 컬럼이 지워지는 경우는 아무런 일이 일어나지 않는다.</li>
+</ul>
+</li>
+<li>validate : 엔티티와 테이블이 정상 매핑 되었는지만 확인</li>
+<li>none : 사용하지 않음<ul>
+<li>사실 없음</li>
+<li>매칭되는게 없으나 관례적으로 none이라고 적는다.</li>
+</ul>
+</li>
+</ul>
+<h4 id="주의"><a href="#주의" class="headerlink" title="주의"></a>주의</h4><ul>
+<li><strong>운영 장비에서는 절대 create, create-drop, update는 사용하면 안된다.</strong></li>
+<li>개발 초기 단계는 create or update</li>
+<li>테스트 서버 update or validate</li>
+<li>스테이징, 운영서버는 validate or none</li>
+</ul>
+<h4 id="DDL-생성-기능"><a href="#DDL-생성-기능" class="headerlink" title="DDL 생성 기능"></a>DDL 생성 기능</h4><ul>
+<li>제약조건 추가<ul>
+<li><code>@Column(nullable = false, length = 10)</code></li>
+</ul>
+</li>
+<li>유니크 제약조건 추가<ul>
+<li><code>@Table(uniqueConstraints = {@UniqueContstranin(name = &quot;NAME_AGE_UNIQUE&quot;, columnNames = {&quot;NAME&quot;, &quot;AGE&quot; })})</code></li>
+</ul>
+</li>
+<li><strong>DDL 생성 기능은 DDL을 자동 생성할 때만 사용되고, JPA의 실행 로직에는 영향을 주지 않는다.</strong></li>
+</ul>
+<p><br><br></p>
+<h3 id="필드와-컬럼-매핑"><a href="#필드와-컬럼-매핑" class="headerlink" title="필드와 컬럼 매핑"></a>필드와 컬럼 매핑</h3><table>
+<thead>
+<tr>
+<th>어노테이션</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@Column</td>
+<td>컬럼매핑</td>
+</tr>
+<tr>
+<td>@Temporal</td>
+<td>날짜 타입 매핑</td>
+</tr>
+<tr>
+<td>@Enumerated</td>
+<td>enum 타입 매핑</td>
+</tr>
+<tr>
+<td>@Lob</td>
+<td>BLOB, CLOB 매핑</td>
+</tr>
+<tr>
+<td>@Transient</td>
+<td>특정 필드를 컬럼에 매핑하지 않음(매핑 무시)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Column"><a href="#Column" class="headerlink" title="@Column"></a>@Column</h4><table>
+<thead>
+<tr>
+<th>속성</th>
+<th>설명</th>
+<th>기본값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>필드와 매핑할 테이블의 컬럼 이름</td>
+<td>객체의 필드 이름</td>
+</tr>
+<tr>
+<td>insertable, updatable</td>
+<td>등록, 변경 가능여부</td>
+<td>TRUE</td>
+</tr>
+<tr>
+<td>nullalbe(DDL)</td>
+<td>null값 허용여부. <br>false로 설정 시 DDL 생성할 때 not null 제약 조건이 붙는다.</td>
+<td></td>
+</tr>
+<tr>
+<td>unique(DDL)</td>
+<td>@Table의 uniqueConstraints와 같지만 한 컬럼에 간단한 유니크 제약조건을 줄 때 사용한다.</td>
+<td>255</td>
+</tr>
+<tr>
+<td>length(DDL)</td>
+<td>문자 길이 제약조건, String 타입에만 사용한다.</td>
+<td>255</td>
+</tr>
+<tr>
+<td>precision, scale(DDL)</td>
+<td>BigDecimal 타입에서 사용한다.(BigInteger도 사용할 수있다.)<br>prevision은 소수점을 포함한 전체 자릿수<br>sacle은 소수의 자릿수<br>double, float타입에는 적용되지 않는다.<br>아주 큰 숫자나 정밀한 소수를 다룰때 사용.</td>
+<td>precision = 19<br>sclae = 2</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>unique의 경우, Constraints 이름은 줄 수 없다. </p>
+<p><img src="/images/jpa/ORM-JPA/ORM03-21.png" alt="ORM03-21"></p>
+</li>
+<li><p>Constarints 이름을 주고 싶다면 @Table(uniqueConstraints)를 사용하자.</p>
+</li>
+</ul>
+<h4 id="Enumerated"><a href="#Enumerated" class="headerlink" title="@Enumerated"></a>@Enumerated</h4><ul>
+<li>자바 enum 타입을 매핑할 때 사용</li>
+<li><strong>ORDINAL 사용 X</strong><ul>
+<li>추가 되거나, 수정 발생 시에 문제가 발생될 수 있다.</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>속성</th>
+<th>설명</th>
+<th>기본값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>EnumType.ORDINAL : enum 순서를 데이터 베이스에 저장<br>EnumType.STRING : enum 이름을 데이터 베이스에 저장</td>
+<td>Enumtype. ORDINAL</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Temporal"><a href="#Temporal" class="headerlink" title="@Temporal"></a>@Temporal</h4><ul>
+<li>날짜 타입을 매핑할 때 사용</li>
+<li><p>자바8에 <strong>LocalDateTime</strong>, <strong>LocalDate</strong> 가 생겼기 때문에, 최근에는 거의 사용하지 않는다.    <img src="/images/jpa/ORM-JPA/ORM03-23.png" alt="ORM03-23"></p>
+<ul>
+<li>최신 하이버네이트 버전에서 지원하고 있다.</li>
+</ul>
+</li>
+</ul>
+<h4 id="Lob"><a href="#Lob" class="headerlink" title="@Lob"></a>@Lob</h4><ul>
+<li>데이터베이스 BLOB, CLOB 타입과 매핑</li>
+<li>지정할 수 있는 속성이 없다.</li>
+<li>매핑하는 필드 타입이 문자면 CLOB, 나머지는 BLOB 매핑<ul>
+<li>CLOB : String, char[], java.sql.CLOB</li>
+<li>BLOB : byte[], java.sql.BLOB</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>CLOB</strong></p>
+<ul>
+<li>사이즈가 큰 데이터를 외부 파일로 저장하기 위한 데이터 타입</li>
+<li>a문자열 데이터를 DB외부에 저장하기 위한 타입이다.</li>
+<li>데이터의 최대 길이는 외부 저장소에서 생성 가능한 파일 크기이다.</li>
+<li>SQL문에서 문자열 타입으로 입출력 값을 표현한다.</li>
+<li>CHAR, VARCHAR, NCHAR, NCHAR VARYING 타입과 호환</li>
+<li>명시적 타입 변환만 허용</li>
+<li>데이터 길이가 서로 다른 경우 최대 길이가 작은 타입에 맞추어 절삭된다.</li>
+</ul>
+<p><strong>BLOB</strong></p>
+<ul>
+<li>바이너리 데이터를 DB외부에 저장하기 위한 타입이다.</li>
+<li>BLOB 데이ㅓㅌ의 최대 길이는 외부 저장소에서 생서 가능한 파일크기이다.</li>
+<li>SQL문에서 비트열 타입으로 입출력 값을 표현한다.</li>
+<li>BIT, BIT VARYING 타입과 호환</li>
+<li>명시적 타입 변환만 허용</li>
+<li>데이터 길이가 서로 다른 경우 최대 길이가 작은 타입에 맞추어 절삭된다.</li>
+<li>BLOB타입값을 바이너리 값으로 변환하는 경우, 변환된 데이터는 초대 1GB를 넘을 수 없다.</li>
+<li>반대로 바이너리를 BLOB타입으로 변환하는 경우, 변환된 데이터는 BLOB저장소에서 제공하는 파일 크기를 넘을 수 없다.</li>
+</ul>
+</blockquote>
+<p><br><br></p>
+<h3 id="기본-키-매핑"><a href="#기본-키-매핑" class="headerlink" title="기본 키 매핑"></a>기본 키 매핑</h3><ul>
+<li>직접 할 : <strong>@Id만 사용</strong></li>
+<li>자동생성 : @GenerateValue<ul>
+<li>IDENTITY 데이터베이스에 위임, (MYSQL의 AUTO_INCREMENT)</li>
+<li>SEQUENCE : 데이터베이스 시퀀스 오브젝트 사용, ORACLE<ul>
+<li>@SequenceGenerator 필요</li>
+</ul>
+</li>
+<li>TABLE : 키생성용 테이블 사용, 모든 DB에서 사용<ul>
+<li>@TableGenerator 필요</li>
+</ul>
+</li>
+<li>AUTO : 방언에 따라 자동 지정, 현재 기본값<ul>
+<li>예를 들어 오라클이면 sequence 생성…</li>
+<li><strong>변경사항이 있을 수 있으니 확인하고 사용하는 것을 추천.</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="IDENTITY-전략"><a href="#IDENTITY-전략" class="headerlink" title="IDENTITY 전략"></a>IDENTITY 전략</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Id</span></span><br><span class="line"><span class="meta">@GeneratedValue</span>(strategy = GenerationType.IDENTITY)</span><br><span class="line"><span class="keyword">private</span> String id;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>기본 키생성을 데이터 베이스에 위임</p>
+</li>
+<li><p>주로 MY_SQL, PostgreSQL, SQL server, DB2에서 사용</p>
+</li>
+<li><p>JPA는 보통 트랜잭션 커밋 시점에 INSERT SQL 실행</p>
+</li>
+<li><p>AUTO_INCREMENT는 데이터 베이스에 INSERT SQL을 실행 한 이후에 ID값을 알 수 있음</p>
+</li>
+<li><p><strong>IDENTITY 전략은 <code>em.persist(entity);</code> 시점에 즉시 INSERT SQL 실행하고 DB에서 식별자 조회</strong></p>
+<ul>
+<li>DB에 아이디값이 null로 날라왔을 때, DB가 ID를 생성한다.</li>
+<li>생성한 ID값을 리턴받아서 영속성 컨텍스트에 넣어준다.</li>
+</ul>
+<p><img src="/images/jpa/ORM-JPA/ORM03-20.png" alt="ORM03-20"></p>
+</li>
+</ul>
+<h4 id="SEQUENCE-전략"><a href="#SEQUENCE-전략" class="headerlink" title="SEQUENCE 전략"></a>SEQUENCE 전략</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Id</span></span><br><span class="line"><span class="meta">@GeneratedValue</span>(strategy = GenerationType.SEQUENCE)</span><br><span class="line"><span class="keyword">private</span> Long id;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>숫자 타입 사용해야한다.</p>
+<ul>
+<li>Integer를 쓴다고 해서 성능적 차이는 미비하다. Long을 쓰자.</li>
+</ul>
+</li>
+<li><p>Sequence를 DB에 요청해서 먼저 받고 영속성 컨텍스트에 저장 -&gt; 트랜잭션 commit 시점에 쿼리를 호출</p>
+<p><img src="/images/jpa/ORM-JPA/ORM03-19.png" alt="ORM03-19"></p>
+<ul>
+<li><p>DB와 너무 많은 커넥션을 맺는것 아닌가..? 성능에 문제가 있지 않나?</p>
+<ul>
+<li><p><strong>allocationSize만큼 DB의 시퀀스값으 올려두고 하나씩 사용한다.</strong> (밑에 예는 allocationSize = 2)</p>
+<p><img src="/images/jpa/ORM-JPA/ORM03-24.png" alt="ORM03-24"></p>
+<ul>
+<li>첫번째 시퀀스 1을 더미처럼 호출한 후, 시퀀스를 2증가시킨 3까지 증가시키는 콜을 한다. (사용값 : 1, DB 시퀀스 현재값 : 3)</li>
+<li>2번째 엔티티를 persist할 때, 미리 증가시켰던 시퀀스 범위 안으로 시퀀스 2를 사용한다. (사용값 : 2, DB 시퀀스 현재값 : 3)</li>
+<li>3번째 엔티티를 persist할 때, 미리 증가시켰던 시퀀스 범위 안으로 시퀀스 3를 사용한다. (사용값 : 3, DB 시퀀스 현재값 : 3)</li>
+<li>4번째 엔티티를 persist할 때, 시퀀스를 2증가 시키는 콜을한다. (사용값 : 4, DB 시퀀스 현재값 : 5) </li>
+</ul>
+</li>
+<li><p>여러 WAS가 있어도 동시성 문제없이 다양한 문제를 해결해준다.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Table마다 Sequence를 가지고 시픙면 설정을 해주면 된다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="meta">@SequenceGenerator</span>(</span><br><span class="line">        name = <span class="string">"MEMBER_SEQ_GENERATOR"</span>,</span><br><span class="line">        sequenceName = <span class="string">"MEMBER_SEQ"</span>,</span><br><span class="line">        initialValue = <span class="number">1</span>,</span><br><span class="line">        allocationSize = <span class="number">1</span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Member</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Id</span></span><br><span class="line">    <span class="meta">@GeneratedValue</span>(strategy = GenerationType.SEQUENCE, generator = <span class="string">"MEMBER_SEQ"</span>)</span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>@SequenceGenerator 속성</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>속성</th>
+<th>설명</th>
+<th>기본값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>코드에서 사용할 이름</td>
+<td><strong>필수</strong></td>
+</tr>
+<tr>
+<td>sequenceName</td>
+<td>데이터베이스에 매핑할 시퀀스 이름</td>
+<td>hibernate_sequence</td>
+</tr>
+<tr>
+<td>initialValue</td>
+<td>초기값</td>
+<td>1</td>
+</tr>
+<tr>
+<td>allocationSize</td>
+<td>증가값</td>
+<td><strong>50</strong></td>
+</tr>
+<tr>
+<td>catalog, schema</td>
+<td>데이터베이스 catalog, schema 이름</td>
+</tr>
+</tbody>
+</table>
+<h4 id="TABLE-전략"><a href="#TABLE-전략" class="headerlink" title="TABLE 전략"></a>TABLE 전략</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="meta">@TableGenerator</span>(</span><br><span class="line">        name = <span class="string">"MEMBER_SEQ_GENERATOR"</span>,</span><br><span class="line">        table = <span class="string">"MY_SEQUENCES"</span>,</span><br><span class="line">        pkColumnName = <span class="string">"MEMBER_SEQ"</span>, allocationSize = <span class="number">1</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Member</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Id</span></span><br><span class="line">    <span class="meta">@GeneratedValue</span>(strategy = GenerationType.SEQUENCE, generator = <span class="string">"MEMBER_SEQ_GENERATOR"</span>)</span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>키 생성 전용 테이블을 하나 만들어서 데이터베이스 시퀀스를 흉내내는 전략</p>
+</li>
+<li><p>@TableGenerator가 필요</p>
+</li>
+<li><p>장점 : 모든 데이터베이스에 적용 가능</p>
+</li>
+<li><p>단점 : 성능;</p>
+</li>
+<li><p>pikColumName 컬럼 이름</p>
+<p><img src="/images/jpa/ORM-JPA/ORM03-18.png" alt="ORM03-18"></p>
+</li>
+<li><p>@TableGenerator 속성</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>속성</th>
+<th>설명</th>
+<th>기본값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>식별자 생성기 이름</td>
+<td>필수</td>
+</tr>
+<tr>
+<td>table</td>
+<td>키생성 테이블명</td>
+<td>hibernate_sequences</td>
+</tr>
+<tr>
+<td>pkColumnName</td>
+<td>시퀀스 컬럼명</td>
+<td>sequence_name</td>
+</tr>
+<tr>
+<td>valueColumnNa</td>
+<td>시퀀스 값 컬럼명</td>
+<td>next_val</td>
+</tr>
+<tr>
+<td>pkColumnValue</td>
+<td>키로 사용할 값 이름</td>
+<td>엔티티 이름</td>
+</tr>
+<tr>
+<td>initialValue</td>
+<td>초기 값, 마지막으로 생성된 값이 기준이다.</td>
+<td>0</td>
+</tr>
+<tr>
+<td>allocationSize</td>
+<td>증가값(sequence전략과 동일)</td>
+<td><strong>50</strong></td>
+</tr>
+<tr>
+<td>catalog, schema</td>
+<td>데이터베이스 catalog, schema 이름</td>
+<td></td>
+</tr>
+<tr>
+<td>uniqueConstraints(DDL)</td>
+<td>유니크 제약조건</td>
+</tr>
+</tbody>
+</table>
+<h4 id="권장하는-식별자-전략"><a href="#권장하는-식별자-전략" class="headerlink" title="권장하는 식별자 전략"></a>권장하는 식별자 전략</h4><ul>
+<li>기본 키 제약 조건<ul>
+<li>null 아님</li>
+<li>유일</li>
+<li><strong>변하면 안된다.</strong></li>
+</ul>
+</li>
+<li>미래까지 이 조건을 만족하는 자연키(주민등록번호, 전호번호 등)는 찾기 어렵다.<br>비지니스와 상관없는 대리키를 사용하자.</li>
+<li>권장 : Long형 + 대체키 + 키 생성전략 사용</li>
+</ul>
+<p><br><br></p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#JPA" >
+    <span class="tag-code">JPA</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/10/08/JPA/ORM-JPA03/">
+        <span class="nav-arrow">← </span>
+        
+          03.영속성 관리(내부 동작 방식) - 영속성 컨텍스트(Dirty checking, 스냅샷..), 플러시, 준영속 상태
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/10/13/JPA/ORM-JPA05/">
+        
+          05.연관관계 매핑 기초 - 단방향 연관관계, 양방향 연관관계, 연관관계의 주인, 연관관계 매핑 주의사항
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#자바-ORM-표준-JPA-프로그래밍-기본편"><span class="toc-nav-text">자바 ORM 표준 JPA 프로그래밍 - 기본편</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#엔티티-매핑"><span class="toc-nav-text">엔티티 매핑</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#객체와-테이블-매핑"><span class="toc-nav-text">객체와 테이블 매핑</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Entity"><span class="toc-nav-text">@Entity</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Entity-속성-정리"><span class="toc-nav-text">@Entity 속성 정리</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Table"><span class="toc-nav-text">@Table</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#데이터베이스-스키마-자동-생성"><span class="toc-nav-text">데이터베이스 스키마 자동 생성</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#hibernate-hbm2ddl-auto-설정"><span class="toc-nav-text">hibernate.hbm2ddl.auto 설정</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#주의"><span class="toc-nav-text">주의</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#DDL-생성-기능"><span class="toc-nav-text">DDL 생성 기능</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#필드와-컬럼-매핑"><span class="toc-nav-text">필드와 컬럼 매핑</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Column"><span class="toc-nav-text">@Column</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Enumerated"><span class="toc-nav-text">@Enumerated</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Temporal"><span class="toc-nav-text">@Temporal</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Lob"><span class="toc-nav-text">@Lob</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#기본-키-매핑"><span class="toc-nav-text">기본 키 매핑</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#IDENTITY-전략"><span class="toc-nav-text">IDENTITY 전략</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SEQUENCE-전략"><span class="toc-nav-text">SEQUENCE 전략</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#TABLE-전략"><span class="toc-nav-text">TABLE 전략</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#권장하는-식별자-전략"><span class="toc-nav-text">권장하는 식별자 전략</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/10/11/JPA/ORM-JPA04/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>
