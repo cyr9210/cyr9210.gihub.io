@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      06.다양한 연관관계 매핑 - 다대일, 일대다, 일대일, 다대 | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>06.다양한 연관관계 매핑 - 다대일, 일대다, 일대일, 다대</h2>
+  <p class="post-date">2019-10-19</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="자바-ORM-표준-JPA-프로그래밍-기본편"><a href="#자바-ORM-표준-JPA-프로그래밍-기본편" class="headerlink" title="자바 ORM 표준 JPA 프로그래밍 - 기본편"></a>자바 ORM 표준 JPA 프로그래밍 - 기본편</h1><h2 id="다양한-연관관계-매핑"><a href="#다양한-연관관계-매핑" class="headerlink" title="다양한 연관관계 매핑"></a>다양한 연관관계 매핑</h2><h3 id="연관관계-매핑시-고려사항"><a href="#연관관계-매핑시-고려사항" class="headerlink" title="연관관계 매핑시 고려사항"></a>연관관계 매핑시 고려사항</h3><ul>
+<li>다중성</li>
+<li>단방향, 양방향</li>
+<li>양방향일 때, 연관관계의 주인</li>
+</ul>
+<h4 id="다중성"><a href="#다중성" class="headerlink" title="다중성"></a>다중성</h4><ul>
+<li>다대일 : @ManyToOne</li>
+<li>일대다 : @OneToMany</li>
+<li>일대일 : @OneToOne</li>
+<li>다대다 : @ManyToMany<ul>
+<li>실무에서는 쓰지 않는다.</li>
+</ul>
+</li>
+</ul>
+<h4 id="단방향-양방향"><a href="#단방향-양방향" class="headerlink" title="단방향, 양방향"></a>단방향, 양방향</h4><ul>
+<li>테이블<ul>
+<li>외래키 하나로 양쪽 조인 가능</li>
+<li>사실 방향이라는 개념이 없음</li>
+</ul>
+</li>
+<li>객체<ul>
+<li>참조용 필드가 있는 쪽으로만 참조가능</li>
+<li>한쪽만 참조하면 단방향</li>
+<li>양쪽이 서로 참조하면 양방향<ul>
+<li>사실 <strong>단방향 두개</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="연관관계의-주인"><a href="#연관관계의-주인" class="headerlink" title="연관관계의 주인"></a>연관관계의 주인</h4><ul>
+<li>테이블은 외래 키 하나로 두 테이블이 연관관계를 맺음</li>
+<li>객체 양방향 관계는 A -&gt; B, B -&gt; A 처럼 참조가 두개</li>
+<li>객체 양방향 관계는 참조가 2군데 있음. 둘중 테이블 외래키를 관리할 곳을 지정해야한다.</li>
+<li>연관관계의 주인 : 외래키를 관리하는 참조</li>
+<li>주인의 반대편 외래 키에 영향을 주지 않음, 단순 조회 가능</li>
+</ul>
+<p><br><br></p>
+<h3 id="다대일-N-1"><a href="#다대일-N-1" class="headerlink" title="다대일(N : 1)"></a>다대일(N : 1)</h3><h4 id="다대일-단방향"><a href="#다대일-단방향" class="headerlink" title="다대일 단방향"></a>다대일 단방향</h4><p><img src="/images/jpa/ORM-JPA/ORM06-2.png" alt="ORM06-2"></p>
+<ul>
+<li>가장 많이 사용하는 연관관계</li>
+<li>다대일의 반대는 일대다</li>
+</ul>
+<h4 id="다대일-양방향"><a href="#다대일-양방향" class="headerlink" title="다대일 양방향"></a>다대일 양방향</h4><p><img src="/images/jpa/ORM-JPA/ORM06-1.png" alt="ORM06-1"></p>
+<ul>
+<li>외래 키가 있는 쪽이 연관관계의 주인<ul>
+<li>다가 연관간계의 주인이 되는것이 좋다.</li>
+</ul>
+</li>
+<li>양쪽을 서로 참조하도록 개발<ul>
+<li>주인이 아닌쪽은 읽기만 가능</li>
+</ul>
+</li>
+</ul>
+<p><br><br></p>
+<h3 id="일대다-1-N"><a href="#일대다-1-N" class="headerlink" title="일대다(1 : N)"></a>일대다(1 : N)</h3><h4 id="일대다-단방향"><a href="#일대다-단방향" class="headerlink" title="일대다 단방향"></a>일대다 단방향</h4><p><img src="/images/jpa/ORM-JPA/ORM06-3.png" alt="ORM06-3"></p>
+<ul>
+<li><p>이모델은 권장하지 않음</p>
+</li>
+<li><p>일대다 단방향은 일대다(1 : N)에서 <strong>일(1)이 연관관계의 주인</strong></p>
+</li>
+<li><p>테이블 일대다 관계는 항상 <strong>다(N) 쪽에 외래 키가 있음</strong></p>
+</li>
+<li><p>객체와 테이블의 차이 때문에 반대편 테이블의 외래키를 관리하는 특이한 구조</p>
+<p><img src="/images/jpa/ORM-JPA/ORM06-4.png" alt="ORM06-4"></p>
+</li>
+<li><p>@JoinColumn을 꼭 사용해야 한다. 그렇지 않으면 조인 테이블 방식을 사용함(중간에 테이블이 추가된다.)</p>
+</li>
+<li><p>단점</p>
+<ul>
+<li>엔티티가 관리하는 외래키가 다른 테이블에 있음</li>
+<li>연간관계 관리를 위해 추가로 UPDATE SQL 실행</li>
+</ul>
+</li>
+<li><p><strong>일대다 단방향 매핑보다는 다대일 양방향 매핑을 사용하자.</strong></p>
+</li>
+</ul>
+<h4 id="일대다-양방향"><a href="#일대다-양방향" class="headerlink" title="일대다 양방향"></a>일대다 양방향</h4><p><img src="/images/jpa/ORM-JPA/ORM06-5.png" alt="ORM06-5"></p>
+<ul>
+<li><p>이런 매핑은 공식적으로 존재 X</p>
+</li>
+<li><p><code>@JoinColumn(insertable=false, updatable=false)</code> 을 추가한다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Team</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Id</span> <span class="meta">@GeneratedValue</span></span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"team_id"</span>)</span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"name"</span>, length = <span class="number">50</span>)</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@OneToMany</span></span><br><span class="line">    <span class="meta">@JoinColumn</span>(name = <span class="string">"team_id"</span>)</span><br><span class="line">    <span class="keyword">private</span> List&lt;Member&gt; members = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Member</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Id</span> <span class="meta">@GeneratedValue</span></span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"member_id"</span>)</span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"name"</span>)</span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@ManyToOne</span></span><br><span class="line">    <span class="meta">@JoinColumn</span>(name=<span class="string">"team_id"</span>, insertable = <span class="keyword">false</span>, updatable = <span class="keyword">false</span>)</span><br><span class="line">    <span class="keyword">private</span> Team team;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>읽기 전용 필드를 사용해서 양방향 처럼 사용하는 방법<ul>
+<li>insertable = false, updatable = false 를 쓰면 읽기 전용이 된다.</li>
+</ul>
+</li>
+<li><strong>다대일 양방향을 사용하자.</strong></li>
+</ul>
+</li>
+</ul>
+<p><br><br></p>
+<h3 id="일대일-1-1"><a href="#일대일-1-1" class="headerlink" title="일대일(1 : 1)"></a>일대일(1 : 1)</h3><h4 id="일대일-관계"><a href="#일대일-관계" class="headerlink" title="일대일 관계"></a>일대일 관계</h4><p><img src="/images/jpa/ORM-JPA/ORM06-6.png" alt="ORM06-6"></p>
+<ul>
+<li>일대일 관계는 그 반대도 일대일</li>
+<li>주 테이블이나 대상 테이블 중에 외래 키 선택 가능<ul>
+<li>주 테이블 외래 키</li>
+<li>대상 테이블에 외래 키</li>
+</ul>
+</li>
+<li><strong>외래 키에 데이터베이스 유니크 제약조건 추가</strong><ul>
+<li>안줘도 되지만 세심한 관리가 필요해진다.</li>
+</ul>
+</li>
+<li>@JoinColumn을 넣어주는것을 추천(default값이 지저분하다.)</li>
+</ul>
+<h4 id="일대일-주-테이블에-외래-키-양방향"><a href="#일대일-주-테이블에-외래-키-양방향" class="headerlink" title="일대일: 주 테이블에 외래 키 양방향"></a>일대일: 주 테이블에 외래 키 양방향</h4><p><img src="/images/jpa/ORM-JPA/ORM06-7.png" alt="ORM06-7"></p>
+<ul>
+<li>다대일 양방향 매핑 처럼 <strong>외래 키가 있는곳이 연관관계의 주인</strong></li>
+<li><strong>반대편은 mappedBy 적용</strong></li>
+</ul>
+<h4 id="일대일-대상-테이블에-외래-키-단방향-정리"><a href="#일대일-대상-테이블에-외래-키-단방향-정리" class="headerlink" title="일대일: 대상 테이블에 외래 키 단방향 정리"></a>일대일: 대상 테이블에 외래 키 단방향 정리</h4><ul>
+<li><strong>단방향 관계는 JPA에서 지원하지 않는다.</strong></li>
+<li>양방향 관계는 지원</li>
+</ul>
+<h4 id="일대일-대상-테이블에-외래-키-양방향-정리"><a href="#일대일-대상-테이블에-외래-키-양방향-정리" class="headerlink" title="일대일: 대상 테이블에 외래 키 양방향 정리"></a>일대일: 대상 테이블에 외래 키 양방향 정리</h4><p><img src="/images/jpa/ORM-JPA/ORM06-8.png" alt="ORM06-8"></p>
+<ul>
+<li>일대일 주 테이블에 외래 키 양방향과 매핑 방법은 같음 </li>
+</ul>
+<h4 id="정리"><a href="#정리" class="headerlink" title="정리"></a>정리</h4><ul>
+<li>주 테이블 외래 키<ul>
+<li>주 객체가 대상 객체의 참조를 가지는 것처럼 주 테이블에 외래 키를 두고 대상 테이블을 찾음</li>
+<li>객체지향 개발자가 선호</li>
+<li>JPA매핑관리</li>
+<li>장점 : 주 테이블만 조회해도 대상 테이블에 데이터가 있는지 확인가능</li>
+<li>단점 : 값이 없으면 외래 키에 null 허용</li>
+</ul>
+</li>
+<li>대상 테이블에 외래 키<ul>
+<li>대상 테이블에 외래 키가 존재</li>
+<li>전통적인 데이터베이스 개발자 선호</li>
+<li>장점 : 주 테이블과 대상 테이블을 일대일에서 일대다 관계로 변경할 때 테이블 구조 유지</li>
+<li>단점 : 프록시 기능의 한계로 <strong>지연로딩으로 설정해도 항상 즉시 로딩됨</strong></li>
+</ul>
+</li>
+</ul>
+<p><br><br></p>
+<h3 id="다대다-N-M"><a href="#다대다-N-M" class="headerlink" title="다대다(N : M)"></a>다대다(N : M)</h3><ul>
+<li><p><strong>실무에서 사용하지 않는것을 추천한다.</strong></p>
+</li>
+<li><p>관계형 데이터베이스는 정규화된 테이블 2개로 다대다 관계를 표현할 수 없음</p>
+<p><img src="/images/jpa/ORM-JPA/ORM06-9.png" alt="ORM06-9"></p>
+<ul>
+<li>연결 테이블을 추가해서 일대다, 다대일 관계로 풀어내야한다.</li>
+</ul>
+</li>
+<li><p>객체는 컬렉션을 사용해서 객체 2개로 다대다 관계 가능</p>
+<p><img src="/images/jpa/ORM-JPA/ORM06-10.png" alt="ORM06-10"></p>
+</li>
+</ul>
+<p><img src="/images/jpa/ORM-JPA/ORM06-12.png" alt="ORM06-12"></p>
+<ul>
+<li><p><code>@ManyToMany</code> 사용</p>
+</li>
+<li><p><code>@JoinTable</code> 로 연결 테이블 지정</p>
+<ul>
+<li>name = 생성될 연결 테이블의 이름</li>
+</ul>
+</li>
+<li><p>다대다 매핑 : 단방향, 양방향 가능</p>
+<ul>
+<li><p>양방향 시, <code>@ManyToMany(mappedBy =&quot;&quot;)</code>  옵션으로 대상 객체에 추가</p>
+<p><img src="/images/jpa/ORM-JPA/ORM06-13.png" alt="ORM06-13"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="다대다-매핑의-한계"><a href="#다대다-매핑의-한계" class="headerlink" title="다대다 매핑의 한계"></a>다대다 매핑의 한계</h4><ul>
+<li>편리해 보이지만 실무에서 사용하지 않는것을 추천한다.</li>
+<li>실제 로직은 연결 테이블이 단순히 연결만하고 끝나지 않음</li>
+<li>주문시간, 수량같은 데이터가 들어올 수 있음.</li>
+</ul>
+<h4 id="다다대-매핑의-한계-극복"><a href="#다다대-매핑의-한계-극복" class="headerlink" title="다다대 매핑의 한계 극복"></a>다다대 매핑의 한계 극복</h4><ul>
+<li><p>연결 테이블용 엔티티 추가<strong>(연결 테이블을 엔티티로 승격</strong>)</p>
+<p><img src="/images/jpa/ORM-JPA/ORM06-11.png" alt="ORM06-11"></p>
+</li>
+<li><p>@ManyToMany -&gt; @OneToMany, @ManyToOne</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="meta">@NoargsConstructor</span></span><br><span class="line"><span class="meta">@Getter</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MemberProduct</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Id</span> <span class="meta">@GeneratedValue</span></span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ManyToOne</span></span><br><span class="line">    <span class="meta">@JoinColumn</span>(name = <span class="string">"member_id"</span>)</span><br><span class="line">    <span class="keyword">private</span> Member member;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ManyToOne</span></span><br><span class="line">    <span class="meta">@JoinColumn</span>(name = <span class="string">"product_id"</span>)</span><br><span class="line">    <span class="keyword">private</span> Product product;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>반대쪽에는 <code>@OneToMany(mappedBy = &quot;product&quot;)</code>,  <code>@OneToMany(mappedBy = &quot;member&quot;)</code>와같이 설정해준다.</li>
+<li>원하는 필드를 추가 가능하다.</li>
+</ul>
+</li>
+<li><p>PK는 의미없는값을 쓰느것을 추천한다. </p>
+<ul>
+<li>유연성이나, 운영시에 유리하다.</li>
+</ul>
+</li>
+</ul>
+<p><br><br></p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#JPA" >
+    <span class="tag-code">JPA</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/10/13/JPA/ORM-JPA05/">
+        <span class="nav-arrow">← </span>
+        
+          05.연관관계 매핑 기초 - 단방향 연관관계, 양방향 연관관계, 연관관계의 주인, 연관관계 매핑 주의사항
+        
+      </a>
+    
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#자바-ORM-표준-JPA-프로그래밍-기본편"><span class="toc-nav-text">자바 ORM 표준 JPA 프로그래밍 - 기본편</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#다양한-연관관계-매핑"><span class="toc-nav-text">다양한 연관관계 매핑</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#연관관계-매핑시-고려사항"><span class="toc-nav-text">연관관계 매핑시 고려사항</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#다중성"><span class="toc-nav-text">다중성</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#단방향-양방향"><span class="toc-nav-text">단방향, 양방향</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#연관관계의-주인"><span class="toc-nav-text">연관관계의 주인</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#다대일-N-1"><span class="toc-nav-text">다대일(N : 1)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#다대일-단방향"><span class="toc-nav-text">다대일 단방향</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#다대일-양방향"><span class="toc-nav-text">다대일 양방향</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#일대다-1-N"><span class="toc-nav-text">일대다(1 : N)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#일대다-단방향"><span class="toc-nav-text">일대다 단방향</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#일대다-양방향"><span class="toc-nav-text">일대다 양방향</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#일대일-1-1"><span class="toc-nav-text">일대일(1 : 1)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#일대일-관계"><span class="toc-nav-text">일대일 관계</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#일대일-주-테이블에-외래-키-양방향"><span class="toc-nav-text">일대일: 주 테이블에 외래 키 양방향</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#일대일-대상-테이블에-외래-키-단방향-정리"><span class="toc-nav-text">일대일: 대상 테이블에 외래 키 단방향 정리</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#일대일-대상-테이블에-외래-키-양방향-정리"><span class="toc-nav-text">일대일: 대상 테이블에 외래 키 양방향 정리</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#정리"><span class="toc-nav-text">정리</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#다대다-N-M"><span class="toc-nav-text">다대다(N : M)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#다대다-매핑의-한계"><span class="toc-nav-text">다대다 매핑의 한계</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#다다대-매핑의-한계-극복"><span class="toc-nav-text">다다대 매핑의 한계 극복</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/10/19/JPA/ORM-JPA06/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>
