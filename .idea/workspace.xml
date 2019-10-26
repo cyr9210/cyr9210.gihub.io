@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="10edeb32-08bb-4258-8866-f6cff31a2348" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Spring/async.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Spring/async.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,11 +40,11 @@
       <recent name="$PROJECT_DIR$/public/css/images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/source/_posts/Java" />
       <recent name="$PROJECT_DIR$/source/_posts/Spring" />
       <recent name="$PROJECT_DIR$/source/_posts/JPA" />
       <recent name="$PROJECT_DIR$/source/_posts/JPA/" />
       <recent name="$PROJECT_DIR$/source/_posts/Security" />
-      <recent name="$PROJECT_DIR$/source/_posts/RestAPI" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -104,7 +103,7 @@
       <workItem from="1572068498930" duration="485000" />
       <workItem from="1572068990488" duration="431000" />
       <workItem from="1572069789972" duration="823000" />
-      <workItem from="1572071471817" duration="214000" />
+      <workItem from="1572071471817" duration="586000" />
     </task>
     <servers />
   </component>
