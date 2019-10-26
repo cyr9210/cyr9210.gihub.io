@@ -26,7 +26,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/css/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -37,6 +37,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/source/_posts/Spring" />
       <recent name="$PROJECT_DIR$/source/_posts/JPA" />
       <recent name="$PROJECT_DIR$/source/_posts/JPA/" />
       <recent name="$PROJECT_DIR$/source/_posts/Security" />
@@ -96,7 +97,11 @@
       <workItem from="1570783410419" duration="1575000" />
       <workItem from="1570956287927" duration="537000" />
       <workItem from="1570956968124" duration="7000" />
-      <workItem from="1571411964345" duration="541000" />
+      <workItem from="1571411964345" duration="799000" />
+      <workItem from="1571450509016" duration="555000" />
+      <workItem from="1572005909952" duration="199000" />
+      <workItem from="1572068498930" duration="485000" />
+      <workItem from="1572068990488" duration="431000" />
     </task>
     <servers />
   </component>
