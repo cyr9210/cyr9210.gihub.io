@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      Sheduled | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>Sheduled</h2>
+  <p class="post-date">2019-10-26</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h2 id="Scheduled-스케줄러"><a href="#Scheduled-스케줄러" class="headerlink" title="@Scheduled 스케줄러"></a>@Scheduled 스케줄러</h2><h3 id="설정"><a href="#설정" class="headerlink" title="설정"></a>설정</h3><ul>
+<li><p><code>@EnableScheduling</code> 을 사용하여 스케쥴링을 사용하는것을 알린다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableScheduling</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ApiApplication</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(ApiApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>SpringBoot 2.0 에서는 auto-configuration으로 스케줄러를 생성해준다.<br>그러나 이 스케줄러의 경우, <strong>쓰레드풀이 아니기 때문에</strong> 많은 작업이 있을 때 효율적이지 못하다.</p>
+<p><img src="/images/springboot/scheduled/sceduled02.png" alt="sceduled02"></p>
+</li>
+<li><p>많은 작업이 필요한 경우, 쓰레드 풀을 사용할 수 있도록  설정할 수 있다.</p>
+<ul>
+<li><p>yml 파일 설정</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">	<span class="attr">task:</span></span><br><span class="line">		<span class="attr">scheduling:</span></span><br><span class="line">			<span class="attr">pool:</span></span><br><span class="line">				<span class="attr">size:</span> <span class="number">8</span></span><br><span class="line">			<span class="attr">thread-name-prefix:</span> <span class="string">my-scheduler</span></span><br></pre></td></tr></table></figure>
+<p>이미지</p>
+</li>
+<li><p>configuration 설정</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SchedulerConfiguration</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Bean</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> TaskScheduler <span class="title">poolScheduler</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		ThreadPoolTaskScheduler threadpool = <span class="keyword">new</span> ThreadPoolTaskScheduler();</span><br><span class="line">		threadpool.setPoolSize(Runtime.getRuntime().availableProcessors() * <span class="number">2</span>);</span><br><span class="line">		threadpool.setThreadNamePrefix(<span class="string">"my-scheduler"</span>);</span><br><span class="line">		<span class="keyword">return</span> threadpool;</span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Runtime.getRuntime().availableProcessors() = 4</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/springboot/scheduled/sceduled03.png" alt="sceduled03"></p>
+</li>
+</ul>
+<h4 id="사용법"><a href="#사용법" class="headerlink" title="사용법"></a>사용법</h4><ul>
+<li><p>주기적으로 실행을 요하는 메소드 위에서 <code>@Scheduled</code> 를 사용한다.(빈으로 등록된 클래스의 메소드여야 한다.)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Scheduled</span>(fixedRateString = <span class="string">"5"</span>, initialDelay = <span class="number">3000</span>) </span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">scheduleTest</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	logger.error(<span class="string">"hello jeong-pro"</span>); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>initialDelay : 대기시간</li>
+<li>fixedRateString : 이전 작업이 끝난 시점으로 부터 고정된 시간을 문자열로 설정 (milli seconds 단위)</li>
+</ul>
+</li>
+</ul>
+<h4 id="속성"><a href="#속성" class="headerlink" title="속성"></a>속성</h4><table>
+<thead>
+<tr>
+<th>속성이름</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cron</td>
+<td>크론 표현식을 지원, “초 분 시 일 월 주 (년)”으로 표현한다.</td>
+</tr>
+<tr>
+<td>fixedDelay</td>
+<td>이전 작업이 끝난 시점으로 부터 고정된 시간을 설정 (milli seconds 단위)</td>
+</tr>
+<tr>
+<td>fixedDelayString</td>
+<td>fixedDelay의 value값을 문자열로 설정</td>
+</tr>
+<tr>
+<td>fixedRate</td>
+<td>이전 작업이 수행되기 시작한 시점으로 부터 고정된 시간을 설정 (milli seconds 단위)</td>
+</tr>
+<tr>
+<td>fixedRateString</td>
+<td>fixedRate의 value값을 문자열로 설정</td>
+</tr>
+<tr>
+<td>initialDelay</td>
+<td>스케줄러에서 메소드가 등록되자마자 수행하는것이 아닌 초기 지연시간을 설정</td>
+</tr>
+<tr>
+<td>initialDelayString</td>
+<td>initialDelay의 value값을 문자열로 설정</td>
+</tr>
+<tr>
+<td>zone</td>
+<td>cron 표현식을 사용햇을 때 사용할 time zone, default = 서버의 time zone</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>cron 표현식</strong></p>
+<table>
+<thead>
+<tr>
+<th>필드명</th>
+<th>값의 허용 범위</th>
+<th>허용된 특수분자</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>초</td>
+<td>0 ~ 59</td>
+<td>, - * /</td>
+</tr>
+<tr>
+<td>분</td>
+<td>0 ~ 59</td>
+<td>, - * /</td>
+</tr>
+<tr>
+<td>시</td>
+<td>0 ~ 23</td>
+<td>, - * /</td>
+</tr>
+<tr>
+<td>일</td>
+<td>1 ~ 31</td>
+<td>, - * / ? L W</td>
+</tr>
+<tr>
+<td>월</td>
+<td>1 ~ 12 or JAN ~ DEC</td>
+<td>, - * /</td>
+</tr>
+<tr>
+<td>요일</td>
+<td>1 ~ 7 or SUN ~ SAT</td>
+<td>, - * / ? L #</td>
+</tr>
+<tr>
+<td>연도</td>
+<td>empty or 1970 ~ 2099</td>
+<td>, - * /</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>* : 모든값</p>
+</li>
+<li><p>? : 특정한 값이 없음</p>
+</li>
+<li><p>- : 범위 (ex&gt; MON-WED)</p>
+</li>
+<li><p>, : 특별한 값일 때만 동작</p>
+</li>
+<li><p>/ : 시작시간/단위 (ex&gt; 0/5 매 5분)</p>
+</li>
+<li><p>L : 일에서 사용하면 마지막 일, 요일에서는 마지막 요일 (토요일)</p>
+</li>
+<li><p>W : 가장 가까운 평일 (ex&gt; 15W 15일에서 가장 가까운 평일)</p>
+</li>
+<li><p># : 몇째주의 무슨 요일을 표현, 요일#주 (ex&gt; 4#2 2번째주 수요일 )</p>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li><p>fixedDelay vs fixedRate</p>
+<p><img src="/images/springboot/scheduled/sceduled01.png" alt="sceduled01"></p>
+</li>
+</ul>
+<h4 id="커스터마이징"><a href="#커스터마이징" class="headerlink" title="커스터마이징"></a>커스터마이징</h4><ol>
+<li><p>ThreadPoolTaskScheduler를 상속받는 클래스를 생성</p>
+<p><img src="/images/springboot/scheduled/sceduled04.png" alt="sceduled04"></p>
+<ul>
+<li>커스터마이징을 원하는 메소드를 오버라이드 한다.<ul>
+<li>상기 예제는 fixedRate가 0이면 아무일도 일어나지 않도록 커스터마이징<br>본래는 fixedRate가 0이면 exception 발생</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>생성한 커스터마이징 클래스를 사용하도록 설정한다.</p>
+<p><img src="/images/springboot/scheduled/sceduled05.png" alt="sceduled05"></p>
+</li>
+</ol>
+<h4 id="외부설정으로-주기-설정"><a href="#외부설정으로-주기-설정" class="headerlink" title="외부설정으로 주기 설정"></a>외부설정으로 주기 설정</h4><ul>
+<li><p>yml, properties파일에 정의한 값으로 적용가능하다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Scheduled</span>(fixedRateString = <span class="string">"$&#123;myscheduler.period&#125;"</span>, initialDelay = <span class="number">2000</span>) </span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">scheduleTest</span><span class="params">()</span> </span>&#123; </span><br><span class="line">  logger.error(<span class="string">"hello jeong-pro"</span>); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h4><ul>
+<li><a href="https://jeong-pro.tistory.com/186" target="_blank" rel="noopener">정아마추어 코딩블로그 - @Scheduled 사용법</a></li>
+</ul>
+<p><br><br></p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#Springframework" >
+    <span class="tag-code">Springframework</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/10/26/Spring/async/">
+        <span class="nav-arrow">← </span>
+        
+          Async
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/10/26/Java/randomstringutils/">
+        
+          난수 생성
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Scheduled-스케줄러"><span class="toc-nav-text">@Scheduled 스케줄러</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#설정"><span class="toc-nav-text">설정</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#사용법"><span class="toc-nav-text">사용법</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#속성"><span class="toc-nav-text">속성</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#커스터마이징"><span class="toc-nav-text">커스터마이징</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#외부설정으로-주기-설정"><span class="toc-nav-text">외부설정으로 주기 설정</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#참고"><span class="toc-nav-text">참고</span></a></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/10/26/Spring/scheduled/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>
