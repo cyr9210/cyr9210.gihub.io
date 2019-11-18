@@ -36,15 +36,15 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/css/images" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/source/_posts/JPA" />
       <recent name="$PROJECT_DIR$/source/_posts/Java" />
       <recent name="$PROJECT_DIR$/source/_posts/Spring" />
-      <recent name="$PROJECT_DIR$/source/_posts/JPA" />
       <recent name="$PROJECT_DIR$/source/_posts/JPA/" />
       <recent name="$PROJECT_DIR$/source/_posts/Security" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/css/images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -103,7 +103,10 @@
       <workItem from="1572068498930" duration="485000" />
       <workItem from="1572068990488" duration="431000" />
       <workItem from="1572069789972" duration="823000" />
-      <workItem from="1572071471817" duration="586000" />
+      <workItem from="1572071471817" duration="1037000" />
+      <workItem from="1572875490663" duration="43000" />
+      <workItem from="1573891222808" duration="253000" />
+      <workItem from="1574085714861" duration="982000" />
     </task>
     <servers />
   </component>
