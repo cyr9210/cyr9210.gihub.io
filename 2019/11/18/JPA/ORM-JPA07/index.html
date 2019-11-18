@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="개발공부 정리 블로그">
+  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      07.고급매핑 - 상속관계 매핑, MappedSuperclass | Bong&#39;s blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Bong's blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>07.고급매핑 - 상속관계 매핑, MappedSuperclass</h2>
+  <p class="post-date">2019-11-18</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="자바-ORM-표준-JPA-프로그래밍-기본편"><a href="#자바-ORM-표준-JPA-프로그래밍-기본편" class="headerlink" title="자바 ORM 표준 JPA 프로그래밍 - 기본편"></a>자바 ORM 표준 JPA 프로그래밍 - 기본편</h1><h2 id="고급매핑"><a href="#고급매핑" class="headerlink" title="고급매핑"></a>고급매핑</h2><h3 id="상속관계-매핑"><a href="#상속관계-매핑" class="headerlink" title="상속관계 매핑"></a>상속관계 매핑</h3><ul>
+<li><p>객체는 상속관계가 있지만, <strong>관계형 데이터베이스는 상속 관계가 없다.</strong></p>
+</li>
+<li><p>슈퍼타입 서브타입 관계라는 모델링 기법이 객체의 상속과 유사하다.</p>
+</li>
+<li><p>상속관계 매핑 : 객체의 상속과 구조와 DB의 슈퍼타입 서브타입 관계를 매핑</p>
+</li>
+<li><p>슈퍼타입 서브타입 논리 모델을 실제 물리 모델로 구현하는 방법</p>
+<ul>
+<li><p>조인 전략 : 각각 테이블로 변환 </p>
+<p><img src="/images/jpa/ORM-JPA/ORM07-1.png" alt="ORM07-1"></p>
+<ul>
+<li>각 테이블을 모두 생성 </li>
+<li>슈퍼타입 테이블의 PK를 서브타입의 PK,FK로 둔다.</li>
+<li>해당 PK로 조인하여 조회</li>
+<li>슈퍼타입에 구분하기 윈한 구분자 컬럼을 둔다.</li>
+</ul>
+</li>
+<li><p>단일 테이블 전략 : 통합 테이블로 변환</p>
+<p><img src="/images/jpa/ORM-JPA/ORM07-2.png" alt="ORM07-2"></p>
+<ul>
+<li>모든 테이블을 하나의 테이블로 구현하고 구분자 컬럼을 둔다.</li>
+</ul>
+</li>
+<li><p>구현 클래스마다 테이블 전략 : 서브타입 테이블로 변환</p>
+<p><img src="/images/jpa/ORM-JPA/ORM07-3.png" alt="ORM07-3"></p>
+<ul>
+<li>모든 테이블을 따로 구현한다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="조인전략"><a href="#조인전략" class="headerlink" title="조인전략"></a>조인전략</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="meta">@Inheritance</span>(strategy = InheritanceType.JOINED)</span><br><span class="line"><span class="meta">@DiscriminatorColumn</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Item</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Id</span> <span class="meta">@GeneratedValue</span></span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> price;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Book</span> <span class="keyword">extends</span> <span class="title">Item</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String author;</span><br><span class="line">    <span class="keyword">private</span> String isbn;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Album</span> <span class="keyword">extends</span> <span class="title">Item</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String artist;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Movie</span> <span class="keyword">extends</span> <span class="title">Item</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String director;</span><br><span class="line">    <span class="keyword">private</span> String actor;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><code>@DiscriminatorColumn</code> 을 추가 하지 않으면 구분자 컬럼은 생략된다.</p>
+<ul>
+<li><p>name값은 기본은 엔티티 이름이다.</p>
+</li>
+<li><p>넣어주는게 DB에서 확인하기 좋다.</p>
+</li>
+<li><p>구분자 컬럼 value값에 들어갈 값을 엔티티명이 아닌 다른값으로 변경하려면 <code>@DiscriminatorValue(&quot;A&quot;)</code> 처럼 사용할 수 있다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="meta">@DiscriminatorValue</span>(<span class="string">"A"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Album</span> <span class="keyword">extends</span> <span class="title">Item</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String artist;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>장점</p>
+<ul>
+<li>테이블이 정규화 된다.</li>
+<li>외래 키 참조 무결성 제약조건 활용가능</li>
+<li>저장공간 효율화</li>
+<li>JPA와 가장 유사 모델</li>
+</ul>
+</li>
+<li><p>단점</p>
+<ul>
+<li>조회시 조인을 많이 사용 -&gt; 성능 저하</li>
+<li>조회쿼리가 복잡하다.</li>
+<li>데이터 저장 시, INSERT 2회 호출</li>
+</ul>
+</li>
+</ul>
+<h4 id="단일-테이블-전략"><a href="#단일-테이블-전략" class="headerlink" title="단일 테이블 전략"></a>단일 테이블 전략</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="meta">@Inheritance</span>(strategy = InheritanceType.SINGLE_TABLE)</span><br><span class="line"><span class="meta">@DiscriminatorColumn</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Item</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Id</span> <span class="meta">@GeneratedValue</span></span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> price;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>기본전략(starategy를 적어주지 않았을 때는 이옵션이 선택된다.)</li>
+<li>장점<ul>
+<li>조인이 필요 없어 일반적으로 조회 성능이 빠름</li>
+<li>조회쿼리가 단순하다.</li>
+</ul>
+</li>
+<li>단점<ul>
+<li>자식 엔티티가 매핑한 컬럼은 모두 null 허용이 필요하다.</li>
+<li>단일 테이블에 모든것을 저장하므로 테이블이 커질 수 있다.<br><strong>(상황에 따라 조회 성능이 느려질 수 있다.)</strong></li>
+</ul>
+</li>
+<li><code>@DiscriminatorColumn</code> 가 없어도 hibernate가 DType(구분자 컬럼)을 생성해준다.</li>
+</ul>
+<h4 id="구현-클래스마다-테이블-전략"><a href="#구현-클래스마다-테이블-전략" class="headerlink" title="구현 클래스마다 테이블 전략"></a>구현 클래스마다 테이블 전략</h4><ul>
+<li>구분자컬럼을 사용할 필요가 없다. (각각 생성되기 때문에)</li>
+<li>장점<ul>
+<li>서브 타입을 명확하게 구분해서 처리할 대 효과적이다.</li>
+<li>not null 제약조건 사용가능</li>
+</ul>
+</li>
+<li>단점<ul>
+<li>여러 자식 테이블을 함께 조회할 때 성능이 느림(UNION SQL 필요)</li>
+<li>자식 테이블을 통합해서 쿼리하기 어려움</li>
+<li><strong>이 전략은 데이터베이스 설계와 ORM 전문가 둘 다 추천 X</strong></li>
+</ul>
+</li>
+</ul>
+<p><strong>조인 전략과 단일 테이블 전략 사이에서 고민을 하여 결정하자.</strong> </p>
+<ul>
+<li>비지니스 로직적으로 중요하거나 데이터가 많은 경우, 조인전략</li>
+<li>비교적 단순한경우 단일 테이블 전략</li>
+</ul>
+<p><br><br></p>
+<h3 id="MappedSuperClass"><a href="#MappedSuperClass" class="headerlink" title="@MappedSuperClass"></a>@MappedSuperClass</h3><p><img src="/images/jpa/ORM-JPA/ORM07-4.png" alt="ORM07-4"></p>
+<ul>
+<li>공통 매핑 정보가 필요할 때 사용(id, name등의 항상 필요한 컬럼)</li>
+<li>상속관계 매핑 X</li>
+<li>엔티티 X, 테이블과 매핑X</li>
+<li><strong>부모 클래스를 상속받는 자식 클래스에 매핑 정보만 제공</strong></li>
+<li><strong>조회, 검색 불가</strong><ul>
+<li><code>em.find(BaseEntity)</code> 와 같은 검색 불가</li>
+</ul>
+</li>
+<li>직접 생성해서 사용할 일이 없으므로 <strong>추상 클래스 권장</strong></li>
+<li>테이블과 관계 없고, 단순히 엔티티가 공통으로 사용되는 매핑 정보를 모으는 역할</li>
+<li>주로 등록일, 수정일, 등록자, 수정자 같은 전체 엔티티에서 공통으로 적용하는 정보를 모을 때 사용</li>
+<li>@Entity 클래스는 엔티티나 @MappedSuperclass로 지정된 클래스만 상속가능</li>
+</ul>
+<p><br><br></p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#JPA" >
+    <span class="tag-code">JPA</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/10/26/Java/randomstringutils/">
+        <span class="nav-arrow">← </span>
+        
+          난수 생성
+        
+      </a>
+    
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#자바-ORM-표준-JPA-프로그래밍-기본편"><span class="toc-nav-text">자바 ORM 표준 JPA 프로그래밍 - 기본편</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#고급매핑"><span class="toc-nav-text">고급매핑</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#상속관계-매핑"><span class="toc-nav-text">상속관계 매핑</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#조인전략"><span class="toc-nav-text">조인전략</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#단일-테이블-전략"><span class="toc-nav-text">단일 테이블 전략</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#구현-클래스마다-테이블-전략"><span class="toc-nav-text">구현 클래스마다 테이블 전략</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#MappedSuperClass"><span class="toc-nav-text">@MappedSuperClass</span></a></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/11/18/JPA/ORM-JPA07/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>
