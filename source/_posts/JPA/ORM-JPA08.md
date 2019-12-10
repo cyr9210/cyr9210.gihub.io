@@ -61,9 +61,13 @@ member.getUsername();
 ![ORM08-6](/images/jpa/ORM-JPA/ORM08-6.png)
 
 1. 실제 사용 요청(`member.getName()`)
+
 2. 영속성 컨텍스트로 초기화 요청
+
 3. DB 조회
+
 4. 실제 엔티티 생성하고 target에 연결해준다.
+
 5. `target.getName()` 호출
 
 #### 프록시의 특징
@@ -201,7 +205,9 @@ member.getUsername();
 ### 고아객체
 
 - 부모 엔티티와 연관관계가 끊어진 자식 엔티티
+
 - `orphanRemoval = true` : 고아객체를 자동으로 삭제
+
   - 단일 소유자(참조가 1개)일 때, 사용하자.
   - 또한 부모가 삭제되면 고아객체가 되어 삭제된다.(CascadeType.REMOVE 처럼 동작한다.)
 
@@ -213,11 +219,16 @@ member.getUsername();
 
 #### 영속성 전이 + 고아객체, 생명주기
 
-- 스스로 생명주기를 관리하는 엔티티는 `em.persist()`, `em.remove()` 로 제거
+- 스스로 생명주기를 관리하는 엔티티는 `em.persist()` , `em.remove()` 로 제거
+
 - `CascadeType.ALL + orphanRemoval=true` 
+
   - 두 옵션 모두를 활성 화 시, 부모 엔티티로를 통해서 자식의 생명주기를 관리할 수 있다.
+  
   - `orphanRemoval = true` 미설정 시, collection 객체 삭제에 대하여 작동하지 않는다.
+  
 - DDD(DomainDrivenDesign) 도메인 주도 설계의 AggregateRoot개념을 구현할 때, 유용하다.
+
   - Aggregate하나당 Repository하나인 것을 추천한다.
 
 <br><br>
