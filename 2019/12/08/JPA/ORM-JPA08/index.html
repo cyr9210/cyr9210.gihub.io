@@ -141,11 +141,16 @@
 <h4 id="프록시-객체의-초기화"><a href="#프록시-객체의-초기화" class="headerlink" title="프록시 객체의 초기화"></a>프록시 객체의 초기화</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Member member = em.getReference(Member.class, <span class="number">1L</span>);</span><br><span class="line">member.getUsername();</span><br></pre></td></tr></table></figure>
 <p><img src="/images/jpa/ORM-JPA/ORM08-6.png" alt="ORM08-6"></p>
 <ol>
-<li>실제 사용 요청(<code>member.getName()</code>)</li>
-<li>영속성 컨텍스트로 초기화 요청</li>
-<li>DB 조회</li>
-<li>실제 엔티티 생성하고 target에 연결해준다.</li>
-<li><code>target.getName()</code> 호출</li>
+<li><p>실제 사용 요청(<code>member.getName()</code>)</p>
+</li>
+<li><p>영속성 컨텍스트로 초기화 요청</p>
+</li>
+<li><p>DB 조회</p>
+</li>
+<li><p>실제 엔티티 생성하고 target에 연결해준다.</p>
+</li>
+<li><p><code>target.getName()</code> 호출</p>
+</li>
 </ol>
 <h4 id="프록시의-특징-1"><a href="#프록시의-특징-1" class="headerlink" title="프록시의 특징"></a>프록시의 특징</h4><ul>
 <li><p>프록시 객체는 <strong>처음 사용할 때 한번만 초기화</strong></p>
@@ -264,8 +269,10 @@
 </ul>
 <p><br><br></p>
 <h3 id="고아객체"><a href="#고아객체" class="headerlink" title="고아객체"></a>고아객체</h3><ul>
-<li>부모 엔티티와 연관관계가 끊어진 자식 엔티티</li>
-<li><code>orphanRemoval = true</code> : 고아객체를 자동으로 삭제<ul>
+<li><p>부모 엔티티와 연관관계가 끊어진 자식 엔티티</p>
+</li>
+<li><p><code>orphanRemoval = true</code> : 고아객체를 자동으로 삭제</p>
+<ul>
 <li>단일 소유자(참조가 1개)일 때, 사용하자.</li>
 <li>또한 부모가 삭제되면 고아객체가 되어 삭제된다.(CascadeType.REMOVE 처럼 동작한다.)</li>
 </ul>
@@ -279,13 +286,18 @@
 </li>
 </ul>
 <h4 id="영속성-전이-고아객체-생명주기"><a href="#영속성-전이-고아객체-생명주기" class="headerlink" title="영속성 전이 + 고아객체, 생명주기"></a>영속성 전이 + 고아객체, 생명주기</h4><ul>
-<li>스스로 생명주기를 관리하는 엔티티는 <code>em.persist()</code>, <code>em.remove()</code> 로 제거</li>
-<li><code>CascadeType.ALL + orphanRemoval=true</code> <ul>
-<li>두 옵션 모두를 활성 화 시, 부모 엔티티로를 통해서 자식의 생명주기를 관리할 수 있다.</li>
-<li><code>orphanRemoval = true</code> 미설정 시, collection 객체 삭제에 대하여 작동하지 않는다.</li>
+<li><p>스스로 생명주기를 관리하는 엔티티는 <code>em.persist()</code> , <code>em.remove()</code> 로 제거</p>
+</li>
+<li><p><code>CascadeType.ALL + orphanRemoval=true</code> </p>
+<ul>
+<li><p>두 옵션 모두를 활성 화 시, 부모 엔티티로를 통해서 자식의 생명주기를 관리할 수 있다.</p>
+</li>
+<li><p><code>orphanRemoval = true</code> 미설정 시, collection 객체 삭제에 대하여 작동하지 않는다.</p>
+</li>
 </ul>
 </li>
-<li>DDD(DomainDrivenDesign) 도메인 주도 설계의 AggregateRoot개념을 구현할 때, 유용하다.<ul>
+<li><p>DDD(DomainDrivenDesign) 도메인 주도 설계의 AggregateRoot개념을 구현할 때, 유용하다.</p>
+<ul>
 <li>Aggregate하나당 Repository하나인 것을 추천한다.</li>
 </ul>
 </li>
@@ -316,6 +328,13 @@
         
       </a>
     
+    
+      <a class="nav-right" href="/2019/12/22/JPA/ORM-JPA09/">
+        
+          09.값 타입 - 값 타입, 임베디드 타입, 값 타입 컬렉션
+        
+        <span class="nav-arrow"> →</span>
+      </a>
     
   </div>
 
