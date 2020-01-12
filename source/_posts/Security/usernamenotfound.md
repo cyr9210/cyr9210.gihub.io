@@ -1,7 +1,7 @@
 ---
 title: 인증 시, UsernameNotfoundException 발생 안함 문제(BadCredentials Exception만 발생)
 date: 2019-09-30 20:58:26
-tags: SpringSecurity
+tags: [SpringSecurity, debug]
 ---
 
 # SpringSecurity
