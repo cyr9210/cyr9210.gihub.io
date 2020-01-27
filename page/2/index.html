@@ -90,6 +90,83 @@
   
     <article class="article-card">
       <h2 class="article-head">
+        <a href="/2019/10/13/JPA/ORM-JPA05/">05.연관관계 매핑 기초 - 단방향 연관관계, 양방향 연관관계, 연관관계의 주인, 연관관계 매핑 주의사항</a>
+      </h2>
+      <p class="article-date">October 13, 2019</p>
+      
+        
+  <a href="/tags#JPA" >
+    <span class="tag-code">JPA</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          자바 ORM 표준 JPA 프로그래밍 - 기본편연관관계 매핑 기초
+객체와 테이블 연관관계의 차이를 이해가 필요
+객체의 참조와 테이블의 외래키 매핑
+방향(Direction) : 단방향, 양방향
+다중성(Multiplicity) : 다대일(N : 1), 일대다 (1 : ...
+        
+      </div>
+      <a class="more" href="/2019/10/13/JPA/ORM-JPA05/">더보기</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2019/10/11/JPA/ORM-JPA04/">04.엔티티 매핑 - 객체와 테이블 매핑(@Table), 데이터베이스 스키마 자동생성, 필드와 컬럼 매핑(@Column), 기본 키 매핑(@Id, @GenerateValue)</a>
+      </h2>
+      <p class="article-date">October 11, 2019</p>
+      
+        
+  <a href="/tags#JPA" >
+    <span class="tag-code">JPA</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          자바 ORM 표준 JPA 프로그래밍 - 기본편엔티티 매핑객체와 테이블 매핑@Entity
+JPA가 관리, 엔티티라고 한다.
+기본 생성자 필수(파라미터가 없는 public 또는 protected 생성자)
+final, enum, interface, inner 클래스  ...
+        
+      </div>
+      <a class="more" href="/2019/10/11/JPA/ORM-JPA04/">더보기</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2019/10/08/JPA/ORM-JPA03/">03.영속성 관리(내부 동작 방식) - 영속성 컨텍스트(Dirty checking, 스냅샷..), 플러시, 준영속 상태</a>
+      </h2>
+      <p class="article-date">October 8, 2019</p>
+      
+        
+  <a href="/tags#JPA" >
+    <span class="tag-code">JPA</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          자바 ORM 표준 JPA 프로그래밍 - 기본편영속성 관리 - 내부 동작 방식
+JPA에서 가장 중요한 2가지
+객체와 관계형 데이터베이스 매핑하기(설계)
+영속성 컨텍스트
+
+
+
+영속성 컨텍스트
+JPA를 이해하는데 가장 중요한 용어
+
+‘엔티티를 영구 저장하는 환경’이라 ...
+        
+      </div>
+      <a class="more" href="/2019/10/08/JPA/ORM-JPA03/">더보기</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
         <a href="/2019/10/08/JPA/ORM-JPA02/">02.JPA 시작하기 - 프로젝트 생성, 애플리케이션 개발</a>
       </h2>
       <p class="article-date">October 8, 2019</p>
@@ -154,6 +231,10 @@ DELETE…
         
   <a href="/tags#SpringSecurity" >
     <span class="tag-code">SpringSecurity</span>
+  </a>
+
+  <a href="/tags#debug" >
+    <span class="tag-code">debug</span>
   </a>
 
       
@@ -264,84 +345,6 @@ MockMvc 빈을 자동 설정 해준다. 따라서 그냥 가져와서 쓰면 됨
       <a class="more" href="/2019/06/25/RestAPI/restapi02/">더보기</a>
     </article>
   
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/06/25/RestAPI/restapi01/">스프링 기반 REST API 개발01 - REST API 및 프로젝트 소개</a>
-      </h2>
-      <p class="article-date">June 25, 2019</p>
-      
-        
-  <a href="/tags#RestAPI" >
-    <span class="tag-code">RestAPI</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          스프링 기반 REST API 개발(inflearn)1 - 백기선REST API 및 프로젝트 소개REST API참고 발표 영상 : 그런 REST API로 괜찮은가참고 소스 코드 : https://github.com/keesun/study/tree/master/re ...
-        
-      </div>
-      <a class="more" href="/2019/06/25/RestAPI/restapi01/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/06/24/Spring/springwebmvc08/">스프링 MVC 활용08 - HTTP 요청 맵핑하기</a>
-      </h2>
-      <p class="article-date">June 24, 2019</p>
-      
-        
-  <a href="/tags#SpringWebMvc" >
-    <span class="tag-code">SpringWebMvc</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          스프링 웹 MVC(inflearn) - 백기선SpringMVC 활용스프링 MVC 핵심 기술 소개
-reference 문서
-
-애노테이션 기반의 스프링 MVC
-요청 맵핑하기
-핸들러 메소드
-모델과 뷰
-데이터 바인더
-예외 처리
-글로벌 컨트롤러
-
-사용할 기술
-스프링 부트
- ...
-        
-      </div>
-      <a class="more" href="/2019/06/24/Spring/springwebmvc08/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/06/24/Spring/springwebmvc07/">스프링 MVC 설정07 - 핸들러 인터셉터, 리소스 핸들러, HTTP 메세지 컨버터, 기타 설정</a>
-      </h2>
-      <p class="article-date">June 24, 2019</p>
-      
-        
-  <a href="/tags#SpringWebMvc" >
-    <span class="tag-code">SpringWebMvc</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          스프링 웹 MVC(inflearn) - 백기선Springframework핸들러 인터셉터
-reference 
-
-HandlerInterceptor
-핸들러 맵핑에 설정할 수 있는 인터셉터
-핸들러를 실행하기 전, 후(아직 랜더링 전) 그리고 완료(랜더링까지 끝난 이후) ...
-        
-      </div>
-      <a class="more" href="/2019/06/24/Spring/springwebmvc07/">더보기</a>
-    </article>
-  
 
   
     <div class="guide-pager">
@@ -361,7 +364,7 @@ HandlerInterceptor
 </div>
     <footer class="app-footer">
   <p class="copyright">
-    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    &copy; 2020 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
     <br>
     Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
   </p>
