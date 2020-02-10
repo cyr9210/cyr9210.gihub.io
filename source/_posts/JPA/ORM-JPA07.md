@@ -1,5 +1,5 @@
 ---
-title: 07.고급매핑 - 상속관계 매핑, MappedSuperclass
+title: ORM07 - 고급매핑(상속관계 매핑, MappedSuperclass)
 date: 2019-11-18 23:13:22
 tags: JPA
 ---

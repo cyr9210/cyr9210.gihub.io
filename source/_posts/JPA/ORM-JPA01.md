@@ -1,5 +1,5 @@
 ---
-title: 01.JPA 소개
+title: ORM01 - JPA 소개
 date: 2019-10-04 16:02:45
 tags: JPA
 ---

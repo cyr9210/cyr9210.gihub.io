@@ -1,5 +1,5 @@
 ---
-title: 08.프록시와 연관관계 관리 - 프록시, fetchType, cascade, orphanRemoval, 고아객체
+title: ORM08 - 프록시와 연관관계 관리(프록시, fetchType, cascade, orphanRemoval, 고아객체)
 date: 2019-12-08 15:35:38
 tags: JPA
 ---
