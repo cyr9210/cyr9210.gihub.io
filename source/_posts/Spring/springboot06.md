@@ -2,11 +2,20 @@
 title: 스프링 부트 활용06 - SpringApplication
 date: 2019-04-03 12:50:08
 tags: SpringBoot
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![springboot](/images/springboot_logo.png)
 # 스프릥 부트 개념과 활용06(inflearn) - 백기선 
 ## Spring boot
-
+<!-- more -->
 ### [SpringApplication](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-spring-application.html#boot-features-spring-application)
 
 #### 로그

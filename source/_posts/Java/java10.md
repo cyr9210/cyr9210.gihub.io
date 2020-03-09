@@ -2,11 +2,20 @@
 title: 인터페이스, Object class, Wrapper class, Inner class, Anonymous class, String API, Boxing/Unboxing
 date: 2018-11-12 19:24:18
 tags: Java
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![Java](/images/javaimage.png)
 # KOSTA DAY10
 ## Java
-
+<!-- more -->
 ### 인터페이스
 개발코드와 객체가 서로 통신하는 접점
 

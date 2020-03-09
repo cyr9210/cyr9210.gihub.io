@@ -1,10 +1,16 @@
 ---
-title: ORM11 - 객체지향 쿼리언어2 중급문법(경로표현식, 페치조인, 다형성쿼리(상속), NamedQuery, 벌크연산)
+title: ORM11 - 객체지향 쿼리언어2 중급문법(경로표현식, 페치조인, 다형성쿼리(상속), NamedQuery, 벌크연산, @BatchSize)
 date: 2020-02-20 23:50:25
 tags: JPA
----
-title : ORM 11 - 객체지향 쿼리언어2(경로 표현식, fetch join, @BatchSize)
-
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 # 자바 ORM 표준 JPA 프로그래밍 - 기본편
@@ -12,7 +18,7 @@ title : ORM 11 - 객체지향 쿼리언어2(경로 표현식, fetch join, @Batch
 ## 객체지향 쿼리언어2 - 중급 문법
 
 ### JPQL - 경로 표현식
-
+<!-- more -->
 - 점(.)을 찍어 객체 그래프를 탐색하는 것
 
   ![ORM11-1](/images/jpa/ORM-JPA/ORM11-1.png)
@@ -25,7 +31,6 @@ title : ORM 11 - 객체지향 쿼리언어2(경로 표현식, fetch join, @Batch
     - 컬렉션 값 연관 필드 : 대상이 컬렉션
       - `@OneToMany`
       - `@ManyToMany`
-
 #### 경로 표현식 특징
 
 - 상태 필드 : 경로 탐색의 끝, 더이상 탐색이 불가능

@@ -2,11 +2,20 @@
 title: 실전 데이터 모델링&데이터베이스 설계와 구축
 date: 2018-12-04 20:42:56
 tags: DataBase
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![DB](/images/oracledb_logo.png)
 # KOSTA DAY25
 ## DataBase
-
+<!-- more -->
 ### 실전 데이터 모델링 & 데이터 베이스 설계와 구축
 - 우리나라는 데이터 위주의 설계를 하기 때문에 ERP 다이어그램 위주로 설계를 한다.
 

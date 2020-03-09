@@ -2,12 +2,21 @@
 title: Project_Kogile_JSP
 date: 2019-01-23 04:10:36
 tags: 프로젝트_회고
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 # Project
 ## KOSTA 중간 프로젝트
 ### Kogile
 **Project github : https://github.com/cyr9210/JSP_Project_kogile**
-
+<!-- more -->
 #### 주제선정
 우리 조의 중간 프로젝트 주제는 업무협업서비스를 선택하였다.
 우리조가 생각한 협업서비스란 업무의 완료 여부 및 상태와 진행률등 여러 정보들을 한눈에 보기 쉽게 표현해주며 앞으로의 업무파악을 보다 쉽게해주기 위해서 제공하는 서비스이다.

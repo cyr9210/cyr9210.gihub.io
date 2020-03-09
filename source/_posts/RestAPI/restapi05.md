@@ -2,12 +2,21 @@
 title: 스프링 기반 REST API 개발05 - RestAPI 보안 적용(@Enumerated, @ElementCollection, 스프링 시큐리티 설정, auth서버, 리소스서버, @ConfigurationProperties, form-data  request body, 현재 사용자 조회, @JsonSerialize)
 date: 2019-09-23 15:38:41
 tags: RestAPI
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 # 스프링 기반 REST API 개발(inflearn)5 - 백기선
 
 ## RestAPI 보안 적용
-
+<!-- more -->
 ### Account 도메인 추가
 
 - SpirngSecurity Auth2 사용

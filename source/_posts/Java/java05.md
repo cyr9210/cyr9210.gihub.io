@@ -2,12 +2,21 @@
 title: 객체지향, 필드, 생성자, Scanner 사용 시 오류해결
 date: 2018-11-05 17:32:43
 tags: Java
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 ![Java](/images/javaimage.png)
 # KOSTA DAY05
 ## Java
-
+<!-- more -->
 ### 객체지향
 #### 객체지향이란?
 - 프로그래밍 기술의 변천

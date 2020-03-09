@@ -2,6 +2,15 @@
 title: 스프링 부트 활용14 - 스프링 시큐리티 
 date: 2019-04-16 22:18:31
 tags: SpringBoot
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 ![springboot](/images/springboot_logo.png)
@@ -9,7 +18,7 @@ tags: SpringBoot
 ## Spring boot
 
 ### 스프링 시큐리티
-
+<!-- more -->
 ---
 ##### 참고 - 뷰 컨트롤러 사용
 ![springboot](/images/springboot/springboot14-1.png)

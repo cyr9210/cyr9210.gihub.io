@@ -2,11 +2,20 @@
 title: 스프링 기반 REST API 개발04 - 이벤트 조회 및 수정 REST API 개발(PagedResouce)
 date: 2019-08-09 11:29:44
 tags: RestAPI
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 # 스프링 기반 REST API 개발(inflearn)4 - 백기선
 
 ## 이벤트 조회 및 수정 REST API 개발
-
+<!-- more -->
 ### 이벤트 목록 조회 API 구현
 
 #### 페이징, 정렬

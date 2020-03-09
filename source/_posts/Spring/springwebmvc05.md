@@ -2,11 +2,20 @@
 title: 스프링 MVC 설정05 - 스프링 부트에서 JSP 사용하기
 date: 2019-05-31 15:36:50
 tags: SpringWebMvc
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![springf](/images/springframwork-logo.png)
 # 스프링 웹 MVC(inflearn) - 백기선 
 ## Springframework
-
+<!-- more -->
 ### 스프링 부트에서 JSP 사용하기
 - 제약 사항
     - JAR 프로젝트로 만들 수 없음, WAR 프로젝트로 만들어야 함

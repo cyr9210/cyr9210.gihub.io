@@ -2,12 +2,21 @@
 title: 게시판 페이징처리, 파일 업로드/다운로드, 썸네일 이미지 게시판
 date: 2019-01-07 03:47:33
 tags: JSP
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 # KOSTA DAY43
 ## JSP
 ![JSP](/images/JSP_logo.png)
-
+<!-- more -->
 ### 게시판 페이징 처리
 mvc 패턴의 비지니스로직을 처리하기 위해 Service객체를 생성하여 Service 객체에서 비지니스로직을 처리하는 법에 대해 알아보자.
 

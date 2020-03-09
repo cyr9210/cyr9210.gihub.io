@@ -2,11 +2,20 @@
 title: 스프링 부트 활용10 - Test
 date: 2019-04-10 16:55:50
 tags: SpringBoot
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![springboot](/images/springboot_logo.png)
 # 스프릥 부트 개념과 활용10(inflearn) - 백기선 
 ## Spring boot
-
+<!-- more -->
 ### Test
 - spring-boot-starter-test 의존성이 필요하다.
 ![springboot](/images/springboot/springboot10-2.png)

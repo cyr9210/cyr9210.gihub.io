@@ -2,11 +2,20 @@
 title: 예상 면접 질문
 date: 2019-05-27 01:05:43
 tags: Interview
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 # 면접 대비 - 예상 면접 질문
 
 ## 개발상식
-
+<!-- more -->
 ### 객체지향 프로그래밍(Object Oriented Programming)
 - 이전의 프로그래밍이 컴퓨터 중심이었다면, 인간 중심적 프로그래밍 패러다임이라고 할 수 있다.
 - 현실세계를 프로그래밍으로 옮겨와 프로그래밍 하는것.

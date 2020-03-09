@@ -2,12 +2,21 @@
 title: Method, 배열
 date: 2018-10-31 17:08:40
 tags: Java
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 ![Java](/images/javaimage.png)
 # KOSTA DAY03
 ## Java
-
+<!-- more -->
 ### Method
 필드가 물체의 상태라면, 물체의 행동에 해당하는게 메소드이다.
 

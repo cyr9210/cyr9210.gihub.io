@@ -2,12 +2,21 @@
 title: Project_kogile
 date: 2019-02-27 16:44:14
 tags: 프로젝트_회고
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 # Project
 ## KOSTA 최종프로젝트
 ### Kogile
 **Project github : https://github.com/cyr9210/Project_kogile_Final**
-
+<!-- more -->
 #### 구현내용
 
 ##### 로그인, 회원가입

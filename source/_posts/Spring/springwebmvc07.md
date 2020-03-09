@@ -2,10 +2,19 @@
 title: 스프링 MVC 설정07 - 핸들러 인터셉터, 리소스 핸들러, HTTP 메세지 컨버터, 기타 설정
 date: 2019-06-24 20:48:44
 tags: SpringWebMvc
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 # 스프링 웹 MVC(inflearn) - 백기선 
 ## Springframework
-
+<!-- more -->
 ### 핸들러 인터셉터
 - [reference](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/servlet/HandlerInterceptor.html) 
 

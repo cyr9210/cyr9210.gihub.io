@@ -2,11 +2,20 @@
 title: 스프링 핵심기술04 - SpEL
 date: 2019-03-26 14:57:24
 tags: Springframework
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![springf](/images/springframwork-logo.png)
 # 스프링 프레임워크 핵심기술04(inflearn) - 백기선 
 ## Springframework
-
+<!-- more -->
 ### [SpEL](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#expressions)(스프링 Expression Language)
 
 #### 스프링 EL이란?

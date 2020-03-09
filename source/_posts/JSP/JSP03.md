@@ -2,6 +2,15 @@
 title: Cookie, Session,익스프레션, JSTL, 필터
 date: 2019-01-03 18:52:29
 tags: JSP
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 # KOSTA DAY41

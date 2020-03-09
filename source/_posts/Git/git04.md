@@ -2,11 +2,20 @@
 title: Git - merge, rebase
 date: 2019-05-29 10:48:07
 tags: Git
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 # Git 
 ![gitlogo](/images/git_logo.png)
-
+<!-- more -->
 ### merge
 ![merge](/images/git/git04-1.png)
 - 브랜치를 병합한다.

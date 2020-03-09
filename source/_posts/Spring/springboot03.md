@@ -2,11 +2,20 @@
 title: 스프링 부트 원리03 - 자동 설정
 date: 2019-04-01 16:59:38
 tags: SpringBoot
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![springboot](/images/springboot_logo.png)
 # 스프릥 부트 개념과 활용03(inflearn) - 백기선 
 ## Spring boot
-
+<!-- more -->
 ### 자동 설정 이해
 - @SpringBootApplication는 아래와 같이 구성되어있다.
     - @Configuration

@@ -2,11 +2,21 @@
 title: TradeFruit_System(Web Mini Project)
 date: 2018-12-19 16:39:13
 tags: 프로젝트_회고
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 # Project
 ## Web Mini Project
 ### TradeFruit_System
+<!-- more -->
 - 개선사항이 필요한 웹페이지를 찾아서 배운내용을 토대로 리뉴얼
 (시간 관계상 전체 페이지가 아닌 3~4페이지)
 - 대상 페이지 : [농산물직거래장터](http://www.guidecrops.com/index.htm)<br>

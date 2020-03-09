@@ -2,11 +2,20 @@
 title: 스프링 MVC 설정06 - 포매터 추가하기, 도메인 클래스 컨버터 자동 등록
 date: 2019-06-10 20:17:39
 tags: SpringWebMvc
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![springf](/images/springframwork-logo.png)
 # 스프링 웹 MVC(inflearn) - 백기선 
 ## Springframework
-
+<!-- more -->
 ### 포매터 추가하기
 - [Reference 문서](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/servlet/config/annotation/WebMvcConfigurer.html#addFormatters-org.springframework.format.FormatterRegistry-)
 

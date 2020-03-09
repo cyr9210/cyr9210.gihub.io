@@ -2,11 +2,20 @@
 title: 설계모델, 모델1설계방식, 모델2설계방식(MVC패턴)
 date: 2019-01-04 19:45:33
 tags: JSP
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 # KOSTA DAY42
 ## JSP
 ![JSP](/images/JSP_logo.png)
-
+<!-- more -->
 ### 설계모델
 - 애플리케이션을 설계할 때 가장 먼저 해야 할 일은 프로그램이 해야 할 일을 적당한 크기로 나누어서 모듈화하는 것이다.
 - JSP 규격서의 초기 버전인 JavaServer Pages– Specification 0.92에서 소개하고 있는 설계 모델인 모델 1과 모델 2에서도 웹 애플리케이션이 해야 할 일을 데이터 입력, 데이터 처리, 데이터 출력으로 구분하여 모듈화하는 방법을 제시하고 있다.

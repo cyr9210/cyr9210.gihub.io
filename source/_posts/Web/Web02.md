@@ -2,11 +2,20 @@
 title: section, article, css, 선택자, float, 박스모델, 포지셔닝
 date: 2018-12-10 01:09:51
 tags: Web
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![html](/images/html_logo.jpeg)
 # KOSTA DAY29
 ## Web
-
+<!-- more -->
 ### section
 #### HTML을 만들때 주의할점
 - 웹표준을 지켜야 한다.

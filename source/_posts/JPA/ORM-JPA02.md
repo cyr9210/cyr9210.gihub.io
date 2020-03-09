@@ -2,11 +2,20 @@
 title: ORM02 - JPA 시작하기(프로젝트 생성, 애플리케이션 개발)
 date: 2019-10-08 10:58:14
 tags: JPA
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 # 자바 ORM 표준 JPA 프로그래밍 - 기본편
 
 ## JPA 시작하기
-
+<!-- more -->
 ### 프로젝트 생성
 
 #### H2 데이터베이스

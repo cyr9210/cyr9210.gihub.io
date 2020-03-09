@@ -2,11 +2,20 @@
 title: 다중컬럼 다중로우, FROM절 서브쿼리, 인덱스, 시퀀스, 뷰, PLSQL
 date: 2018-11-29 19:58:06
 tags: OracleDB
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![DB](/images/oracledb_logo.png)
 # KOSTA DAY23
 ## DataBase
-
+<!-- more -->
 ### 다중컬럼 다중로우 서브쿼리
 서브쿼리의 결과가 여러 컬럼 및 여러 행인 서브쿼리
 

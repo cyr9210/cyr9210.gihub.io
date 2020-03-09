@@ -2,11 +2,20 @@
 title: 웹 어플리케이션 서버,Servlet, JSP
 date: 2018-12-27 17:58:32
 tags: JSP
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 # KOSTA DAY38
 ## JSP
 ![JSP](/images/JSP_logo.png)
-
+<!-- more -->
 ### 웹 어플리케이션 서버
 #### setting
 ![JSP](/images/jsp/JSP01-01.png)

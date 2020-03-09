@@ -2,12 +2,21 @@
 title: ORM03 - 영속성 관리(내부 동작 방식)(영속성 컨텍스트(Dirty checking, 스냅샷..), 플러시, 준영속 상태)
 date: 2019-10-08 16:53:21
 tags: JPA
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 # 자바 ORM 표준 JPA 프로그래밍 - 기본편
 
 ## 영속성 관리 - 내부 동작 방식
-
+<!-- more -->
 - JPA에서 가장 중요한 2가지
   - 객체와 관계형 데이터베이스 매핑하기(설계)
   - **영속성 컨텍스트**

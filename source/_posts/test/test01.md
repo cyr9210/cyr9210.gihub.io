@@ -2,11 +2,21 @@
 title: 정보처리기사 필기 - 1과목(데이터베이스)
 date: 2019-03-01 13:33:48
 tags: 정보처리기사_필기
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 # 정보처리기사 -필기
 
 ## 1과목 - 데이터베이스
+<!-- more -->
 ### 로킹
 로킹(Locking)이란?   
 하나의 트랜잭션이 데이터를 액세스 하는 동안 다른 트랜잭션이 그 데이터 항목을 액세스할 수 없도록 하는 방법

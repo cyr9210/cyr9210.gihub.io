@@ -2,12 +2,21 @@
 title: Java 면접질문1, KOSTA 필기시험
 date: 2018-11-21 15:29:57
 tags: Interview
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 ![Java](/images/javaimage.png)
 # KOSTA DAY17
 ## Java
-
+<!-- more -->
 ### Jav 면접 예상 질문
 kosta 필기 시험을 토대로 예상 면접질문을 뽑아보았다.
 

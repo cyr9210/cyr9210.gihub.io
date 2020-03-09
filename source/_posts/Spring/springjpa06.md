@@ -2,12 +2,21 @@
 title: 스프링 데이터 JPA06 - 스프링 데이터 JPA
 date: 2019-05-03 18:05:54
 tags: JPA
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 ![springf](/images/jpa_logo.png)
 # 스프링 데이터 JPA(inflearn) - 백기선 
 ## 스프링 데이터 JPA
-
+<!-- more -->
 ### JPA Repository
 
 #### @EnableJpaRepositories

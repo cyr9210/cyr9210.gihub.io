@@ -2,11 +2,20 @@
 title: 면접 예상질문_JSP
 date: 2018-12-28 18:12:59
 tags: Interview
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 # KOSTA DAY38
 ## JSP
 ![JSP](/images/JSP_logo.png)
-
+<!-- more -->
 ### 면접에 많이 나오는 질문
 #### WAS란 ?
 - WAS(Web Application Server)웹 어플리케이션 서버 : 요청한 페이지의 로직이나 데이터베이스와의 연동을 처리하는 부분이다.

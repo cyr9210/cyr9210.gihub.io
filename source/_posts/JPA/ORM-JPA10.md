@@ -2,12 +2,21 @@
 title: ORM10 - 객체지향 쿼리언어1 기본문법(JPQL, 조인, 페이징, 서브쿼리, 조건식, 사용자 정의 방언)
 date: 2020-01-27 22:32:42
 tags: JPA
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 # 자바 ORM 표준 JPA 프로그래밍 - 기본편
 
 ## 객체지향 쿼리언어1 - 기본문법
-
+<!-- more -->
 - JPA는 다양한 쿼리 방법을 지원한다.
   - **JPQL**
     - 표준문법
@@ -19,7 +28,6 @@ tags: JPA
     - DB종속적인 문법 사용 시, 사용
   - JDBC API 직접사용(MyBatis, SpringJdbcTemplate 함께 사용)
 - 대부분의 문제는 JPQL로 해결할 수 있다.
-
 ### 소개
 
 #### JPQL

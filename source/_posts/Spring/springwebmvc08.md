@@ -2,10 +2,19 @@
 title: 스프링 MVC 활용08 - HTTP 요청 맵핑하기 
 date: 2019-06-24 21:02:45
 tags: SpringWebMvc
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 # 스프링 웹 MVC(inflearn) - 백기선 
 ## SpringMVC 활용
-
+<!-- more -->
 ### 스프링 MVC 핵심 기술 소개
 - [reference 문서](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc-controller)
 

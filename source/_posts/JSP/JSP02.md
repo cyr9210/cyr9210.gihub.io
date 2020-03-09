@@ -2,11 +2,20 @@
 title: JSP액션, useBean/setProperty, 한글처리, JDBC, DAO/DTO, mybatis
 date: 2019-01-02 18:25:16
 tags: JSP
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 # KOSTA DAY39
 ## JSP
 ![JSP](/images/JSP_logo.png)
-
+<!-- more -->
 ### JSP액션
 자바 코드에 의해 객체를 생성하고 사용하는 것이 아니라 태그를 이용하여 객체의 생성하고 사용하는 것 → JSP 태그 or JSP 액션
 

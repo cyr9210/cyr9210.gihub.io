@@ -2,11 +2,20 @@
 title: 스프링 핵심기술02 - Resource / Validation
 date: 2019-03-21 02:37:57
 tags: Springframework
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![springf](/images/springframwork-logo.png)
 # 스프링 프레임워크 핵심기술02(inflearn) - 백기선 
 ## Springframework
-
+<!-- more -->
 ### [Resource](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/io/Resource.html) 추상화
 - org.springframework.core.io.Resource
 - 스프링 내부에서 많이 사용하는 인터페이스.

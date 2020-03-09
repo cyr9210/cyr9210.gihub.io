@@ -2,11 +2,20 @@
 title: 변수, 데이터 종류, 연산자, if/else, switch
 date: 2018-10-29 09:00:00
 tags: Java
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![Java](/images/javaimage.png)
 # KOSTA DAY01
 ## Java
-
+<!-- more -->
 ### 변수
 #### 변수란?
 변수란 값을 저장할 수 있는 메모리 공간을 의미한다.

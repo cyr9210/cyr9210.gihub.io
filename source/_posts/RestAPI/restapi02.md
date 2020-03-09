@@ -2,11 +2,21 @@
 title: 스프링 기반 REST API 개발02 - 이벤트 생성 API 개발 (@MockBean, ModelMapper, ErrorSerializer, JUnitParams)
 date: 2019-06-25 17:10:57
 tags: RestAPI
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 # 스프링 기반 REST API 개발(inflearn)2 - 백기선
 ## 이벤트 생성 API 개발
 ### 이벤트 API 테스트 클래스 생성
 #### 스프링 부트 슬라이스 테스트
+<!-- more -->
 - @WebMvcTest
     - MockMvc 빈을 자동 설정 해준다. 따라서 그냥 가져와서 쓰면 됨.
     - 웹 관련 빈만 등록해 준다. (슬라이스)

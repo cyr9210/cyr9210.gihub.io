@@ -2,11 +2,20 @@
 title: 스프링 데이터 JPA01 - 관계형 데이터 베이스와 자바, ORM
 date: 2019-04-29 15:19:45
 tags: JPA
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![springf](/images/jpa_logo.png)
 # 스프링 데이터 JPA(inflearn) - 백기선 
 ## 핵심 개념 이해
-
+<!-- more -->
 스프링 웹 MVC와 함께 JPA 강좌를 수강하고 있습니다.
 JPA는 Java Persistence API ORM(Object Relational Mapping)을 위한 표준 기술입니다.
 ORM이란 RDB 테이블을 객체지향적으로 사용하기 위한 기술을 말합니다.

@@ -2,11 +2,20 @@
 title: ORM05 - 연관관계 매핑 기초(단방향 연관관계, 양방향 연관관계, 연관관계의 주인, 연관관계 매핑 주의사항)
 date: 2019-10-13 17:49:58
 tags: JPA
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 # 자바 ORM 표준 JPA 프로그래밍 - 기본편
 
 ## 연관관계 매핑 기초
-
+<!-- more -->
 - 객체와 테이블 연관관계의 차이를 이해가 필요
 - **객체의 참조와 테이블의 외래키 매핑**
 - 방향(Direction) : 단방향, 양방향

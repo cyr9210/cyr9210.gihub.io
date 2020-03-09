@@ -2,11 +2,20 @@
 title: 접근제어자, Exception
 date: 2018-11-07 17:49:08
 tags: Java
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![Java](/images/javaimage.png)
 # KOSTA DAY07
 ## Java
-
+<!-- more -->
 ### 접근제어자
 멤버 또는 클래스에 사용되어 해당 멤버 및 클래스를 외부에서 접근하지 못하도록 제한하는 역할을 함.
 

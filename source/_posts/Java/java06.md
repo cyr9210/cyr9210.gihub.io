@@ -2,10 +2,20 @@
 title: 객체지향, 생성자, 객체 내 배열
 date: 2018-11-06 17:43:45
 tags: Java
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![Java](/images/javaimage.png)
 # KOSTA DAY06
 ## Java
+<!-- more -->
 ### 객체지향
 객체들간의 상호작용을 하는 현상
 

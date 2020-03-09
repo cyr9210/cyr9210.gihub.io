@@ -2,11 +2,20 @@
 title: 정보처리기사 필기 - 4과목(소프트웨어 공학)
 date: 2019-03-02 20:39:48
 tags: 정보처리기사_필기
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 # 정보처리기사 -필기
 
 ## 4과목 - 소프트웨어 공학
-
+<!-- more -->
 ### 품질표준
 - 정확성(Correctness)
 - 신뢰성(Reliability)

@@ -2,11 +2,21 @@
 title: 배열정렬, 스트림
 date: 2018-11-15 11:20:17
 tags: Java
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
+
 ![Java](/images/javaimage.png)
 # KOSTA DAY13
 ## Java
-
+<!-- more -->
 ### 배열정렬
 - 대부분은 데이터베이스에서 정렬된 데이터를 조회하여 ArrayList에 담아서 사용하므로 ArrayList 자체를 정렬할 일이 잘 없지만 ]가끔씩 리스트를 직접 정렬해야 할일이 생긴다.
 - 정렬하는데에는 Collections.sort(); 메소드를 사용한다.

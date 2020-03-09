@@ -2,11 +2,21 @@
 title: 정보처리기사 필기 - 3과목(운영체제)
 date: 2019-03-01 18:39:36
 tags: 정보처리기사_필기
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 # 정보처리기사 -필기
 
 ## 3과목 - 운영체제
+<!-- more -->
 ### 시스템 소프트웨어의 구성
 - 제어 프로그램(Control Program) : 시스템 전체의 작동상태 감시,  작업의 순서 지정(스케쥴링), 작업에 사용되는 데이터 관리, 인터럽트 처리 등의 역할을 수행하는 프로그램
     - 감시(Supervisor) 프로그램 : 프로그램의 실행과 시스템 전체의 작동상태를 감시, 감독하는 프로그램

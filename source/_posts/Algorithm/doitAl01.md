@@ -2,12 +2,21 @@
 title: 알고리즘, 반복 (doit-알고리즘)
 date: 2019-03-14 09:59:13
 tags: Algorithm
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 ![Java](/images/algorism_logo.png)
 # Study
 ## Algorism
-
+<!-- more -->
 알고리즘 시험을 시행하는 회사들이 많아졌습니다.
 시험을 대비하기 위해 매주 조금씩 알고리즘을 공부하기로 마음을 먹었습니다.
 

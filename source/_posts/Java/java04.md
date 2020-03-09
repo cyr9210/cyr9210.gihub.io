@@ -2,11 +2,20 @@
 title: 배열, 정렬, 배열복사
 date: 2018-11-02 17:21:33
 tags: Java
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![Java](/images/javaimage.png)
 # KOSTA DAY04
 ## Java
-
+<!-- more -->
 ### 배열
 - 열의 생성과 선언에 관련하여 수강하였다.
 - 향상된 for 문

@@ -2,9 +2,19 @@
 title: Git - status, init, commit, config, log, reset, revert
 date: 2019-04-19 16:15:26
 tags: Git
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 # Git 
 ![gitlogo](/images/git_logo.png)
+<!-- more -->
 개발공부를 시작하면서.. git에대한 이야기를 참 많이 들었습니다.
 커밋, 푸쉬, 풀등... 알 수 없는 이야기들을 하고 나중에 그것이 git과 관련된 명령어였다는 사실을 알게되었습니다.
 회사에 일을 시작하기전에 알아야 할 필수적인 내용이라고 듣게되어 좀 자세히 알아보려고 합니다.

@@ -2,11 +2,20 @@
 title: 스프링 핵심기술03 - 데이터 바인딩
 date: 2019-03-22 14:17:41
 tags: Springframework
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![springf](/images/springframwork-logo.png)
 # 스프링 프레임워크 핵심기술03(inflearn) - 백기선 
 ## Springframework
-
+<!-- more -->
 ### 데이터바인딩 추상화
 - 기술적인 관점: 프로퍼티 값을 타겟 객체에 설정하는 기능
 - 사용자 관점: 사용자 입력값을 애플리케이션 도메인 모델에 동적으로 변환해 넣어주는 기능.

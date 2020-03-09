@@ -2,11 +2,20 @@
 title: 스프링 데이터 JPA05 - 스프링 데이터 Common
 date: 2019-05-03 18:05:54
 tags: JPA
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![springf](/images/jpa_logo.png)
 # 스프링 데이터 JPA(inflearn) - 백기선 
 ## 스프링 데이터 Common
-
+<!-- more -->
 ### 스프링 데이터 JPA 활용 파트 소개
 ![springjpa](/images/jpa/jpa05-1.png)
 - 스프링 데이터 : 하나의 프로젝트를 말하는것이 아니고, 여러개의 프로젝트들의 묶음을 말하는것.

@@ -2,10 +2,19 @@
 title: Git - 원격저장소(Github), gitignore설정, ssh설정
 date: 2019-04-19 23:03:39
 tags: Git
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 # Git 
 ![gitlogo](/images/git_logo.png)
-
+<!-- more -->
 ### Github
 - github은 git이라는 버전관리시스템에 저장소를 빌려주는 호스팅 사이트이다.
 - 호스팅 사이트로는 github외에도 GitLab, BitBucket등이 있다.

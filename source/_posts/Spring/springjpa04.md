@@ -2,12 +2,21 @@
 title: 스프링 데이터 JPA04 - Cascade, Fetch, Query, 스프링 데이터 JPA 소개 및 원리
 date: 2019-04-30 20:12:00
 tags: JPA
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![springf](/images/jpa_logo.png)
 # 스프링 데이터 JPA(inflearn) - 백기선 
 ## 핵심 개념 이해
 ### 엔티티의 상태와 Cascade
-
+<!-- more -->
 #### 엔티티의 상태
 ![springjpa](/images/jpa/jpa04-1.png)
 - Transient: JPA가 모르는 상태

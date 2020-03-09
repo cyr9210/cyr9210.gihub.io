@@ -2,6 +2,15 @@
 title: ORM09 - 값 타입(값 타입, 임베디드 타입, 값 타입 컬렉션)
 date: 2019-12-22 13:09:10
 tags: JPA
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 # 자바 ORM 표준 JPA 프로그래밍 - 기본편
@@ -9,7 +18,7 @@ tags: JPA
 ## 값 타입
 
 ### 기본값 타입
-
+<!-- more -->
 #### JPA의 데이터 타입분류
 
 - 엔티티 타입
@@ -18,7 +27,6 @@ tags: JPA
 - 값 타입
   - int, Integer, String처럼 단순히 값으로 사용하는 자바 기본 타입이나 객체
   - 식별자가 없고 값만 있으므로 추적 불가
-
 #### 값 타입 분류
 
 - 기본값 타입

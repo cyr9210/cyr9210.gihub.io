@@ -2,10 +2,19 @@
 title: Git - branch, stash 
 date: 2019-04-19 19:04:32
 tags: Git
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 # Git 
 ![gitlogo](/images/git_logo.png)
-
+<!-- more -->
 ### Git branch
 - branch는 가지라는 뜻으로 작업을 분기해서 처리하는 경우에 대한 시적인 표현입니다.
 

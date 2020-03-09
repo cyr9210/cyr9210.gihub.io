@@ -2,11 +2,20 @@
 title: Calendar, GregorianCalandar, Random
 date: 2018-11-13 17:21:55
 tags: Java
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![Java](/images/javaimage.png)
 # KOSTA DAY11
 ## Java
-
+<!-- more -->
 ### Calendar 클래스
 - 날짜와 시간에 관련된 클래스로서, 시스템 시계로 부터 시간을 가져오는 클래스
 - GregorianCalendar도 사용되지만 보편적으로는 Calendar가 사용된다.

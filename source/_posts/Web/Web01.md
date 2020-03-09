@@ -2,11 +2,20 @@
 title: Web, HTML
 date: 2018-12-07 21:31:38
 tags: Web
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![html](/images/html_logo.jpeg)
 # KOSTA DAY28
 ## Web
-
+<!-- more -->
 ### WEB
 비지니스 로직 처리→ Java
 비지니스의 데이터값 저장 및 구조적인 관리 → RDB

@@ -2,11 +2,20 @@
 title: while, Do~while, for, 반복문
 date: 2018-10-30 16:54:16
 tags: Java
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![Java](/images/javaimage.png)
 # KOSTA DAY02
 ## Java
-
+<!-- more -->
 ### while
 - 조건문의 실행결과가 true일 동안 반복해서 실행
 

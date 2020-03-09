@@ -2,12 +2,21 @@
 title: 필드, 오버로딩, 오버라이딩, 상속
 date: 2018-11-08 18:44:08
 tags: Java
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 ![Java](/images/javaimage.png)
 # KOSTA DAY08
 ## Java
-
+<!-- more -->
 ### 필드
 
 #### 정적필드

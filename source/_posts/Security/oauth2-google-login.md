@@ -2,11 +2,20 @@
 title: oauth2 - 구글 로그인
 date: 2019-04-21 17:07:08
 tags: SpringSecurity
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![google_logo](/images/google_logo.png)
 # Spring
 ## SpringSecurity-OAuth2
-
+<!-- more -->
 최근 서비스들은 자체적으로 계정을 가입하고, 접근하는 방식도 있지만, 구글, 카카오, 네이버, 페이스북등으로 계정관리를 하고있습니다.
 이번 포스팅에서는 Spring Security & 구글 OAuth를 사용하여 계정 권한관리에 대해 알아보려고 합니다.
 빌드 도구로는 gradle을 사용해 보려고 합니다.

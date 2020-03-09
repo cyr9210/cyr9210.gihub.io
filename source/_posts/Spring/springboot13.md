@@ -2,11 +2,20 @@
 title: 스프링 부트 활용13 - 스프링 데이터
 date: 2019-04-15 14:34:06
 tags: SpringBoot
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![springboot](/images/springboot_logo.png)
 # 스프릥 부트 개념과 활용13(inflearn) - 백기선 
 ## Spring boot
-
+<!-- more -->
 ### 스프링 데이터
 ![springboot](/images/springboot/springboot13-1.png)
 

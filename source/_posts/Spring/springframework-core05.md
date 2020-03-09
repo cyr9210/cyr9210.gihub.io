@@ -2,11 +2,20 @@
 title: 스프링 핵심기술05 - 스프링 AOP
 date: 2019-03-26 16:23:40
 tags: Springframework
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![springf](/images/springframwork-logo.png)
 # 스프링 프레임워크 핵심기술05(inflearn) - 백기선 
 ## Springframework
-
+<!-- more -->
 ### AOP 개념
 - Aspect-oriendted Programming (AOP)은 OOP를 보완하는 수단으로, 흩어진 Aspect를 모듈화 할 수 있는 프로그래밍 기법.
 

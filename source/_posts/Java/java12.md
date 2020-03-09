@@ -2,12 +2,21 @@
 title: 정규표현식, 자료구조 클래스
 date: 2018-11-14 21:22:14
 tags: Java
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 ![Java](/images/javaimage.png)
 # KOSTA DAY12
 ## Java
-
+<!-- more -->
 ### 정규표현식
 특정한 규칙(패턴)을 가진 문자열의 집합을 표현하는데 사용하는 표현식 언어
 ![Java](/images/java/java12-01.png)

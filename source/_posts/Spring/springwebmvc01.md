@@ -2,11 +2,20 @@
 title: 스프링 MVC 동작 원리01 - 스프링 MVC 소개, 서블릿
 date: 2019-04-23 20:21:40
 tags: SpringWebMvc
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![springf](/images/springframwork-logo.png)
 # 스프링 웹 MVC(inflearn) - 백기선 
 ## Springframework
-
+<!-- more -->
 백기선님의 스프링 웹 MVC강의를 수강하고 공부내용을 정리하고 있습니다.
 해당 강좌는 스프링 MVC에 대하여 핵심원리, 설정, 활용으로 나누어 강의해주고 있습니다.
 모든 예제는 [github](https://github.com/cyr9210/SpringWebMVc-study)에 올리고 있습니다.

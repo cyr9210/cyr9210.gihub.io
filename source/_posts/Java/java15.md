@@ -2,12 +2,21 @@
 title: JSON, JunitTest
 date: 2018-11-19 13:29:49
 tags: Java
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 ![Java](/images/javaimage.png)
 # KOSTA DAY15
 ## Java
-
+<!-- more -->
 ### JSON
 Javascript 객체 문법을 따르는 문자 기반의 데이터 포맷
 - JSON은 경량의 data 교환 형식

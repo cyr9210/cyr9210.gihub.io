@@ -2,10 +2,19 @@
 title: Notice-Project
 date: 2019-05-24 10:04:44
 tags: 프로젝트_회고
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 # Project
 ## 공지사항 웹 어플리케이션 
-
+<!-- more -->
 ### 사용스택
 - Java
 - Spring(Boot)

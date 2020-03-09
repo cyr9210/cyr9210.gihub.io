@@ -2,10 +2,19 @@
 title: Async
 date: 2019-10-26 14:51:57
 tags: SpringBoot
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 ## @Async
-
+<!-- more -->
 - 스프링 부트에서 개발자에게 비동기 처리를 하기 위해 제공하는 방법중 하나이다.
   - Reactive stack, CompletableFuture등이 있으나 가장 쉬운 방법이 @Async 적용이다.
 

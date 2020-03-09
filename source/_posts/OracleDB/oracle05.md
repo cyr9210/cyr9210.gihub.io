@@ -2,11 +2,20 @@
 title: Reference 형 데이터, ROWTYPE, 제어문, 반복문, 예외처리, Cursor, for문, Procedure
 date: 2018-12-03 20:24:51
 tags: OracleDB
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![DB](/images/oracledb_logo.png)
 # KOSTA DAY24
 ## DataBase
-
+<!-- more -->
 ### Reference형 데이터 타입
 - 선언방법   
 ```

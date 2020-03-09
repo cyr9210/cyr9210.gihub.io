@@ -2,12 +2,21 @@
 title: reference타입, instanceof, 추상클래스, 객체와 인스턴스의 차이
 date: 2018-11-09 19:04:23
 tags: Java
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 ![Java](/images/javaimage.png)
 # KOSTA DAY09
 ## Java
-
+<!-- more -->
 ### reference타입
 메모리상에 할당되는 각각의 공간에 참조를 위한 주소값이 들어가는 타입
 ![Java](/images/java/java09-01.png)

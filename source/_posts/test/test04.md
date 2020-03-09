@@ -2,12 +2,21 @@
 title: 정보처리기사 필기 - 5과목(데이터 통신)
 date: 2019-03-03 01:49:33
 tags: 정보처리기사_필기
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 # 정보처리기사 -필기
 
 ## 5과목 - 데이터 통신
-
+<!-- more -->
 ### 동축 케이블
 - 주파수 범위가 넓어 데이터 전송률 높음
 - 꼬임선에 비해 외부 간섭과 누화의 영향이 적음

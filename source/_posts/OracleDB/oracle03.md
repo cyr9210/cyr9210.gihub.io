@@ -2,11 +2,20 @@
 title: ANSI JOIN, INNER JOIN, OUTER JOIN, SELF JOIN, 서브쿼리
 date: 2018-11-28 17:36:11
 tags: OracleDB
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![DB](/images/oracledb_logo.png)
 # KOSTA DAY22
 ## DataBase
-
+<!-- more -->
 ### ANSI JOIN
 - FROM절에서 INNER JOIN 구문 사용
 - 조인조건은 ON절에 명시

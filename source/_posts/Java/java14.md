@@ -2,11 +2,20 @@
 title: File Class, Thread
 date: 2018-11-16 13:19:05
 tags: Java
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![Java](/images/javaimage.png)
 # KOSTA DAY14
 ## Java
-
+<!-- more -->
 ### File Class
 ![Java](/images/java/java13-01.png)
 - File 클래스

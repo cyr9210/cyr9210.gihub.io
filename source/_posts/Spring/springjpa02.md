@@ -2,11 +2,20 @@
 title: 스프링 데이터 JPA02 - 프로젝트 세팅
 date: 2019-04-30 15:18:46
 tags: JPA
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![springf](/images/jpa_logo.png)
 # 스프링 데이터 JPA(inflearn) - 백기선 
 ## 핵심 개념 이해
-
+<!-- more -->
 ### 프로젝트 세팅
 - 데이터 베이스 실행(PostgreSQL로 진행)
     - 참고 : [스프링 데이터 PostgreSQL](https://cyr9210.github.io/2019/04/15/Spring/springboot13/#PostgreSQL-%ED%8F%AC%EC%8A%A4%ED%8A%B8%EA%B7%B8%EB%A0%88%EC%8A%A4)

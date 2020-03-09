@@ -2,11 +2,20 @@
 title: 스프링 MVC 동작 원리03 - 스프링 MVC 구성 요소, 동작원리 정리
 date: 2019-04-30 00:59:04
 tags: SpringWebMvc
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![springf](/images/springframwork-logo.png)
 # 스프링 웹 MVC(inflearn) - 백기선 
 ## Springframework
-
+<!-- more -->
 ### 스프링 MVC 구성 요소
 ![springmvc](/images/springwebmvc/springwebmvc03-1.png)
 - DispatcherSerlvet의 기본 전략

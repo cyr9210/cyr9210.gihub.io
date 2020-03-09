@@ -2,11 +2,20 @@
 title: Spring MVC TEST (KOSTA)
 date: 2019-01-30 06:45:43
 tags: Springframework_kosta
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![springf](/images/springframwork-logo.png)
 #  KOSTA DAY59
 ## Springframework
-
+<!-- more -->
 ### Mapper Test
 CRUD를 위한 Mapping이 잘되었는지 확인하기위한 Test방법에 대해 알아보자.
 

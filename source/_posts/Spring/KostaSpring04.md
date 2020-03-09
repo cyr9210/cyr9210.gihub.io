@@ -2,11 +2,20 @@
 title: 개발환경 세팅, Junit 테스트, OracleDB 연동, mybaits연동, log4jdbc, MVC Controller, 파일업/다운로드 (KOSTA)
 date: 2019-01-29 06:06:08
 tags: Springframework_kosta
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![springf](/images/springframwork-logo.png)
 #  KOSTA DAY58
 ## Springframework
-
+<!-- more -->
 ### 개발환경 설정(Spring MVC)
 해당 포스팅은 Eclipse를 통해 이루어진다. 추후에 IntelliJ 로 변경할 예정이다.
 

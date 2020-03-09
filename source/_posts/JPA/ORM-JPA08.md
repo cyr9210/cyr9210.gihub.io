@@ -2,6 +2,15 @@
 title: ORM08 - 프록시와 연관관계 관리(프록시, fetchType, cascade, orphanRemoval, 고아객체)
 date: 2019-12-08 15:35:38
 tags: JPA
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 # 자바 ORM 표준 JPA 프로그래밍 - 기본편
 
@@ -10,7 +19,7 @@ tags: JPA
 ### 프록시
 
 #### 기초
-
+<!-- more -->
 - `em.find()` vs `em.getReference()`
 
 - `em.find()` : 데이터베이스를 통해서 **실제 엔티티** 객체 조회

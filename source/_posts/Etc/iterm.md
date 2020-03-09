@@ -2,6 +2,15 @@
 title: iTerm2 설치 및 커스터마이징
 date: 2019-03-05 15:02:58
 tags: Etc
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 
@@ -12,7 +21,7 @@ tags: Etc
 구글링을 통해 알아보니, macOS에서 사용하며 mac용 터미널인 iterm2를 설치한 후 여러 설치과정들을 통해 멋진 터미널을 만들 수 있다는 정보를 알게되었고..  [참고블로그 : Beomi's Tech Blog](https://beomi.github.io/2017/07/07/Beautify-ZSH/)     
 mac을 사용하고 있고, 앞으로 터미널 이용이 더 많아질 예정이기 때문에.. 제 mac 터미널에 적용하기로 결정하였습니다.<br>
 편리하고 다양하게 터미널을 사용하기위해 기본 Shell인 bash 대신에 zsh를 사용하고, 보다 깔끔하고 멋진 테마를 적용하는 방법에 대해 알아봅시다.
-
+<!-- more -->
 # iterm 설치 및 꾸미기
 
 ### iterm2 설치

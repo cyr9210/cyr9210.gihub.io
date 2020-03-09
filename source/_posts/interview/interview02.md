@@ -2,10 +2,19 @@
 title: 면접 후기01
 date: 2019-05-28 16:46:11
 tags: Interview
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 # 면접 후기
 ## 웹 백엔드 개발자 지원
-
+<!-- more -->
 처음으로 개발회사에서 면접을 보게되었고, 면접을 마치고 후기를 씁니다.
 면접은 기초적인 질문들과 과제 프로젝트관련 질문들이 있었습니다.
 면접 시, 정말 좋았던건 면접관님들께서 매우 친절했으며, 과제프로젝트에 관련하여 질문만 해주신것이 아닌 고쳐야 할 점에대해 코드리뷰를 해주었다는 점입니다.

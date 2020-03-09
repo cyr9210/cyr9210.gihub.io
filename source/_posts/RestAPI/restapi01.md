@@ -2,10 +2,20 @@
 title: 스프링 기반 REST API 개발01 - REST API 및 프로젝트 소개
 date: 2019-06-25 10:21:40
 tags: RestAPI
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 # 스프링 기반 REST API 개발(inflearn)1 - 백기선
 ## REST API 및 프로젝트 소개
 ### REST API
+<!-- more -->
 참고 발표 영상 : [그런 REST API로 괜찮은가](https://www.youtube.com/watch?v=RP_f5dMoHFc)
 참고 소스 코드 : https://github.com/keesun/study/tree/master/rest-api-with-spring
 

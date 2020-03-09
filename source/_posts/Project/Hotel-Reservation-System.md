@@ -2,12 +2,21 @@
 title: HotelReservation-System(DB Mini project)
 date: 2018-12-07 21:05:09
 tags: 프로젝트_회고
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 # Project
 ## DataBase Mini Project
 ### HotelReservation-System
 **Project github : https://github.com/cyr9210/Hotel-Reservation_System**
-
+<!-- more -->
 #### 구현내용
 ![HotelReservation](/images/Project/HotelReservation/HotelReservation01.png)
 ![HotelReservation](/images/Project/HotelReservation/HotelReservation02.png)

@@ -2,12 +2,21 @@
 title: 데이터베이스, Oracle , SELECT
 date: 2018-11-26 13:26:15
 tags: OracleDB
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 ![DB](/images/oracledb_logo.png)
 # KOSTA DAY20
 ## DataBase
-
+<!-- more -->
 ### 데이터베이스
 서로 연관성을 가지며, 중복없이 지속적으로 유지 관리해야 할 유용한 데이터들의 집합
 - 데이터 베이스 이전에 데이터 저장을 위해서 파일시스템을 사용했으나, 많은 문제점이 있었다.

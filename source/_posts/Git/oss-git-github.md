@@ -2,9 +2,19 @@
 title: Git/GitHub 입문 (oss개발자포럼 세미나)
 date: 2019-03-23 13:42:40
 tags: Seminar
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 # Git/GitHub 입문 (oss개발자포럼 세미나)
 ## Git
+<!-- more -->
 ![ossgit](/images/git/ossgit02.png)
 버젼관리 시스템인 Git에 대하여 생활코딩 '지옥에서 온 git'을 수강하며, 공부를 하던중...   
 oss개발자 포럼 커뮤니티와 국민대학교가 주관하는 'Git과 Github을 이용한 버전관리 입문'이라는 주제로 강연을 진행하단다는 정보를 알게되었습니다.

@@ -2,10 +2,19 @@
 title: 개발프로세스
 date: 2018-11-21 16:04:55
 tags: Process
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 # KOSTA DAY17
 ## Process
-
+<!-- more -->
 ### 개발 프로세스
 ![Process](/images/Process/Process01-01.png)
 1.주제

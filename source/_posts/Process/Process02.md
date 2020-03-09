@@ -2,11 +2,20 @@
 title: agile(애자일) 프로세스
 date: 2019-01-09 18:04:11
 tags: Process
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 # KOSTA DAY44
 ## Process
-
+<!-- more -->
 ### 프로세스
 일을 처리하는 과정 또는 순서       
 

@@ -2,12 +2,21 @@
 title: ORM01 - JPA 소개
 date: 2019-10-04 16:02:45
 tags: JPA
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 # 자바 ORM 표준 JPA 프로그래밍 - 기본편
 
 ## JPA 소개
-
+<!-- more -->
 ### SQL 중심적인 개발의 문제점
 
 - 무한반복, 지루한 코드

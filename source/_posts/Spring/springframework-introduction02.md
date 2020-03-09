@@ -2,11 +2,20 @@
 title: 스프링 프레임워크 입문02 - AOP
 date: 2019-03-08 14:03:12
 tags: Springframework
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![springf](/images/springframwork-logo.png)
 # 스프링 프레임워크 입문02(inflearn) - 백기선 
 ## Springframework
-
+<!-- more -->
 ### AOP(Aspect Oriented Programming)
 흩어져있는 코드를 한곳에 모으는 코딩 기법
 - 바이트코드 조작

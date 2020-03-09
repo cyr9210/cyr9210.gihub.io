@@ -2,11 +2,20 @@
 title: ORM04 - 엔티티 매핑(객체와 테이블 매핑(@Table), 데이터베이스 스키마 자동생성, 필드와 컬럼 매핑(@Column), 기본 키 매핑(@Id, @GenerateValue))
 date: 2019-10-11 17:44:27
 tags: JPA
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 # 자바 ORM 표준 JPA 프로그래밍 - 기본편
 
 ## 엔티티 매핑
-
+<!-- more -->
 #### 객체와 테이블 매핑
 
 #### @Entity

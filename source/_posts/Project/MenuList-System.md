@@ -2,11 +2,20 @@
 title: MenuList System(Java Mini Project)
 date: 2018-11-23 15:06:23
 tags: 프로젝트_회고
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 # Project
 ## Java Mini Project
-
+<!-- more -->
 ### MenuList_System
 **Project github : https://github.com/cyr9210/Menu-List-System**
 #### 구현내용

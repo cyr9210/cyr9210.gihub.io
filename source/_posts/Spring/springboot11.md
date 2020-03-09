@@ -2,11 +2,20 @@
 title: 스프링 부트 활용11 - SpringBoot_Devtools
 date: 2019-04-11 00:26:47
 tags: SpringBoot
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![springboot](/images/springboot_logo.png)
 # 스프릥 부트 개념과 활용11(inflearn) - 백기선 
 ## Spring boot
-
+<!-- more -->
 ### SpringBoot_Devtools
 - devtools 의존성 추가가 필요하다.
 ```

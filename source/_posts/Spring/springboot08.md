@@ -2,11 +2,20 @@
 title: 스프링 부트 활용08 - 프로파일
 date: 2019-04-08 16:15:30
 tags: SpringBoot
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![springboot](/images/springboot_logo.png)
 # 스프릥 부트 개념과 활용08(inflearn) - 백기선 
 ## Spring boot
-
+<!-- more -->
 ### 프로파일
 참고 : [IoC컨테이너와 빈 - profile](https://cyr9210.github.io/2019/03/20/Spring/springframework-core01/)
 #### @Profile 애노테이션은 어디에?

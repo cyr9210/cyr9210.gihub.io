@@ -2,12 +2,21 @@
 title: 스프링 MVC 동작 원리02 - 스프링 연동, DispatcherServlet
 date: 2019-04-25 16:11:55
 tags: SpringWebMvc
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 ![springf](/images/springframwork-logo.png)
 # 스프링 웹 MVC(inflearn) - 백기선 
 ## Springframework
-
+<!-- more -->
 웹 서블릿 어플리케이션에 스프링을 사용한다는 의미는 크게 2가지로 나눠서 이야기 할 수 있다.
 - 스프링 IoC 컨테이너를 사용하겠다.
 - 스프링 MVC를 사용하겠다.

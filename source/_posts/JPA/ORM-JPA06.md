@@ -2,13 +2,22 @@
 title: ORM06 - 다양한 연관관계 매핑(다대일, 일대다, 일대일, 다대)
 date: 2019-10-19 00:21:33
 tags: JPA
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 # 자바 ORM 표준 JPA 프로그래밍 - 기본편
 
 ## 다양한 연관관계 매핑
 
 ### 연관관계 매핑시 고려사항
-
+<!-- more -->
 - 다중성
 - 단방향, 양방향
 - 양방향일 때, 연관관계의 주인

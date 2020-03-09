@@ -2,13 +2,22 @@
 title: 스프링 기반 REST API 개발03 - HATEOAS와 Self-Describtive Message 적용 (HATEOAS-Resource, REST Docs, 테스트용 DB와 설정 분리, API 인덱스)
 date: 2019-08-08 10:24:27
 tags: RestAPI
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 # 스프링 기반 REST API 개발(inflearn)3 - 백기선
 
 ## HATEOAS와 Self-Describtive Messgae 적용
 
 ### 스프링 HATEOAS 소개
-
+<!-- more -->
 - api를 만들 때, REST하게 resource를 보다 쉽게 제공해주는 라이브러리
 
 - [reference문서](https://docs.spring.io/spring-hateoas/docs/current/reference/html/)

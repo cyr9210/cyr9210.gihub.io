@@ -2,11 +2,20 @@
 title: 스프링 부트 활용12 - 스프링 웹 MVC
 date: 2019-04-11 16:43:16
 tags: SpringBoot
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![springboot](/images/springboot_logo.png)
 # 스프릥 부트 개념과 활용12(inflearn) - 백기선 
 ## Spring boot
-
+<!-- more -->
 ### 스프링 웹 MVC
 - 스프링 웹 MVC
     - [reference문서](https://docs.spring.io/spring/docs/5.0.7.RELEASE/spring-framework-reference/web.html#spring-web)

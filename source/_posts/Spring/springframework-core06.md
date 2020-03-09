@@ -2,12 +2,21 @@
 title: 스프링 핵심기술06 - Null-safety
 date: 2019-03-27 15:17:40
 tags: Springframework
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
  
 ![springf](/images/springframwork-logo.png)
 # 스프링 프레임워크 핵심기술06(inflearn) - 백기선 
 ## Springframework
-
+<!-- more -->
 ### Null-safety
 - 스프링 프레임워크 5에 추가된 Null 관련 애노테이션
     - @NonNull

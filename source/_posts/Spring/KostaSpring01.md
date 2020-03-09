@@ -2,11 +2,20 @@
 title: Spring, Maven, DI, 객체주입, AOP (KOSTA)
 date: 2019-01-24 04:29:52
 tags: Springframework_kosta
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ![springf](/images/springframwork-logo.png)
 #  KOSTA DAY55
 ## Springframework
-
+<!-- more -->
 ### Spring
 - 오픈소스 프레임 워크
 - 엔터프라이즈 어플리케이션 개발의 복잡성을 줄여주기 위한 목적

@@ -2,12 +2,21 @@
 title: 스프링 프레임워크 입문01 - IOC, IOC컨테이너
 date: 2019-03-05 02:19:06
 tags: Springframework
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 ![springf](/images/springframwork-logo.png)
 # 스프링 프레임워크 입문01(inflearn) - 백기선 
 ## Springframework
-
+<!-- more -->
 kosta에서 스프링 프레임워크에 대해서 배웠지만.. 저는 스프링 프레임워크가 정확히 무엇인지 잘 모르고 있다는 생각이 들었습니다.
 책을 사서 공부해야 하나, 인터넷 강의를 들어야하나 고민을 했는데 책보다는 시청각 자료와 친했던 저는 강을 선택했습니다..<br>
 여러 강좌들을 고민하다가 유투브에서 종종 보았던 백기선님의 강의가 눈에 들어왔습니다.

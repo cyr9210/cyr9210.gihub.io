@@ -2,12 +2,21 @@
 title: KOSTA 예제, DFS
 date: 2018-11-20 14:27:17
 tags: Algorithm
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 ![Java](/images/algorism_logo.png)
 # KOSTA DAY16
 ## Algorism
-
+<!-- more -->
 ### kosta 예제
 #### 문제
 고전게임을 잘하기로 소문난 두 형제 종현이와 종원이는 요새 갤러그라는 게임에푹 빠져 있다.    
