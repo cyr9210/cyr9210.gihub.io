@@ -1,103 +1,165 @@
 <!DOCTYPE html>
-<html>
-  <head><meta name="generator" content="Hexo 3.9.0">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-  <meta name="description" content="개발공부 정리 블로그">
-  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
-  
-    <link rel="shortcut icon" href="/css/images/logo.png">
-  
-  <title>
-    
-      oauth2 - 구글 로그인 | Bong&#39;s blog
-    
-  </title>
-  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
-  
-  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
-  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+<html >
+<head>
+    <meta charset="utf-8" />
 
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>oauth2 - 구글 로그인 - Bong&#39;s blog</title>
+
+
+    <meta name="description" content="SpringSpringSecurity-OAuth2">
+<meta name="keywords" content="SpringSecurity">
+<meta property="og:type" content="article">
+<meta property="og:title" content="oauth2 - 구글 로그인">
+<meta property="og:url" content="http://yoursite.com/2019/04/21/Security/oauth2-google-login/index.html">
+<meta property="og:site_name" content="Bong&#39;s blog">
+<meta property="og:description" content="SpringSpringSecurity-OAuth2">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:updated_time" content="2020-03-09T20:43:58.919Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="oauth2 - 구글 로그인">
+<meta name="twitter:description" content="SpringSpringSecurity-OAuth2">
+<meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
 </head>
-<div class="wechat-share">
-  <img src="/css/images/logo.png">
-</div>
-
-  <body>
-    <header class="header fixed-header">
-  <div class="header-container">
-    <a class="home-link" href="/">
-      <div class="logo"></div>
-      <span>Bong's blog</span>
-    </a>
-    <ul class="right-list">
-      
-        <li class="list-item">
-          
-            <a href="/" class="item-link">Home</a>
-          
-        </li>
-      
-        <li class="list-item">
-          
-            <a href="/tags/" class="item-link">Tags</a>
-          
-        </li>
-      
-        <li class="list-item">
-          
-            <a href="/about/" class="item-link">About</a>
-          
-        </li>
-      
-    </ul>
-    <div class="menu">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.svg" alt="oauth2 - 구글 로그인" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/tags">Tags</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/cyr9210">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catálogo" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="Buscar" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
     </div>
-    <div class="menu-mask">
-      <ul class="menu-list">
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
         
-          <li class="menu-item">
-            
-              <a href="/" class="menu-link">Home</a>
-            
-          </li>
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-21T08:07:08.000Z">2019-04-21</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    17 minutes leer (Acerca de 2501 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
         
-          <li class="menu-item">
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-              <a href="/tags/" class="menu-link">Tags</a>
+                oauth2 - 구글 로그인
             
-          </li>
-        
-          <li class="menu-item">
-            
-              <a href="/about/" class="menu-link">About</a>
-            
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</header>
-
-    <div id="article-banner">
-  <h2>oauth2 - 구글 로그인</h2>
-  <p class="post-date">2019-04-21</p>
-  <div class="arrow-down">
-    <a href="javascript:;"></a>
-  </div>
-</div>
-<main class="app-body flex-box">
-  <!-- Article START -->
-  <article class="post-article">
-    <section class="markdown-content"><p><img src="/images/google_logo.png" alt="google_logo"></p>
-<h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><h2 id="SpringSecurity-OAuth2"><a href="#SpringSecurity-OAuth2" class="headerlink" title="SpringSecurity-OAuth2"></a>SpringSecurity-OAuth2</h2><p>최근 서비스들은 자체적으로 계정을 가입하고, 접근하는 방식도 있지만, 구글, 카카오, 네이버, 페이스북등으로 계정관리를 하고있습니다.<br>이번 포스팅에서는 Spring Security &amp; 구글 OAuth를 사용하여 계정 권한관리에 대해 알아보려고 합니다.<br>빌드 도구로는 gradle을 사용해 보려고 합니다.</p>
+        </h1>
+        <div class="content">
+            <p><img src="/images/google_logo.png" alt="google_logo"></p>
+<h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><h2 id="SpringSecurity-OAuth2"><a href="#SpringSecurity-OAuth2" class="headerlink" title="SpringSecurity-OAuth2"></a>SpringSecurity-OAuth2</h2><a id="more"></a>
+<p>최근 서비스들은 자체적으로 계정을 가입하고, 접근하는 방식도 있지만, 구글, 카카오, 네이버, 페이스북등으로 계정관리를 하고있습니다.<br>이번 포스팅에서는 Spring Security &amp; 구글 OAuth를 사용하여 계정 권한관리에 대해 알아보려고 합니다.<br>빌드 도구로는 gradle을 사용해 보려고 합니다.</p>
 <hr>
 <h3 id="구글-OAuth"><a href="#구글-OAuth" class="headerlink" title="구글 OAuth"></a>구글 OAuth</h3><h4 id="의존성-추가"><a href="#의존성-추가" class="headerlink" title="의존성 추가"></a>의존성 추가</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    implementation &apos;org.springframework.boot:spring-boot-starter-actuator&apos;</span><br><span class="line">    implementation &apos;org.springframework.boot:spring-boot-starter-data-jpa&apos;</span><br><span class="line">    implementation &apos;org.springframework.boot:spring-boot-starter-web&apos;</span><br><span class="line">    implementation &apos;org.springframework.boot:spring-boot-starter-thymeleaf&apos;</span><br><span class="line"></span><br><span class="line">    compileOnly &apos;org.projectlombok:lombok&apos;</span><br><span class="line"></span><br><span class="line">    runtimeOnly &apos;com.h2database:h2&apos;</span><br><span class="line">    runtimeOnly &apos;mysql:mysql-connector-java&apos;</span><br><span class="line"></span><br><span class="line">    annotationProcessor &apos;org.projectlombok:lombok&apos;</span><br><span class="line"></span><br><span class="line">    testImplementation &apos;org.springframework.boot:spring-boot-starter-test&apos;</span><br><span class="line">    testCompile(&apos;org.springframework.security:spring-security-test&apos;)</span><br><span class="line">    testCompile(&apos;io.rest-assured:rest-assured:3.0.3&apos;)</span><br><span class="line">    </span><br><span class="line">    compile(&quot;org.mariadb.jdbc:mariadb-java-client&quot;)</span><br><span class="line">    compile group: &apos;org.springframework.security.oauth&apos;, name: &apos;spring-security-oauth2&apos;, version: &apos;2.3.5.RELEASE&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
@@ -121,7 +183,7 @@
 <li>기본 루트로 접속 시, index.html을 호출하는지 확인하기 위해 테스트 클래스를 작성한다.<br><img src="/images/springboot/oauth01-3.png" alt="oauth2"></li>
 </ul>
 <h4 id="구글-OAuth-등록"><a href="#구글-OAuth-등록" class="headerlink" title="구글 OAuth 등록"></a>구글 OAuth 등록</h4><ul>
-<li><a href="http://console.developers.google.com" target="_blank" rel="noopener">구글 개발자 콘솔</a>에 접속한다.</li>
+<li><a href="http://console.developers.google.com">구글 개발자 콘솔</a>에 접속한다.</li>
 <li><p>프로젝트 생성<br><img src="/images/springboot/oauth01-4.png" alt="oauth2"></p>
 </li>
 <li><p>프로젝트 정보 입력 및 생성<br><img src="/images/springboot/oauth01-5.png" alt="oauth2"></p>
@@ -226,7 +288,7 @@
 <h4 id="브라우저에서-확인"><a href="#브라우저에서-확인" class="headerlink" title="브라우저에서 확인"></a>브라우저에서 확인</h4><ul>
 <li><p>localhost:8080/login<br><img src="/images/springboot/oauth01-14.png" alt="oauth2"></p>
 </li>
-<li><p><a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">구글계정으로 가입된 서비스</a>에서 확인 할 수 있다.<br><img src="/images/springboot/oauth01-15.png" alt="oauth2"></p>
+<li><p><a href="https://myaccount.google.com/permissions">구글계정으로 가입된 서비스</a>에서 확인 할 수 있다.<br><img src="/images/springboot/oauth01-15.png" alt="oauth2"></p>
 </li>
 </ul>
 <h3 id="로그인-세션-관리"><a href="#로그인-세션-관리" class="headerlink" title="로그인 세션 관리"></a>로그인 세션 관리</h3><ul>
@@ -249,7 +311,7 @@
 <li>Redis, Memcached등의 메모리 DB를 세션 저장소로 사용<ul>
 <li>사용자 서비스에서 가장 많이 사용되는 방식입니다.</li>
 <li>실제 서비스로 사용하기 위해서는 Embedded Redis와 같은 방식이 아닌 외부 메모리 서버가 필요합니다.</li>
-<li>참고 : <a href="https://haviyj.tistory.com/38" target="_blank" rel="noopener">Havi님 블로그</a></li>
+<li>참고 : <a href="https://haviyj.tistory.com/38">Havi님 블로그</a></li>
 </ul>
 </li>
 </ul>
@@ -312,171 +374,324 @@
 </ul>
 <hr>
 <p>많은 자료들이 스프링부트 1점대를 기준으로 작성되어 작업이 생각보다 오래걸렸습니다..😂<br>구글로그인을 해보고나니, 여러가지 다른 인증들도 해보고 싶어졌습니다.<br>음.. 이번 내용들을 블로깅하면서 내가 security부분도 많이 부족하고 강의를 보고 복습도했지만..<br>아직 스프링 그리고 스프링부트를 완벽히 이해하고 있지 않다는 생각이 들었습니다.<br><br><br></p>
-</section>
-    <!-- Tags START -->
-    
-      <div class="tags">
-        <span>Tags:</span>
+
+        </div>
         
-  <a href="/tags#SpringSecurity" >
-    <span class="tag-code">SpringSecurity</span>
-  </a>
-
-      </div>
-    
-    <!-- Tags END -->
-    <!-- NAV START -->
-    
-  <div class="nav-container">
-    <!-- reverse left and right to put prev and next in a more logic postition -->
-    
-      <a class="nav-left" href="/2019/04/19/Git/git03/">
-        <span class="nav-arrow">← </span>
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/SpringSecurity/">SpringSecurity</a>
+                </div>
+            </div>
+        </div>
         
-          Git - 원격저장소(Github), gitignore설정, ssh설정
         
-      </a>
-    
-    
-      <a class="nav-right" href="/2019/04/23/Spring/springwebmvc01/">
         
-          스프링 MVC 동작 원리01 - 스프링 MVC 소개, 서블릿
-        
-        <span class="nav-arrow"> →</span>
-      </a>
-    
-  </div>
-
-    <!-- NAV END -->
-    <!-- 打赏 START -->
-    
-    <!-- 打赏 END -->
-    <!-- 二维码 START -->
-    
-    <!-- 二维码 END -->
-    
-      <!-- No Comment -->
-    
-  </article>
-  <!-- Article END -->
-  <!-- Catalog START -->
-  
-    <aside class="catalog-container">
-  <div class="toc-main">
-    <strong class="toc-title">Catalog</strong>
-    
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Spring"><span class="toc-nav-text">Spring</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#SpringSecurity-OAuth2"><span class="toc-nav-text">SpringSecurity-OAuth2</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#구글-OAuth"><span class="toc-nav-text">구글 OAuth</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#의존성-추가"><span class="toc-nav-text">의존성 추가</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#application-yml-설정"><span class="toc-nav-text">application.yml 설정</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#SpringSecurity-기본인증-옵션-비활성화"><span class="toc-nav-text">SpringSecurity 기본인증 옵션 비활성화</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#index-html-호출-test-파일작성"><span class="toc-nav-text">index.html 호출 test 파일작성</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#구글-OAuth-등록"><span class="toc-nav-text">구글 OAuth 등록</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#구글-인증-정보를-프로젝트에-적용하기"><span class="toc-nav-text">구글 인증 정보를 프로젝트에 적용하기</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Google-OAuth-설정"><span class="toc-nav-text">Google OAuth 설정</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#브라우저에서-확인"><span class="toc-nav-text">브라우저에서 확인</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#로그인-세션-관리"><span class="toc-nav-text">로그인 세션 관리</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Database를-세션저장소로-사용"><span class="toc-nav-text">Database를 세션저장소로 사용</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#의존성-추가-1"><span class="toc-nav-text">의존성 추가</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Session-테이블-생성"><span class="toc-nav-text">Session 테이블 생성</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#JdbcSession-옵션-활성화"><span class="toc-nav-text">JdbcSession 옵션 활성화</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SuccessHandler-생성"><span class="toc-nav-text">SuccessHandler 생성</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SuccessHandler-적용"><span class="toc-nav-text">SuccessHandler 적용</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#결과"><span class="toc-nav-text">결과</span></a></li></ol></li></ol></li></ol></li></ol>
-    
-  </div>
-</aside>
-  
-  <!-- Catalog END -->
-</main>
-
-<script>
-  (function () {
-    var url = 'http://yoursite.com/2019/04/21/Security/oauth2-google-login/';
-    var banner = ''
-    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
-      $('#article-banner').css({
-        'background-image': 'url(' + banner + ')'
-      })
-    } else {
-      $('#article-banner').geopattern(url)
-    }
-    $('.header').removeClass('fixed-header')
-
-    // error image
-    $(".markdown-content img").on('error', function() {
-      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
-      $(this).css({
-        'cursor': 'default'
-      })
-    })
-
-    // zoom image
-    $(".markdown-content img").on('click', function() {
-      var src = $(this).attr('src')
-      if (src !== 'http://file.muyutech.com/error-img.png') {
-        var imageW = $(this).width()
-        var imageH = $(this).height()
-
-        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
-        zoom = zoom < 1 ? 1 : zoom
-        zoom = zoom > 2 ? 2 : zoom
-        var transY = (($(window).height() - imageH) / 2).toFixed(2)
-
-        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
-        $('.image-view-wrap').addClass('wrap-active')
-        $('.image-view-wrap img').css({
-          'width': `${imageW}`,
-          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
-        })
-        $('html').css('overflow', 'hidden')
-
-        $('.image-view-wrap').on('click', function() {
-          $(this).remove()
-          $('html').attr('style', '')
-        })
-      }
-    })
-  })();
-</script>
-
-
-
-
-
-
-
-    <div class="scroll-top">
-  <span class="arrow-icon"></span>
+    </div>
 </div>
-    <footer class="app-footer">
-  <p class="copyright">
-    &copy; 2020 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
-    <br>
-    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
-  </p>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Gefällt Ihnen der Artikel? Unterstützen Sie den Autor mit</h3>
+        <div class="buttons is-centered">
+            
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Alipay. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
+
+<div class="notification is-danger">
+    You forgot to set the <code>business</code> and <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>url</code> Patreon. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/04/23/spring/springwebmvc01/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">스프링 MVC 동작 원리01 - 스프링 MVC 소개, 서블릿</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/04/19/Git/git03/">
+                <span class="level-item">Git - 원격저장소(Github), gitignore설정, ssh설정</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-4-widescreen  has-order-3 column-right is-sticky">
+    
+        
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    Catálogo
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#Spring">
+        <span class="has-mr-6">1</span>
+        <span>Spring</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#SpringSecurity-OAuth2">
+        <span class="has-mr-6">1.1</span>
+        <span>SpringSecurity-OAuth2</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#구글-OAuth">
+        <span class="has-mr-6">1.1.1</span>
+        <span>구글 OAuth</span>
+        </a></li><li>
+        <a class="is-flex" href="#SpringSecurity-기본인증-옵션-비활성화">
+        <span class="has-mr-6">1.1.2</span>
+        <span>SpringSecurity 기본인증 옵션 비활성화</span>
+        </a></li><li>
+        <a class="is-flex" href="#로그인-세션-관리">
+        <span class="has-mr-6">1.1.3</span>
+        <span>로그인 세션 관리</span>
+        </a></li><li>
+        <a class="is-flex" href="#Database를-세션저장소로-사용">
+        <span class="has-mr-6">1.1.4</span>
+        <span>Database를 세션저장소로 사용</span>
+        </a></li></ul></li></ul></li></ul>
+            </div>
+        </div>
+    </div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Nube de etiquetas
+        </h3>
+        <a href="/tags/Algorithm/" style="font-size: 11.11px;">Algorithm</a> <a href="/tags/DataBase/" style="font-size: 10px;">DataBase</a> <a href="/tags/Etc/" style="font-size: 11.11px;">Etc</a> <a href="/tags/Git/" style="font-size: 13.33px;">Git</a> <a href="/tags/Interview/" style="font-size: 14.44px;">Interview</a> <a href="/tags/JPA/" style="font-size: 20px;">JPA</a> <a href="/tags/JSP/" style="font-size: 14.44px;">JSP</a> <a href="/tags/Java/" style="font-size: 18.89px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 12.22px;">JavaScript</a> <a href="/tags/OracleDB/" style="font-size: 14.44px;">OracleDB</a> <a href="/tags/Process/" style="font-size: 11.11px;">Process</a> <a href="/tags/RestAPI/" style="font-size: 14.44px;">RestAPI</a> <a href="/tags/Seminar/" style="font-size: 10px;">Seminar</a> <a href="/tags/SpringBoot/" style="font-size: 20px;">SpringBoot</a> <a href="/tags/SpringSecurity/" style="font-size: 12.22px;">SpringSecurity</a> <a href="/tags/SpringWebMvc/" style="font-size: 16.67px;">SpringWebMvc</a> <a href="/tags/Springframework/" style="font-size: 17.78px;">Springframework</a> <a href="/tags/Springframework-kosta/" style="font-size: 14.44px;">Springframework_kosta</a> <a href="/tags/Web/" style="font-size: 12.22px;">Web</a> <a href="/tags/debug/" style="font-size: 11.11px;">debug</a> <a href="/tags/jQuery/" style="font-size: 12.22px;">jQuery</a> <a href="/tags/정보처리기사-필기/" style="font-size: 13.33px;">정보처리기사_필기</a> <a href="/tags/프로젝트-회고/" style="font-size: 15.56px;">프로젝트_회고</a>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="oauth2 - 구글 로그인" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 Bong&#39;s blog&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/cyr9210">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
 </footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
 
 <script>
-  function async(u, c) {
-    var d = document, t = 'script',
-      o = d.createElement(t),
-      s = d.getElementsByTagName(t)[0];
-    o.src = u;
-    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-    s.parentNode.insertBefore(o, s);
-  }
-</script>
-<script>
-  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
-    FastClick.attach(document.body);
-  })
+var IcarusThemeSettings = {
+    site: {
+        url: 'http://yoursite.com',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
 </script>
 
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
 <script>
-  var hasLine = 'true';
-  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
-    $('figure pre').each(function(i, block) {
-      var figure = $(this).parents('figure');
-      if (hasLine === 'false') {
-        figure.find('.gutter').hide();
-      }
-      var lang = figure.attr('class').split(' ')[1] || 'code';
-      var codeHtml = $(this).html();
-      var codeTag = document.createElement('code');
-      codeTag.className = lang;
-      codeTag.innerHTML = codeHtml;
-      $(this).attr('class', '').empty().html(codeTag);
-      figure.attr('data-lang', lang.toUpperCase());
-      hljs.highlightBlock(block);
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
     });
-  })
 </script>
-<!-- Baidu Tongji -->
 
-<script src="/js/script.js"></script>
-  </body>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Teclea algo..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Entradas',
+                PAGES: 'Páginas',
+                CATEGORIES: 'Categorías',
+                TAGS: 'Etiquetas',
+                UNTITLED: '(Sin título)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
 </html>

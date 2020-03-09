@@ -1,398 +1,1114 @@
 <!DOCTYPE html>
-<html>
-  <head><meta name="generator" content="Hexo 3.9.0">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-  <meta name="description" content="개발공부 정리 블로그">
-  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
-  
-    <link rel="shortcut icon" href="/css/images/logo.png">
-  
-  <title>
-    
-      Bong&#39;s blog
-    
-  </title>
-  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
-  
-  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
-  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+<html >
+<head>
+    <meta charset="utf-8" />
 
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>Bong&#39;s blog</title>
+
+
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Bong&#39;s blog">
+<meta property="og:url" content="http://yoursite.com/page/8/index.html">
+<meta property="og:site_name" content="Bong&#39;s blog">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bong&#39;s blog">
+<meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
 </head>
-<div class="wechat-share">
-  <img src="/css/images/logo.png">
-</div>
-
-  <body>
-    <header class="header fixed-header">
-  <div class="header-container">
-    <a class="home-link" href="/">
-      <div class="logo"></div>
-      <span>Bong's blog</span>
-    </a>
-    <ul class="right-list">
-      
-        <li class="list-item">
-          
-            <a href="/" class="item-link active">Home</a>
-          
-        </li>
-      
-        <li class="list-item">
-          
-            <a href="/tags/" class="item-link">Tags</a>
-          
-        </li>
-      
-        <li class="list-item">
-          
-            <a href="/about/" class="item-link">About</a>
-          
-        </li>
-      
-    </ul>
-    <div class="menu">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.svg" alt="Bong&#39;s blog" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/tags">Tags</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/cyr9210">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="Buscar" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
     </div>
-    <div class="menu-mask">
-      <ul class="menu-list">
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main">
+    
+<div class="card">
+    
+    <div class="card-content article ">
         
-          <li class="menu-item">
-            
-              <a href="/" class="menu-link mobile-active">Home</a>
-            
-          </li>
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-03-05T06:02:58.000Z">2019-03-05</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    6 minutes leer (Acerca de 892 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
         
-          <li class="menu-item">
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-              <a href="/tags/" class="menu-link">Tags</a>
+                <a class="has-link-black-ter" href="/2019/03/05/Etc/iterm/">iTerm2 설치 및 커스터마이징</a>
             
-          </li>
+        </h1>
+        <div class="content">
+            <p><img src="/images/etc/iTerm2.jpg" alt="item2"></p>
+<p>생활코딩의 지옥에서 온 git 강의를 듣다 보면 이고잉님의 터미널이 뭔가 특별한것을 보실 수 있습니다.<br>현재 path 및 branch 등도 표현되며 무엇보다 뭔가 있어 보였습니다.😁<br><br>구글링을 통해 알아보니, macOS에서 사용하며 mac용 터미널인 iterm2를 설치한 후 여러 설치과정들을 통해 멋진 터미널을 만들 수 있다는 정보를 알게되었고..  <a href="https://beomi.github.io/2017/07/07/Beautify-ZSH/">참고블로그 : Beomi’s Tech Blog</a><br>mac을 사용하고 있고, 앞으로 터미널 이용이 더 많아질 예정이기 때문에.. 제 mac 터미널에 적용하기로 결정하였습니다.<br><br>편리하고 다양하게 터미널을 사용하기위해 기본 Shell인 bash 대신에 zsh를 사용하고, 보다 깔끔하고 멋진 테마를 적용하는 방법에 대해 알아봅시다.<br>
+        </div>
         
-          <li class="menu-item">
-            
-              <a href="/about/" class="menu-link">About</a>
-            
-          </li>
         
-      </ul>
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/03/05/Etc/iterm/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
     </div>
-  </div>
-</header>
-
-    <main class="app-body">
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/03/05/Etc/iterm/">iTerm2 설치 및 커스터마이징</a>
-      </h2>
-      <p class="article-date">March 5, 2019</p>
-      
-        
-  <a href="/tags#Etc" >
-    <span class="tag-code">Etc</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          
-생활코딩의 지옥에서 온 git 강의를 듣다 보면 이고잉님의 터미널이 뭔가 특별한것을 보실 수 있습니다.현재 path 및 branch 등도 표현되며 무엇보다 뭔가 있어 보였습니다.😁구글링을 통해 알아보니, macOS에서 사용하며 mac용 터미널인 iterm2를 ...
-        
-      </div>
-      <a class="more" href="/2019/03/05/Etc/iterm/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/03/05/Spring/springframework-introduction01/">스프링 프레임워크 입문01 - IOC, IOC컨테이너</a>
-      </h2>
-      <p class="article-date">March 5, 2019</p>
-      
-        
-  <a href="/tags#Springframework" >
-    <span class="tag-code">Springframework</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          
-스프링 프레임워크 입문01(inflearn) - 백기선Springframeworkkosta에서 스프링 프레임워크에 대해서 배웠지만.. 저는 스프링 프레임워크가 정확히 무엇인지 잘 모르고 있다는 생각이 들었습니다.책을 사서 공부해야 하나, 인터넷 강의를 들어야하 ...
-        
-      </div>
-      <a class="more" href="/2019/03/05/Spring/springframework-introduction01/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/03/03/test/test04/">정보처리기사 필기 - 5과목(데이터 통신)</a>
-      </h2>
-      <p class="article-date">March 3, 2019</p>
-      
-        
-  <a href="/tags#정보처리기사_필기" >
-    <span class="tag-code">정보처리기사_필기</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          정보처리기사 -필기5과목 - 데이터 통신동축 케이블
-주파수 범위가 넓어 데이터 전송률 높음
-꼬임선에 비해 외부 간섭과 누화의 영향이 적음
-신호 감쇠 현상을 막기 위해 일정 간격마다 중계기를 설치해야한다.
-광대역 전소에 적합하며 CATV, 근거리 통신망등에 사용된 ...
-        
-      </div>
-      <a class="more" href="/2019/03/03/test/test04/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/03/02/test/test03/">정보처리기사 필기 - 4과목(소프트웨어 공학)</a>
-      </h2>
-      <p class="article-date">March 2, 2019</p>
-      
-        
-  <a href="/tags#정보처리기사_필기" >
-    <span class="tag-code">정보처리기사_필기</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          정보처리기사 -필기4과목 - 소프트웨어 공학품질표준
-정확성(Correctness)
-신뢰성(Reliability)
-효율성(Efficency)
-무결성(Integrity)
-사용 용이성(Useability)
-유지보수성(Maintainability)
-유연성(Flexibi ...
-        
-      </div>
-      <a class="more" href="/2019/03/02/test/test03/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/03/01/test/test02/">정보처리기사 필기 - 3과목(운영체제)</a>
-      </h2>
-      <p class="article-date">March 1, 2019</p>
-      
-        
-  <a href="/tags#정보처리기사_필기" >
-    <span class="tag-code">정보처리기사_필기</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          정보처리기사 -필기3과목 - 운영체제시스템 소프트웨어의 구성
-제어 프로그램(Control Program) : 시스템 전체의 작동상태 감시,  작업의 순서 지정(스케쥴링), 작업에 사용되는 데이터 관리, 인터럽트 처리 등의 역할을 수행하는 프로그램
-
-감시(Supe ...
-        
-      </div>
-      <a class="more" href="/2019/03/01/test/test02/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/03/01/test/test01/">정보처리기사 필기 - 1과목(데이터베이스)</a>
-      </h2>
-      <p class="article-date">March 1, 2019</p>
-      
-        
-  <a href="/tags#정보처리기사_필기" >
-    <span class="tag-code">정보처리기사_필기</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          정보처리기사 -필기1과목 - 데이터베이스로킹로킹(Locking)이란?하나의 트랜잭션이 데이터를 액세스 하는 동안 다른 트랜잭션이 그 데이터 항목을 액세스할 수 없도록 하는 방법
-
-로킹단위 : 로킹의 대상이되는 객체의 크기(데이터 베이스, 파일, 레코드등)
-로킹단 ...
-        
-      </div>
-      <a class="more" href="/2019/03/01/test/test01/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/02/27/Project/kogile/">Project_kogile</a>
-      </h2>
-      <p class="article-date">February 27, 2019</p>
-      
-        
-  <a href="/tags#프로젝트_회고" >
-    <span class="tag-code">프로젝트_회고</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          ProjectKOSTA 최종프로젝트KogileProject github : https://github.com/cyr9210/Project_kogile_Final
-구현내용로그인, 회원가입
-
-
-카카오 로그인 및 회원가입이 가능하다.
-
-프로젝트
-
-
-로그인된 아이디가  ...
-        
-      </div>
-      <a class="more" href="/2019/02/27/Project/kogile/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/02/17/Etc/블로그-마크다운-활용/">블로그 명령어 정리</a>
-      </h2>
-      <p class="article-date">February 17, 2019</p>
-      
-        
-  <a href="/tags#Etc" >
-    <span class="tag-code">Etc</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          블로그 명령어 정리hexo
-npm run dev (“hexo serve”)   
-npm run deploy (“hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy”)
-hexo new post “게시물이름”
-
- ...
-        
-      </div>
-      <a class="more" href="/2019/02/17/Etc/블로그-마크다운-활용/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/01/30/Spring/KostaSpring05/">Spring MVC TEST (KOSTA)</a>
-      </h2>
-      <p class="article-date">January 30, 2019</p>
-      
-        
-  <a href="/tags#Springframework_kosta" >
-    <span class="tag-code">Springframework_kosta</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          
-KOSTA DAY59SpringframeworkMapper TestCRUD를 위한 Mapping이 잘되었는지 확인하기위한 Test방법에 대해 알아보자.
-
-테스트를 위한 DB의 테이블과 data를 생성한다.(table명 = tbl_board, seq_board) ...
-        
-      </div>
-      <a class="more" href="/2019/01/30/Spring/KostaSpring05/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/01/29/Spring/KostaSpring04/">개발환경 세팅, Junit 테스트, OracleDB 연동, mybaits연동, log4jdbc, MVC Controller, 파일업/다운로드 (KOSTA)</a>
-      </h2>
-      <p class="article-date">January 29, 2019</p>
-      
-        
-  <a href="/tags#Springframework_kosta" >
-    <span class="tag-code">Springframework_kosta</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          
-KOSTA DAY58Springframework개발환경 설정(Spring MVC)해당 포스팅은 Eclipse를 통해 이루어진다. 추후에 IntelliJ 로 변경할 예정이다.
-프로젝트생성
-
-
-
-Spring Legacy Project를 생성한다.
-Spirng MV ...
-        
-      </div>
-      <a class="more" href="/2019/01/29/Spring/KostaSpring04/">더보기</a>
-    </article>
-  
-
-  
-    <div class="guide-pager">
-  
-    <a href="/page/7/"><span class="page-arrow">← </span>Prev</a>
-  
-  
-    <a href="/page/9/">Next<span class="page-arrow"> →</span></a>
-  
 </div>
-  
-</main>
 
 
-    <div class="scroll-top">
-  <span class="arrow-icon"></span>
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-03-04T17:19:06.000Z">2019-03-05</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    6 minutes leer (Acerca de 974 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/03/05/spring/springframework-introduction01/">스프링 프레임워크 입문01 - IOC, IOC컨테이너</a>
+            
+        </h1>
+        <div class="content">
+            <p><img src="/images/springframwork-logo.png" alt="springf"></p>
+<h1 id="스프링-프레임워크-입문01-inflearn-백기선"><a href="#스프링-프레임워크-입문01-inflearn-백기선" class="headerlink" title="스프링 프레임워크 입문01(inflearn) - 백기선"></a>스프링 프레임워크 입문01(inflearn) - 백기선</h1><h2 id="Springframework"><a href="#Springframework" class="headerlink" title="Springframework"></a>Springframework</h2>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/03/05/spring/springframework-introduction01/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
 </div>
-    <footer class="app-footer">
-  <p class="copyright">
-    &copy; 2020 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
-    <br>
-    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
-  </p>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-03-02T16:49:33.000Z">2019-03-03</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes leer (Acerca de 329 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/03/03/test/test04/">정보처리기사 필기 - 5과목(데이터 통신)</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="정보처리기사-필기"><a href="#정보처리기사-필기" class="headerlink" title="정보처리기사 -필기"></a>정보처리기사 -필기</h1><h2 id="5과목-데이터-통신"><a href="#5과목-데이터-통신" class="headerlink" title="5과목 - 데이터 통신"></a>5과목 - 데이터 통신</h2>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/03/03/test/test04/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-03-02T11:39:48.000Z">2019-03-02</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    18 minutes leer (Acerca de 2769 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/03/02/test/test03/">정보처리기사 필기 - 4과목(소프트웨어 공학)</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="정보처리기사-필기"><a href="#정보처리기사-필기" class="headerlink" title="정보처리기사 -필기"></a>정보처리기사 -필기</h1><h2 id="4과목-소프트웨어-공학"><a href="#4과목-소프트웨어-공학" class="headerlink" title="4과목 - 소프트웨어 공학"></a>4과목 - 소프트웨어 공학</h2>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/03/02/test/test03/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-03-01T09:39:36.000Z">2019-03-01</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    an hour leer (Acerca de 6921 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/03/01/test/test02/">정보처리기사 필기 - 3과목(운영체제)</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="정보처리기사-필기"><a href="#정보처리기사-필기" class="headerlink" title="정보처리기사 -필기"></a>정보처리기사 -필기</h1><h2 id="3과목-운영체제"><a href="#3과목-운영체제" class="headerlink" title="3과목 - 운영체제"></a>3과목 - 운영체제</h2>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/03/01/test/test02/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-03-01T04:33:48.000Z">2019-03-01</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    29 minutes leer (Acerca de 4290 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/03/01/test/test01/">정보처리기사 필기 - 1과목(데이터베이스)</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="정보처리기사-필기"><a href="#정보처리기사-필기" class="headerlink" title="정보처리기사 -필기"></a>정보처리기사 -필기</h1><h2 id="1과목-데이터베이스"><a href="#1과목-데이터베이스" class="headerlink" title="1과목 - 데이터베이스"></a>1과목 - 데이터베이스</h2>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/03/01/test/test01/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-02-27T07:44:14.000Z">2019-02-27</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    13 minutes leer (Acerca de 1999 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/02/27/Project/kogile/">Project_kogile</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h1><h2 id="KOSTA-최종프로젝트"><a href="#KOSTA-최종프로젝트" class="headerlink" title="KOSTA 최종프로젝트"></a>KOSTA 최종프로젝트</h2><h3 id="Kogile"><a href="#Kogile" class="headerlink" title="Kogile"></a>Kogile</h3><p><strong>Project github : <a href="https://github.com/cyr9210/Project_kogile_Final">https://github.com/cyr9210/Project_kogile_Final</a></strong><br>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/02/27/Project/kogile/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-02-16T19:11:33.000Z">2019-02-17</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a few seconds leer (Acerca de 97 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/02/17/Etc/블로그-마크다운-활용/">블로그 명령어 정리</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="블로그-명령어-정리"><a href="#블로그-명령어-정리" class="headerlink" title="블로그 명령어 정리"></a>블로그 명령어 정리</h1><h2 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h2>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/02/17/Etc/블로그-마크다운-활용/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-01-29T21:45:43.000Z">2019-01-30</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    5 minutes leer (Acerca de 713 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/01/30/spring/KostaSpring05/">Spring MVC TEST (KOSTA)</a>
+            
+        </h1>
+        <div class="content">
+            <p><img src="/images/springframwork-logo.png" alt="springf"></p>
+<h1 id="KOSTA-DAY59"><a href="#KOSTA-DAY59" class="headerlink" title="KOSTA DAY59"></a>KOSTA DAY59</h1><h2 id="Springframework"><a href="#Springframework" class="headerlink" title="Springframework"></a>Springframework</h2>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/01/30/spring/KostaSpring05/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-01-28T21:06:08.000Z">2019-01-29</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    15 minutes leer (Acerca de 2298 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/01/29/spring/KostaSpring04/">개발환경 세팅, Junit 테스트, OracleDB 연동, mybaits연동, log4jdbc, MVC Controller, 파일업/다운로드 (KOSTA)</a>
+            
+        </h1>
+        <div class="content">
+            <p><img src="/images/springframwork-logo.png" alt="springf"></p>
+<h1 id="KOSTA-DAY58"><a href="#KOSTA-DAY58" class="headerlink" title="KOSTA DAY58"></a>KOSTA DAY58</h1><h2 id="Springframework"><a href="#Springframework" class="headerlink" title="Springframework"></a>Springframework</h2>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/01/29/spring/KostaSpring04/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+    
+<div class="card card-transparent">
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+        <div class="pagination-previous">
+            <a class="is-flex-grow has-text-black-ter" href="/page/7/">Anterior</a>
+        </div>
+        <div class="pagination-next">
+            <a class="is-flex-grow has-text-black-ter" href="/page/9/">Siguiente</a>
+        </div>
+        <ul class="pagination-list is-hidden-mobile">
+            
+            <li><a class="pagination-link has-text-black-ter" href="/">1</a></li>
+            
+            <li><span class="pagination-ellipsis has-text-black-ter">&hellip;</span></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/page/7/">7</a></li>
+            
+            <li><a class="pagination-link is-current" href="/page/8/">8</a></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/page/9/">9</a></li>
+            
+            <li><span class="pagination-ellipsis has-text-black-ter">&hellip;</span></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/page/13/">13</a></li>
+            
+        </ul>
+    </nav>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-4-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="/images/avatar.png" alt="최용락">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        최용락
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        BackEnd_Developer
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>경기도 안양시</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Entradas
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            127
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categorías
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            0
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Etiquetas
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            23
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/cyr9210" target="_blank" rel="noopener">
+                SEGUIR</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Github" href="https://github.com/cyr9210">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Etiquetas
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Algorithm/">
+                        <span class="tag">Algorithm</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/DataBase/">
+                        <span class="tag">DataBase</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Etc/">
+                        <span class="tag">Etc</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Git/">
+                        <span class="tag">Git</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Interview/">
+                        <span class="tag">Interview</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JPA/">
+                        <span class="tag">JPA</span>
+                        <span class="tag is-grey">17</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JSP/">
+                        <span class="tag">JSP</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java/">
+                        <span class="tag">Java</span>
+                        <span class="tag is-grey">16</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JavaScript/">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/OracleDB/">
+                        <span class="tag">OracleDB</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Process/">
+                        <span class="tag">Process</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/RestAPI/">
+                        <span class="tag">RestAPI</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Seminar/">
+                        <span class="tag">Seminar</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/SpringBoot/">
+                        <span class="tag">SpringBoot</span>
+                        <span class="tag is-grey">17</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/SpringSecurity/">
+                        <span class="tag">SpringSecurity</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/SpringWebMvc/">
+                        <span class="tag">SpringWebMvc</span>
+                        <span class="tag is-grey">8</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Springframework/">
+                        <span class="tag">Springframework</span>
+                        <span class="tag is-grey">10</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Springframework-kosta/">
+                        <span class="tag">Springframework_kosta</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Web/">
+                        <span class="tag">Web</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/debug/">
+                        <span class="tag">debug</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/jQuery/">
+                        <span class="tag">jQuery</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/정보처리기사-필기/">
+                        <span class="tag">정보처리기사_필기</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/프로젝트-회고/">
+                        <span class="tag">프로젝트_회고</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen is-sticky">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="Bong&#39;s blog" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 Bong&#39;s blog&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/cyr9210">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
 </footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
 
 <script>
-  function async(u, c) {
-    var d = document, t = 'script',
-      o = d.createElement(t),
-      s = d.getElementsByTagName(t)[0];
-    o.src = u;
-    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-    s.parentNode.insertBefore(o, s);
-  }
-</script>
-<script>
-  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
-    FastClick.attach(document.body);
-  })
+var IcarusThemeSettings = {
+    site: {
+        url: 'http://yoursite.com',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
 </script>
 
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
 <script>
-  var hasLine = 'true';
-  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
-    $('figure pre').each(function(i, block) {
-      var figure = $(this).parents('figure');
-      if (hasLine === 'false') {
-        figure.find('.gutter').hide();
-      }
-      var lang = figure.attr('class').split(' ')[1] || 'code';
-      var codeHtml = $(this).html();
-      var codeTag = document.createElement('code');
-      codeTag.className = lang;
-      codeTag.innerHTML = codeHtml;
-      $(this).attr('class', '').empty().html(codeTag);
-      figure.attr('data-lang', lang.toUpperCase());
-      hljs.highlightBlock(block);
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
     });
-  })
 </script>
-<!-- Baidu Tongji -->
 
-<script src="/js/script.js"></script>
-  </body>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Teclea algo..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Entradas',
+                PAGES: 'Páginas',
+                CATEGORIES: 'Categorías',
+                TAGS: 'Etiquetas',
+                UNTITLED: '(Sin título)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
 </html>

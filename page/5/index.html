@@ -1,426 +1,1117 @@
 <!DOCTYPE html>
-<html>
-  <head><meta name="generator" content="Hexo 3.9.0">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-  <meta name="description" content="개발공부 정리 블로그">
-  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
-  
-    <link rel="shortcut icon" href="/css/images/logo.png">
-  
-  <title>
-    
-      Bong&#39;s blog
-    
-  </title>
-  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
-  
-  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
-  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+<html >
+<head>
+    <meta charset="utf-8" />
 
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>Bong&#39;s blog</title>
+
+
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Bong&#39;s blog">
+<meta property="og:url" content="http://yoursite.com/page/5/index.html">
+<meta property="og:site_name" content="Bong&#39;s blog">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bong&#39;s blog">
+<meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
 </head>
-<div class="wechat-share">
-  <img src="/css/images/logo.png">
-</div>
-
-  <body>
-    <header class="header fixed-header">
-  <div class="header-container">
-    <a class="home-link" href="/">
-      <div class="logo"></div>
-      <span>Bong's blog</span>
-    </a>
-    <ul class="right-list">
-      
-        <li class="list-item">
-          
-            <a href="/" class="item-link active">Home</a>
-          
-        </li>
-      
-        <li class="list-item">
-          
-            <a href="/tags/" class="item-link">Tags</a>
-          
-        </li>
-      
-        <li class="list-item">
-          
-            <a href="/about/" class="item-link">About</a>
-          
-        </li>
-      
-    </ul>
-    <div class="menu">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.svg" alt="Bong&#39;s blog" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/tags">Tags</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/cyr9210">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="Buscar" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
     </div>
-    <div class="menu-mask">
-      <ul class="menu-list">
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main">
+    
+<div class="card">
+    
+    <div class="card-content article ">
         
-          <li class="menu-item">
-            
-              <a href="/" class="menu-link mobile-active">Home</a>
-            
-          </li>
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-21T08:07:08.000Z">2019-04-21</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    17 minutes leer (Acerca de 2501 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
         
-          <li class="menu-item">
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-              <a href="/tags/" class="menu-link">Tags</a>
+                <a class="has-link-black-ter" href="/2019/04/21/Security/oauth2-google-login/">oauth2 - 구글 로그인</a>
             
-          </li>
+        </h1>
+        <div class="content">
+            <p><img src="/images/google_logo.png" alt="google_logo"></p>
+<h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><h2 id="SpringSecurity-OAuth2"><a href="#SpringSecurity-OAuth2" class="headerlink" title="SpringSecurity-OAuth2"></a>SpringSecurity-OAuth2</h2>
+        </div>
         
-          <li class="menu-item">
-            
-              <a href="/about/" class="menu-link">About</a>
-            
-          </li>
         
-      </ul>
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/21/Security/oauth2-google-login/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
     </div>
-  </div>
-</header>
-
-    <main class="app-body">
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/04/21/Security/oauth2-google-login/">oauth2 - 구글 로그인</a>
-      </h2>
-      <p class="article-date">April 21, 2019</p>
-      
-        
-  <a href="/tags#SpringSecurity" >
-    <span class="tag-code">SpringSecurity</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          
-SpringSpringSecurity-OAuth2최근 서비스들은 자체적으로 계정을 가입하고, 접근하는 방식도 있지만, 구글, 카카오, 네이버, 페이스북등으로 계정관리를 하고있습니다.이번 포스팅에서는 Spring Security &amp; 구글 OAuth를 사용 ...
-        
-      </div>
-      <a class="more" href="/2019/04/21/Security/oauth2-google-login/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/04/19/Git/git03/">Git - 원격저장소(Github), gitignore설정, ssh설정</a>
-      </h2>
-      <p class="article-date">April 19, 2019</p>
-      
-        
-  <a href="/tags#Git" >
-    <span class="tag-code">Git</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          Git
-Github
-github은 git이라는 버전관리시스템에 저장소를 빌려주는 호스팅 사이트이다.
-호스팅 사이트로는 github외에도 GitLab, BitBucket등이 있다.
-
-원격저장소
-git clone &lt;주소(https/ssh)&gt;
-
-현재 디렉토 ...
-        
-      </div>
-      <a class="more" href="/2019/04/19/Git/git03/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/04/19/Git/git02/">Git - branch, stash</a>
-      </h2>
-      <p class="article-date">April 19, 2019</p>
-      
-        
-  <a href="/tags#Git" >
-    <span class="tag-code">Git</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          Git
-Git branch
-branch는 가지라는 뜻으로 작업을 분기해서 처리하는 경우에 대한 시적인 표현입니다.
-
-git branch
-git branch
-
-브랜치 조회
-
-
-git branch “생성할 브랜치 이름”
-
-브랜치가 생성된다.
-
-
-git branch  ...
-        
-      </div>
-      <a class="more" href="/2019/04/19/Git/git02/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/04/19/Git/git01/">Git - status, init, commit, config, log, reset, revert</a>
-      </h2>
-      <p class="article-date">April 19, 2019</p>
-      
-        
-  <a href="/tags#Git" >
-    <span class="tag-code">Git</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          Git개발공부를 시작하면서.. git에대한 이야기를 참 많이 들었습니다.커밋, 푸쉬, 풀등… 알 수 없는 이야기들을 하고 나중에 그것이 git과 관련된 명령어였다는 사실을 알게되었습니다.회사에 일을 시작하기전에 알아야 할 필수적인 내용이라고 듣게되어 좀 자세히  ...
-        
-      </div>
-      <a class="more" href="/2019/04/19/Git/git01/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/04/18/Spring/springboot16/">스프링 부트 운영16 - Actuator</a>
-      </h2>
-      <p class="article-date">April 18, 2019</p>
-      
-        
-  <a href="/tags#SpringBoot" >
-    <span class="tag-code">SpringBoot</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          
-스프릥 부트 개념과 활용16(inflearn) - 백기선Spring bootActuator
-스프링 부트는 애플리케이션 운영 환경에서 유용한 기능을 제공한다. 
-
-스프링 부트가 제공하는 엔드포인트와 메트릭스
-그 데이터를 활용하는 모니터링 기능
-
-
-referenc ...
-        
-      </div>
-      <a class="more" href="/2019/04/18/Spring/springboot16/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/04/17/Spring/springboot15/">스프링 부트 활용15 - 스프링 REST 클라이언트</a>
-      </h2>
-      <p class="article-date">April 17, 2019</p>
-      
-        
-  <a href="/tags#SpringBoot" >
-    <span class="tag-code">SpringBoot</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          
-스프릥 부트 개념과 활용15(inflearn) - 백기선Spring boot스프링 REST 클라이언트
-스프링 부트가 REST 클라이언트 관련해서 직접적인 기능을 제공하는것은 아니다.
-REST 클라이언트는 스프링 프레임워크에서 지원한다.
-스프링부트는 REST 클 ...
-        
-      </div>
-      <a class="more" href="/2019/04/17/Spring/springboot15/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/04/16/Spring/springboot14/">스프링 부트 활용14 - 스프링 시큐리티</a>
-      </h2>
-      <p class="article-date">April 16, 2019</p>
-      
-        
-  <a href="/tags#SpringBoot" >
-    <span class="tag-code">SpringBoot</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          
-스프릥 부트 개념과 활용14(inflearn) - 백기선Spring boot스프링 시큐리티
-참고 - 뷰 컨트롤러 사용
-
-Webconfigure 생성
-@Configuration
-implements
-
-
-@Overide - addViewControllers
-regi ...
-        
-      </div>
-      <a class="more" href="/2019/04/16/Spring/springboot14/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/04/15/Spring/springboot13/">스프링 부트 활용13 - 스프링 데이터</a>
-      </h2>
-      <p class="article-date">April 15, 2019</p>
-      
-        
-  <a href="/tags#SpringBoot" >
-    <span class="tag-code">SpringBoot</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          
-스프릥 부트 개념과 활용13(inflearn) - 백기선Spring boot스프링 데이터
-인메모리 데이터베이스
-스프링 부트가 지원하는 인-메모리 데이터베이스
-
-H2 (추천, 콘솔 때문에…)
-HSQL
-Derby
-
-
-Spring-JDBC가 클래스패스에 있으면 자동 ...
-        
-      </div>
-      <a class="more" href="/2019/04/15/Spring/springboot13/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/04/11/Spring/springboot12/">스프링 부트 활용12 - 스프링 웹 MVC</a>
-      </h2>
-      <p class="article-date">April 11, 2019</p>
-      
-        
-  <a href="/tags#SpringBoot" >
-    <span class="tag-code">SpringBoot</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          
-스프릥 부트 개념과 활용12(inflearn) - 백기선Spring boot스프링 웹 MVC
-스프링 웹 MVC
-reference문서
-
-
-스프링 부트 MVC
-자동 설정으로 제공하는 여러 기본 기능
-
-
-스프링 MVC 확장
-부분적 설정 추가
-@Configuratio ...
-        
-      </div>
-      <a class="more" href="/2019/04/11/Spring/springboot12/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/04/11/Spring/springboot11/">스프링 부트 활용11 - SpringBoot_Devtools</a>
-      </h2>
-      <p class="article-date">April 11, 2019</p>
-      
-        
-  <a href="/tags#SpringBoot" >
-    <span class="tag-code">SpringBoot</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          
-스프릥 부트 개념과 활용11(inflearn) - 백기선Spring bootSpringBoot_Devtools
-devtools 의존성 추가가 필요하다.
-1234&lt;dependency&gt;    &lt;groupId&gt;org.springframework ...
-        
-      </div>
-      <a class="more" href="/2019/04/11/Spring/springboot11/">더보기</a>
-    </article>
-  
-
-  
-    <div class="guide-pager">
-  
-    <a href="/page/4/"><span class="page-arrow">← </span>Prev</a>
-  
-  
-    <a href="/page/6/">Next<span class="page-arrow"> →</span></a>
-  
 </div>
-  
-</main>
 
 
-    <div class="scroll-top">
-  <span class="arrow-icon"></span>
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-19T14:03:39.000Z">2019-04-19</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    5 minutes leer (Acerca de 811 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/19/Git/git03/">Git - 원격저장소(Github), gitignore설정, ssh설정</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p><img src="/images/git_logo.png" alt="gitlogo"><br>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/19/Git/git03/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
 </div>
-    <footer class="app-footer">
-  <p class="copyright">
-    &copy; 2020 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
-    <br>
-    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
-  </p>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-19T10:04:32.000Z">2019-04-19</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    5 minutes leer (Acerca de 705 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/19/Git/git02/">Git - branch, stash</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p><img src="/images/git_logo.png" alt="gitlogo"><br>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/19/Git/git02/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-19T07:15:26.000Z">2019-04-19</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    8 minutes leer (Acerca de 1178 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/19/Git/git01/">Git - status, init, commit, config, log, reset, revert</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p><img src="/images/git_logo.png" alt="gitlogo"><br>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/19/Git/git01/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-18T11:13:46.000Z">2019-04-18</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    6 minutes leer (Acerca de 833 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/18/spring/springboot16/">스프링 부트 운영16 - Actuator</a>
+            
+        </h1>
+        <div class="content">
+            <p><img src="/images/springboot_logo.png" alt="springboot"></p>
+<h1 id="스프릥-부트-개념과-활용16-inflearn-백기선"><a href="#스프릥-부트-개념과-활용16-inflearn-백기선" class="headerlink" title="스프릥 부트 개념과 활용16(inflearn) - 백기선"></a>스프릥 부트 개념과 활용16(inflearn) - 백기선</h1><h2 id="Spring-boot"><a href="#Spring-boot" class="headerlink" title="Spring boot"></a>Spring boot</h2>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/18/spring/springboot16/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-17T07:27:48.000Z">2019-04-17</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 minutes leer (Acerca de 642 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/17/spring/springboot15/">스프링 부트 활용15 - 스프링 REST 클라이언트</a>
+            
+        </h1>
+        <div class="content">
+            <p><img src="/images/springboot_logo.png" alt="springboot"></p>
+<h1 id="스프릥-부트-개념과-활용15-inflearn-백기선"><a href="#스프릥-부트-개념과-활용15-inflearn-백기선" class="headerlink" title="스프릥 부트 개념과 활용15(inflearn) - 백기선"></a>스프릥 부트 개념과 활용15(inflearn) - 백기선</h1><h2 id="Spring-boot"><a href="#Spring-boot" class="headerlink" title="Spring boot"></a>Spring boot</h2>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/17/spring/springboot15/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-16T13:18:31.000Z">2019-04-16</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    9 minutes leer (Acerca de 1278 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/16/spring/springboot14/">스프링 부트 활용14 - 스프링 시큐리티</a>
+            
+        </h1>
+        <div class="content">
+            <p><img src="/images/springboot_logo.png" alt="springboot"></p>
+<h1 id="스프릥-부트-개념과-활용14-inflearn-백기선"><a href="#스프릥-부트-개념과-활용14-inflearn-백기선" class="headerlink" title="스프릥 부트 개념과 활용14(inflearn) - 백기선"></a>스프릥 부트 개념과 활용14(inflearn) - 백기선</h1><h2 id="Spring-boot"><a href="#Spring-boot" class="headerlink" title="Spring boot"></a>Spring boot</h2><h3 id="스프링-시큐리티"><a href="#스프링-시큐리티" class="headerlink" title="스프링 시큐리티"></a>스프링 시큐리티</h3>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/16/spring/springboot14/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-15T05:34:06.000Z">2019-04-15</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    21 minutes leer (Acerca de 3164 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/15/spring/springboot13/">스프링 부트 활용13 - 스프링 데이터</a>
+            
+        </h1>
+        <div class="content">
+            <p><img src="/images/springboot_logo.png" alt="springboot"></p>
+<h1 id="스프릥-부트-개념과-활용13-inflearn-백기선"><a href="#스프릥-부트-개념과-활용13-inflearn-백기선" class="headerlink" title="스프릥 부트 개념과 활용13(inflearn) - 백기선"></a>스프릥 부트 개념과 활용13(inflearn) - 백기선</h1><h2 id="Spring-boot"><a href="#Spring-boot" class="headerlink" title="Spring boot"></a>Spring boot</h2>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/15/spring/springboot13/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-11T07:43:16.000Z">2019-04-11</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    14 minutes leer (Acerca de 2110 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/11/spring/springboot12/">스프링 부트 활용12 - 스프링 웹 MVC</a>
+            
+        </h1>
+        <div class="content">
+            <p><img src="/images/springboot_logo.png" alt="springboot"></p>
+<h1 id="스프릥-부트-개념과-활용12-inflearn-백기선"><a href="#스프릥-부트-개념과-활용12-inflearn-백기선" class="headerlink" title="스프릥 부트 개념과 활용12(inflearn) - 백기선"></a>스프릥 부트 개념과 활용12(inflearn) - 백기선</h1><h2 id="Spring-boot"><a href="#Spring-boot" class="headerlink" title="Spring boot"></a>Spring boot</h2>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/11/spring/springboot12/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-10T15:26:47.000Z">2019-04-11</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 minutes leer (Acerca de 440 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/11/spring/springboot11/">스프링 부트 활용11 - SpringBoot_Devtools</a>
+            
+        </h1>
+        <div class="content">
+            <p><img src="/images/springboot_logo.png" alt="springboot"></p>
+<h1 id="스프릥-부트-개념과-활용11-inflearn-백기선"><a href="#스프릥-부트-개념과-활용11-inflearn-백기선" class="headerlink" title="스프릥 부트 개념과 활용11(inflearn) - 백기선"></a>스프릥 부트 개념과 활용11(inflearn) - 백기선</h1><h2 id="Spring-boot"><a href="#Spring-boot" class="headerlink" title="Spring boot"></a>Spring boot</h2>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/11/spring/springboot11/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+    
+<div class="card card-transparent">
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+        <div class="pagination-previous">
+            <a class="is-flex-grow has-text-black-ter" href="/page/4/">Anterior</a>
+        </div>
+        <div class="pagination-next">
+            <a class="is-flex-grow has-text-black-ter" href="/page/6/">Siguiente</a>
+        </div>
+        <ul class="pagination-list is-hidden-mobile">
+            
+            <li><a class="pagination-link has-text-black-ter" href="/">1</a></li>
+            
+            <li><span class="pagination-ellipsis has-text-black-ter">&hellip;</span></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/page/4/">4</a></li>
+            
+            <li><a class="pagination-link is-current" href="/page/5/">5</a></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/page/6/">6</a></li>
+            
+            <li><span class="pagination-ellipsis has-text-black-ter">&hellip;</span></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/page/13/">13</a></li>
+            
+        </ul>
+    </nav>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-4-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="/images/avatar.png" alt="최용락">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        최용락
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        BackEnd_Developer
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>경기도 안양시</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Entradas
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            127
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categorías
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            0
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Etiquetas
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            23
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/cyr9210" target="_blank" rel="noopener">
+                SEGUIR</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Github" href="https://github.com/cyr9210">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Etiquetas
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Algorithm/">
+                        <span class="tag">Algorithm</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/DataBase/">
+                        <span class="tag">DataBase</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Etc/">
+                        <span class="tag">Etc</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Git/">
+                        <span class="tag">Git</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Interview/">
+                        <span class="tag">Interview</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JPA/">
+                        <span class="tag">JPA</span>
+                        <span class="tag is-grey">17</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JSP/">
+                        <span class="tag">JSP</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java/">
+                        <span class="tag">Java</span>
+                        <span class="tag is-grey">16</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JavaScript/">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/OracleDB/">
+                        <span class="tag">OracleDB</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Process/">
+                        <span class="tag">Process</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/RestAPI/">
+                        <span class="tag">RestAPI</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Seminar/">
+                        <span class="tag">Seminar</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/SpringBoot/">
+                        <span class="tag">SpringBoot</span>
+                        <span class="tag is-grey">17</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/SpringSecurity/">
+                        <span class="tag">SpringSecurity</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/SpringWebMvc/">
+                        <span class="tag">SpringWebMvc</span>
+                        <span class="tag is-grey">8</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Springframework/">
+                        <span class="tag">Springframework</span>
+                        <span class="tag is-grey">10</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Springframework-kosta/">
+                        <span class="tag">Springframework_kosta</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Web/">
+                        <span class="tag">Web</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/debug/">
+                        <span class="tag">debug</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/jQuery/">
+                        <span class="tag">jQuery</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/정보처리기사-필기/">
+                        <span class="tag">정보처리기사_필기</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/프로젝트-회고/">
+                        <span class="tag">프로젝트_회고</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen is-sticky">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="Bong&#39;s blog" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 Bong&#39;s blog&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/cyr9210">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
 </footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
 
 <script>
-  function async(u, c) {
-    var d = document, t = 'script',
-      o = d.createElement(t),
-      s = d.getElementsByTagName(t)[0];
-    o.src = u;
-    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-    s.parentNode.insertBefore(o, s);
-  }
-</script>
-<script>
-  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
-    FastClick.attach(document.body);
-  })
+var IcarusThemeSettings = {
+    site: {
+        url: 'http://yoursite.com',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
 </script>
 
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
 <script>
-  var hasLine = 'true';
-  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
-    $('figure pre').each(function(i, block) {
-      var figure = $(this).parents('figure');
-      if (hasLine === 'false') {
-        figure.find('.gutter').hide();
-      }
-      var lang = figure.attr('class').split(' ')[1] || 'code';
-      var codeHtml = $(this).html();
-      var codeTag = document.createElement('code');
-      codeTag.className = lang;
-      codeTag.innerHTML = codeHtml;
-      $(this).attr('class', '').empty().html(codeTag);
-      figure.attr('data-lang', lang.toUpperCase());
-      hljs.highlightBlock(block);
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
     });
-  })
 </script>
-<!-- Baidu Tongji -->
 
-<script src="/js/script.js"></script>
-  </body>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Teclea algo..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Entradas',
+                PAGES: 'Páginas',
+                CATEGORIES: 'Categorías',
+                TAGS: 'Etiquetas',
+                UNTITLED: '(Sin título)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
 </html>

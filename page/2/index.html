@@ -1,418 +1,1106 @@
 <!DOCTYPE html>
-<html>
-  <head><meta name="generator" content="Hexo 3.9.0">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-  <meta name="description" content="개발공부 정리 블로그">
-  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
-  
-    <link rel="shortcut icon" href="/css/images/logo.png">
-  
-  <title>
-    
-      Bong&#39;s blog
-    
-  </title>
-  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
-  
-  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
-  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+<html >
+<head>
+    <meta charset="utf-8" />
 
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>Bong&#39;s blog</title>
+
+
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Bong&#39;s blog">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta property="og:site_name" content="Bong&#39;s blog">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bong&#39;s blog">
+<meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
 </head>
-<div class="wechat-share">
-  <img src="/css/images/logo.png">
-</div>
-
-  <body>
-    <header class="header fixed-header">
-  <div class="header-container">
-    <a class="home-link" href="/">
-      <div class="logo"></div>
-      <span>Bong's blog</span>
-    </a>
-    <ul class="right-list">
-      
-        <li class="list-item">
-          
-            <a href="/" class="item-link active">Home</a>
-          
-        </li>
-      
-        <li class="list-item">
-          
-            <a href="/tags/" class="item-link">Tags</a>
-          
-        </li>
-      
-        <li class="list-item">
-          
-            <a href="/about/" class="item-link">About</a>
-          
-        </li>
-      
-    </ul>
-    <div class="menu">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.svg" alt="Bong&#39;s blog" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/tags">Tags</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/cyr9210">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="Buscar" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
     </div>
-    <div class="menu-mask">
-      <ul class="menu-list">
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main">
+    
+<div class="card">
+    
+    <div class="card-content article ">
         
-          <li class="menu-item">
-            
-              <a href="/" class="menu-link mobile-active">Home</a>
-            
-          </li>
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-10-18T15:21:33.000Z">2019-10-19</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    11 minutes leer (Acerca de 1594 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
         
-          <li class="menu-item">
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-              <a href="/tags/" class="menu-link">Tags</a>
+                <a class="has-link-black-ter" href="/2019/10/19/JPA/ORM-JPA06/">ORM06 - 다양한 연관관계 매핑(다대일, 일대다, 일대일, 다대)</a>
             
-          </li>
+        </h1>
+        <div class="content">
+            <h1 id="자바-ORM-표준-JPA-프로그래밍-기본편"><a href="#자바-ORM-표준-JPA-프로그래밍-기본편" class="headerlink" title="자바 ORM 표준 JPA 프로그래밍 - 기본편"></a>자바 ORM 표준 JPA 프로그래밍 - 기본편</h1><h2 id="다양한-연관관계-매핑"><a href="#다양한-연관관계-매핑" class="headerlink" title="다양한 연관관계 매핑"></a>다양한 연관관계 매핑</h2><h3 id="연관관계-매핑시-고려사항"><a href="#연관관계-매핑시-고려사항" class="headerlink" title="연관관계 매핑시 고려사항"></a>연관관계 매핑시 고려사항</h3>
+        </div>
         
-          <li class="menu-item">
-            
-              <a href="/about/" class="menu-link">About</a>
-            
-          </li>
         
-      </ul>
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/10/19/JPA/ORM-JPA06/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
     </div>
-  </div>
-</header>
-
-    <main class="app-body">
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/10/19/JPA/ORM-JPA06/">ORM06 - 다양한 연관관계 매핑(다대일, 일대다, 일대일, 다대)</a>
-      </h2>
-      <p class="article-date">October 19, 2019</p>
-      
-        
-  <a href="/tags#JPA" >
-    <span class="tag-code">JPA</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          자바 ORM 표준 JPA 프로그래밍 - 기본편다양한 연관관계 매핑연관관계 매핑시 고려사항
-다중성
-단방향, 양방향
-양방향일 때, 연관관계의 주인
-
-다중성
-다대일 : @ManyToOne
-일대다 : @OneToMany
-일대일 : @OneToOne
-다대다 : @Many ...
-        
-      </div>
-      <a class="more" href="/2019/10/19/JPA/ORM-JPA06/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/10/13/JPA/ORM-JPA05/">ORM05 - 연관관계 매핑 기초(단방향 연관관계, 양방향 연관관계, 연관관계의 주인, 연관관계 매핑 주의사항)</a>
-      </h2>
-      <p class="article-date">October 13, 2019</p>
-      
-        
-  <a href="/tags#JPA" >
-    <span class="tag-code">JPA</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          자바 ORM 표준 JPA 프로그래밍 - 기본편연관관계 매핑 기초
-객체와 테이블 연관관계의 차이를 이해가 필요
-객체의 참조와 테이블의 외래키 매핑
-방향(Direction) : 단방향, 양방향
-다중성(Multiplicity) : 다대일(N : 1), 일대다 (1 : ...
-        
-      </div>
-      <a class="more" href="/2019/10/13/JPA/ORM-JPA05/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/10/11/JPA/ORM-JPA04/">ORM04 - 엔티티 매핑(객체와 테이블 매핑(@Table), 데이터베이스 스키마 자동생성, 필드와 컬럼 매핑(@Column), 기본 키 매핑(@Id, @GenerateValue))</a>
-      </h2>
-      <p class="article-date">October 11, 2019</p>
-      
-        
-  <a href="/tags#JPA" >
-    <span class="tag-code">JPA</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          자바 ORM 표준 JPA 프로그래밍 - 기본편엔티티 매핑객체와 테이블 매핑@Entity
-JPA가 관리, 엔티티라고 한다.
-기본 생성자 필수(파라미터가 없는 public 또는 protected 생성자)
-final, enum, interface, inner 클래스  ...
-        
-      </div>
-      <a class="more" href="/2019/10/11/JPA/ORM-JPA04/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/10/08/JPA/ORM-JPA03/">ORM03 - 영속성 관리(내부 동작 방식)(영속성 컨텍스트(Dirty checking, 스냅샷..), 플러시, 준영속 상태)</a>
-      </h2>
-      <p class="article-date">October 8, 2019</p>
-      
-        
-  <a href="/tags#JPA" >
-    <span class="tag-code">JPA</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          자바 ORM 표준 JPA 프로그래밍 - 기본편영속성 관리 - 내부 동작 방식
-JPA에서 가장 중요한 2가지
-객체와 관계형 데이터베이스 매핑하기(설계)
-영속성 컨텍스트
-
-
-
-영속성 컨텍스트
-JPA를 이해하는데 가장 중요한 용어
-
-‘엔티티를 영구 저장하는 환경’이라 ...
-        
-      </div>
-      <a class="more" href="/2019/10/08/JPA/ORM-JPA03/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/10/08/JPA/ORM-JPA02/">ORM02 - JPA 시작하기(프로젝트 생성, 애플리케이션 개발)</a>
-      </h2>
-      <p class="article-date">October 8, 2019</p>
-      
-        
-  <a href="/tags#JPA" >
-    <span class="tag-code">JPA</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          자바 ORM 표준 JPA 프로그래밍 - 기본편JPA 시작하기프로젝트 생성H2 데이터베이스
-최고의 실습용 DB
-가볍다
-웹용 쿼리를 제공
-MySQL, Oracle 데이터베이스 시뮬레이션 기능
-sequence, Auto Increment 기능 지원
-
-H2 데이터베이스 ...
-        
-      </div>
-      <a class="more" href="/2019/10/08/JPA/ORM-JPA02/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/10/04/JPA/ORM-JPA01/">ORM01 - JPA 소개</a>
-      </h2>
-      <p class="article-date">October 4, 2019</p>
-      
-        
-  <a href="/tags#JPA" >
-    <span class="tag-code">JPA</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          자바 ORM 표준 JPA 프로그래밍 - 기본편JPA 소개SQL 중심적인 개발의 문제점
-무한반복, 지루한 코드
-CRUD
-INSERT INTO…
-UPDATE…
-SELECT…
-DELETE…
-
-
-필드 추가 시, 각 쿼리마다 수정이 필요하다.
-휴먼 에러가 발생하기 쉽다. ...
-        
-      </div>
-      <a class="more" href="/2019/10/04/JPA/ORM-JPA01/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/09/30/Security/usernamenotfound/">인증 시, UsernameNotfoundException 발생 안함 문제(BadCredentials Exception만 발생)</a>
-      </h2>
-      <p class="article-date">September 30, 2019</p>
-      
-        
-  <a href="/tags#SpringSecurity" >
-    <span class="tag-code">SpringSecurity</span>
-  </a>
-
-  <a href="/tags#debug" >
-    <span class="tag-code">debug</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          SpringSecurityDebug인증 시, UsernameNotfoundException 발생 안함 문제(BadCredentials Exception만 발생)조건
-SpringSecurity 사용
-로그인 성공 시, 응답으로 authorization에 ‘succe ...
-        
-      </div>
-      <a class="more" href="/2019/09/30/Security/usernamenotfound/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/09/23/RestAPI/restapi05/">스프링 기반 REST API 개발05 - RestAPI 보안 적용(@Enumerated, @ElementCollection, 스프링 시큐리티 설정, auth서버, 리소스서버, @ConfigurationProperties, form-data  request body, 현재 사용자 조회, @JsonSerialize)</a>
-      </h2>
-      <p class="article-date">September 23, 2019</p>
-      
-        
-  <a href="/tags#RestAPI" >
-    <span class="tag-code">RestAPI</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          스프링 기반 REST API 개발(inflearn)5 - 백기선RestAPI 보안 적용Account 도메인 추가
-SpirngSecurity Auth2 사용
-Grant Type : password
-
-
-
-Account 도메인 생성12345678910111213141 ...
-        
-      </div>
-      <a class="more" href="/2019/09/23/RestAPI/restapi05/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/08/09/RestAPI/restapi04/">스프링 기반 REST API 개발04 - 이벤트 조회 및 수정 REST API 개발(PagedResouce)</a>
-      </h2>
-      <p class="article-date">August 9, 2019</p>
-      
-        
-  <a href="/tags#RestAPI" >
-    <span class="tag-code">RestAPI</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          스프링 기반 REST API 개발(inflearn)4 - 백기선이벤트 조회 및 수정 REST API 개발이벤트 목록 조회 API 구현페이징, 정렬
-스프링 데이터 JPA가 제공하는 pageable을 사용한다.
-GET방식 parameter
-page : 원하는 페이지 ...
-        
-      </div>
-      <a class="more" href="/2019/08/09/RestAPI/restapi04/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/08/08/RestAPI/restapi03/">스프링 기반 REST API 개발03 - HATEOAS와 Self-Describtive Message 적용 (HATEOAS-Resource, REST Docs, 테스트용 DB와 설정 분리, API 인덱스)</a>
-      </h2>
-      <p class="article-date">August 8, 2019</p>
-      
-        
-  <a href="/tags#RestAPI" >
-    <span class="tag-code">RestAPI</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          스프링 기반 REST API 개발(inflearn)3 - 백기선HATEOAS와 Self-Describtive Messgae 적용스프링 HATEOAS 소개
-api를 만들 때, REST하게 resource를 보다 쉽게 제공해주는 라이브러리
-
-reference문서
-
- ...
-        
-      </div>
-      <a class="more" href="/2019/08/08/RestAPI/restapi03/">더보기</a>
-    </article>
-  
-
-  
-    <div class="guide-pager">
-  
-    <a href="/"><span class="page-arrow">← </span>Prev</a>
-  
-  
-    <a href="/page/3/">Next<span class="page-arrow"> →</span></a>
-  
 </div>
-  
-</main>
 
 
-    <div class="scroll-top">
-  <span class="arrow-icon"></span>
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-10-13T08:49:58.000Z">2019-10-13</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    13 minutes leer (Acerca de 1878 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/10/13/JPA/ORM-JPA05/">ORM05 - 연관관계 매핑 기초(단방향 연관관계, 양방향 연관관계, 연관관계의 주인, 연관관계 매핑 주의사항)</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="자바-ORM-표준-JPA-프로그래밍-기본편"><a href="#자바-ORM-표준-JPA-프로그래밍-기본편" class="headerlink" title="자바 ORM 표준 JPA 프로그래밍 - 기본편"></a>자바 ORM 표준 JPA 프로그래밍 - 기본편</h1><h2 id="연관관계-매핑-기초"><a href="#연관관계-매핑-기초" class="headerlink" title="연관관계 매핑 기초"></a>연관관계 매핑 기초</h2>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/10/13/JPA/ORM-JPA05/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
 </div>
-    <footer class="app-footer">
-  <p class="copyright">
-    &copy; 2020 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
-    <br>
-    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
-  </p>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-10-11T08:44:27.000Z">2019-10-11</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    16 minutes leer (Acerca de 2416 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/10/11/JPA/ORM-JPA04/">ORM04 - 엔티티 매핑(객체와 테이블 매핑(@Table), 데이터베이스 스키마 자동생성, 필드와 컬럼 매핑(@Column), 기본 키 매핑(@Id, @GenerateValue))</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="자바-ORM-표준-JPA-프로그래밍-기본편"><a href="#자바-ORM-표준-JPA-프로그래밍-기본편" class="headerlink" title="자바 ORM 표준 JPA 프로그래밍 - 기본편"></a>자바 ORM 표준 JPA 프로그래밍 - 기본편</h1><h2 id="엔티티-매핑"><a href="#엔티티-매핑" class="headerlink" title="엔티티 매핑"></a>엔티티 매핑</h2>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/10/11/JPA/ORM-JPA04/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-10-08T07:53:21.000Z">2019-10-08</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    11 minutes leer (Acerca de 1614 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/10/08/JPA/ORM-JPA03/">ORM03 - 영속성 관리(내부 동작 방식)(영속성 컨텍스트(Dirty checking, 스냅샷..), 플러시, 준영속 상태)</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="자바-ORM-표준-JPA-프로그래밍-기본편"><a href="#자바-ORM-표준-JPA-프로그래밍-기본편" class="headerlink" title="자바 ORM 표준 JPA 프로그래밍 - 기본편"></a>자바 ORM 표준 JPA 프로그래밍 - 기본편</h1><h2 id="영속성-관리-내부-동작-방식"><a href="#영속성-관리-내부-동작-방식" class="headerlink" title="영속성 관리 - 내부 동작 방식"></a>영속성 관리 - 내부 동작 방식</h2>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/10/08/JPA/ORM-JPA03/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-10-08T01:58:14.000Z">2019-10-08</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    8 minutes leer (Acerca de 1267 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/10/08/JPA/ORM-JPA02/">ORM02 - JPA 시작하기(프로젝트 생성, 애플리케이션 개발)</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="자바-ORM-표준-JPA-프로그래밍-기본편"><a href="#자바-ORM-표준-JPA-프로그래밍-기본편" class="headerlink" title="자바 ORM 표준 JPA 프로그래밍 - 기본편"></a>자바 ORM 표준 JPA 프로그래밍 - 기본편</h1><h2 id="JPA-시작하기"><a href="#JPA-시작하기" class="headerlink" title="JPA 시작하기"></a>JPA 시작하기</h2>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/10/08/JPA/ORM-JPA02/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-10-04T07:02:45.000Z">2019-10-04</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 minutes leer (Acerca de 1062 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/10/04/JPA/ORM-JPA01/">ORM01 - JPA 소개</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="자바-ORM-표준-JPA-프로그래밍-기본편"><a href="#자바-ORM-표준-JPA-프로그래밍-기본편" class="headerlink" title="자바 ORM 표준 JPA 프로그래밍 - 기본편"></a>자바 ORM 표준 JPA 프로그래밍 - 기본편</h1><h2 id="JPA-소개"><a href="#JPA-소개" class="headerlink" title="JPA 소개"></a>JPA 소개</h2>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/10/04/JPA/ORM-JPA01/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-09-30T11:58:26.000Z">2019-09-30</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    8 minutes leer (Acerca de 1274 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/09/30/Security/usernamenotfound/">인증 시, UsernameNotfoundException 발생 안함 문제(BadCredentials Exception만 발생)</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="SpringSecurity"><a href="#SpringSecurity" class="headerlink" title="SpringSecurity"></a>SpringSecurity</h1><h2 id="Debug"><a href="#Debug" class="headerlink" title="Debug"></a>Debug</h2><h3 id="인증-시-UsernameNotfoundException-발생-안함-문제-BadCredentials-Exception만-발생"><a href="#인증-시-UsernameNotfoundException-발생-안함-문제-BadCredentials-Exception만-발생" class="headerlink" title="인증 시, UsernameNotfoundException 발생 안함 문제(BadCredentials Exception만 발생)"></a>인증 시, UsernameNotfoundException 발생 안함 문제(BadCredentials Exception만 발생)</h3>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/09/30/Security/usernamenotfound/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-09-23T06:38:41.000Z">2019-09-23</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    19 minutes leer (Acerca de 2894 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/09/23/RestAPI/restapi05/">스프링 기반 REST API 개발05 - RestAPI 보안 적용(@Enumerated, @ElementCollection, 스프링 시큐리티 설정, auth서버, 리소스서버, @ConfigurationProperties, form-data  request body, 현재 사용자 조회, @JsonSerialize)</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="스프링-기반-REST-API-개발-inflearn-5-백기선"><a href="#스프링-기반-REST-API-개발-inflearn-5-백기선" class="headerlink" title="스프링 기반 REST API 개발(inflearn)5 - 백기선"></a>스프링 기반 REST API 개발(inflearn)5 - 백기선</h1><h2 id="RestAPI-보안-적용"><a href="#RestAPI-보안-적용" class="headerlink" title="RestAPI 보안 적용"></a>RestAPI 보안 적용</h2>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/09/23/RestAPI/restapi05/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-08-09T02:29:44.000Z">2019-08-09</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    8 minutes leer (Acerca de 1208 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/08/09/RestAPI/restapi04/">스프링 기반 REST API 개발04 - 이벤트 조회 및 수정 REST API 개발(PagedResouce)</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="스프링-기반-REST-API-개발-inflearn-4-백기선"><a href="#스프링-기반-REST-API-개발-inflearn-4-백기선" class="headerlink" title="스프링 기반 REST API 개발(inflearn)4 - 백기선"></a>스프링 기반 REST API 개발(inflearn)4 - 백기선</h1><h2 id="이벤트-조회-및-수정-REST-API-개발"><a href="#이벤트-조회-및-수정-REST-API-개발" class="headerlink" title="이벤트 조회 및 수정 REST API 개발"></a>이벤트 조회 및 수정 REST API 개발</h2>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/08/09/RestAPI/restapi04/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-08-08T01:24:27.000Z">2019-08-08</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    11 minutes leer (Acerca de 1656 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/08/08/RestAPI/restapi03/">스프링 기반 REST API 개발03 - HATEOAS와 Self-Describtive Message 적용 (HATEOAS-Resource, REST Docs, 테스트용 DB와 설정 분리, API 인덱스)</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="스프링-기반-REST-API-개발-inflearn-3-백기선"><a href="#스프링-기반-REST-API-개발-inflearn-3-백기선" class="headerlink" title="스프링 기반 REST API 개발(inflearn)3 - 백기선"></a>스프링 기반 REST API 개발(inflearn)3 - 백기선</h1><h2 id="HATEOAS와-Self-Describtive-Messgae-적용"><a href="#HATEOAS와-Self-Describtive-Messgae-적용" class="headerlink" title="HATEOAS와 Self-Describtive Messgae 적용"></a>HATEOAS와 Self-Describtive Messgae 적용</h2><h3 id="스프링-HATEOAS-소개"><a href="#스프링-HATEOAS-소개" class="headerlink" title="스프링 HATEOAS 소개"></a>스프링 HATEOAS 소개</h3>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/08/08/RestAPI/restapi03/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+    
+<div class="card card-transparent">
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+        <div class="pagination-previous">
+            <a class="is-flex-grow has-text-black-ter" href="/">Anterior</a>
+        </div>
+        <div class="pagination-next">
+            <a class="is-flex-grow has-text-black-ter" href="/page/3/">Siguiente</a>
+        </div>
+        <ul class="pagination-list is-hidden-mobile">
+            
+            <li><a class="pagination-link has-text-black-ter" href="/">1</a></li>
+            
+            <li><a class="pagination-link is-current" href="/page/2/">2</a></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/page/3/">3</a></li>
+            
+            <li><span class="pagination-ellipsis has-text-black-ter">&hellip;</span></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/page/13/">13</a></li>
+            
+        </ul>
+    </nav>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-4-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="/images/avatar.png" alt="최용락">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        최용락
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        BackEnd_Developer
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>경기도 안양시</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Entradas
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            127
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categorías
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            0
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Etiquetas
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            23
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/cyr9210" target="_blank" rel="noopener">
+                SEGUIR</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Github" href="https://github.com/cyr9210">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Etiquetas
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Algorithm/">
+                        <span class="tag">Algorithm</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/DataBase/">
+                        <span class="tag">DataBase</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Etc/">
+                        <span class="tag">Etc</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Git/">
+                        <span class="tag">Git</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Interview/">
+                        <span class="tag">Interview</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JPA/">
+                        <span class="tag">JPA</span>
+                        <span class="tag is-grey">17</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JSP/">
+                        <span class="tag">JSP</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java/">
+                        <span class="tag">Java</span>
+                        <span class="tag is-grey">16</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JavaScript/">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/OracleDB/">
+                        <span class="tag">OracleDB</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Process/">
+                        <span class="tag">Process</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/RestAPI/">
+                        <span class="tag">RestAPI</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Seminar/">
+                        <span class="tag">Seminar</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/SpringBoot/">
+                        <span class="tag">SpringBoot</span>
+                        <span class="tag is-grey">17</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/SpringSecurity/">
+                        <span class="tag">SpringSecurity</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/SpringWebMvc/">
+                        <span class="tag">SpringWebMvc</span>
+                        <span class="tag is-grey">8</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Springframework/">
+                        <span class="tag">Springframework</span>
+                        <span class="tag is-grey">10</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Springframework-kosta/">
+                        <span class="tag">Springframework_kosta</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Web/">
+                        <span class="tag">Web</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/debug/">
+                        <span class="tag">debug</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/jQuery/">
+                        <span class="tag">jQuery</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/정보처리기사-필기/">
+                        <span class="tag">정보처리기사_필기</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/프로젝트-회고/">
+                        <span class="tag">프로젝트_회고</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen is-sticky">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="Bong&#39;s blog" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 Bong&#39;s blog&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/cyr9210">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
 </footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
 
 <script>
-  function async(u, c) {
-    var d = document, t = 'script',
-      o = d.createElement(t),
-      s = d.getElementsByTagName(t)[0];
-    o.src = u;
-    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-    s.parentNode.insertBefore(o, s);
-  }
-</script>
-<script>
-  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
-    FastClick.attach(document.body);
-  })
+var IcarusThemeSettings = {
+    site: {
+        url: 'http://yoursite.com',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
 </script>
 
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
 <script>
-  var hasLine = 'true';
-  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
-    $('figure pre').each(function(i, block) {
-      var figure = $(this).parents('figure');
-      if (hasLine === 'false') {
-        figure.find('.gutter').hide();
-      }
-      var lang = figure.attr('class').split(' ')[1] || 'code';
-      var codeHtml = $(this).html();
-      var codeTag = document.createElement('code');
-      codeTag.className = lang;
-      codeTag.innerHTML = codeHtml;
-      $(this).attr('class', '').empty().html(codeTag);
-      figure.attr('data-lang', lang.toUpperCase());
-      hljs.highlightBlock(block);
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
     });
-  })
 </script>
-<!-- Baidu Tongji -->
 
-<script src="/js/script.js"></script>
-  </body>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Teclea algo..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Entradas',
+                PAGES: 'Páginas',
+                CATEGORIES: 'Categorías',
+                TAGS: 'Etiquetas',
+                UNTITLED: '(Sin título)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
 </html>

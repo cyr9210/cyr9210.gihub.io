@@ -1,405 +1,1111 @@
 <!DOCTYPE html>
-<html>
-  <head><meta name="generator" content="Hexo 3.9.0">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-  <meta name="description" content="개발공부 정리 블로그">
-  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
-  
-    <link rel="shortcut icon" href="/css/images/logo.png">
-  
-  <title>
-    
-      Bong&#39;s blog
-    
-  </title>
-  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
-  
-  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
-  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+<html >
+<head>
+    <meta charset="utf-8" />
 
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>Bong&#39;s blog</title>
+
+
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Bong&#39;s blog">
+<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+<meta property="og:site_name" content="Bong&#39;s blog">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bong&#39;s blog">
+<meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
 </head>
-<div class="wechat-share">
-  <img src="/css/images/logo.png">
-</div>
-
-  <body>
-    <header class="header fixed-header">
-  <div class="header-container">
-    <a class="home-link" href="/">
-      <div class="logo"></div>
-      <span>Bong's blog</span>
-    </a>
-    <ul class="right-list">
-      
-        <li class="list-item">
-          
-            <a href="/" class="item-link active">Home</a>
-          
-        </li>
-      
-        <li class="list-item">
-          
-            <a href="/tags/" class="item-link">Tags</a>
-          
-        </li>
-      
-        <li class="list-item">
-          
-            <a href="/about/" class="item-link">About</a>
-          
-        </li>
-      
-    </ul>
-    <div class="menu">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.svg" alt="Bong&#39;s blog" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/tags">Tags</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/cyr9210">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="Buscar" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
     </div>
-    <div class="menu-mask">
-      <ul class="menu-list">
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main">
+    
+<div class="card">
+    
+    <div class="card-content article ">
         
-          <li class="menu-item">
-            
-              <a href="/" class="menu-link mobile-active">Home</a>
-            
-          </li>
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-06-25T08:10:57.000Z">2019-06-25</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    10 minutes leer (Acerca de 1432 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
         
-          <li class="menu-item">
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-              <a href="/tags/" class="menu-link">Tags</a>
+                <a class="has-link-black-ter" href="/2019/06/25/RestAPI/restapi02/">스프링 기반 REST API 개발02 - 이벤트 생성 API 개발 (@MockBean, ModelMapper, ErrorSerializer, JUnitParams)</a>
             
-          </li>
+        </h1>
+        <div class="content">
+            <h1 id="스프링-기반-REST-API-개발-inflearn-2-백기선"><a href="#스프링-기반-REST-API-개발-inflearn-2-백기선" class="headerlink" title="스프링 기반 REST API 개발(inflearn)2 - 백기선"></a>스프링 기반 REST API 개발(inflearn)2 - 백기선</h1><h2 id="이벤트-생성-API-개발"><a href="#이벤트-생성-API-개발" class="headerlink" title="이벤트 생성 API 개발"></a>이벤트 생성 API 개발</h2><h3 id="이벤트-API-테스트-클래스-생성"><a href="#이벤트-API-테스트-클래스-생성" class="headerlink" title="이벤트 API 테스트 클래스 생성"></a>이벤트 API 테스트 클래스 생성</h3><h4 id="스프링-부트-슬라이스-테스트"><a href="#스프링-부트-슬라이스-테스트" class="headerlink" title="스프링 부트 슬라이스 테스트"></a>스프링 부트 슬라이스 테스트</h4>
+        </div>
         
-          <li class="menu-item">
-            
-              <a href="/about/" class="menu-link">About</a>
-            
-          </li>
         
-      </ul>
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/06/25/RestAPI/restapi02/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
     </div>
-  </div>
-</header>
-
-    <main class="app-body">
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/06/25/RestAPI/restapi02/">스프링 기반 REST API 개발02 - 이벤트 생성 API 개발 (@MockBean, ModelMapper, ErrorSerializer, JUnitParams)</a>
-      </h2>
-      <p class="article-date">June 25, 2019</p>
-      
-        
-  <a href="/tags#RestAPI" >
-    <span class="tag-code">RestAPI</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          스프링 기반 REST API 개발(inflearn)2 - 백기선이벤트 생성 API 개발이벤트 API 테스트 클래스 생성스프링 부트 슬라이스 테스트
-@WebMvcTest
-MockMvc 빈을 자동 설정 해준다. 따라서 그냥 가져와서 쓰면 됨.
-웹 관련 빈만 등록해  ...
-        
-      </div>
-      <a class="more" href="/2019/06/25/RestAPI/restapi02/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/06/25/RestAPI/restapi01/">스프링 기반 REST API 개발01 - REST API 및 프로젝트 소개</a>
-      </h2>
-      <p class="article-date">June 25, 2019</p>
-      
-        
-  <a href="/tags#RestAPI" >
-    <span class="tag-code">RestAPI</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          스프링 기반 REST API 개발(inflearn)1 - 백기선REST API 및 프로젝트 소개REST API참고 발표 영상 : 그런 REST API로 괜찮은가참고 소스 코드 : https://github.com/keesun/study/tree/master/re ...
-        
-      </div>
-      <a class="more" href="/2019/06/25/RestAPI/restapi01/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/06/24/Spring/springwebmvc08/">스프링 MVC 활용08 - HTTP 요청 맵핑하기</a>
-      </h2>
-      <p class="article-date">June 24, 2019</p>
-      
-        
-  <a href="/tags#SpringWebMvc" >
-    <span class="tag-code">SpringWebMvc</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          스프링 웹 MVC(inflearn) - 백기선SpringMVC 활용스프링 MVC 핵심 기술 소개
-reference 문서
-
-애노테이션 기반의 스프링 MVC
-요청 맵핑하기
-핸들러 메소드
-모델과 뷰
-데이터 바인더
-예외 처리
-글로벌 컨트롤러
-
-사용할 기술
-스프링 부트
- ...
-        
-      </div>
-      <a class="more" href="/2019/06/24/Spring/springwebmvc08/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/06/24/Spring/springwebmvc07/">스프링 MVC 설정07 - 핸들러 인터셉터, 리소스 핸들러, HTTP 메세지 컨버터, 기타 설정</a>
-      </h2>
-      <p class="article-date">June 24, 2019</p>
-      
-        
-  <a href="/tags#SpringWebMvc" >
-    <span class="tag-code">SpringWebMvc</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          스프링 웹 MVC(inflearn) - 백기선Springframework핸들러 인터셉터
-reference 
-
-HandlerInterceptor
-핸들러 맵핑에 설정할 수 있는 인터셉터
-핸들러를 실행하기 전, 후(아직 랜더링 전) 그리고 완료(랜더링까지 끝난 이후) ...
-        
-      </div>
-      <a class="more" href="/2019/06/24/Spring/springwebmvc07/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/06/10/Spring/springwebmvc06/">스프링 MVC 설정06 - 포매터 추가하기, 도메인 클래스 컨버터 자동 등록</a>
-      </h2>
-      <p class="article-date">June 10, 2019</p>
-      
-        
-  <a href="/tags#SpringWebMvc" >
-    <span class="tag-code">SpringWebMvc</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          
-스프링 웹 MVC(inflearn) - 백기선Springframework포매터 추가하기
-Reference 문서
-
-Formatter
-Formatter를 implements 하는 클래스를 생성한다.  
-Printer, Parser를 구현한다.
-Printer: 해당 ...
-        
-      </div>
-      <a class="more" href="/2019/06/10/Spring/springwebmvc06/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/05/31/Spring/springwebmvc05/">스프링 MVC 설정05 - 스프링 부트에서 JSP 사용하기</a>
-      </h2>
-      <p class="article-date">May 31, 2019</p>
-      
-        
-  <a href="/tags#SpringWebMvc" >
-    <span class="tag-code">SpringWebMvc</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          
-스프링 웹 MVC(inflearn) - 백기선Springframework스프링 부트에서 JSP 사용하기
-제약 사항
-
-JAR 프로젝트로 만들 수 없음, WAR 프로젝트로 만들어야 함  
-Java -JAR로 실행할 수는 있지만 “실행가능한 JAR 파일”은 지원하지 ...
-        
-      </div>
-      <a class="more" href="/2019/05/31/Spring/springwebmvc05/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/05/31/Spring/springwebmvc04/">스프링 MVC 설정04 - 스프링 MVC 빈 설정</a>
-      </h2>
-      <p class="article-date">May 31, 2019</p>
-      
-        
-  <a href="/tags#SpringWebMvc" >
-    <span class="tag-code">SpringWebMvc</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          
-스프링 웹 MVC(inflearn) - 백기선Springframework스프링 MVC 빈 설정@Configuration을 사용한 자바 설정 파일에 직접 @Bean을 사용해서 등록하기
-Dispatcher Servlet의 기본적략을 따른다면 아래와 같다.  
-추가 ...
-        
-      </div>
-      <a class="more" href="/2019/05/31/Spring/springwebmvc04/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/05/29/Git/git04/">Git - merge, rebase</a>
-      </h2>
-      <p class="article-date">May 29, 2019</p>
-      
-        
-  <a href="/tags#Git" >
-    <span class="tag-code">Git</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          Git
-merge
-
-브랜치를 병합한다.
-3wayMerge를 통해 병렬로 병합한다.
-
-fast forward
-자동 병합이 가능한 상태 커밋까지 해준다.
-
-conflict
-자동병합이 안되고 충돌이 난 상태
-git status를 통해 충돌 파일을 확인하고 직접 수정해 ...
-        
-      </div>
-      <a class="more" href="/2019/05/29/Git/git04/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/05/28/interview/interview02/">면접 후기01</a>
-      </h2>
-      <p class="article-date">May 28, 2019</p>
-      
-        
-  <a href="/tags#Interview" >
-    <span class="tag-code">Interview</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          면접 후기웹 백엔드 개발자 지원처음으로 개발회사에서 면접을 보게되었고, 면접을 마치고 후기를 씁니다.면접은 기초적인 질문들과 과제 프로젝트관련 질문들이 있었습니다.면접 시, 정말 좋았던건 면접관님들께서 매우 친절했으며, 과제프로젝트에 관련하여 질문만 해주신것이  ...
-        
-      </div>
-      <a class="more" href="/2019/05/28/interview/interview02/">더보기</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/05/27/interview/interview01/">예상 면접 질문</a>
-      </h2>
-      <p class="article-date">May 27, 2019</p>
-      
-        
-  <a href="/tags#Interview" >
-    <span class="tag-code">Interview</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          면접 대비 - 예상 면접 질문개발상식객체지향 프로그래밍(Object Oriented Programming)
-이전의 프로그래밍이 컴퓨터 중심이었다면, 인간 중심적 프로그래밍 패러다임이라고 할 수 있다.
-현실세계를 프로그래밍으로 옮겨와 프로그래밍 하는것.
-현실 세계 ...
-        
-      </div>
-      <a class="more" href="/2019/05/27/interview/interview01/">더보기</a>
-    </article>
-  
-
-  
-    <div class="guide-pager">
-  
-    <a href="/page/2/"><span class="page-arrow">← </span>Prev</a>
-  
-  
-    <a href="/page/4/">Next<span class="page-arrow"> →</span></a>
-  
 </div>
-  
-</main>
 
 
-    <div class="scroll-top">
-  <span class="arrow-icon"></span>
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-06-25T01:21:40.000Z">2019-06-25</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    10 minutes leer (Acerca de 1458 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/06/25/RestAPI/restapi01/">스프링 기반 REST API 개발01 - REST API 및 프로젝트 소개</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="스프링-기반-REST-API-개발-inflearn-1-백기선"><a href="#스프링-기반-REST-API-개발-inflearn-1-백기선" class="headerlink" title="스프링 기반 REST API 개발(inflearn)1 - 백기선"></a>스프링 기반 REST API 개발(inflearn)1 - 백기선</h1><h2 id="REST-API-및-프로젝트-소개"><a href="#REST-API-및-프로젝트-소개" class="headerlink" title="REST API 및 프로젝트 소개"></a>REST API 및 프로젝트 소개</h2><h3 id="REST-API"><a href="#REST-API" class="headerlink" title="REST API"></a>REST API</h3>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/06/25/RestAPI/restapi01/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
 </div>
-    <footer class="app-footer">
-  <p class="copyright">
-    &copy; 2020 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
-    <br>
-    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
-  </p>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-06-24T12:02:45.000Z">2019-06-24</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    14 minutes leer (Acerca de 2056 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/06/24/spring/springwebmvc08/">스프링 MVC 활용08 - HTTP 요청 맵핑하기</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="스프링-웹-MVC-inflearn-백기선"><a href="#스프링-웹-MVC-inflearn-백기선" class="headerlink" title="스프링 웹 MVC(inflearn) - 백기선"></a>스프링 웹 MVC(inflearn) - 백기선</h1><h2 id="SpringMVC-활용"><a href="#SpringMVC-활용" class="headerlink" title="SpringMVC 활용"></a>SpringMVC 활용</h2>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/06/24/spring/springwebmvc08/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-06-24T11:48:44.000Z">2019-06-24</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    13 minutes leer (Acerca de 1966 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/06/24/spring/springwebmvc07/">스프링 MVC 설정07 - 핸들러 인터셉터, 리소스 핸들러, HTTP 메세지 컨버터, 기타 설정</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="스프링-웹-MVC-inflearn-백기선"><a href="#스프링-웹-MVC-inflearn-백기선" class="headerlink" title="스프링 웹 MVC(inflearn) - 백기선"></a>스프링 웹 MVC(inflearn) - 백기선</h1><h2 id="Springframework"><a href="#Springframework" class="headerlink" title="Springframework"></a>Springframework</h2>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/06/24/spring/springwebmvc07/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-06-10T11:17:39.000Z">2019-06-10</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes leer (Acerca de 310 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/06/10/spring/springwebmvc06/">스프링 MVC 설정06 - 포매터 추가하기, 도메인 클래스 컨버터 자동 등록</a>
+            
+        </h1>
+        <div class="content">
+            <p><img src="/images/springframwork-logo.png" alt="springf"></p>
+<h1 id="스프링-웹-MVC-inflearn-백기선"><a href="#스프링-웹-MVC-inflearn-백기선" class="headerlink" title="스프링 웹 MVC(inflearn) - 백기선"></a>스프링 웹 MVC(inflearn) - 백기선</h1><h2 id="Springframework"><a href="#Springframework" class="headerlink" title="Springframework"></a>Springframework</h2>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/06/10/spring/springwebmvc06/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-31T06:36:50.000Z">2019-05-31</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 minutes leer (Acerca de 549 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/31/spring/springwebmvc05/">스프링 MVC 설정05 - 스프링 부트에서 JSP 사용하기</a>
+            
+        </h1>
+        <div class="content">
+            <p><img src="/images/springframwork-logo.png" alt="springf"></p>
+<h1 id="스프링-웹-MVC-inflearn-백기선"><a href="#스프링-웹-MVC-inflearn-백기선" class="headerlink" title="스프링 웹 MVC(inflearn) - 백기선"></a>스프링 웹 MVC(inflearn) - 백기선</h1><h2 id="Springframework"><a href="#Springframework" class="headerlink" title="Springframework"></a>Springframework</h2>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/05/31/spring/springwebmvc05/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-31T03:38:31.000Z">2019-05-31</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 minutes leer (Acerca de 436 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/31/spring/springwebmvc04/">스프링 MVC 설정04 - 스프링 MVC 빈 설정</a>
+            
+        </h1>
+        <div class="content">
+            <p><img src="/images/springframwork-logo.png" alt="springf"></p>
+<h1 id="스프링-웹-MVC-inflearn-백기선"><a href="#스프링-웹-MVC-inflearn-백기선" class="headerlink" title="스프링 웹 MVC(inflearn) - 백기선"></a>스프링 웹 MVC(inflearn) - 백기선</h1><h2 id="Springframework"><a href="#Springframework" class="headerlink" title="Springframework"></a>Springframework</h2>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/05/31/spring/springwebmvc04/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-29T01:48:07.000Z">2019-05-29</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes leer (Acerca de 263 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/29/Git/git04/">Git - merge, rebase</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p><img src="/images/git_logo.png" alt="gitlogo"><br>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/05/29/Git/git04/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-28T07:46:11.000Z">2019-05-28</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 minutes leer (Acerca de 1003 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/28/interview/interview02/">면접 후기01</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="면접-후기"><a href="#면접-후기" class="headerlink" title="면접 후기"></a>면접 후기</h1><h2 id="웹-백엔드-개발자-지원"><a href="#웹-백엔드-개발자-지원" class="headerlink" title="웹 백엔드 개발자 지원"></a>웹 백엔드 개발자 지원</h2>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/05/28/interview/interview02/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-26T16:05:43.000Z">2019-05-27</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    17 minutes leer (Acerca de 2531 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/27/interview/interview01/">예상 면접 질문</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="면접-대비-예상-면접-질문"><a href="#면접-대비-예상-면접-질문" class="headerlink" title="면접 대비 - 예상 면접 질문"></a>면접 대비 - 예상 면접 질문</h1><h2 id="개발상식"><a href="#개발상식" class="headerlink" title="개발상식"></a>개발상식</h2>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/05/27/interview/interview01/#more">Leer más</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+    
+<div class="card card-transparent">
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+        <div class="pagination-previous">
+            <a class="is-flex-grow has-text-black-ter" href="/page/2/">Anterior</a>
+        </div>
+        <div class="pagination-next">
+            <a class="is-flex-grow has-text-black-ter" href="/page/4/">Siguiente</a>
+        </div>
+        <ul class="pagination-list is-hidden-mobile">
+            
+            <li><a class="pagination-link has-text-black-ter" href="/">1</a></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/page/2/">2</a></li>
+            
+            <li><a class="pagination-link is-current" href="/page/3/">3</a></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/page/4/">4</a></li>
+            
+            <li><span class="pagination-ellipsis has-text-black-ter">&hellip;</span></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/page/13/">13</a></li>
+            
+        </ul>
+    </nav>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-4-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="/images/avatar.png" alt="최용락">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        최용락
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        BackEnd_Developer
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>경기도 안양시</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Entradas
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            127
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categorías
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            0
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Etiquetas
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            23
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/cyr9210" target="_blank" rel="noopener">
+                SEGUIR</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Github" href="https://github.com/cyr9210">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Etiquetas
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Algorithm/">
+                        <span class="tag">Algorithm</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/DataBase/">
+                        <span class="tag">DataBase</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Etc/">
+                        <span class="tag">Etc</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Git/">
+                        <span class="tag">Git</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Interview/">
+                        <span class="tag">Interview</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JPA/">
+                        <span class="tag">JPA</span>
+                        <span class="tag is-grey">17</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JSP/">
+                        <span class="tag">JSP</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java/">
+                        <span class="tag">Java</span>
+                        <span class="tag is-grey">16</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JavaScript/">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/OracleDB/">
+                        <span class="tag">OracleDB</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Process/">
+                        <span class="tag">Process</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/RestAPI/">
+                        <span class="tag">RestAPI</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Seminar/">
+                        <span class="tag">Seminar</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/SpringBoot/">
+                        <span class="tag">SpringBoot</span>
+                        <span class="tag is-grey">17</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/SpringSecurity/">
+                        <span class="tag">SpringSecurity</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/SpringWebMvc/">
+                        <span class="tag">SpringWebMvc</span>
+                        <span class="tag is-grey">8</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Springframework/">
+                        <span class="tag">Springframework</span>
+                        <span class="tag is-grey">10</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Springframework-kosta/">
+                        <span class="tag">Springframework_kosta</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Web/">
+                        <span class="tag">Web</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/debug/">
+                        <span class="tag">debug</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/jQuery/">
+                        <span class="tag">jQuery</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/정보처리기사-필기/">
+                        <span class="tag">정보처리기사_필기</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/프로젝트-회고/">
+                        <span class="tag">프로젝트_회고</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen is-sticky">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="Bong&#39;s blog" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 Bong&#39;s blog&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/cyr9210">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
 </footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
 
 <script>
-  function async(u, c) {
-    var d = document, t = 'script',
-      o = d.createElement(t),
-      s = d.getElementsByTagName(t)[0];
-    o.src = u;
-    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-    s.parentNode.insertBefore(o, s);
-  }
-</script>
-<script>
-  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
-    FastClick.attach(document.body);
-  })
+var IcarusThemeSettings = {
+    site: {
+        url: 'http://yoursite.com',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
 </script>
 
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
 <script>
-  var hasLine = 'true';
-  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
-    $('figure pre').each(function(i, block) {
-      var figure = $(this).parents('figure');
-      if (hasLine === 'false') {
-        figure.find('.gutter').hide();
-      }
-      var lang = figure.attr('class').split(' ')[1] || 'code';
-      var codeHtml = $(this).html();
-      var codeTag = document.createElement('code');
-      codeTag.className = lang;
-      codeTag.innerHTML = codeHtml;
-      $(this).attr('class', '').empty().html(codeTag);
-      figure.attr('data-lang', lang.toUpperCase());
-      hljs.highlightBlock(block);
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
     });
-  })
 </script>
-<!-- Baidu Tongji -->
 
-<script src="/js/script.js"></script>
-  </body>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Teclea algo..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Entradas',
+                PAGES: 'Páginas',
+                CATEGORIES: 'Categorías',
+                TAGS: 'Etiquetas',
+                UNTITLED: '(Sin título)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
 </html>

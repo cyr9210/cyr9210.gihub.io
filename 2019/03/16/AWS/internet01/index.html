@@ -1,102 +1,164 @@
 <!DOCTYPE html>
-<html>
-  <head><meta name="generator" content="Hexo 3.9.0">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-  <meta name="description" content="개발공부 정리 블로그">
-  <meta name="keyword" content="Java, Spring, SQL, JavaScript">
-  
-    <link rel="shortcut icon" href="/css/images/logo.png">
-  
-  <title>
-    
-      인터넷, IP, 도메인, DNS, 포트, 포트포워딩, 절대경로, 상대경로, 유동IP, DDNS | Bong&#39;s blog
-    
-  </title>
-  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
-  
-  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
-  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+<html >
+<head>
+    <meta charset="utf-8" />
 
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>인터넷, IP, 도메인, DNS, 포트, 포트포워딩, 절대경로, 상대경로, 유동IP, DDNS - Bong&#39;s blog</title>
+
+
+    <meta name="description" content="생활코딩 - 인터넷web">
+<meta name="keywords" content="Web">
+<meta property="og:type" content="article">
+<meta property="og:title" content="인터넷, IP, 도메인, DNS, 포트, 포트포워딩, 절대경로, 상대경로, 유동IP, DDNS">
+<meta property="og:url" content="http://yoursite.com/2019/03/16/AWS/internet01/index.html">
+<meta property="og:site_name" content="Bong&#39;s blog">
+<meta property="og:description" content="생활코딩 - 인터넷web">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:updated_time" content="2020-03-09T20:33:02.446Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="인터넷, IP, 도메인, DNS, 포트, 포트포워딩, 절대경로, 상대경로, 유동IP, DDNS">
+<meta name="twitter:description" content="생활코딩 - 인터넷web">
+<meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
 </head>
-<div class="wechat-share">
-  <img src="/css/images/logo.png">
-</div>
-
-  <body>
-    <header class="header fixed-header">
-  <div class="header-container">
-    <a class="home-link" href="/">
-      <div class="logo"></div>
-      <span>Bong's blog</span>
-    </a>
-    <ul class="right-list">
-      
-        <li class="list-item">
-          
-            <a href="/" class="item-link">Home</a>
-          
-        </li>
-      
-        <li class="list-item">
-          
-            <a href="/tags/" class="item-link">Tags</a>
-          
-        </li>
-      
-        <li class="list-item">
-          
-            <a href="/about/" class="item-link">About</a>
-          
-        </li>
-      
-    </ul>
-    <div class="menu">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.svg" alt="인터넷, IP, 도메인, DNS, 포트, 포트포워딩, 절대경로, 상대경로, 유동IP, DDNS" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/tags">Tags</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/cyr9210">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catálogo" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="Buscar" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
     </div>
-    <div class="menu-mask">
-      <ul class="menu-list">
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
         
-          <li class="menu-item">
-            
-              <a href="/" class="menu-link">Home</a>
-            
-          </li>
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-03-16T10:45:26.000Z">2019-03-16</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    6 minutes leer (Acerca de 921 palabras)
+                </span>
+                
+                
+            </div>
+        </div>
         
-          <li class="menu-item">
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-              <a href="/tags/" class="menu-link">Tags</a>
+                인터넷, IP, 도메인, DNS, 포트, 포트포워딩, 절대경로, 상대경로, 유동IP, DDNS
             
-          </li>
-        
-          <li class="menu-item">
-            
-              <a href="/about/" class="menu-link">About</a>
-            
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</header>
-
-    <div id="article-banner">
-  <h2>인터넷, IP, 도메인, DNS, 포트, 포트포워딩, 절대경로, 상대경로, 유동IP, DDNS</h2>
-  <p class="post-date">2019-03-16</p>
-  <div class="arrow-down">
-    <a href="javascript:;"></a>
-  </div>
-</div>
-<main class="app-body flex-box">
-  <!-- Article START -->
-  <article class="post-article">
-    <section class="markdown-content"><h1 id="생활코딩-인터넷"><a href="#생활코딩-인터넷" class="headerlink" title="생활코딩 - 인터넷"></a>생활코딩 - 인터넷</h1><h2 id="web"><a href="#web" class="headerlink" title="web"></a>web</h2><p>저는 네트워크에 대해서 http완벽가이드라는 교재로 공부할 예정이지만..<br>그전에 AWS를 공부하기위해 선행학습으로 인터넷과 네트워크를 간단하게 정리해보려고 합니다.🙂<br><br>관련강의 : <a href="https://opentutorials.org/course/1688/9483" target="_blank" rel="noopener">생활코딩 - 인터넷</a> </p>
+        </h1>
+        <div class="content">
+            <h1 id="생활코딩-인터넷"><a href="#생활코딩-인터넷" class="headerlink" title="생활코딩 - 인터넷"></a>생활코딩 - 인터넷</h1><h2 id="web"><a href="#web" class="headerlink" title="web"></a>web</h2><a id="more"></a>
+<p>저는 네트워크에 대해서 http완벽가이드라는 교재로 공부할 예정이지만..<br>그전에 AWS를 공부하기위해 선행학습으로 인터넷과 네트워크를 간단하게 정리해보려고 합니다.🙂<br><br>관련강의 : <a href="https://opentutorials.org/course/1688/9483">생활코딩 - 인터넷</a> </p>
 <hr>
 <h3 id="인터넷"><a href="#인터넷" class="headerlink" title="인터넷"></a>인터넷</h3><ul>
 <li>웹애플리케이션에 모든 사람들이 접근할 수 있도록 해주는 것이다.</li>
@@ -197,172 +259,329 @@
 <li>id와 pw 설정</li>
 <li>정상등록이라고 표시되면 DDNS설정 완료</li>
 </ul>
-<p><strong>도메인을 구입하여 DDNS서비스 이용 시, 무료 서비스 : <a href="http://freedns.afraid.org/" target="_blank" rel="noopener">FreeDNS</a></strong><br><br><br></p>
-</section>
-    <!-- Tags START -->
-    
-      <div class="tags">
-        <span>Tags:</span>
+<p><strong>도메인을 구입하여 DDNS서비스 이용 시, 무료 서비스 : <a href="http://freedns.afraid.org/">FreeDNS</a></strong><br><br><br></p>
+
+        </div>
         
-  <a href="/tags#Web" >
-    <span class="tag-code">Web</span>
-  </a>
-
-      </div>
-    
-    <!-- Tags END -->
-    <!-- NAV START -->
-    
-  <div class="nav-container">
-    <!-- reverse left and right to put prev and next in a more logic postition -->
-    
-      <a class="nav-left" href="/2019/03/14/Algorithm/doitAl01/">
-        <span class="nav-arrow">← </span>
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Web/">Web</a>
+                </div>
+            </div>
+        </div>
         
-          알고리즘, 반복 (doit-알고리즘)
         
-      </a>
-    
-    
-      <a class="nav-right" href="/2019/03/20/Spring/springframework-core01/">
         
-          스프링 핵심기술01 - IoC 컨테이너와 빈
-        
-        <span class="nav-arrow"> →</span>
-      </a>
-    
-  </div>
-
-    <!-- NAV END -->
-    <!-- 打赏 START -->
-    
-    <!-- 打赏 END -->
-    <!-- 二维码 START -->
-    
-    <!-- 二维码 END -->
-    
-      <!-- No Comment -->
-    
-  </article>
-  <!-- Article END -->
-  <!-- Catalog START -->
-  
-    <aside class="catalog-container">
-  <div class="toc-main">
-    <strong class="toc-title">Catalog</strong>
-    
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#생활코딩-인터넷"><span class="toc-nav-text">생활코딩 - 인터넷</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#web"><span class="toc-nav-text">web</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#인터넷"><span class="toc-nav-text">인터넷</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#IP"><span class="toc-nav-text">IP</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#도메인"><span class="toc-nav-text">도메인</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#DNS"><span class="toc-nav-text">DNS</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#동작원리"><span class="toc-nav-text">동작원리</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#IPv6"><span class="toc-nav-text">IPv6</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#포트"><span class="toc-nav-text">포트</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#공유기"><span class="toc-nav-text">공유기</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#포트포워딩"><span class="toc-nav-text">포트포워딩</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#공유기에서-포트포워딩-설정-iptime기준"><span class="toc-nav-text">공유기에서 포트포워딩 설정 (iptime기준)</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#절대경로-상대경로"><span class="toc-nav-text">절대경로, 상대경로</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#절대경로"><span class="toc-nav-text">절대경로</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#상대경로"><span class="toc-nav-text">상대경로</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#유동IP와-DDNS"><span class="toc-nav-text">유동IP와 DDNS</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#유동IP"><span class="toc-nav-text">유동IP</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#DDNS"><span class="toc-nav-text">DDNS</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#iptime-DDNS설정"><span class="toc-nav-text">iptime DDNS설정</span></a></li></ol></li></ol></li></ol></li></ol>
-    
-  </div>
-</aside>
-  
-  <!-- Catalog END -->
-</main>
-
-<script>
-  (function () {
-    var url = 'http://yoursite.com/2019/03/16/AWS/internet01/';
-    var banner = ''
-    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
-      $('#article-banner').css({
-        'background-image': 'url(' + banner + ')'
-      })
-    } else {
-      $('#article-banner').geopattern(url)
-    }
-    $('.header').removeClass('fixed-header')
-
-    // error image
-    $(".markdown-content img").on('error', function() {
-      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
-      $(this).css({
-        'cursor': 'default'
-      })
-    })
-
-    // zoom image
-    $(".markdown-content img").on('click', function() {
-      var src = $(this).attr('src')
-      if (src !== 'http://file.muyutech.com/error-img.png') {
-        var imageW = $(this).width()
-        var imageH = $(this).height()
-
-        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
-        zoom = zoom < 1 ? 1 : zoom
-        zoom = zoom > 2 ? 2 : zoom
-        var transY = (($(window).height() - imageH) / 2).toFixed(2)
-
-        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
-        $('.image-view-wrap').addClass('wrap-active')
-        $('.image-view-wrap img').css({
-          'width': `${imageW}`,
-          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
-        })
-        $('html').css('overflow', 'hidden')
-
-        $('.image-view-wrap').on('click', function() {
-          $(this).remove()
-          $('html').attr('style', '')
-        })
-      }
-    })
-  })();
-</script>
-
-
-
-
-
-
-
-    <div class="scroll-top">
-  <span class="arrow-icon"></span>
+    </div>
 </div>
-    <footer class="app-footer">
-  <p class="copyright">
-    &copy; 2020 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
-    <br>
-    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
-  </p>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Gefällt Ihnen der Artikel? Unterstützen Sie den Autor mit</h3>
+        <div class="buttons is-centered">
+            
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Alipay. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
+
+<div class="notification is-danger">
+    You forgot to set the <code>business</code> and <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>url</code> Patreon. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/03/20/spring/springframework-core01/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">스프링 핵심기술01 - IoC 컨테이너와 빈</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/03/14/Algorithm/doitAl01/">
+                <span class="level-item">알고리즘, 반복 (doit-알고리즘)</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-4-widescreen  has-order-3 column-right is-sticky">
+    
+        
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    Catálogo
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#생활코딩-인터넷">
+        <span class="has-mr-6">1</span>
+        <span>생활코딩 - 인터넷</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#web">
+        <span class="has-mr-6">1.1</span>
+        <span>web</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#인터넷">
+        <span class="has-mr-6">1.1.1</span>
+        <span>인터넷</span>
+        </a></li><li>
+        <a class="is-flex" href="#IPv6">
+        <span class="has-mr-6">1.1.2</span>
+        <span>IPv6</span>
+        </a></li><li>
+        <a class="is-flex" href="#포트">
+        <span class="has-mr-6">1.1.3</span>
+        <span>포트</span>
+        </a></li><li>
+        <a class="is-flex" href="#절대경로-상대경로">
+        <span class="has-mr-6">1.1.4</span>
+        <span>절대경로, 상대경로</span>
+        </a></li><li>
+        <a class="is-flex" href="#유동IP와-DDNS">
+        <span class="has-mr-6">1.1.5</span>
+        <span>유동IP와 DDNS</span>
+        </a></li></ul></li></ul></li></ul>
+            </div>
+        </div>
+    </div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Nube de etiquetas
+        </h3>
+        <a href="/tags/Algorithm/" style="font-size: 11.11px;">Algorithm</a> <a href="/tags/DataBase/" style="font-size: 10px;">DataBase</a> <a href="/tags/Etc/" style="font-size: 11.11px;">Etc</a> <a href="/tags/Git/" style="font-size: 13.33px;">Git</a> <a href="/tags/Interview/" style="font-size: 14.44px;">Interview</a> <a href="/tags/JPA/" style="font-size: 20px;">JPA</a> <a href="/tags/JSP/" style="font-size: 14.44px;">JSP</a> <a href="/tags/Java/" style="font-size: 18.89px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 12.22px;">JavaScript</a> <a href="/tags/OracleDB/" style="font-size: 14.44px;">OracleDB</a> <a href="/tags/Process/" style="font-size: 11.11px;">Process</a> <a href="/tags/RestAPI/" style="font-size: 14.44px;">RestAPI</a> <a href="/tags/Seminar/" style="font-size: 10px;">Seminar</a> <a href="/tags/SpringBoot/" style="font-size: 20px;">SpringBoot</a> <a href="/tags/SpringSecurity/" style="font-size: 12.22px;">SpringSecurity</a> <a href="/tags/SpringWebMvc/" style="font-size: 16.67px;">SpringWebMvc</a> <a href="/tags/Springframework/" style="font-size: 17.78px;">Springframework</a> <a href="/tags/Springframework-kosta/" style="font-size: 14.44px;">Springframework_kosta</a> <a href="/tags/Web/" style="font-size: 12.22px;">Web</a> <a href="/tags/debug/" style="font-size: 11.11px;">debug</a> <a href="/tags/jQuery/" style="font-size: 12.22px;">jQuery</a> <a href="/tags/정보처리기사-필기/" style="font-size: 13.33px;">정보처리기사_필기</a> <a href="/tags/프로젝트-회고/" style="font-size: 15.56px;">프로젝트_회고</a>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="인터넷, IP, 도메인, DNS, 포트, 포트포워딩, 절대경로, 상대경로, 유동IP, DDNS" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 Bong&#39;s blog&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/cyr9210">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
 </footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
 
 <script>
-  function async(u, c) {
-    var d = document, t = 'script',
-      o = d.createElement(t),
-      s = d.getElementsByTagName(t)[0];
-    o.src = u;
-    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-    s.parentNode.insertBefore(o, s);
-  }
-</script>
-<script>
-  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
-    FastClick.attach(document.body);
-  })
+var IcarusThemeSettings = {
+    site: {
+        url: 'http://yoursite.com',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
 </script>
 
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
 <script>
-  var hasLine = 'true';
-  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
-    $('figure pre').each(function(i, block) {
-      var figure = $(this).parents('figure');
-      if (hasLine === 'false') {
-        figure.find('.gutter').hide();
-      }
-      var lang = figure.attr('class').split(' ')[1] || 'code';
-      var codeHtml = $(this).html();
-      var codeTag = document.createElement('code');
-      codeTag.className = lang;
-      codeTag.innerHTML = codeHtml;
-      $(this).attr('class', '').empty().html(codeTag);
-      figure.attr('data-lang', lang.toUpperCase());
-      hljs.highlightBlock(block);
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
     });
-  })
 </script>
-<!-- Baidu Tongji -->
 
-<script src="/js/script.js"></script>
-  </body>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Teclea algo..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Entradas',
+                PAGES: 'Páginas',
+                CATEGORIES: 'Categorías',
+                TAGS: 'Etiquetas',
+                UNTITLED: '(Sin título)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
 </html>
