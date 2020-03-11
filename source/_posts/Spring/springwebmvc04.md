@@ -13,9 +13,12 @@ sidebar:
     sticky: true
 ---
 ![springf](/images/springframwork-logo.png)
+
 # 스프링 웹 MVC(inflearn) - 백기선 
 ## Springframework
+
 <!-- more -->
+
 ### 스프링 MVC 빈 설정
 #### @Configuration을 사용한 자바 설정 파일에 직접 @Bean을 사용해서 등록하기
 - Dispatcher Servlet의 기본적략을 따른다면 아래와 같다.

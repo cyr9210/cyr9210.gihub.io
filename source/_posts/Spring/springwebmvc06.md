@@ -13,9 +13,12 @@ sidebar:
     sticky: true
 ---
 ![springf](/images/springframwork-logo.png)
+
 # 스프링 웹 MVC(inflearn) - 백기선 
 ## Springframework
+
 <!-- more -->
+
 ### 포매터 추가하기
 - [Reference 문서](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/servlet/config/annotation/WebMvcConfigurer.html#addFormatters-org.springframework.format.FormatterRegistry-)
 

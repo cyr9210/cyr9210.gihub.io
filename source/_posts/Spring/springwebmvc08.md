@@ -12,9 +12,12 @@ sidebar:
   right:
     sticky: true
 ---
+
 # 스프링 웹 MVC(inflearn) - 백기선 
 ## SpringMVC 활용
+
 <!-- more -->
+
 ### 스프링 MVC 핵심 기술 소개
 - [reference 문서](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc-controller)
 

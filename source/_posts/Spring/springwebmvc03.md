@@ -13,9 +13,12 @@ sidebar:
     sticky: true
 ---
 ![springf](/images/springframwork-logo.png)
+
 # 스프링 웹 MVC(inflearn) - 백기선 
 ## Springframework
+
 <!-- more -->
+
 ### 스프링 MVC 구성 요소
 ![springmvc](/images/springwebmvc/springwebmvc03-1.png)
 - DispatcherSerlvet의 기본 전략
