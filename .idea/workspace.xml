@@ -35,7 +35,7 @@
     <favorites_list name="cyr9210.github.io" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.deploy_git" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1RvFG02USHkBvqxDdflCEkizw7m" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -147,7 +147,7 @@
       <workItem from="1583779111400" duration="478000" />
       <workItem from="1583779760186" duration="7179000" />
       <workItem from="1583824849279" duration="686000" />
-      <workItem from="1583892649711" duration="514000" />
+      <workItem from="1583892649711" duration="846000" />
     </task>
     <servers />
   </component>
