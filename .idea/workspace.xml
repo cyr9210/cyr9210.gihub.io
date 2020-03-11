@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="10edeb32-08bb-4258-8866-f6cff31a2348" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/spring/springwebmvc03.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/spring/springwebmvc03.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/about/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/about/index.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/icarus" beforeDir="false" afterPath="$PROJECT_DIR$/themes/icarus" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/icarus/languages/de.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/icarus/languages/de.yml" afterDir="false" />
@@ -36,7 +35,7 @@
     <favorites_list name="cyr9210.github.io" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.deploy_git" />
   </component>
   <component name="ProjectId" id="1RvFG02USHkBvqxDdflCEkizw7m" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -148,7 +147,7 @@
       <workItem from="1583779111400" duration="478000" />
       <workItem from="1583779760186" duration="7179000" />
       <workItem from="1583824849279" duration="686000" />
-      <workItem from="1583892649711" duration="141000" />
+      <workItem from="1583892649711" duration="514000" />
     </task>
     <servers />
   </component>
