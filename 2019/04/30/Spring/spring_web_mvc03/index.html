@@ -7,21 +7,21 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>스프링 MVC 동작 원리02 - 스프링 연동, DispatcherServlet - Bong&#39;s blog</title>
+<title>스프링 MVC 동작 원리03 - 스프링 MVC 구성 요소, 동작원리 정리 - Bong&#39;s blog</title>
 
 
     <meta name="description" content="스프링 웹 MVC(inflearn) - 백기선Springframework">
 <meta name="keywords" content="SpringWebMvc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="스프링 MVC 동작 원리02 - 스프링 연동, DispatcherServlet">
-<meta property="og:url" content="http://yoursite.com/2019/04/25/spring/springwebmvc02/index.html">
+<meta property="og:title" content="스프링 MVC 동작 원리03 - 스프링 MVC 구성 요소, 동작원리 정리">
+<meta property="og:url" content="http://yoursite.com/2019/04/30/spring/spring_web_mvc03/index.html">
 <meta property="og:site_name" content="Bong&#39;s blog">
 <meta property="og:description" content="스프링 웹 MVC(inflearn) - 백기선Springframework">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="og:updated_time" content="2020-03-09T20:52:33.911Z">
+<meta property="og:updated_time" content="2020-03-11T02:13:09.802Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="스프링 MVC 동작 원리02 - 스프링 연동, DispatcherServlet">
+<meta name="twitter:title" content="스프링 MVC 동작 원리03 - 스프링 MVC 구성 요소, 동작원리 정리">
 <meta name="twitter:description" content="스프링 웹 MVC(inflearn) - 백기선Springframework">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
@@ -81,7 +81,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/blog_logo.png" alt="스프링 MVC 동작 원리02 - 스프링 연동, DispatcherServlet" height="28">
+                <img src="/images/blog_logo.png" alt="스프링 MVC 동작 원리03 - 스프링 MVC 구성 요소, 동작원리 정리" height="28">
             
             </a>
         </div>
@@ -114,12 +114,12 @@
                     
                 
                 
-                <a class="navbar-item is-hidden-tablet catalogue" title="Katalog" href="javascript:;">
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
                     <i class="fas fa-list-ul"></i>
                 </a>
                 
                 
-                <a class="navbar-item search" title="Suche" href="javascript:;">
+                <a class="navbar-item search" title="Search" href="javascript:;">
                     <i class="fas fa-search"></i>
                 </a>
                 
@@ -138,13 +138,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-25T07:11:55.000Z">2019-04-25</time>
+                <time class="level-item has-text-grey" datetime="2019-04-29T15:59:04.000Z">2019-04-30</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    7 minutes lesen (Über 1004 Worte)
+                    4 minutes read (About 664 words)
                 </span>
                 
                 
@@ -153,160 +153,98 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                스프링 MVC 동작 원리02 - 스프링 연동, DispatcherServlet
+                스프링 MVC 동작 원리03 - 스프링 MVC 구성 요소, 동작원리 정리
             
         </h1>
         <div class="content">
             <p><img src="/images/springframwork-logo.png" alt="springf"></p>
 <h1 id="스프링-웹-MVC-inflearn-백기선"><a href="#스프링-웹-MVC-inflearn-백기선" class="headerlink" title="스프링 웹 MVC(inflearn) - 백기선"></a>스프링 웹 MVC(inflearn) - 백기선</h1><h2 id="Springframework"><a href="#Springframework" class="headerlink" title="Springframework"></a>Springframework</h2><a id="more"></a>
-<p>웹 서블릿 어플리케이션에 스프링을 사용한다는 의미는 크게 2가지로 나눠서 이야기 할 수 있다.</p>
+<h3 id="스프링-MVC-구성-요소"><a href="#스프링-MVC-구성-요소" class="headerlink" title="스프링 MVC 구성 요소"></a>스프링 MVC 구성 요소</h3><p><img src="/images/springwebmvc/springwebmvc03-1.png" alt="springmvc"></p>
 <ul>
-<li>스프링 IoC 컨테이너를 사용하겠다.</li>
-<li>스프링 MVC를 사용하겠다.</li>
-</ul>
-<h3 id="스프링-IoC-컨테이너-연동"><a href="#스프링-IoC-컨테이너-연동" class="headerlink" title="스프링 IoC 컨테이너 연동"></a>스프링 IoC 컨테이너 연동</h3><ul>
-<li><p>의존성 추가</p>
+<li><p>DispatcherSerlvet의 기본 전략</p>
 <ul>
-<li>spring-webmvc</li>
+<li>DispatcherServlet.properties를 보면 정의되어있다.</li>
 </ul>
 </li>
-<li><p>ContextLoaderListener 등록</p>
+<li><p>MultipartResolver</p>
 <ul>
-<li>ApplicationContext를 서블릿 어플리케이션 생명주기에 맞춰서 바인딩해준다.<ul>
-<li>ApplicationContext를 웹어플리케이션에 등록된 서블릿들이 사용할 수 있도록 서블릿 컨텍스트에 등록해준다.</li>
-<li>서블릿이 종료될때 제거해준다.</li>
-<li>즉, ApplicationContext를 연동해준다.(ApplicationContext는 만들어야한다.)</li>
+<li>파일 업로드 요청 처리에 필요한 인터페이스</li>
+<li>HttpServletRequest를 MultipartHttpServletRequest로 변환해주어 요청이 담고 있는 File을 꺼낼 수 있는 API 제공.</li>
 </ul>
 </li>
-<li>서블릿에서 IoC 컨테이너를 ServletContext를 통해 꺼내 사용할 수 있다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;listener&gt;</span><br><span class="line">    &lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;</span><br><span class="line">&lt;/listener&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
+<li><p>LocaleResolver</p>
 <ul>
-<li><p>ApplicationContext 생성</p>
+<li>클라이언트의 위치(Locale) 정보를 파악하는 인터페이스</li>
+<li>기본 전략은 요청의 accept-language를 보고 판단.</li>
+</ul>
+</li>
+<li><p>ThemeResolver</p>
 <ul>
-<li><p>기본적으로 xml을 사용하지만 Java설정파일 사용하겠다. (최근 추세)</p>
-<ul>
-<li>AppConfig 생성<br><img src="/images/springwebmvc/springwebmvc02-1.png" alt="springmvc"></li>
-<li>context class 설정 변경<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;context-param&gt;</span><br><span class="line">    &lt;param-name&gt;contextClass&lt;/param-name&gt;</span><br><span class="line">    &lt;param-value&gt;org.springframework.web.context.support.AnnotationConfigWebApplicationContext&lt;/param-value&gt;</span><br><span class="line">&lt;/context-param&gt;</span><br><span class="line"></span><br><span class="line">&lt;context-param&gt;</span><br><span class="line">    &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</span><br><span class="line">    &lt;param-value&gt;bong.spring.AppConfig&lt;/param-value&gt; /* Appconfig파일위치 */</span><br><span class="line">&lt;/context-param&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>ContextLoaderListener - initWebApplicationContext을 보면 WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE라는 이름으로 ApplicationContext를 setattribute하는것을 볼 수 있다.<br>  <img src="/images/springwebmvc/springwebmvc02-2.png" alt="springmvc"></p>
-</li>
-</ul>
-</li>
-<li><p>등록한 빈 사용하기</p>
-<ul>
-<li>servletcontext에서 확인한 이름으로 getattrbute해서 확인할 수 있다.</li>
-<li>빈으로 등록한 서비스를 getBean()으로 사용할 수 있다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">private Object getName() &#123;</span><br><span class="line">    ApplicationContext applicationContext = (ApplicationContext) getServletContext().getAttribute(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE);</span><br><span class="line">    HelloService helloService = applicationContext.getBean(HelloService.class);</span><br><span class="line">    return helloService.getname();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>지금까지 만들었던 내용을 RootApplicationContext라고 할 수 있다.<ul>
-<li>다른 서블릿에서도 공용으로 사용될 공용 리소스</li>
-<li>web과 상관없는…<br><img src="/images/springwebmvc/springwebmvc02-3.png" width="40%"><br><br></li>
-</ul>
-</li>
-</ul>
-<h3 id="스프링-MVC-연동"><a href="#스프링-MVC-연동" class="headerlink" title="스프링 MVC 연동"></a>스프링 MVC 연동</h3><ul>
-<li><p>DispatcherServlet</p>
-<ul>
-<li>스프링 MVC의 핵심.</li>
-<li>Front Controller 역할을 한다.</li>
-</ul>
-</li>
-<li><p>DispatcherServlet 등록</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;servlet&gt;</span><br><span class="line">    &lt;servlet-name&gt;app&lt;/servlet-name&gt;</span><br><span class="line">    &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;</span><br><span class="line">    &lt;init-param&gt;</span><br><span class="line">      &lt;param-name&gt;contextClass&lt;/param-name&gt;</span><br><span class="line">      &lt;param-value&gt;org.springframework.web.context.support.AnnotationConfigWebApplicationContext&lt;/param-value&gt;</span><br><span class="line">    &lt;/init-param&gt;</span><br><span class="line">    &lt;init-param&gt;</span><br><span class="line">      &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</span><br><span class="line">      &lt;param-value&gt;bong.spring.WebConfig&lt;/param-value&gt;</span><br><span class="line">    &lt;/init-param&gt;</span><br><span class="line">  &lt;/servlet&gt;</span><br><span class="line"></span><br><span class="line">  &lt;servlet-mapping&gt;</span><br><span class="line">    &lt;servlet-name&gt;app&lt;/servlet-name&gt;</span><br><span class="line">    &lt;url-pattern&gt;/app/*&lt;/url-pattern&gt;</span><br><span class="line">  &lt;/servlet-mapping&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>@Controller로 매핑 할 수 있도록한다.</p>
-</li>
-<li><p>RootApplicationContext와 같이 쓸 수 있다.</p>
-<ul>
-<li>Root : Service, Repository등.. 공통 사용빈</li>
-<li>Dispatcher : Controller등 web 관련 .. </li>
-<li>그러나 다음과 같은 설정이 필요하다.<br><img src="/images/springwebmvc/springwebmvc02-4.png" alt="springmvc"></li>
-</ul>
-</li>
-<li><p>최근에는 DispatcherServlet 하나만 등록해서 모두 사용하는 방법을 주로 사용한다.</p>
-</li>
-<li><p>SpringBoot의 경우 구조가 다르다.</p>
-<ul>
-<li>ServletContext 안에 스프링이 들어갔다면</li>
-<li>스프링부트는 어플리케이션(Java) 안에 톰캣(Servlet컨테이너)가 들어간다.<br><br></li>
-</ul>
-</li>
-</ul>
-<h3 id="DispatcherServlet"><a href="#DispatcherServlet" class="headerlink" title="DispatcherServlet"></a>DispatcherServlet</h3><h4 id="동작원리"><a href="#동작원리" class="headerlink" title="동작원리"></a>동작원리</h4><ul>
-<li><p>DispatcherServlet 초기화</p>
-<ul>
-<li>다음의 특별한 타입의 빈들을 찾거나, 기본 전략에 해당하는 빈들을 등록한다.</li>
-<li>HandlerMapping : 핸들러를 찾아주는 인터페이스</li>
-<li>HandlerAdapter : 핸들러를 실행하는 인터페이스</li>
-<li>HandlerExceptionResolver : 예외처리</li>
-<li>ViewResolver : 뷰를 찾아낸다.</li>
-<li>…</li>
-</ul>
-</li>
-<li><p>DispatcherServlet 동작 순서</p>
-<ol>
-<li>요청을 분석한다. (로케일, 테마, 멀티파트 등)</li>
-<li>(핸들러 맵핑에게 위임하여) 요청을 처리할 핸들러를 찾는다.</li>
-<li>(등록되어 있는 핸들러 어댑터 중에) 해당 핸들러를 실행할 수 있는 “핸들러 어댑터”를 찾는다.</li>
-<li>찾아낸 “핸들러 어댑터”를 사용해서 핸들러의 응답을 처리한다.<ul>
-<li>핸들러의 리턴값을 보고 어떻게 처리할지 판단한다.</li>
-<li>뷰 이름에 해당하는 뷰를 찾아서 모델 데이터를 랜더링한다.</li>
-<li>@ResponseEntity가 있다면 Converter를 사용해서 응답 본문을 만들고.</li>
-</ul>
-</li>
-<li>(부가적으로) 예외가 발생했다면, 예외 처리 핸들러에 요청 처리를 위임한다.</li>
-<li>최종적으로 응답을 보낸다.</li>
-</ol>
-</li>
-<li><p>DispatcherServlet의 사용전략은 서블릿 init 할 때 이루어짐으로 최초 한번만 실행된다.</p>
-<ul>
-<li>ViewResolver등록이라던지.. </li>
+<li>애플리케이션에 설정된 테마를 파악하고 변경할 수 있는 인터페이스</li>
+<li>참고: <a href="https://memorynotfound.com/spring-mvc-theme-switcher-example/">https://memorynotfound.com/spring-mvc-theme-switcher-example/</a></li>
 </ul>
 </li>
 <li><p>HandlerMapping</p>
 <ul>
-<li>RequestMappingHandlerMapping</li>
+<li>요청을 처리할 핸들러를 찾는 인터페이스</li>
 </ul>
 </li>
-<li>HandlerAdapter<ul>
-<li>RequestMappingHandlerAdapter</li>
+<li><p>HandlerAdapter</p>
+<ul>
+<li>HandlerMapping이 찾아낸 “핸들러”를 처리하는 인터페이스</li>
+<li>스프링 MVC 확장력의 핵심</li>
 </ul>
 </li>
-</ul>
-<h4 id="SimpleController"><a href="#SimpleController" class="headerlink" title="SimpleController"></a>SimpleController</h4><ul>
-<li>HandlerMapping<ul>
-<li>BeanNameUrlHandlerMapping</li>
-</ul>
-</li>
-<li>HandlerAdapter<ul>
-<li>SimpleControllerHandlerAdapter</li>
+<li><p>HandlerExceptionResolver</p>
+<ul>
+<li>요청 처리 중에 발생한 에러 처리하는 인터페이스</li>
 </ul>
 </li>
+<li><p>RequestToViewNameTranslator</p>
+<ul>
+<li>핸들러에서 뷰 이름을 명시적으로 리턴하지 않은 경우, 요청을 기반으로 뷰 이름을 판단하는 인터페이스</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@org.springframework.stereotype.Controller(&quot;/simple&quot;)</span><br><span class="line">public class SimpleController implements Controller &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception &#123;</span><br><span class="line">    return new ModelAndView(&quot;/WEB-INF/simple.jsp&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="커스텀-ViewResolver"><a href="#커스텀-ViewResolver" class="headerlink" title="커스텀 ViewResolver"></a>커스텀 ViewResolver</h4><ul>
+</li>
 <li><p>ViewResolver</p>
 <ul>
-<li>InternalResourceViewResolver</li>
+<li>뷰 이름(string)에 해당하는 뷰를 찾아내는 인터페이스</li>
 </ul>
 </li>
-<li><p>InternalResourceViewResolver</p>
+<li><p>FlashMapManager</p>
 <ul>
-<li>Prefix</li>
-<li>Suffix</li>
+<li>FlashMap 인스턴스를 가져오고 저장하는 인터페이스</li>
+<li>FlashMap은 주로 리다이렉션을 사용할 때 요청 매개변수를 사용하지 않고 데이터를 전달하고 정리할 때 사용한다.</li>
+<li>redirect:/events 이런식으로 이전 정보들을 가지고 가되, url에 정의하지 않고 리다이렉트할 때 사용됨.</li>
 </ul>
 </li>
-<li><p>예제<br><img src="/images/springwebmvc/springwebmvc02-5.png" alt="springmvc"></p>
+</ul>
+<h3 id="스프링-MVC-동작원리-정리"><a href="#스프링-MVC-동작원리-정리" class="headerlink" title="스프링 MVC 동작원리 정리"></a>스프링 MVC 동작원리 정리</h3><ul>
+<li>결국엔 (굉장히 복잡한) 서블릿 = DispatcherServlet</li>
+<li>DispatcherServlet 초기화<ol>
+<li>특정 타입에 해당하는 빈을 찾는다.</li>
+<li>없으면 기본 전략을 사용한다. (DispatcherServlet.properties)</li>
+</ol>
+</li>
+<li><p>스프링 부트 사용하지 않는 스프링 MVC</p>
 <ul>
-<li>이제 뷰이름만 주어도 된다. 주소 및 타입 설정을 생략할 수 있다.<br><br></li>
+<li><p>서블릿 컨네이너(ex, 톰캣)에 등록한 웹 애플리케이션(WAR)에 DispatcherServlet을 등록한다.</p>
+<ul>
+<li>web.xml에 서블릿 등록</li>
+<li>또는 WebApplicationInitializer에 자바 코드로 서블릿 등록 (스프링 3.1+, 서블릿 3.0+)  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class WebApplication implements WebApplicationInitializer &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void onStartup(ServletContext servletContext) throws ServletException &#123;</span><br><span class="line">        AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();</span><br><span class="line">        context.register(WebConfig.class);</span><br><span class="line">        context.refresh();</span><br><span class="line"></span><br><span class="line">        DispatcherServlet dispatcherServlet = new DispatcherServlet(context);</span><br><span class="line">        ServletRegistration.Dynamic app = servletContext.addServlet(&quot;app&quot;, dispatcherServlet);</span><br><span class="line">        app.addMapping(&quot;/app/*&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>세부 구성 요소는 빈 설정하기 나름.</p>
+</li>
+</ul>
+</li>
+<li><p>스프링 부트를 사용하는 스프링 MVC</p>
+<ul>
+<li>자바 애플리케이션에 내장 톰캣을 만들고 그 안에 DispatcherServlet을 등록한다.<ul>
+<li>스프링 부트 자동 설정이 자동으로 해줌.</li>
+</ul>
+</li>
+<li>스프링 부트의 주관에 따라 여러 인터페이스 구현체를 빈으로 등록한다.<br><br><br></li>
 </ul>
 </li>
 </ul>
@@ -331,7 +269,7 @@
 
 <div class="card">
     <div class="card-content">
-        <h3 class="menu-label has-text-centered">Gefällt Ihnen der Artikel? Unterstützen Sie den Autor mit</h3>
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
         <div class="buttons is-centered">
             
                 
@@ -369,16 +307,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/04/29/spring/springjpa01/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/04/30/spring/springjpa02/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">스프링 데이터 JPA01 - 관계형 데이터 베이스와 자바, ORM</span>
+                <span class="level-item">스프링 데이터 JPA02 - 프로젝트 세팅</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/04/23/spring/springwebmvc01/">
-                <span class="level-item">스프링 MVC 동작 원리01 - 스프링 MVC 소개, 서블릿</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/04/29/spring/springjpa01/">
+                <span class="level-item">스프링 데이터 JPA01 - 관계형 데이터 베이스와 자바, ORM</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -402,7 +340,7 @@
         <div class="card-content">
             <div class="menu">
                 <h3 class="menu-label">
-                    Katalog
+                    Catalogue
                 </h3>
                 <ul class="menu-list"><li>
         <a class="is-flex" href="#스프링-웹-MVC-inflearn-백기선">
@@ -413,17 +351,13 @@
         <span class="has-mr-6">1.1</span>
         <span>Springframework</span>
         </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#스프링-IoC-컨테이너-연동">
+        <a class="is-flex" href="#스프링-MVC-구성-요소">
         <span class="has-mr-6">1.1.1</span>
-        <span>스프링 IoC 컨테이너 연동</span>
+        <span>스프링 MVC 구성 요소</span>
         </a></li><li>
-        <a class="is-flex" href="#스프링-MVC-연동">
+        <a class="is-flex" href="#스프링-MVC-동작원리-정리">
         <span class="has-mr-6">1.1.2</span>
-        <span>스프링 MVC 연동</span>
-        </a></li><li>
-        <a class="is-flex" href="#DispatcherServlet">
-        <span class="has-mr-6">1.1.3</span>
-        <span>DispatcherServlet</span>
+        <span>스프링 MVC 동작원리 정리</span>
         </a></li></ul></li></ul></li></ul>
             </div>
         </div>
@@ -451,7 +385,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/blog_logo.png" alt="스프링 MVC 동작 원리02 - 스프링 연동, DispatcherServlet" height="28">
+                    <img src="/images/blog_logo.png" alt="스프링 MVC 동작 원리03 - 스프링 MVC 구성 요소, 동작원리 정리" height="28">
                 
                 </a>
                 <p class="is-size-7">
@@ -574,7 +508,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
-<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
+<a id="back-to-top" title="Back to Top" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
@@ -598,7 +532,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="Tippen Sie etwas..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">
@@ -611,10 +545,10 @@ document.addEventListener('DOMContentLoaded', function () {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
                 POSTS: 'Posts',
-                PAGES: 'Seiten',
-                CATEGORIES: 'Kategorien',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
                 TAGS: 'Tags',
-                UNTITLED: '(Unbenannt)',
+                UNTITLED: '(Untitled)',
             },
             CONTENT_URL: '/content.json',
         };
