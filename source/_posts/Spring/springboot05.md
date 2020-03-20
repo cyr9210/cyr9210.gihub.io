@@ -12,10 +12,13 @@ sidebar:
   right:
     sticky: true
 ---
+
 ![springboot](/images/springboot_logo.png)
 # 스프릥 부트 개념과 활용05(inflearn) - 백기선 
 ## Spring boot
+
 <!-- more -->
+
 ### [독립적으로 실행 가능한 JAR](https://docs.spring.io/spring-boot/docs/current/reference/html/executable-jar.html)
 - mvn package를 하면 실행 가능한 ​JAR 파일 “하나가"​ 생성 됨.
     - mvn clean : target아래 파일들 삭제

@@ -12,10 +12,13 @@ sidebar:
   right:
     sticky: true
 ---
+
 ![springboot](/images/springboot_logo.png)
 # 스프릥 부트 개념과 활용09(inflearn) - 백기선 
 ## Spring boot
+
 <!-- more -->
+
 ### 스프링 부트 기본 로거 설정
 
 #### 로깅 퍼사드 VS 로거

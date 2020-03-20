@@ -12,10 +12,13 @@ sidebar:
   right:
     sticky: true
 ---
+
 ![springboot](/images/springboot_logo.png)
 # 스프릥 부트 개념과 활용08(inflearn) - 백기선 
 ## Spring boot
+
 <!-- more -->
+
 ### 프로파일
 참고 : [IoC컨테이너와 빈 - profile](https://cyr9210.github.io/2019/03/20/Spring/springframework-core01/)
 #### @Profile 애노테이션은 어디에?

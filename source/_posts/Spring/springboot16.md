@@ -15,7 +15,9 @@ sidebar:
 ![springboot](/images/springboot_logo.png)
 # 스프릥 부트 개념과 활용16(inflearn) - 백기선 
 ## Spring boot
+
 <!-- more -->
+
 ### Actuator
 - 스프링 부트는 애플리케이션 운영 환경에서 유용한 기능을 제공한다. 
     -  스프링 부트가 제공하는 엔드포인트와 메트릭스

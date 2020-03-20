@@ -12,10 +12,13 @@ sidebar:
   right:
     sticky: true
 ---
+
 ![springboot](/images/springboot_logo.png)
 # 스프릥 부트 개념과 활용10(inflearn) - 백기선 
 ## Spring boot
+
 <!-- more -->
+
 ### Test
 - spring-boot-starter-test 의존성이 필요하다.
 ![springboot](/images/springboot/springboot10-2.png)

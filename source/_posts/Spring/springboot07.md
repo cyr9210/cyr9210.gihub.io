@@ -12,10 +12,13 @@ sidebar:
   right:
     sticky: true
 ---
+
 ![springboot](/images/springboot_logo.png)
 # 스프릥 부트 개념과 활용07(inflearn) - 백기선 
 ## Spring boot
+
 <!-- more -->
+
 ### 외부 설정
 #### 사용할 수 있는 외부 설정
 - properties

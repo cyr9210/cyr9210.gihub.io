@@ -12,10 +12,13 @@ sidebar:
   right:
     sticky: true
 ---
+
 ![springboot](/images/springboot_logo.png)
 # 스프릥 부트 개념과 활용12(inflearn) - 백기선 
 ## Spring boot
+
 <!-- more -->
+
 ### 스프링 웹 MVC
 - 스프링 웹 MVC
     - [reference문서](https://docs.spring.io/spring/docs/5.0.7.RELEASE/spring-framework-reference/web.html#spring-web)

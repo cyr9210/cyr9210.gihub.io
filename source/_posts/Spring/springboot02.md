@@ -12,10 +12,13 @@ sidebar:
   right:
     sticky: true
 ---
+
 ![springboot](/images/springboot_logo.png)
 # 스프릥 부트 개념과 활용02(inflearn) - 백기선 
 ## Spring boot
+
 <!-- more -->
+
 ### 의존성 관리 이해
 - pom.xml에서 spring-boot-parent로 들어가본다.
 ![springboot](/images/springboot/springboot02-1.png)

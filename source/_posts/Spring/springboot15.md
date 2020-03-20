@@ -12,10 +12,13 @@ sidebar:
   right:
     sticky: true
 ---
+
 ![springboot](/images/springboot_logo.png)
 # 스프릥 부트 개념과 활용15(inflearn) - 백기선 
 ## Spring boot
+
 <!-- more -->
+
 ### 스프링 REST 클라이언트
 - 스프링 부트가 REST 클라이언트 관련해서 직접적인 기능을 제공하는것은 아니다.
 - REST 클라이언트는 스프링 프레임워크에서 지원한다.

@@ -12,10 +12,13 @@ sidebar:
   right:
     sticky: true
 ---
+
 ![springboot](/images/springboot_logo.png)
 # 스프릥 부트 개념과 활용11(inflearn) - 백기선 
 ## Spring boot
+
 <!-- more -->
+
 ### SpringBoot_Devtools
 - devtools 의존성 추가가 필요하다.
 ```

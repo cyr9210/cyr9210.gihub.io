@@ -12,10 +12,13 @@ sidebar:
   right:
     sticky: true
 ---
+
 ![springboot](/images/springboot_logo.png)
 # 스프릥 부트 개념과 활용04(inflearn) - 백기선 
 ## Spring boot
+
 <!-- more -->
+
 ### 내장 웹 서버
 - @SpringBootApplication 쓰지 않고 톰캣 띄우기
     ![springboot](/images/springboot/springboot04-1.png)

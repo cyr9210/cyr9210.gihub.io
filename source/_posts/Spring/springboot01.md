@@ -12,10 +12,13 @@ sidebar:
   right:
     sticky: true
 ---
+
 ![springboot](/images/springboot_logo.png)
 # 스프릥 부트 개념과 활용01(inflearn) - 백기선 
 ## Spring boot
+
 <!-- more -->
+
 백기선 님의 강의 중 세 번째로 수강하게 된 '스프링 부트 개념과 활용'!!
 사실 이 강의를 듣고 스프링 부트를 사용하기 위해서 앞선 두 강의를 수강했다고 할 수 있습니다.
 스프링 부트에 대해서 기초부터 탄탄히 다져 나갑시다.
