@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10edeb32-08bb-4258-8866-f6cff31a2348" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/source/_posts/spring/spring_web_mvc01.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/spring/springboot04.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/spring/springboot05.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/icarus" beforeDir="false" afterPath="$PROJECT_DIR$/themes/icarus" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/icarus/languages/de.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/icarus/languages/de.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/icarus/languages/es.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/icarus/languages/es.yml" afterDir="false" />
@@ -147,7 +150,7 @@
       <workItem from="1583824849279" duration="686000" />
       <workItem from="1583892649711" duration="954000" />
       <workItem from="1583894133618" duration="159000" />
-      <workItem from="1584686033730" duration="1854000" />
+      <workItem from="1584686033730" duration="2301000" />
     </task>
     <servers />
   </component>
