@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>스프링 부트 운영16 - Actuator - Bong&#39;s blog</title>
+
+
+    <meta name="description" content="스프릥 부트 개념과 활용16(inflearn) - 백기선Spring boot">
+<meta name="keywords" content="SpringBoot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="스프링 부트 운영16 - Actuator">
+<meta property="og:url" content="http://yoursite.com/2019/04/18/spring/springboot16/index.html">
+<meta property="og:site_name" content="Bong&#39;s blog">
+<meta property="og:description" content="스프릥 부트 개념과 활용16(inflearn) - 백기선Spring boot">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:updated_time" content="2020-03-20T06:35:43.574Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="스프링 부트 운영16 - Actuator">
+<meta name="twitter:description" content="스프릥 부트 개념과 활용16(inflearn) - 백기선Spring boot">
+<meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/blog_logo.png" alt="스프링 부트 운영16 - Actuator" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/tags">Tags</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/cyr9210">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-18T11:13:46.000Z">2019-04-18</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    6 minutes read (About 833 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                스프링 부트 운영16 - Actuator
+            
+        </h1>
+        <div class="content">
+            <p><img src="/images/springboot_logo.png" alt="springboot"></p>
+<h1 id="스프릥-부트-개념과-활용16-inflearn-백기선"><a href="#스프릥-부트-개념과-활용16-inflearn-백기선" class="headerlink" title="스프릥 부트 개념과 활용16(inflearn) - 백기선"></a>스프릥 부트 개념과 활용16(inflearn) - 백기선</h1><h2 id="Spring-boot"><a href="#Spring-boot" class="headerlink" title="Spring boot"></a>Spring boot</h2><a id="more"></a>
+<h3 id="Actuator"><a href="#Actuator" class="headerlink" title="Actuator"></a>Actuator</h3><ul>
+<li><p>스프링 부트는 애플리케이션 운영 환경에서 유용한 기능을 제공한다. </p>
+<ul>
+<li>스프링 부트가 제공하는 엔드포인트와 메트릭스</li>
+<li>그 데이터를 활용하는 모니터링 기능</li>
+</ul>
+</li>
+<li><p><a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready-endpoints">reference 문서</a></p>
+</li>
+<li><p>의존성 추가</p>
+<ul>
+<li>spring-boot-starter-actuator</li>
+</ul>
+</li>
+<li><p>애플리케이션의 각종 정보를 확인할 수 있는 Endpoints</p>
+<ul>
+<li><p>다양한 Endpoints 제공.</p>
+<ul>
+<li>auditevents : 인증정보</li>
+<li>conditions : 자동설정 및 조건</li>
+<li>env : environment안에 property</li>
+<li>health : 잘 구동중인지..</li>
+<li>httptrace : 최근 100개의 http요청과 응답</li>
+<li>loggers : 로그와 레벨 정보, 수정도 가능하다.</li>
+<li>metrics : 메모리, cpu등 핵심정보, 알림설정도 가능하다. (모니터링 중 어느 수치를 넘거나..)</li>
+<li>shutdown : 애플리케이션을 off 할 수 있다.</li>
+<li>web<ul>
+<li>jolokia : JMX 빈을 http 화면에서 확인할 수 있다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>JMX 또는 HTTP를 통해 접근 가능 함.</p>
+</li>
+<li>shutdown을 제외한 모든 Endpoint는 기본적으로 활성화 상태.</li>
+<li>활성화(enable)랑 공개(Exposing)는 다르다.<br>보안상의 이유로 노출 health, info 외 비공개이다. </li>
+<li>활성화 옵션 조정<ul>
+<li>management.endpoints.enabled-by-default=false</li>
+<li>management.endpoint.info.enabled=true</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="JMX와-HTTP"><a href="#JMX와-HTTP" class="headerlink" title="JMX와 HTTP"></a>JMX와 HTTP</h4><ul>
+<li>JConsole 사용하기<ul>
+<li>terminal에서 jconsole<br><img src="/images/springboot/springboot16-1.png" alt="springboot"></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/jmx/mbeans/">https://docs.oracle.com/javase/tutorial/jmx/mbeans/</a></li>
+<li><a href="https://docs.oracle.com/javase/7/docs/technotes/guides/management/jconsole.html">https://docs.oracle.com/javase/7/docs/technotes/guides/management/jconsole.html</a></li>
+</ul>
+</li>
+<li><p>VisualVM 사용하기<br> <img src="/images/springboot/springboot16-2.png" alt="springboot"></p>
+<ul>
+<li>[다운로드 사이트]<a href="https://visualvm.github.io/download.html">https://visualvm.github.io/download.html</a></li>
+<li>JConsole보다 가시적이고 다양한 플러그인을 지원한다.</li>
+</ul>
+</li>
+<li><p>HTTP 사용하기</p>
+<ul>
+<li>/actuator</li>
+<li>health와 info를 제외한 대부분의 Endpoint가 기본적으로 비공개 상태</li>
+<li>공개 옵션 조정<ul>
+<li>management.endpoints.web.exposure.include=*</li>
+<li>management.endpoints.web.exposure.exclude=env,beans</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Spring-Boot-Admin"><a href="#Spring-Boot-Admin" class="headerlink" title="Spring-Boot-Admin"></a>Spring-Boot-Admin</h4><ul>
+<li>스프링 부트가 제공하는것이 아닌 제 3자가 오픈소스로 제공하는 어플리케이션</li>
+<li>Actuator 정보를 간단한 UI로 제공한다.</li>
+<li><p>github : <a href="https://github.com/codecentric/spring-boot-admin">https://github.com/codecentric/spring-boot-admin</a></p>
+</li>
+<li><p>Admin 서버 설정</p>
+<ul>
+<li><p>의존성 추가</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;de.codecentric&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-admin-starter-server&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.1.4&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>@EnableAdminServer<br><img src="/images/springboot/springboot16-3.png" alt="springboot"></p>
+</li>
+</ul>
+</li>
+<li><p>클라이언트 설정 (운영될 프로젝트)</p>
+<ul>
+<li><p>의존성 추가</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;de.codecentric&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-admin-starter-client&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.1.4 &lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>spring.boot.admin.client.url=<a href="http://localhost:8080">http://localhost:8080</a></p>
+</li>
+<li>management.endpoints.web.exposure.include=*</li>
+<li>포트를 같은걸 쓸 수 없기 때문에 포트 변경해준다.</li>
+<li>설정했던 localhost:8080 접속 시, 아래와같은 화면이 나오고 아래 버튼 클릭 시, 기능들을 사용할 수 있다.<br><img src="/images/springboot/springboot16-4.png" alt="springboot"></li>
+<li>가시적으로 정보들을 확인할 수 있고, 운영중에 로거 변경등의 기능이 있다.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>스프링부트 개념과 활용 강좌를 모두 수강하였습니다.😁<br>제가 원했던 내용보다 자세하고 깊숙하게 알려주셔서 너무너무 만족스러웠습니다.<br>제가 알게된 내용들로 프로젝트를 진행할 생각을 하니 설레기도 합니다.<br>다음 정리 블로깅은 아마 스프링 JPA되지 않을까합니다.<br>스프링 JPA는 ORM의 구현체로 객체와 관계형 데이터베이스의 연결을 해주는 api며 많은 기업에서 사용하고 있는것으로 알고있습니다.<br>빨리 수강하고 싶네요 😁<br><br><br>    </p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/SpringBoot/">SpringBoot</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Alipay. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
+
+<div class="notification is-danger">
+    You forgot to set the <code>business</code> and <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>url</code> Patreon. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/04/19/Git/git01/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Git - status, init, commit, config, log, reset, revert</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/04/17/spring/springboot15/">
+                <span class="level-item">스프링 부트 활용15 - 스프링 REST 클라이언트</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-4-widescreen  has-order-3 column-right is-sticky">
+    
+        
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    Catalogue
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#스프릥-부트-개념과-활용16-inflearn-백기선">
+        <span class="has-mr-6">1</span>
+        <span>스프릥 부트 개념과 활용16(inflearn) - 백기선</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Spring-boot">
+        <span class="has-mr-6">1.1</span>
+        <span>Spring boot</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Actuator">
+        <span class="has-mr-6">1.1.1</span>
+        <span>Actuator</span>
+        </a></li></ul></li></ul></li></ul>
+            </div>
+        </div>
+    </div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/Algorithm/" style="font-size: 11.11px;">Algorithm</a> <a href="/tags/DataBase/" style="font-size: 10px;">DataBase</a> <a href="/tags/Etc/" style="font-size: 11.11px;">Etc</a> <a href="/tags/Git/" style="font-size: 13.33px;">Git</a> <a href="/tags/Interview/" style="font-size: 14.44px;">Interview</a> <a href="/tags/JPA/" style="font-size: 20px;">JPA</a> <a href="/tags/JSP/" style="font-size: 14.44px;">JSP</a> <a href="/tags/Java/" style="font-size: 18.89px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 12.22px;">JavaScript</a> <a href="/tags/OracleDB/" style="font-size: 14.44px;">OracleDB</a> <a href="/tags/Process/" style="font-size: 11.11px;">Process</a> <a href="/tags/RestAPI/" style="font-size: 14.44px;">RestAPI</a> <a href="/tags/Seminar/" style="font-size: 10px;">Seminar</a> <a href="/tags/SpringBoot/" style="font-size: 20px;">SpringBoot</a> <a href="/tags/SpringSecurity/" style="font-size: 12.22px;">SpringSecurity</a> <a href="/tags/SpringWebMvc/" style="font-size: 16.67px;">SpringWebMvc</a> <a href="/tags/Springframework/" style="font-size: 17.78px;">Springframework</a> <a href="/tags/Springframework-kosta/" style="font-size: 14.44px;">Springframework_kosta</a> <a href="/tags/Web/" style="font-size: 12.22px;">Web</a> <a href="/tags/debug/" style="font-size: 11.11px;">debug</a> <a href="/tags/jQuery/" style="font-size: 12.22px;">jQuery</a> <a href="/tags/정보처리기사-필기/" style="font-size: 13.33px;">정보처리기사_필기</a> <a href="/tags/프로젝트-회고/" style="font-size: 15.56px;">프로젝트_회고</a>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/blog_logo.png" alt="스프링 부트 운영16 - Actuator" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 Bong&#39;s blog&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/cyr9210">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'http://yoursite.com',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
